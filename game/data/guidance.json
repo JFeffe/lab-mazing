@@ -167,6 +167,48 @@
         "Installez la cartouche, puis réinitialisez. Commande II deux fois, commande III une fois : A est EST, B SUD et C OUEST. Validez.",
         "Install the cartridge and reset. Control II twice, control III once: A is EAST, B SOUTH and C WEST. Validate."
       ]
+    ],
+    "g_irrigation": [
+      [
+        "Les ouvertures de deux coudes voisins doivent se faire face.",
+        "The openings of neighbouring elbows must face each other."
+      ],
+      [
+        "L’eau doit descendre de A vers C, traverser vers D, puis remonter en B.",
+        "Water must go down from A to C, across to D, then up to B."
+      ],
+      [
+        "Après réinitialisation : A deux fois, B une fois, C aucune fois, D trois fois. Ouvertures A ouest/sud ; B sud/est ; C nord/est ; D nord/ouest. Validez.",
+        "After reset: A twice, B once, C zero times, D three times. Openings: A west/south; B south/east; C north/east; D north/west. Validate."
+      ]
+    ],
+    "g_growth": [
+      [
+        "Cette plante a besoin d’un environnement et d’un support adaptés.",
+        "This plant needs a suitable environment and support."
+      ],
+      [
+        "La fiche 102 distingue la lumière douce du plein soleil. Le treillis doit être prêt avant la croissance.",
+        "Sheet 102 distinguishes soft light from full sun. The trellis must be ready before growth."
+      ],
+      [
+        "Installez la graine 101 et l’eau obtenue en 203. Réglez lumière DOUCE, arrosage 2 doses et treillis DÉPLOYÉ, puis validez.",
+        "Install seed 101 and the water obtained at 203. Set SOFT light, 2 doses of water and RAISED trellis, then validate."
+      ]
+    ],
+    "g_blend": [
+      [
+        "Additionnez les propriétés, pas les numéros des récoltes. Un ingrédient peut rester inutilisé.",
+        "Add the properties, not the crop reference numbers. An ingredient may remain unused."
+      ],
+      [
+        "Une mesure de grain fournit déjà toute l’amertume demandée. Complétez l’arôme et la stabilité sans ajouter d’amertume.",
+        "One measure of beans already provides all required bitterness. Add aroma and stability without adding bitterness."
+      ],
+      [
+        "Après installation des quatre récoltes : Grain 1, Pétale 1, Mousse 1, Sel 0. Trois mesures donnent arôme 3, amertume 2 et stabilité 2. Validez.",
+        "After installing all four crops: Bean 1, Petal 1, Moss 1, Salt 0. Three measures give aroma 3, bitterness 2 and stability 2. Validate."
+      ]
     ]
   },
   "objectives": {
@@ -257,6 +299,30 @@
     "f_exit": [
       "ZÉRO fonctionne : rejoindre le pupitre 405 pour présenter le résultat à Folamour.",
       "ZERO works: reach console 405 to show Folamour the result."
+    ],
+    "g_irrigation": [
+      "Récupérer le raccord à l’ouest et rétablir la circulation de l’eau au panneau 203.",
+      "Find the coupling in the west and restore water flow at panel 203."
+    ],
+    "g_growth": [
+      "Installer la graine et l’eau dans le bac 104, puis créer la passerelle végétale.",
+      "Install the seed and water in bed 104, then create the living walkway."
+    ],
+    "g_harvest": [
+      "Explorer les cultures à l’est et récolter les quatre ingrédients du mélangeur.",
+      "Explore the eastern crops and harvest all four mixer ingredients."
+    ],
+    "g_blend": [
+      "Apporter les récoltes au mélangeur 205 au nord et préparer le mélange demandé.",
+      "Take the crops to northern mixer 205 and prepare the requested blend."
+    ],
+    "g_mug": [
+      "Retrouver la tasse du docteur dans le vestiaire au sud.",
+      "Find the doctor’s mug in the southern cloakroom."
+    ],
+    "g_coffee": [
+      "Servir le café à la cafetière 105 avec la tasse et la préparation validée.",
+      "Serve coffee at machine 105 with the mug and approved preparation."
     ]
   },
   "stages": {
@@ -391,6 +457,47 @@
           "f_exit"
         ],
         "f_exit"
+      ]
+    ],
+    "6": [
+      [
+        [
+          "g_irrigation"
+        ],
+        "g_irrigation"
+      ],
+      [
+        [
+          "g_growth"
+        ],
+        "g_growth"
+      ],
+      [
+        [
+          "g_beans",
+          "g_petals",
+          "g_moss",
+          "g_salt"
+        ],
+        "g_harvest"
+      ],
+      [
+        [
+          "g_blend"
+        ],
+        "g_blend"
+      ],
+      [
+        [
+          "g_mug"
+        ],
+        "g_mug"
+      ],
+      [
+        [
+          "g_coffee"
+        ],
+        "g_coffee"
       ]
     ]
   }

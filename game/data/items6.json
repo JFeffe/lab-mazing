@@ -1,0 +1,38 @@
+{
+  "bridge_seed": {
+    "title": "Graine de liane-pont",
+    "text": "Cette liane devient une passerelle lorsqu’elle reçoit de l’eau, une lumière douce et un support. À installer dans le bac 104."
+  },
+  "coffee_mug": {
+    "title": "Tasse du docteur",
+    "text": "Une tasse gravée « Meilleur superviseur, selon moi ». Rapportez-la à la cafetière 105."
+  },
+  "water_coupling": {
+    "title": "Raccord étanche",
+    "text": "Le dernier raccord du panneau d’irrigation 203. Son joint empêche l’eau de fuir à l’entrée."
+  },
+  "bean_crop": {
+    "title": "Grains de café-lune",
+    "text": "Une mesure : arôme 2, amertume 2, stabilité 0. Réserve pour le mélangeur 205."
+  },
+  "petal_crop": {
+    "title": "Pétales de vanillombre",
+    "text": "Une mesure : arôme 1, amertume 0, stabilité 1. Réserve pour le mélangeur 205."
+  },
+  "moss_crop": {
+    "title": "Mousse stabilisante",
+    "text": "Une mesure : arôme 0, amertume 0, stabilité 1. Réserve pour le mélangeur 205."
+  },
+  "salt_crop": {
+    "title": "Sel de rosée",
+    "text": "Une mesure : arôme 0, amertume 1, stabilité 2. Réserve pour le mélangeur 205. Récolter n’oblige pas à utiliser."
+  },
+  "water_reserve": {
+    "title": "Réserve d’eau",
+    "text": "Pour le bac 104."
+  },
+  "coffee_blend": {
+    "title": "Préparation aromatique",
+    "text": "À servir avec la tasse en 105."
+  }
+}

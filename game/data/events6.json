@@ -1,0 +1,323 @@
+[
+  {
+    "id": "g_welcome",
+    "kind": "clue",
+    "cell": [
+      17,
+      21
+    ],
+    "ref": "100",
+    "title": "Première affectation",
+    "text": "Bienvenue aux serres expérimentales. Mission : préparer le café de Folamour. La cafetière 105 dépend du mélangeur au nord, des cultures à l’est et de l’irrigation à l’ouest. Le vestiaire se trouve au sud."
+  },
+  {
+    "id": "g_seed",
+    "kind": "pickup",
+    "cell": [
+      13,
+      11
+    ],
+    "ref": "101",
+    "title": "Graine de liane-pont",
+    "text": "Cette liane devient une passerelle lorsqu’elle reçoit de l’eau, une lumière douce et un support. À installer dans le bac 104.",
+    "resource": "bridge_seed",
+    "amount": 1,
+    "appearance": "seed"
+  },
+  {
+    "id": "g_growth_note",
+    "kind": "clue",
+    "cell": [
+      13,
+      23
+    ],
+    "ref": "102",
+    "title": "Fiche de germination",
+    "text": "La liane-pont pousse sous une lumière DOUCE. Elle demande DEUX doses d’eau et un treillis DÉPLOYÉ. L’ombre empêche sa croissance ; le soleil fort la fait se recroqueviller. L’eau du circuit est recyclée."
+  },
+  {
+    "id": "g_mug",
+    "kind": "pickup",
+    "cell": [
+      13,
+      33
+    ],
+    "ref": "103",
+    "title": "Tasse du docteur",
+    "text": "Une tasse gravée « Meilleur superviseur, selon moi ». Rapportez-la à la cafetière 105.",
+    "resource": "coffee_mug",
+    "amount": 1,
+    "appearance": "cup"
+  },
+  {
+    "id": "g_growth",
+    "kind": "mechanism",
+    "cell": [
+      21,
+      17
+    ],
+    "ref": "104",
+    "title": "Bac de la liane-pont",
+    "text": "Installez la graine et la réserve d’eau. Ajustez la lumière, l’arrosage et le treillis selon la fiche 102. La croissance déploiera un passage vers les cultures de l’est.",
+    "requires": [
+      "bridge_seed",
+      "water_reserve"
+    ],
+    "puzzle_type": "growth",
+    "model": "growth",
+    "opens": [
+      "g_bridge"
+    ],
+    "success": "La liane s’enroule autour du treillis. La passerelle est praticable dans les deux sens ! « Vous voyez ? Même les plantes acceptent les heures supplémentaires. » — Folamour"
+  },
+  {
+    "id": "g_coffee",
+    "kind": "exit",
+    "cell": [
+      17,
+      13
+    ],
+    "ref": "105",
+    "title": "Cafetière administrative",
+    "text": "Il faut la tasse du docteur et une préparation validée au mélangeur 205. Le café ne lance aucun compte à rebours.",
+    "requires": [
+      "coffee_mug",
+      "coffee_blend"
+    ],
+    "prerequisites": [
+      "g_irrigation",
+      "g_growth",
+      "g_blend"
+    ],
+    "action": "Servir le café",
+    "success": "Le café est servi. Première mission du stage réussie."
+  },
+  {
+    "id": "g_bridge",
+    "kind": "door",
+    "cell": [
+      23,
+      17
+    ],
+    "ref": "106",
+    "title": "Passerelle végétale",
+    "text": "Le treillis est replié. La liane du bac 104 doit pousser pour rendre ce passage sûr.",
+    "axis": "x",
+    "controlled_by": "g_growth"
+  },
+  {
+    "id": "g_pipe_note",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "201",
+    "title": "Plan de circulation de l’eau",
+    "text": "Les quatre coudes A, B, C et D forment un carré : A et B en haut, C et D en bas. L’eau arrive par l’OUEST de A et doit sortir par l’EST de B. Tournez chaque coude ; deux ouvertures face à face doivent se rejoindre, sans fuite."
+  },
+  {
+    "id": "g_coupling",
+    "kind": "pickup",
+    "cell": [
+      11,
+      31
+    ],
+    "ref": "202",
+    "title": "Raccord étanche",
+    "text": "Le dernier raccord du panneau d’irrigation 203. Son joint empêche l’eau de fuir à l’entrée.",
+    "resource": "water_coupling",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "g_irrigation",
+    "kind": "mechanism",
+    "cell": [
+      5,
+      15
+    ],
+    "ref": "203",
+    "title": "Circuit d’irrigation",
+    "text": "Installez le raccord puis tournez les quatre coudes. Les flèches indiquent leurs ouvertures actuelles. Le chemin de l’eau doit relier l’entrée à la sortie.",
+    "requires": [
+      "water_coupling"
+    ],
+    "puzzle_type": "pipes",
+    "model": "pipes",
+    "grants": {
+      "water_reserve": 1
+    },
+    "success": "L’eau circule. Une réserve est prête pour le bac 104. « Excellent. Maintenant, arrosez quelque chose qui rapporte. » — Folamour"
+  },
+  {
+    "id": "g_pipe_tip",
+    "kind": "clue",
+    "cell": [
+      9,
+      3
+    ],
+    "ref": "204",
+    "title": "Annotation du plombier",
+    "text": "Ce sont uniquement des COUDES, jamais des tuyaux droits. L’eau doit faire un détour par le bas du carré avant de rejoindre la sortie."
+  },
+  {
+    "id": "g_blend",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      3
+    ],
+    "ref": "205",
+    "title": "Mélangeur aromatique",
+    "text": "Installez les quatre récoltes. Composez TROIS mesures au total avec arôme 3, amertume 2 et stabilité 2. Chaque réserve accepte de 0 à 2 mesures. Les propriétés des ingrédients s’additionnent ; les essais ne consomment pas les réserves installées.",
+    "requires": [
+      "bean_crop",
+      "petal_crop",
+      "moss_crop",
+      "salt_crop"
+    ],
+    "puzzle_type": "blend",
+    "model": "blend",
+    "ingredients": [
+      "Grain",
+      "Pétale",
+      "Mousse",
+      "Sel"
+    ],
+    "properties": [
+      [
+        2,
+        2,
+        0
+      ],
+      [
+        1,
+        0,
+        1
+      ],
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        1,
+        2
+      ]
+    ],
+    "target": [
+      3,
+      2,
+      2
+    ],
+    "grants": {
+      "coffee_blend": 1
+    },
+    "success": "Préparation validée. Rapportez-la à la cafetière 105 avec la tasse. « Une réussite botanique. Espérons qu’elle soit aussi buvable. » — Folamour"
+  },
+  {
+    "id": "g_recipe",
+    "kind": "clue",
+    "cell": [
+      23,
+      7
+    ],
+    "ref": "206",
+    "title": "Commande du superviseur",
+    "text": "TROIS mesures. ARÔME : 3. AMERTUME : 2. STABILITÉ : 2. Un ingrédient peut être omis. Lire les propriétés des récoltes et additionner chaque colonne. « Pas de sucre. Il crée des attentes. » — Folamour"
+  },
+  {
+    "id": "g_beans",
+    "kind": "pickup",
+    "cell": [
+      25,
+      1
+    ],
+    "ref": "301",
+    "title": "Grains de café-lune",
+    "text": "Une mesure : arôme 2, amertume 2, stabilité 0. Réserve pour le mélangeur 205.",
+    "resource": "bean_crop",
+    "amount": 1,
+    "appearance": "seed"
+  },
+  {
+    "id": "g_petals",
+    "kind": "pickup",
+    "cell": [
+      33,
+      9
+    ],
+    "ref": "302",
+    "title": "Pétales de vanillombre",
+    "text": "Une mesure : arôme 1, amertume 0, stabilité 1. Réserve pour le mélangeur 205.",
+    "resource": "petal_crop",
+    "amount": 1,
+    "appearance": "seed"
+  },
+  {
+    "id": "g_moss",
+    "kind": "pickup",
+    "cell": [
+      25,
+      31
+    ],
+    "ref": "303",
+    "title": "Mousse stabilisante",
+    "text": "Une mesure : arôme 0, amertume 0, stabilité 1. Réserve pour le mélangeur 205.",
+    "resource": "moss_crop",
+    "amount": 1,
+    "appearance": "seed"
+  },
+  {
+    "id": "g_salt",
+    "kind": "pickup",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "304",
+    "title": "Sel de rosée",
+    "text": "Une mesure : arôme 0, amertume 1, stabilité 2. Réserve pour le mélangeur 205. Récolter n’oblige pas à utiliser.",
+    "resource": "salt_crop",
+    "amount": 1,
+    "appearance": "seed"
+  },
+  {
+    "id": "g_secret1",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "207",
+    "title": "Archive des serres 207",
+    "text": "« Les plantes carnivores ne mangent que les employés rémunérés. Vous ne risquez rien. » — Folamour",
+    "secret": true
+  },
+  {
+    "id": "g_secret2",
+    "kind": "clue",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "305",
+    "title": "Archive des serres 305",
+    "text": "Le syndicat des fougères réclame une pause de photosynthèse. Demande rejetée : exposition insuffisante.",
+    "secret": true
+  },
+  {
+    "id": "g_secret3",
+    "kind": "clue",
+    "cell": [
+      23,
+      33
+    ],
+    "ref": "107",
+    "title": "Archive des serres 107",
+    "text": "Contrat de stage, annexe B : les pauses café commencent lorsque le café est terminé. La préparation ne compte pas.",
+    "secret": true
+  }
+]

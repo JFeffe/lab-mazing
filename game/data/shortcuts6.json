@@ -1,0 +1,122 @@
+[
+  {
+    "cell": [
+      6,
+      5
+    ],
+    "sides": [
+      [
+        7,
+        5
+      ],
+      [
+        5,
+        5
+      ]
+    ],
+    "axis": "x",
+    "original_detour_steps": 18,
+    "id": "G1",
+    "minimum_saved_steps": 16
+  },
+  {
+    "cell": [
+      6,
+      13
+    ],
+    "sides": [
+      [
+        7,
+        13
+      ],
+      [
+        5,
+        13
+      ]
+    ],
+    "axis": "x",
+    "original_detour_steps": 58,
+    "id": "G2",
+    "minimum_saved_steps": 56
+  },
+  {
+    "cell": [
+      29,
+      24
+    ],
+    "sides": [
+      [
+        29,
+        23
+      ],
+      [
+        29,
+        25
+      ]
+    ],
+    "axis": "y",
+    "original_detour_steps": 14,
+    "id": "G3",
+    "minimum_saved_steps": 12
+  },
+  {
+    "cell": [
+      12,
+      27
+    ],
+    "sides": [
+      [
+        13,
+        27
+      ],
+      [
+        11,
+        27
+      ]
+    ],
+    "axis": "x",
+    "original_detour_steps": 118,
+    "id": "G4",
+    "minimum_saved_steps": 104
+  },
+  {
+    "cell": [
+      17,
+      28
+    ],
+    "sides": [
+      [
+        17,
+        27
+      ],
+      [
+        17,
+        29
+      ]
+    ],
+    "axis": "y",
+    "original_detour_steps": 14,
+    "id": "G5",
+    "minimum_saved_steps": 12
+  },
+  {
+    "cell": [
+      31,
+      30
+    ],
+    "sides": [
+      [
+        31,
+        29
+      ],
+      [
+        31,
+        31
+      ]
+    ],
+    "axis": "y",
+    "original_detour_steps": 18,
+    "id": "G6",
+    "minimum_saved_steps": 16
+  }
+]

@@ -12,6 +12,17 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 ## Développement
 Ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
 
+## Nouveautés v0.12
+Le chapitre 2 commence avec **Les serres expérimentales**, première mission du stage non rémunéré. Folamour demande un café : le joueur rétablit l’irrigation avec quatre coudes orientables, fait pousser une liane-pont, récolte quatre ingrédients et compose un mélange selon trois propriétés. Le nouveau labyrinthe possède une serre centrale, quatre branches, des parois vitrées, 20 repères, trois secrets et six raccourcis de retour.
+
+Accès depuis « Choisir un chapitre » ou « Accepter le stage — Chapitre 2 » à la fin du niveau 5. Les bilans précédents sont conservés en poursuivant l’aventure. La sélection de test utilise le numéro global 6. La suite du chapitre 2 reste annoncée comme indisponible.
+
+Les trois nouvelles manipulations sont réversibles et sauvegardées, avec objectifs et indices progressifs FR/EN. Le parcours de référence passe de 741 à 653 pas avec les raccourcis révélés au fil de la marche ; chaque lien économise encore au moins 12 pas avec les autres ouverts. Aucun ne contourne la passerelle verrouillée.
+
+Données : `python scripts/build_level6.py`. Vérification : `python game/tests/validate_level6.py`, puis Godot `--headless --path game --fixed-fps 60 --script res://tests/verify_level6.gd`. Documents : `python scripts/document_level6.py /chemin/de/sortie`.
+
+Cartes, solutions et résumé v0.12 : https://drive.google.com/drive/folders/1NI13ExWbDG9bNK3Hkqd6PydEJkyuQezn
+
 ## Nouveautés v0.11
 Les cinq niveaux proposent des indices facultatifs en trois paliers : piste, méthode, puis solution annoncée. L’objectif actuel est consultable depuis le jeu, le journal et la pause ; les deux ailes du niveau 5 restent explorables dans les deux ordres. Les aides révélées sont sauvegardées sans modifier les énigmes.
 
