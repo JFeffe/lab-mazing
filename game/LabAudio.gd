@@ -36,6 +36,11 @@ func persist():
 func gain(game,channel):
 	return 0.0 if game.muted or game.test_mode or not focused else levels.master*levels[channel]
 
+static func set_paused(player,value):
+	# Web samples recreate their source on every resume, even if already playing.
+	# Never forward an unchanged pause state to the audio backend.
+	if player.stream_paused!=value:player.stream_paused=value
+
 func update(game,delta):
 	var active=game.playing and focused and not game.test_mode
 	var target=gain(game,"music")*(0.45 if game.modal_open else 1.0) if active else 0.0
@@ -43,11 +48,11 @@ func update(game,delta):
 	# Muting and zero volume take effect immediately, including ongoing sounds.
 	if gain(game,"music")==0:current_gain=0
 	music.volume_db=linear_to_db(maxf(current_gain,0.00001))
-	music.stream_paused=not active or gain(game,"music")==0
+	set_paused(music,not active or gain(game,"music")==0)
 	if active and gain(game,"music")>0 and not music.playing:music.play()
 	for p in [mechanical,fanfare,game.audio]:
 		p.volume_db=linear_to_db(maxf(gain(game,"effects"),0.00001))
-		p.stream_paused=gain(game,"effects")<=0
+		set_paused(p,gain(game,"effects")<=0)
 
 func effect(game,kind):
 	if gain(game,"effects")<=0:return

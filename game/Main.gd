@@ -1642,17 +1642,19 @@ func build_readability_decor():
 func update_ambience():
 	if not is_instance_valid(ambience): return
 	if muted or not playing or modal_open or test_mode or (is_instance_valid(soundscape) and not soundscape.focused):
-		ambience.stream_paused=true
+		soundscape.set_paused(ambience,true)
 		return
-	var sector=zone(int(player.position.z/TILE))
+	var background_gain=soundscape.gain(self,"ambience") if is_instance_valid(soundscape) else 1.0
+	if background_gain<=0:
+		soundscape.set_paused(ambience,true)
+		return
+	var sector=zone(int(player.position.z/TILE),int(player.position.x/TILE))
 	if sector!=ambience_zone:
 		ambience_zone=sector
 		ambience.stream=load("res://assets/ambience"+str(sector)+".wav")
 		ambience.play()
 	elif not ambience.playing: ambience.play()
-	ambience.stream_paused=false
-	var background_gain=soundscape.gain(self,"ambience") if is_instance_valid(soundscape) else 1.0
-	if background_gain<=0:ambience.stream_paused=true
+	soundscape.set_paused(ambience,false)
 	ambience.volume_db=(-28 if not done.has("generator") else -23)+linear_to_db(maxf(background_gain,0.00001))
 
 func build_code_keypad():

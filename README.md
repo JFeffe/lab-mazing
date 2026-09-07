@@ -80,3 +80,7 @@ Partage des BoxMesh (serres : 4031 blocs / 54 ressources), limitation à 30 FPS 
 ### Correctif mobile v0.12.2
 
 Suppression complète du bruit des pas. Sur appareil à pointeur tactile, plafonnement du ratio de pixels du canvas WebGL à 1, pour réduire aussi la mémoire des tampons 2D et intermédiaires que la baisse de résolution 3D seule ne limitait pas. Les commandes tactiles utilisent le même ratio que le dessin. La cause exacte du plantage navigateur signalé reste à confirmer sur le téléphone ; ces mesures réduisent sa charge mémoire.
+
+### Correctif v0.12.3 — transitions audio Web
+
+Les commandes de pause/reprise audio étaient envoyées à chaque image. Dans le backend samples de Godot 4.5.1, chaque reprise recrée une source Web Audio, même si elle joue déjà. Reproduction sur la classe JavaScript exportée : 600 reprises identiques créent 600 sources. Les commandes sont désormais envoyées uniquement lors d’un changement d’état ; le volume d’ambiance à zéro ne provoque plus une reprise immédiatement suivie d’une pause. Test de régression : 108000 mises à jour / deux transitions. La stabilité réelle du navigateur reste à confirmer sur les appareils concernés.
