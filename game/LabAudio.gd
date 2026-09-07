@@ -2,19 +2,16 @@ extends Node
 const SETTINGS="user://audio.cfg"
 var levels={"master":0.8,"music":0.22,"effects":0.55,"ambience":0.4}
 var music:AudioStreamPlayer
-var step:AudioStreamPlayer
 var mechanical:AudioStreamPlayer
 var fanfare:AudioStreamPlayer
 var preference_muted=false
 var focused=true
-var step_distance=0.0
 var current_gain=0.0
 
 func _ready():
 	load_settings()
 	music=make_player("folamour_lounge.ogg")
 	music.stream.loop=true
-	step=make_player("footstep.wav")
 	mechanical=make_player("door.wav")
 	fanfare=make_player("chapter_complete.wav")
 
@@ -48,17 +45,9 @@ func update(game,delta):
 	music.volume_db=linear_to_db(maxf(current_gain,0.00001))
 	music.stream_paused=not active or gain(game,"music")==0
 	if active and gain(game,"music")>0 and not music.playing:music.play()
-	for p in [step,mechanical,fanfare,game.audio]:
+	for p in [mechanical,fanfare,game.audio]:
 		p.volume_db=linear_to_db(maxf(gain(game,"effects"),0.00001))
 		p.stream_paused=gain(game,"effects")<=0
-
-func movement(game,distance):
-	step_distance+=distance
-	if step_distance>=1.35:
-		step_distance=fmod(step_distance,1.35)
-		if gain(game,"effects")>0:
-			step.pitch_scale=game.rng.randf_range(.94,1.06)
-			step.play()
 
 func effect(game,kind):
 	if gain(game,"effects")<=0:return

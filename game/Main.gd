@@ -754,7 +754,6 @@ func _physics_process(delta):
 	var previous_position=player.position
 	player.velocity=Vector3(direction.x*speed,-2,direction.y*speed)
 	player.move_and_slide()
-	if is_instance_valid(soundscape):soundscape.movement(self,Vector2(player.position.x-previous_position.x,player.position.z-previous_position.z).length())
 	if not move_path.is_empty():
 		stuck_time=stuck_time+delta if player.position.distance_to(previous_position)<0.001 else 0.0
 		if stuck_time>1.2:
