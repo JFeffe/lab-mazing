@@ -1,0 +1,18 @@
+{
+  "transfer_seal": {
+    "title": "Joint de transfert",
+    "text": "Joint réutilisable pour le doseur 203."
+  },
+  "coolant4": {
+    "title": "Charge de 4 litres",
+    "text": "Refroidissement pour la station 103."
+  },
+  "intact_core": {
+    "title": "Noyau intact",
+    "text": "Transféré sur C ; à assembler en 103."
+  },
+  "stable_cartridge": {
+    "title": "Cartouche stable",
+    "text": "À installer dans le stabilisateur 403."
+  }
+}

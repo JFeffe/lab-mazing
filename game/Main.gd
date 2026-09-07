@@ -23,6 +23,7 @@ var decor=[]
 var ambience:AudioStreamPlayer
 var ambience_zone=-1
 var material_cache={}
+var folamour:Node3D
 var level=1
 var level_stats={}
 var level_data={}
@@ -164,12 +165,13 @@ func build_world():
 	sun.shadow_enabled=not OS.has_feature("web")
 	world.add_child(sun)
 	var palettes=[Color("648a83"),Color("7b83a4"),Color("9e8174")] if level==1 else [Color("9e8460"),Color("527f8e"),Color("858371")]
+	if level==5: palettes=[Color("659b9d"),Color("ac9070"),Color("8982a9")]
 	if level==4: palettes=[Color("a18d72"),Color("788ba2"),Color("6b968d")]
 	if level==3: palettes=[Color("7789a5"),Color("638f94"),Color("93839e")]
 	for y in range(grid.size()):
 		for x in range(grid.size()):
 			var k=key(x,y)
-			var col=palettes[zone(y)]
+			var col=palettes[zone(y,x)]
 			if floor_at(x,y):
 				floors[k]=box(world,Vector3(TILE-0.05,0.25,TILE-0.05),Vector3(x*TILE,-0.15,y*TILE),material(col*(0.94+float((x+y)%3)*0.045)))
 				floors[k].visible=false
@@ -230,6 +232,9 @@ func build_world():
 	build_shortcuts()
 	build_readability_decor()
 	if level==2: build_machine_decor()
+	if level==5:
+		folamour=make_folamour(world)
+		folamour.position=Vector3(17*TILE,0,19*TILE)
 	update_camera(1)
 
 func build_event(e):
@@ -565,28 +570,45 @@ func read_save():
 		var parser=JSON.new()
 		if parser.parse(FileAccess.get_file_as_string(path))!=OK: continue
 		var data=parser.data
-		if data is Dictionary and int(data.get("version",0)) in [2,4] and int(data.get("level",1)) in [1,2,3,4]: return data
+		if data is Dictionary and int(data.get("version",0)) in [2,4] and int(data.get("level",1)) in [1,2,3,4,5]: return data
 	return {}
 func show_title():
 	DisplayServer.window_set_title(loc("LE LABYRINTHE")+" — Folamour")
 	playing=false
 	hud.hide()
-	clear_modal("DOCTEUR FOLAMOUR / QUATRE EXPÉRIENCES","LE LABYRINTHE")
+	clear_modal("DOCTEUR FOLAMOUR / CHAPITRE 1","LE LABYRINTHE")
 	paragraph("Le laboratoire vous attend.\nLes machines aussi.",22)
-	paragraph("Quatre labyrinthes fixes à enchaîner. Objets à assembler, installations à remettre en marche et indices à recouper. Aucune limite de temps.")
+	paragraph("Cinq labyrinthes forment le chapitre 1, du laboratoire au défi final de Folamour. Objets à assembler, énigmes à manipuler et indices à recouper. Aucune limite de temps.")
 	var saved=read_save()
 	if not saved.is_empty():
 		modal_box.add_child(button("Continuer la partie",func(): start_game(true),true))
 		paragraph(loc("Sauvegarde : niveau %d • %02d:%02d") % [int(saved.get("level",1)),int(saved.get("elapsed",0))/60,int(saved.get("elapsed",0))%60],16)
-		if saved.get("won",false) and int(saved.get("level",1))<4: paragraph("Niveau terminé : reprenez pour accéder à la suite.",16)
-	modal_box.add_child(button("Nouvelle partie — niveau 1",func(): confirm_new(1),not has_save()))
-	modal_box.add_child(button("Tester directement le niveau 2",func(): confirm_new(2)))
-	modal_box.add_child(button("Tester directement le niveau 3",func(): confirm_new(3)))
-	modal_box.add_child(button("Tester directement le niveau 4",func(): confirm_new(4)))
+		if saved.get("won",false) and int(saved.get("level",1))<5: paragraph("Niveau terminé : reprenez pour accéder à la suite.",16)
+	modal_box.add_child(button("Choisir un chapitre",show_chapters,not has_save()))
+	modal_box.add_child(button("Sélection de niveau / test",show_level_select))
 	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("VERSION 0.8 · LES ESSAIS",13)
+	paragraph("VERSION 0.9 · LE DÉFI DE FOLAMOUR",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
+func show_chapters():
+	clear_modal("CHAPITRES","Choisir son chapitre")
+	paragraph("Chapitre 1 — Le labyrinthe de Folamour",22)
+	paragraph("Niveaux 1 → 2 → 3 → 4 → 5. Une aventure complète, jusqu’au prototype ZÉRO et à la rencontre de Folamour.")
+	var saved=read_save()
+	if not saved.is_empty():
+		if int(saved.get("level",1))==5 and saved.get("won",false):paragraph("Chapitre 1 terminé !",20)
+		modal_box.add_child(button("Reprendre le chapitre 1",func(): start_game(true),true))
+	modal_box.add_child(button("Commencer le chapitre 1",func(): confirm_new(1),saved.is_empty()))
+	var locked=button("Chapitre 2 — À venir",func(): pass)
+	locked.disabled=true
+	modal_box.add_child(locked)
+	paragraph("Seul le chapitre 1 est disponible pour le moment.",16)
+	modal_box.add_child(button("Retour",show_title))
+func show_level_select():
+	clear_modal("TEST / NIVEAUX","Choisir un niveau")
+	paragraph("Un démarrage direct remplace la partie actuelle après confirmation. Pour l’histoire complète, commencez le chapitre 1.")
+	for n in range(1,6):modal_box.add_child(button("Niveau "+str(n),func(): confirm_new(n)))
+	modal_box.add_child(button("Retour",show_title))
 func confirm_new(target=1):
 	if not has_save():
 		start_game(false,target)
@@ -600,7 +622,7 @@ func set_level(number):
 	signal_lights.clear()
 	decor.clear()
 	ambience_zone=-1
-	level=clampi(number,1,4)
+	level=clampi(number,1,5)
 	if is_instance_valid(world):
 		remove_child(world)
 		world.queue_free()
@@ -671,12 +693,16 @@ func start_game(resume_v,target=1,keep_campaign=false):
 			clear_modal("NIVEAU 3 / DÉPARTEMENT D’OPTIQUE","Que la lumière soit.")
 			paragraph("« Vous avez réparé mon ascenseur. Voyons maintenant si vous savez faire la lumière sur mes archives. »")
 			paragraph("Explorez trois secteurs : le banc optique, la galerie des faisceaux et les archives. Retrouvez les pièces, recoupez les notes et ouvrez la chambre d’observation.")
-		else:
+		elif level==4:
 			add_journal("intro","DÉPARTEMENT DES ESSAIS\nRépartissez les masses, retrouvez l’ordre des symboles et alimentez les cinq voyants. Les objets installés restent en place ; les manipulations sont réversibles et sauvegardées.")
 			clear_modal("NIVEAU 4 / DÉPARTEMENT DES ESSAIS","La théorie ne suffit plus.")
 			paragraph("« Aujourd’hui, vous manipulerez le matériel. Les formulaires de responsabilité sont déjà signés. Par moi. »")
 			paragraph("Pesez, ordonnez, récupérez et inversez. Les notes donnent les règles ; les mécanismes vous laissent expérimenter sans perdre vos objets.")
-		modal_box.add_child(button("Commencer l’exploration",close_modal,true))
+		else:
+			show_folamour_intro()
+		if level!=5:modal_box.add_child(button("Commencer l’exploration",close_modal,true))
+	elif level==5 and not won and not done.has("folamour_met"):
+		show_folamour_intro()
 	save_game()
 func _physics_process(delta):
 	if not playing or modal_open or won: return
@@ -749,7 +775,9 @@ func update_camera(delta):
 	camera.size=lerp(camera.size,zoom,min(1,delta*8))
 func key(x,y): return str(int(x))+","+str(int(y))
 func floor_at(x,y): return y>=0 and x>=0 and y<grid.size() and x<grid.size() and (grid[y][x]==1 or shortcut_cells.has(key(x,y)))
-func zone(y): return (0 if y<11 else (1 if y<24 else 2)) if level==1 else (0 if y<12 else (1 if y<24 else 2))
+func zone(y,x=17):
+	if level==5: return 2 if y<12 else 0 if x<15 else 1 if x>19 else 2
+	return (0 if y<11 else (1 if y<24 else 2)) if level==1 else (0 if y<12 else (1 if y<24 else 2))
 func update_fog():
 	var px=int(round(player.position.x/TILE))
 	var py=int(round(player.position.z/TILE))
@@ -798,6 +826,8 @@ func update_hud():
 	status_label.text=loc("Objets  %d    •    Disques récupérés  %d / 3    •    %02d:%02d") % [held,int(done.has("disc_sun"))+int(done.has("disc_moon"))+int(done.has("disc_star")),int(elapsed)/60,int(elapsed)%60]
 	if level==2: status_label.text=loc("Objets  %d    •    Installations  %d / 4    •    %02d:%02d") % [held,int(done.has("generator"))+int(done.has("water_manifold"))+int(done.has("hoist"))+int(done.has("lift_power")),int(elapsed)/60,int(elapsed)%60]
 	if level==3: status_label.text=loc("Objets  %d    •    Installations  %d / 3    •    %02d:%02d") % [held,int(done.has("projector"))+int(done.has("beam_router"))+int(done.has("archive_reader")),int(elapsed)/60,int(elapsed)%60]
+	if level==5: title_label.text=loc("N5 / "+("PROTOTYPE" if player.position.z<12*TILE else "DOSAGE" if player.position.x<15*TILE else "TRANSFERT" if player.position.x>19*TILE else "HALL CENTRAL"))
+	if level==5: status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d") % [held,int(done.has("f_dosing"))+int(done.has("f_tower"))+int(done.has("f_rotors")),int(elapsed)/60,int(elapsed)%60]
 	if level==4: status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d") % [held,int(done.has("test_balance"))+int(done.has("sequence_panel"))+int(done.has("test_circuit")),int(elapsed)/60,int(elapsed)%60]
 	action_label.text=loc("["+nearest.ref+"] "+nearest.title if not nearest.is_empty() else "Cliquez / touchez le sol pour explorer")
 	if not move_path.is_empty(): action_label.text=loc("Destination : ")+ (loc(click_event.title) if not click_event.is_empty() else str(move_path[-1].x)+", "+str(move_path[-1].y))
@@ -1102,8 +1132,18 @@ func show_win():
 		if e.get("secret",false) and done.has(e.id): secrets+=1
 	level_stats[str(level)]={"time":elapsed,"secrets":secrets,"hints":h,"errors":errors}
 	save_game()
-	clear_modal("NIVEAU "+str(level)+" / TERMINÉ", "Le laboratoire est franchi." if level==1 else "L’ascenseur est en marche." if level==2 else "Le ciel vous appartient." if level==3 else "Essais réussis.")
-	paragraph("« Le prochain département sera ravi de vous recevoir. »" if level==1 else "« Vous avez réparé l’ascenseur. Et sans réclamer de salaire. Une expérience remarquable. »" if level==2 else "« Vous pouvez admirer le ciel. La fenêtre ne constitue pas une autorisation de congé. »" if level==3 else "« Certification accordée. Le service des ressources humaines vous considère désormais comme une ressource. »",21)
+	clear_modal("NIVEAU "+str(level)+" / TERMINÉ", "Le laboratoire est franchi." if level==1 else "L’ascenseur est en marche." if level==2 else "Le ciel vous appartient." if level==3 else "Essais réussis." if level==4 else "Le défi impossible est accompli.")
+	if level==5:
+		present_folamour(true)
+		clear_modal("CHAPITRE 1 / TERMINÉ","Le défi impossible est accompli.")
+		folamour_portrait()
+		paragraph("Folamour s’approche. Pour la première fois, il semble à court de sarcasmes.",16)
+		paragraph("« Vous avez réussi. ZÉRO est stable… Personne n’y était jamais arrivé. Félicitations, sujet 16. Vous pouvez être fier de vous. »",21)
+		paragraph("Il remet ses lunettes, puis retrouve son sourire habituel.",16)
+		paragraph("« Un tel talent mérite une proposition exceptionnelle : un stage dans mon laboratoire ! Non rémunéré, évidemment. Vous ne voudriez tout de même pas fausser l’expérience avec de l’argent ? »",21)
+		paragraph("FIN DU CHAPITRE 1 — Le labyrinthe de Folamour",20)
+	else:
+		paragraph("« Le prochain département sera ravi de vous recevoir. »" if level==1 else "« Vous avez réparé l’ascenseur. Et sans réclamer de salaire. Une expérience remarquable. »" if level==2 else "« Vous pouvez admirer le ciel. La fenêtre ne constitue pas une autorisation de congé. »" if level==3 else "« Certification accordée. Le service des ressources humaines vous considère désormais comme une ressource. »",21)
 	paragraph(loc("Temps du niveau : %02d:%02d\nSecrets : %d / 3    •    Tentatives incorrectes : %d") % [int(elapsed)/60,int(elapsed)%60,secrets,errors],20)
 	if level==1:
 		paragraph("La suite : le secteur des machines. Votre inventaire sera remis à zéro. Le bilan du laboratoire sera conservé et la transition sera sauvegardée.",17)
@@ -1114,6 +1154,9 @@ func show_win():
 	elif level==3:
 		paragraph("La suite : le département des essais. Le sac et les notes seront remis à zéro ; les bilans restent conservés.",17)
 		modal_box.add_child(button("Continuer vers le niveau 4",func(): start_game(false,4,true),true))
+	elif level==4:
+		paragraph("La suite : le défi personnel de Folamour. Dernière étape du chapitre 1 ; les bilans précédents restent conservés.",17)
+		modal_box.add_child(button("Continuer vers le niveau 5",func(): start_game(false,5,true),true))
 	else:
 		var total=0.0
 		var found=0
@@ -1121,7 +1164,8 @@ func show_win():
 			total+=stat.time
 			found+=int(stat.secrets)
 		paragraph(loc("Bilan : %d niveau(x) terminé(s), %02d:%02d d’exploration, %d secrets.") % [level_stats.size(),int(total)/60,int(total)%60,found],17)
-		modal_box.add_child(button("Recommencer les quatre niveaux",func(): confirm_new(1)))
+		modal_box.add_child(button("Choisir un chapitre",func(): playing=false; hud.hide(); show_chapters(),true))
+		modal_box.add_child(button("Recommencer le chapitre 1",func(): confirm_new(1)))
 	modal_box.add_child(button("Sauvegarder et revenir au menu",show_title))
 func save_game():
 	if test_mode: return
@@ -1200,6 +1244,28 @@ func capture_preview():
 func build_machine(root,e,gold,dark):
 	var metal=material(Color("708994"))
 	match e.model:
+		"dosing":
+			box(root,Vector3(1.9,0.22,1),Vector3(0,0.18,0),metal)
+			for i in range(2):
+				var x=(i-0.5)*1.0
+				for side in [-0.35,0.35]:box(root,Vector3(0.07,1.2,0.65),Vector3(x+side,0.9,0),gold)
+				var liquid=box(root,Vector3(0.6,1,0.55),Vector3(x,0.8,0),material(Color("78d9df"),true))
+				liquid.name="Liquid"+str(i)
+		"tower":
+			box(root,Vector3(2.3,0.2,1),Vector3(0,0.18,0),metal)
+			for i in range(3):box(root,Vector3(0.08,1.2,0.08),Vector3((i-1)*0.75,0.9,0),gold)
+			for i in range(3):
+				var disc=box(root,Vector3(0.3+i*0.19,0.18,0.3+i*0.19),Vector3.ZERO,material([Color("cde9ec"),Color("e9be72"),Color("b49ada")][i]))
+				disc.name="Disc"+str(i)
+		"rotors":
+			box(root,Vector3(2.3,0.3,1.1),Vector3(0,0.7,0),metal)
+			for i in range(3):
+				var rotor=Node3D.new()
+				rotor.name="Rotor"+str(i)
+				root.add_child(rotor)
+				rotor.position=Vector3((i-1)*0.75,0.95,0)
+				box(rotor,Vector3(0.08,0.08,0.65),Vector3.ZERO,gold)
+				box(rotor,Vector3(0.22,0.08,0.12),Vector3(0,0,-0.28),gold)
 		"balance":
 			box(root,Vector3(1.5,0.18,1),Vector3(0,0.12,0),metal)
 			box(root,Vector3(0.16,1.3,0.16),Vector3(0,0.8,0),gold)
@@ -1308,6 +1374,8 @@ func build_machine_decor():
 	machine_parts.lift=lift
 func _process(delta):
 	update_ambience()
+	if level==5 and is_instance_valid(folamour):
+		folamour.visible=playing and seen.has(key(roundi(folamour.position.x/TILE),roundi(folamour.position.z/TILE)))
 	for prop in decor: prop.visible=seen.has(prop.get_meta("fog_cell"))
 	if not playing or modal_open or level!=2 or machine_parts.is_empty(): return
 	if done.has("generator") and machine_parts.has("generator"): machine_parts.generator.rotate_y(delta*3)
@@ -1469,7 +1537,7 @@ func build_readability_decor():
 			prop.position=Vector3(x*TILE,0,y*TILE)
 			prop.set_meta("fog_cell",key(x,y))
 			world.add_child(prop)
-			var tint=[Color("8ddbc3"),Color("9caedf"),Color("e6b979")][zone(y)]
+			var tint=[Color("8ddbc3"),Color("9caedf"),Color("e6b979")][zone(y,x)]
 			box(prop,Vector3(0.85,0.12,0.08),Vector3(0,1.6,-1.25),material(tint,true))
 			box(prop,Vector3(1.05,0.28,0.08),Vector3(0,1.6,-1.3),material(Color("243942")))
 			if level==2: box(prop,Vector3(0.11,1.35,0.11),Vector3(0.8,0.7,-1.2),material(Color("7b929c")))
@@ -1504,3 +1572,67 @@ func build_code_keypad():
 		)
 		b.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 		pad.add_child(b)
+
+func make_folamour(parent):
+	var actor=Node3D.new()
+	actor.name="DocteurFolamour"
+	parent.add_child(actor)
+	var coat=material(Color("e7eeee"))
+	var skin=material(Color("e7bc99"))
+	var dark=material(Color("243344"))
+	box(actor,Vector3(0.72,1.05,0.48),Vector3(0,0.9,0),coat)
+	box(actor,Vector3(0.5,0.5,0.46),Vector3(0,1.7,0),skin)
+	box(actor,Vector3(0.6,0.22,0.5),Vector3(0,1.98,0.05),coat)
+	for x in [-0.29,0.29]:
+		var hair=box(actor,Vector3(0.28,0.38,0.5),Vector3(x,1.88,0.06),coat)
+		hair.rotation.z=x*1.2
+	for x in [-0.15,0.15]:
+		box(actor,Vector3(0.25,0.2,0.05),Vector3(x,1.75,-0.26),dark)
+		box(actor,Vector3(0.16,0.11,0.02),Vector3(x,1.75,-0.295),material(Color("b7e3e9"),true))
+		box(actor,Vector3(0.25,0.4,0.26),Vector3(x,0.22,0),dark)
+	box(actor,Vector3(0.12,0.08,0.08),Vector3(0,1.75,-0.27),dark)
+	box(actor,Vector3(0.12,0.3,0.04),Vector3(0,1.15,-0.26),material(Color("bc5762")))
+	for x in [-0.47,0.47]:
+		box(actor,Vector3(0.2,0.7,0.24),Vector3(x,1,0),coat)
+		box(actor,Vector3(0.19,0.19,0.22),Vector3(x,0.6,0),skin)
+	box(actor,Vector3(0.25,0.03,0.03),Vector3(0,1.54,-0.25),dark)
+	return actor
+func folamour_portrait():
+	var container=SubViewportContainer.new()
+	container.custom_minimum_size=Vector2(200,190)
+	container.size_flags_horizontal=Control.SIZE_SHRINK_CENTER
+	modal_box.add_child(container)
+	var viewport=SubViewport.new()
+	viewport.size=Vector2i(200,190)
+	viewport.own_world_3d=true
+	viewport.transparent_bg=true
+	container.add_child(viewport)
+	var actor=make_folamour(viewport)
+	actor.rotation.y=-0.12
+	var light=DirectionalLight3D.new()
+	light.rotation_degrees=Vector3(-30,-25,0)
+	light.light_energy=1.6
+	viewport.add_child(light)
+	var portrait_camera=Camera3D.new()
+	viewport.add_child(portrait_camera)
+	portrait_camera.position=Vector3(0,1.3,-4)
+	portrait_camera.look_at(Vector3(0,1.15,0))
+	portrait_camera.projection=Camera3D.PROJECTION_ORTHOGONAL
+	portrait_camera.size=2.5
+func present_folamour(ending=false):
+	if not is_instance_valid(folamour):return
+	var destination=Vector3(18*TILE,0,2*TILE) if ending else Vector3(18*TILE,0,20*TILE)
+	folamour.position=destination+Vector3(0,0,TILE)
+	folamour.visible=true
+	folamour.look_at(Vector3(player.position.x,0,player.position.z))
+	if test_mode:folamour.position=destination
+	else:create_tween().tween_property(folamour,"position",destination,1.6)
+func show_folamour_intro():
+	present_folamour()
+	clear_modal("NIVEAU 5 / LE DÉFI DE FOLAMOUR","Enfin, en personne.")
+	folamour_portrait()
+	paragraph("Une silhouette en blouse blanche vient à votre rencontre. Cette fois, la voix ne sort pas d’un haut-parleur : le docteur Folamour est devant vous.",17)
+	paragraph("« Sujet 16 ! Encore debout ? Je commençais à soupçonner mes labyrinthes d’être trop accueillants. Rassurez-vous, je corrigerai cela. »",21)
+	paragraph("« Voici ZÉRO. Personne n’a jamais réussi à stabiliser ce prototype. Pas un seul de mes brillants assistants. Je vous mets au défi d’être le premier. Le matériel est précieux ; vous, nous verrons. »",21)
+	paragraph("Explorez les ailes ouest et est, assemblez leurs résultats dans le hall, puis accédez au stabilisateur nord. Aucun compte à rebours. Tous les essais peuvent être recommencés.",17)
+	modal_box.add_child(button("Relever le défi",func(): done["folamour_met"]=true; add_journal("intro","LE DÉFI DE FOLAMOUR\nStabiliser ZÉRO : dosage à l’ouest, transfert à l’est, assemblage dans le hall, rotors au nord. Personne n’y est encore arrivé."); close_modal(),true))

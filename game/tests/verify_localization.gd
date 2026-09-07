@@ -23,7 +23,7 @@ func run():
 	game.show_title()
 	check("THE LABYRINTH" in texts(game.modal_box),"English title missing")
 	check("Langue / Language" in texts(game.modal_box),"Language option missing")
-	for number in [1,2,3,4]:
+	for number in [1,2,3,4,5]:
 		game.start_game(false,number)
 		for e in game.events:
 			for field in ["title","text","question","success","action","installed_text"]:

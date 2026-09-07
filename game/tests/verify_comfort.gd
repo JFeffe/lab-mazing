@@ -42,21 +42,22 @@ func run():
 	await process_frame
 	game.show_pause()
 	check(game.modal_scroll.size.y<=game.get_viewport().get_visible_rect().size.y,"Landscape menu exceeds viewport")
-	game.start_game(false,4)
-	for language in ["fr","en"]:
-		game.localization.choose(language,false)
-		for dimensions in [Vector2i(390,844),Vector2i(844,390)]:
-			root.size=dimensions
-			await process_frame
-			await process_frame
-			await process_frame
-			for e in game.events:
-				if not e.has("puzzle_type"):continue
-				game.done["installed_"+e.id]=true
-				game.show_puzzle(e)
+	for number in [4,5]:
+		game.start_game(false,number)
+		for language in ["fr","en"]:
+			game.localization.choose(language,false)
+			for dimensions in [Vector2i(390,844),Vector2i(844,390)]:
+				root.size=dimensions
 				await process_frame
 				await process_frame
-				check(game.modal_scroll.size.x<=game.get_viewport().get_visible_rect().size.x,"Puzzle panel overflow: "+e.id)
-				check(game.modal_box.size.x<=game.get_viewport().get_visible_rect().size.x,"Puzzle content overflow: "+e.id)
+				await process_frame
+				for e in game.events:
+					if not e.has("puzzle_type"):continue
+					game.done["installed_"+e.id]=true
+					game.show_puzzle(e)
+					await process_frame
+					await process_frame
+					check(game.modal_scroll.size.x<=game.get_viewport().get_visible_rect().size.x,"Puzzle panel overflow: "+e.id)
+					check(game.modal_box.size.x<=game.get_viewport().get_visible_rect().size.x,"Puzzle content overflow: "+e.id)
 	print("MOBILE LAYOUT + DESTINATION + AUTOSAVE: ","FAIL" if failed else "PASS")
 	quit(1 if failed else 0)
