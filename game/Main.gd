@@ -436,7 +436,7 @@ func configure_viewport():
 	ui_mobile=mini(last_window_size.x,last_window_size.y)<720 or DisplayServer.is_touchscreen_available()
 	# Keep UI sharp; cap only the 3D buffer on high-density touch screens.
 	Engine.max_fps=30 if ui_mobile else 60
-	get_viewport().scaling_3d_scale=clampf(960.0/maxf(last_window_size.x,last_window_size.y),0.25,0.75) if ui_mobile else 1.0
+	get_viewport().scaling_3d_scale=clampf(1152.0/maxf(last_window_size.x,last_window_size.y),0.25,0.85) if ui_mobile else 1.0
 	if ui_mobile:
 		var width=480 if last_window_size.x<last_window_size.y else 960
 		get_window().content_scale_size=Vector2i(width,roundi(float(width)*last_window_size.y/maxi(1,last_window_size.x)))

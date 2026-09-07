@@ -84,3 +84,7 @@ Suppression complète du bruit des pas. Sur appareil à pointeur tactile, plafon
 ### Correctif v0.12.3 — transitions audio Web
 
 Les commandes de pause/reprise audio étaient envoyées à chaque image. Dans le backend samples de Godot 4.5.1, chaque reprise recrée une source Web Audio, même si elle joue déjà. Reproduction sur la classe JavaScript exportée : 600 reprises identiques créent 600 sources. Les commandes sont désormais envoyées uniquement lors d’un changement d’état ; le volume d’ambiance à zéro ne provoque plus une reprise immédiatement suivie d’une pause. Test de régression : 108000 mises à jour / deux transitions. La stabilité réelle du navigateur reste à confirmer sur les appareils concernés.
+
+### Ajustement v0.12.4 — netteté mobile
+
+Ratio de pixels tactile plafonné à 1,5 au lieu de 1 pour améliorer les textes et le décor. Résolution 3D à 85 % maximum et grand côté visé de 1152 pixels (contre 75 % / 960). Limite de 30 FPS, partage des modèles et correctif audio conservés.

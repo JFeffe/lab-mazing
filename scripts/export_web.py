@@ -14,7 +14,7 @@ p.write_text(s)
 js=root/'web/index.js'
 source=js.read_text()
 original='GodotDisplayScreen.hidpi?window.devicePixelRatio||1:1'
-replacement='GodotDisplayScreen.hidpi?(window.matchMedia("(pointer: coarse)").matches?1:(window.devicePixelRatio||1)):1'
+replacement='GodotDisplayScreen.hidpi?(window.matchMedia("(pointer: coarse)").matches?Math.min(window.devicePixelRatio||1,1.5):(window.devicePixelRatio||1)):1'
 if source.count(original)!=1:
     raise RuntimeError('Godot display adapter changed; review mobile pixel ratio cap')
 js.write_text(source.replace(original,replacement))
