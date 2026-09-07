@@ -4,6 +4,9 @@ const MOVE_SPEED=7.0
 const SHORTCUT_LAYOUT_REVISION=2
 const SAVE="user://experience16_v4.json"
 const LEGACY_SAVE="user://experience16_v2.json"
+const Guidance=preload("res://Guidance.gd")
+var guidance_data=JSON.parse_string(FileAccess.get_file_as_string("res://data/guidance.json"))
+var soundscape
 var localization=preload("res://Localization.gd").new()
 var ui_layer:CanvasLayer
 var toast_source=""
@@ -95,6 +98,9 @@ func _ready():
 	ambience=AudioStreamPlayer.new()
 	ambience.volume_db=-26
 	add_child(ambience)
+	soundscape=preload("res://LabAudio.gd").new()
+	add_child(soundscape)
+	muted=soundscape.preference_muted
 	get_window().size_changed.connect(window_resized)
 	if "--verify" in OS.get_cmdline_user_args() or "--verify-machines" in OS.get_cmdline_user_args():
 		start_game(false,2 if "--verify-machines" in OS.get_cmdline_user_args() else 1)
@@ -368,6 +374,7 @@ func record_walk():
 			sync_shortcuts()
 			add_journal(sc.id,"Raccourci "+sc.id+" révélé\nVous avez parcouru les deux côtés du mur. Ce passage reste ouvert dans les deux sens et apparaît sur la carte.")
 			if is_instance_valid(toast_label): toast("Raccourci "+sc.id+" révélé — passage ouvert !")
+			if is_instance_valid(soundscape):soundscape.effect(self,"door")
 			if is_instance_valid(mini_map): mini_map.queue_redraw()
 			save_game()
 func add_journal(id,text):
@@ -463,6 +470,9 @@ func build_ui():
 	status_label=label("",14)
 	status_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	stack.add_child(status_label)
+	var objective_button=button("Objectif actuel",show_objective)
+	objective_button.custom_minimum_size.y=38
+	stack.add_child(objective_button)
 	var mp=PanelContainer.new()
 	mp.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
 	mp.position=Vector2(-234,12)
@@ -588,8 +598,9 @@ func show_title():
 	modal_box.add_child(button("Choisir un chapitre",show_chapters,not has_save()))
 	modal_box.add_child(button("Sélection de niveau / test",show_level_select))
 	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("VERSION 0.10 · LES RACCOURCIS",13)
+	paragraph("VERSION 0.11 · LE DOSSIER DU STAGIAIRE",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
+	modal_box.add_child(button("Réglages audio",func(): show_audio(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
 func show_chapters():
 	clear_modal("CHAPITRES","Choisir son chapitre")
@@ -706,7 +717,7 @@ func start_game(resume_v,target=1,keep_campaign=false):
 		show_folamour_intro()
 	save_game()
 func _physics_process(delta):
-	if not playing or modal_open or won: return
+	if not playing or modal_open or won or (is_instance_valid(soundscape) and not soundscape.focused): return
 	elapsed+=delta
 	var direction=Input.get_vector("west","east","north","south")
 	var speed=MOVE_SPEED
@@ -725,6 +736,7 @@ func _physics_process(delta):
 	var previous_position=player.position
 	player.velocity=Vector3(direction.x*speed,-2,direction.y*speed)
 	player.move_and_slide()
+	if is_instance_valid(soundscape):soundscape.movement(self,Vector2(player.position.x-previous_position.x,player.position.z-previous_position.z).length())
 	if not move_path.is_empty():
 		stuck_time=stuck_time+delta if player.position.distance_to(previous_position)<0.001 else 0.0
 		if stuck_time>1.2:
@@ -885,6 +897,7 @@ func show_puzzle(e):
 		paragraph("Mécanisme déjà activé. Vous pouvez poursuivre.")
 		modal_box.add_child(button("Retour",close_modal,true))
 		return
+	modal_box.add_child(button("Indice facultatif",func(): show_hint(e)))
 	for id in e.get("prerequisites",[]):
 		if not done.has(id):
 			paragraph("Installation requise : "+item_name(id)+".",17)
@@ -985,6 +998,7 @@ func complete(e):
 	for target in e.get("opens",[]): open_target(target)
 	sync_event(e)
 	chime(880)
+	if is_instance_valid(soundscape):soundscape.effect(self,"door" if e.kind in ["door","exit"] or e.has("opens") else "machine")
 	close_modal()
 	toast(e.get("success","Le passage est ouvert."))
 	update_hud()
@@ -1087,6 +1101,11 @@ func show_inventory():
 	modal_box.add_child(button("Reprendre",close_modal,true))
 func show_journal(return_to={}):
 	clear_modal("PLUS RÉCENT EN PREMIER","Journal d’exploration")
+	modal_box.add_child(button("Objectif actuel",show_objective))
+	for e in events:
+		if int(hints.get(e.id,0))>0:
+			var hint_event=e
+			modal_box.add_child(button(loc("Indices consultés : ")+loc(e.title),func(): show_hint(hint_event,null,false)))
 	var scroll=ScrollContainer.new()
 	scroll.custom_minimum_size=Vector2(content_width(),300 if ui_mobile else 390)
 	modal_box.add_child(scroll)
@@ -1121,7 +1140,8 @@ func show_pause():
 	modal_box.add_child(button("Reprendre",close_modal,true))
 	modal_box.add_child(button("Journal",show_journal))
 	modal_box.add_child(button("Langue / Language",func(): show_language(true)))
-	modal_box.add_child(button("Son : "+("désactivé" if muted else "activé"),func(): muted=not muted; show_pause()))
+	modal_box.add_child(button("Objectif actuel",show_objective))
+	modal_box.add_child(button("Réglages audio",func(): show_audio(true)))
 	modal_box.add_child(button("Sauvegarder et revenir au menu",func(): save_game(); show_title()))
 	if not OS.has_feature("web"): modal_box.add_child(button("Sauvegarder et quitter",func(): save_game(); get_tree().quit()))
 func show_win():
@@ -1131,7 +1151,12 @@ func show_win():
 	for value in hints.values(): h+=int(value)
 	for e in events:
 		if e.get("secret",false) and done.has(e.id): secrets+=1
-	level_stats[str(level)]={"time":elapsed,"secrets":secrets,"hints":h,"errors":errors}
+	var puzzles=0
+	for e in events:
+		if Guidance.is_challenge(e) and done.has(e.id):puzzles+=1
+	var first_completion=not level_stats.has(str(level))
+	level_stats[str(level)]={"time":elapsed,"secrets":secrets,"hints":h,"errors":errors,"puzzles":puzzles,"shortcuts":open_shortcuts.size()}
+	if first_completion and level==5 and is_instance_valid(soundscape):soundscape.effect(self,"chapter_complete")
 	save_game()
 	clear_modal("NIVEAU "+str(level)+" / TERMINÉ", "Le laboratoire est franchi." if level==1 else "L’ascenseur est en marche." if level==2 else "Le ciel vous appartient." if level==3 else "Essais réussis." if level==4 else "Le défi impossible est accompli.")
 	if level==5:
@@ -1146,6 +1171,7 @@ func show_win():
 	else:
 		paragraph("« Le prochain département sera ravi de vous recevoir. »" if level==1 else "« Vous avez réparé l’ascenseur. Et sans réclamer de salaire. Une expérience remarquable. »" if level==2 else "« Vous pouvez admirer le ciel. La fenêtre ne constitue pas une autorisation de congé. »" if level==3 else "« Certification accordée. Le service des ressources humaines vous considère désormais comme une ressource. »",21)
 	paragraph(loc("Temps du niveau : %02d:%02d\nSecrets : %d / 3    •    Tentatives incorrectes : %d") % [int(elapsed)/60,int(elapsed)%60,secrets,errors],20)
+	paragraph(loc("Énigmes résolues : %d • Raccourcis découverts : %d • Indices révélés : %d") % [puzzles,open_shortcuts.size(),h],17)
 	if level==1:
 		paragraph("La suite : le secteur des machines. Votre inventaire sera remis à zéro. Le bilan du laboratoire sera conservé et la transition sera sauvegardée.",17)
 		modal_box.add_child(button("Continuer vers le niveau 2",func(): start_game(false,2,true),true))
@@ -1165,6 +1191,12 @@ func show_win():
 			total+=stat.time
 			found+=int(stat.secrets)
 		paragraph(loc("Bilan : %d niveau(x) terminé(s), %02d:%02d d’exploration, %d secrets.") % [level_stats.size(),int(total)/60,int(total)%60,found],17)
+		var summary=Guidance.summary(self)
+		paragraph("DOSSIER DE CANDIDATURE",20)
+		paragraph(loc("Énigmes résolues : %d • Raccourcis découverts : %d • Indices révélés : %d") % [summary.puzzles,summary.shortcuts,summary.hints],17)
+		if summary.tracked<summary.levels:paragraph("Certaines anciennes sauvegardes ne contiennent pas le détail des énigmes et raccourcis des niveaux précédents. Ces totaux couvrent seulement les niveaux enregistrés avec le nouveau bilan.",15)
+		if summary.levels<5:paragraph("Bilan partiel : seuls les niveaux terminés dans cette partie sont comptabilisés.",15)
+		paragraph("« Votre candidature est retenue. Sens de l’initiative : excellent. Prétentions salariales : nous préférons ne pas les mesurer. » — Folamour",19)
 		modal_box.add_child(button("Choisir un chapitre",func(): playing=false; hud.hide(); show_chapters(),true))
 		modal_box.add_child(button("Recommencer le chapitre 1",func(): confirm_new(1)))
 	modal_box.add_child(button("Sauvegarder et revenir au menu",show_title))
@@ -1201,11 +1233,12 @@ func load_game():
 	restore_shortcuts(data)
 	sync_shortcuts()
 	hints=data.get("hints",{})
+	for id in hints:hints[id]=clampi(int(hints[id]),0,3)
 	inventory=data.get("inventory",{})
 	elapsed=data.get("elapsed",0)
 	errors=data.get("errors",0)
 	zoom=data.get("zoom",22)
-	muted=data.get("muted",false)
+	muted=soundscape.preference_muted if FileAccess.file_exists(soundscape.SETTINGS) else data.get("muted",false)
 	var p=data.get("position",[start_cell.x*TILE,0.1,start_cell.y*TILE])
 	if floor_at(int(round(p[0]/TILE)),int(round(p[2]/TILE))): player.position=Vector3(p[0],0.1,p[2])
 	else:
@@ -1235,11 +1268,14 @@ func restore_shortcuts(data):
 				journal[sc.id]="Raccourci "+sc.id+" révélé\nVous avez parcouru les deux côtés du mur. Ce passage reste ouvert dans les deux sens et apparaît sur la carte."
 				if not journal_order.has(sc.id):journal_order.append(sc.id)
 func chime(frequency):
-	if muted or test_mode: return
+	if muted or test_mode or (is_instance_valid(soundscape) and soundscape.gain(self,"effects")<=0): return
 	var tone="success" if frequency>=800 else "error" if frequency<200 else "pickup" if frequency>=600 else "read"
 	audio.stream=load("res://assets/"+tone+".wav")
 	audio.play()
 func _notification(what):
+	if is_instance_valid(soundscape):
+		if what in [NOTIFICATION_APPLICATION_PAUSED,NOTIFICATION_APPLICATION_FOCUS_OUT]:soundscape.focused=false
+		elif what in [NOTIFICATION_APPLICATION_RESUMED,NOTIFICATION_APPLICATION_FOCUS_IN]:soundscape.focused=true
 	if what in [NOTIFICATION_WM_CLOSE_REQUEST,NOTIFICATION_APPLICATION_PAUSED,NOTIFICATION_APPLICATION_FOCUS_OUT] and playing: save_game()
 func verify_game():
 	# Full physical and progression regression tests live in tests/verify_v02.gd.
@@ -1399,6 +1435,7 @@ func build_machine_decor():
 	box(lift,Vector3(2.4,0.15,0.3),Vector3(0,3.15,0.9),metal)
 	machine_parts.lift=lift
 func _process(delta):
+	if is_instance_valid(soundscape):soundscape.update(self,delta)
 	update_ambience()
 	if level==5 and is_instance_valid(folamour):
 		folamour.visible=playing and seen.has(key(roundi(folamour.position.x/TILE),roundi(folamour.position.z/TILE)))
@@ -1571,7 +1608,7 @@ func build_readability_decor():
 			prop.hide()
 func update_ambience():
 	if not is_instance_valid(ambience): return
-	if muted or not playing or modal_open or test_mode:
+	if muted or not playing or modal_open or test_mode or (is_instance_valid(soundscape) and not soundscape.focused):
 		ambience.stream_paused=true
 		return
 	var sector=zone(int(player.position.z/TILE))
@@ -1581,7 +1618,9 @@ func update_ambience():
 		ambience.play()
 	elif not ambience.playing: ambience.play()
 	ambience.stream_paused=false
-	ambience.volume_db=-28 if not done.has("generator") else -23
+	var background_gain=soundscape.gain(self,"ambience") if is_instance_valid(soundscape) else 1.0
+	if background_gain<=0:ambience.stream_paused=true
+	ambience.volume_db=(-28 if not done.has("generator") else -23)+linear_to_db(maxf(background_gain,0.00001))
 
 func build_code_keypad():
 	var pad=GridContainer.new()
@@ -1662,3 +1701,67 @@ func show_folamour_intro():
 	paragraph("« Voici ZÉRO. Personne n’a jamais réussi à stabiliser ce prototype. Pas un seul de mes brillants assistants. Je vous mets au défi d’être le premier. Le matériel est précieux ; vous, nous verrons. »",21)
 	paragraph("Explorez les ailes ouest et est, assemblez leurs résultats dans le hall, puis accédez au stabilisateur nord. Aucun compte à rebours. Tous les essais peuvent être recommencés.",17)
 	modal_box.add_child(button("Relever le défi",func(): done["folamour_met"]=true; add_journal("intro","LE DÉFI DE FOLAMOUR\nStabiliser ZÉRO : dosage à l’ouest, transfert à l’est, assemblage dans le hall, rotors au nord. Personne n’y est encore arrivé."); close_modal(),true))
+
+func show_objective():
+	clear_modal("CARNET DE BORD","Objectif actuel")
+	paragraph_ready(Guidance.objective(self),20)
+	paragraph("Les objectifs se mettent à jour avec votre progression. Les solutions restent dans les indices facultatifs de chaque mécanisme.",16)
+	modal_box.add_child(button("Journal",show_journal))
+	modal_box.add_child(button("Reprendre",close_modal,true))
+
+func show_hint(e,typed=null,at_mechanism=true):
+	if typed==null:typed=code_entry.text if is_instance_valid(code_entry) and current_event.get("id","")==e.id else ""
+	clear_modal("AIDE FACULTATIVE",e.title)
+	var steps=Guidance.hint_steps(self,e)
+	var count=clampi(int(hints.get(e.id,0)),0,steps.size())
+	paragraph("Les indices sont facultatifs et sans pénalité. La troisième étape révèle la solution. Les consulter ne modifie pas le mécanisme.",16)
+	for i in range(count):
+		paragraph(loc("Indice %d / 3") % (i+1),16)
+		paragraph_ready(steps[i])
+	if count<steps.size():
+		modal_box.add_child(button("Révéler la solution" if count==2 else "Afficher une piste" if count==0 else "Afficher la méthode",func():
+			hints[e.id]=count+1
+			save_game()
+			show_hint(e,typed,at_mechanism)))
+	if at_mechanism:
+		modal_box.add_child(button("Retour au mécanisme",func():
+			show_puzzle(e)
+			if is_instance_valid(code_entry) and e.has("answer") and not e.has("dials"):code_entry.text=typed
+		,true))
+	else:modal_box.add_child(button("Journal",show_journal,true))
+	modal_box.add_child(button("Reprendre",close_modal))
+
+func show_audio(from_pause=true):
+	clear_modal("AMBIANCE DU LABORATOIRE","Réglages audio")
+	paragraph("Une musique d’ascenseur un peu étrange, à faible volume. Le fond musical s’atténue pendant la lecture.",16)
+	for channel in ["master","music","effects","ambience"]:
+		var titles={"master":"Volume général","music":"Musique","effects":"Effets sonores","ambience":"Bruit des machines"}
+		var caption=paragraph(loc(titles[channel])+" : "+str(roundi(soundscape.levels[channel]*100))+" %",17)
+		var slider=HSlider.new()
+		slider.min_value=0
+		slider.max_value=100
+		slider.step=1
+		slider.value=soundscape.levels[channel]*100
+		slider.custom_minimum_size=Vector2(0,48)
+		modal_box.add_child(slider)
+		slider.value_changed.connect(func(value):
+			soundscape.levels[channel]=value/100.0
+			caption.text=loc(titles[channel])+" : "+str(int(value))+" %"
+			soundscape.persist())
+	modal_box.add_child(button("Son : "+("désactivé" if muted else "activé"),func():
+		muted=not muted
+		soundscape.preference_muted=muted
+		soundscape.persist()
+		if playing:save_game()
+		show_audio(from_pause)))
+	modal_box.add_child(button("Retour",func():
+		if from_pause:show_pause()
+		else:show_title()
+	,true))
+
+# Guidance already selected its language; do not translate embedded English twice.
+func paragraph_ready(text,size_v=18):
+	var l=paragraph("",size_v)
+	l.remove_meta("source_text")
+	l.text=text
+	return l

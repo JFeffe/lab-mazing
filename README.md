@@ -12,6 +12,15 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 ## Développement
 Ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
 
+## Nouveautés v0.11
+Les cinq niveaux proposent des indices facultatifs en trois paliers : piste, méthode, puis solution annoncée. L’objectif actuel est consultable depuis le jeu, le journal et la pause ; les deux ailes du niveau 5 restent explorables dans les deux ordres. Les aides révélées sont sauvegardées sans modifier les énigmes.
+
+Une composition originale de 48 secondes accompagne l’exploration à faible volume : piano électrique, basse et cloches légèrement étranges. Des sons ponctuent les pas, les portes, les machines et la fin du chapitre. Les réglages séparés (général, musique, effets, machines) sont persistants, avec coupure générale et interruption en arrière-plan. La musique s’atténue pendant la lecture. `scripts/compose_audio.py` permet de recréer les assets avec NumPy et ffmpeg, sans échantillons tiers.
+
+Le dossier de candidature final additionne temps d’exploration, énigmes, raccourcis et aides des niveaux terminés. Les bilans historiques sans ces détails sont signalés comme partiels. Validation supplémentaire : `verify_chapter_polish.gd` (aides, objectifs, sauvegardes, anciens bilans, audio et disposition mobile FR/EN).
+
+Documents v0.11 : https://drive.google.com/drive/folders/1zHdNMZROgU8dtWD_6bY5QsWSrvqi2HBO
+
 ## Nouveautés v0.10
 Les 32 raccourcis des cinq niveaux sont réévalués pour réduire les retours dans les couloirs déjà explorés. Chaque passage économise au moins 12 pas entre ses deux côtés, même lorsque les autres raccourcis de sa zone sont ouverts. Les trajets de référence sont plus courts pour chacun des cinq niveaux ; `game/tests/shortcut_audit.json` conserve le détail avant/après et les conditions de mesure.
 

@@ -1,0 +1,397 @@
+{
+  "hints": {
+    "code03": [
+      [
+        "Deux fragments portent la même référence que la porte.",
+        "Two fragments bear the same reference as the door."
+      ],
+      [
+        "Le fragment gauche donne le début, le fragment droit donne la fin. Consultez les notes 38 et 02.",
+        "The left fragment gives the beginning, the right gives the end. Check notes 38 and 02."
+      ],
+      [
+        "Assemblez 47 puis 26 : le code est 4726.",
+        "Join 47 and 26: the code is 4726."
+      ]
+    ],
+    "star_vault": [
+      [
+        "L’ordre est sur la porte, les valeurs sont ailleurs.",
+        "The order is on the door; the values are elsewhere."
+      ],
+      [
+        "Recoupez les fiches 53 et 54 : cuve, bobine, filtre, lentille.",
+        "Combine sheets 53 and 54: tank, coil, filter, lens."
+      ],
+      [
+        "Cuve 8, bobine 5, filtre 1, lentille 2 : entrez 8512.",
+        "Tank 8, coil 5, filter 1, lens 2: enter 8512."
+      ]
+    ],
+    "final": [
+      [
+        "Les gravures des disques et la disposition des alvéoles se complètent.",
+        "The disc engravings and socket order fit together."
+      ],
+      [
+        "Alimentez le tableau 65 et installez les trois disques. La fiche 20 indique leur ordre.",
+        "Power panel 65 and install all three discs. Sheet 20 gives their order."
+      ],
+      [
+        "Lune 4, Soleil 6, Étoile 9 : après installation, entrez 469.",
+        "Moon 4, Sun 6, Star 9: after installation, enter 469."
+      ]
+    ],
+    "water_manifold": [
+      [
+        "Le nom de la molette n’est pas celui du manomètre : suivez les conduites.",
+        "Dial names differ from gauge names: follow the pipes."
+      ],
+      [
+        "Le plan 205 relie RETOUR à CUVE, DÉPART à POMPE et PURGE à FILTRE.",
+        "Plan 205 links RETURN to TANK, SUPPLY to PUMP and DRAIN to FILTER."
+      ],
+      [
+        "Installez le volant 201. Réglez RETOUR sur 2, DÉPART sur 3 et PURGE sur 1, puis validez.",
+        "Install wheel 201. Set RETURN to 2, SUPPLY to 3 and DRAIN to 1, then validate."
+      ]
+    ],
+    "beam_router": [
+      [
+        "Les formes identifient les faisceaux ; les couleurs ne sont pas nécessaires.",
+        "Shapes identify the beams; colours are not required."
+      ],
+      [
+        "Le plan 205 permute les étalons : cercle à gauche, carré au centre, triangle à droite.",
+        "Plan 205 permutes the references: circle left, square centre, triangle right."
+      ],
+      [
+        "Installez le prisme 201, puis réglez GAUCHE 3, CENTRE 1, DROITE 2 et validez.",
+        "Install prism 201, then set LEFT 3, CENTRE 1, RIGHT 2 and validate."
+      ]
+    ],
+    "archive_reader": [
+      [
+        "Tous les traits ne sont pas éclairés. L’ordre de lecture compte aussi.",
+        "Not every mark is lit. Reading order matters too."
+      ],
+      [
+        "La note 209 donne aube, zénith, crépuscule. La consigne 304 exclut les traits sous la ligne.",
+        "Note 209 gives dawn, zenith, dusk. Rule 304 excludes marks below the line."
+      ],
+      [
+        "Comptez les traits au-dessus : 2, 4, 3. Entrez 243.",
+        "Count the upper marks: 2, 4, 3. Enter 243."
+      ]
+    ],
+    "test_balance": [
+      [
+        "On cherche une différence de masse, pas l’équilibre.",
+        "You need a weight difference, not balance."
+      ],
+      [
+        "Le total vaut 11 kg. Pour un écart de 1 kg, visez 6 kg à gauche et 5 kg à droite, avec deux masses par plateau.",
+        "The total is 11 kg. For a 1 kg difference, aim for 6 kg left and 5 kg right, with two weights per pan."
+      ],
+      [
+        "Placez 1 et 5 kg à gauche, 2 et 3 kg à droite. Validez.",
+        "Put 1 and 5 kg on the left, 2 and 3 kg on the right. Validate."
+      ]
+    ],
+    "sequence_panel": [
+      [
+        "Placez d’abord les symboles dont la position est imposée.",
+        "Start with the symbols whose positions are fixed."
+      ],
+      [
+        "Le Soleil est troisième, la Comète dernière. Lune et Étoile doivent rester voisines dans cet ordre.",
+        "Sun is third, Comet last. Moon and Star must stay adjacent in that order."
+      ],
+      [
+        "Effacez la suite, puis choisissez LUNE → ÉTOILE → SOLEIL → PLANÈTE → COMÈTE. Validez.",
+        "Clear the sequence, then select MOON → STAR → SUN → PLANET → COMET. Validate."
+      ]
+    ],
+    "test_circuit": [
+      [
+        "Un levier inverse ses voyants : il peut aussi éteindre un voyant déjà allumé.",
+        "A lever toggles its lights: it can turn an already lit one off."
+      ],
+      [
+        "E dépend uniquement du levier IV. Les effets communs de deux leviers peuvent s’annuler.",
+        "E depends only on lever IV. Effects shared by two levers can cancel out."
+      ],
+      [
+        "Après installation du fusible et du contact, réinitialisez le circuit. Actionnez I, III et IV une fois chacun, puis validez.",
+        "After installing the fuse and contact, reset the circuit. Operate I, III and IV once each, then validate."
+      ]
+    ],
+    "f_dosing": [
+      [
+        "Les petits restes obtenus en transvasant sont votre instrument de mesure.",
+        "The remainders left by pouring are your measuring tool."
+      ],
+      [
+        "Gardez 2 L dans le petit réservoir. Il ne pourra alors recevoir qu’un litre du grand réservoir plein.",
+        "Keep 2 L in the small tank. It can then accept only one litre from the full large tank."
+      ],
+      [
+        "Installez le joint 101 puis réinitialisez. Remplir grand → grand vers petit → vider petit → grand vers petit → remplir grand → grand vers petit. Le grand contient 4 L : validez.",
+        "Install seal 101 and reset. Fill large → large to small → empty small → large to small → fill large → large to small. The large tank holds 4 L: validate."
+      ]
+    ],
+    "f_tower": [
+      [
+        "Le grand disque ne peut partir que lorsque les deux petits sont ailleurs.",
+        "The largest disc can move only once the two smaller ones are elsewhere."
+      ],
+      [
+        "Rassemblez les deux petits sur B, déplacez le grand sur C, puis reconstruisez la petite pile sur C.",
+        "Gather the two small discs on B, move the large one to C, then rebuild the small stack on C."
+      ],
+      [
+        "Depuis l’état réinitialisé : A → C, A → B, C → B, A → C, B → A, B → C, A → C. Validez.",
+        "From the reset state: A → C, A → B, C → B, A → C, B → A, B → C, A → C. Validate."
+      ]
+    ],
+    "f_rotors": [
+      [
+        "Chaque commande agit sur deux rotors. Quatre impulsions font un tour complet.",
+        "Each control affects two rotors. Four pulses make a full turn."
+      ],
+      [
+        "Depuis le nord, A demande 1 quart de tour, B en demande 2 et C en demande 3. Cherchez des commandes dont les effets s’additionnent ainsi.",
+        "From north, A needs 1 quarter-turn, B needs 2 and C needs 3. Find controls whose effects add up that way."
+      ],
+      [
+        "Installez la cartouche, puis réinitialisez. Commande II deux fois, commande III une fois : A est EST, B SUD et C OUEST. Validez.",
+        "Install the cartridge and reset. Control II twice, control III once: A is EAST, B SOUTH and C WEST. Validate."
+      ]
+    ]
+  },
+  "objectives": {
+    "entry": [
+      "Reconstituer le bordereau déchiré pour ouvrir l’accès au laboratoire.",
+      "Reassemble the torn delivery slip to open the laboratory entrance."
+    ],
+    "discs": [
+      "Explorer les trois ateliers pour récupérer les disques du Soleil, de l’Étoile et de la Lune.",
+      "Explore the three workshops to collect the Sun, Star and Moon discs."
+    ],
+    "protocol": [
+      "Retrouver la fiche de calibration 20 avant de passer un sas de confinement.",
+      "Find calibration sheet 20 before entering a containment airlock."
+    ],
+    "power": [
+      "Passer un sas de confinement avec les trois disques et la fiche, puis remettre le tableau électrique en service.",
+      "Enter a containment airlock with the three discs and the sheet, then restore the electrical panel."
+    ],
+    "final": [
+      "Rejoindre le pupitre de sortie et utiliser les disques avec la fiche de calibration.",
+      "Reach the exit console and use the discs with the calibration sheet."
+    ],
+    "generator": [
+      "Assembler l’outil du hall et remettre le générateur en marche.",
+      "Assemble the hall tool and restart the generator."
+    ],
+    "water_manifold": [
+      "Explorer le département hydraulique et régler le collecteur pour vider le bassin.",
+      "Explore the hydraulic department and adjust the manifold to drain the basin."
+    ],
+    "lift": [
+      "Préparer le relais de puissance à l’établi électrique, alimenter l’armoire et réparer le treuil du contrepoids.",
+      "Prepare the power relay at the electrical bench, power the cabinet and repair the counterweight hoist."
+    ],
+    "lift_exit": [
+      "Les installations sont prêtes : rejoindre les commandes de l’ascenseur.",
+      "The machinery is ready: reach the lift controls."
+    ],
+    "projector": [
+      "Assembler l’objectif et remettre le projecteur en service.",
+      "Assemble the lens unit and restore the projector."
+    ],
+    "beam_router": [
+      "Installer le prisme et recouper les étalons avec le plan des faisceaux.",
+      "Install the prism and compare the references with the beam plan."
+    ],
+    "archive_reader": [
+      "Explorer les archives et déduire le code du lecteur à partir des plaques et des consignes.",
+      "Explore the archives and deduce the reader code from the plates and instructions."
+    ],
+    "observation_exit": [
+      "Ouvrir la chambre d’observation.",
+      "Open the observation chamber."
+    ],
+    "test_balance": [
+      "Rassembler les quatre masses et réussir la pesée différentielle.",
+      "Collect the four weights and complete the differential weighing test."
+    ],
+    "sequence_panel": [
+      "Recouper les trois rapports pour reconstituer l’ordre de lancement.",
+      "Compare the three reports to reconstruct the launch order."
+    ],
+    "test_circuit": [
+      "Récupérer le contact du conduit, installer les pièces et stabiliser les cinq voyants.",
+      "Recover the duct contact, install the parts and stabilise all five lights."
+    ],
+    "test_exit": [
+      "Les trois essais sont réussis : rejoindre le sas de certification.",
+      "All three tests are complete: reach the certification airlock."
+    ],
+    "f_dosing": [
+      "Aile ouest : préparer une charge de refroidissement de 4 litres. Le joint nécessaire se trouve dans le hall.",
+      "West wing: prepare a 4-litre cooling charge. The required seal is in the hall."
+    ],
+    "f_tower": [
+      "Aile est : transférer le noyau intact. Les ailes est et ouest peuvent être explorées dans l’ordre de votre choix.",
+      "East wing: transfer the core intact. Explore the east and west wings in either order."
+    ],
+    "f_assembly": [
+      "Rapporter la charge et le noyau à la station 103 du hall pour assembler la cartouche.",
+      "Bring the charge and core to hall station 103 to assemble the cartridge."
+    ],
+    "f_rotors": [
+      "Explorer l’aile nord et stabiliser ZÉRO en recoupant les repères et les liaisons des rotors.",
+      "Explore the north wing and stabilise ZERO by comparing the rotor references and linkages."
+    ],
+    "f_exit": [
+      "ZÉRO fonctionne : rejoindre le pupitre 405 pour présenter le résultat à Folamour.",
+      "ZERO works: reach console 405 to show Folamour the result."
+    ]
+  },
+  "stages": {
+    "1": [
+      [
+        [
+          "code03"
+        ],
+        "entry"
+      ],
+      [
+        [
+          "disc_sun",
+          "disc_star",
+          "disc_moon"
+        ],
+        "discs"
+      ],
+      [
+        [
+          "exit_protocol"
+        ],
+        "protocol"
+      ],
+      [
+        [
+          "power_panel"
+        ],
+        "power"
+      ],
+      [
+        [
+          "final"
+        ],
+        "final"
+      ]
+    ],
+    "2": [
+      [
+        [
+          "generator"
+        ],
+        "generator"
+      ],
+      [
+        [
+          "water_manifold"
+        ],
+        "water_manifold"
+      ],
+      [
+        [
+          "hoist",
+          "lift_power"
+        ],
+        "lift"
+      ],
+      [
+        [
+          "lift_exit"
+        ],
+        "lift_exit"
+      ]
+    ],
+    "3": [
+      [
+        [
+          "projector"
+        ],
+        "projector"
+      ],
+      [
+        [
+          "beam_router"
+        ],
+        "beam_router"
+      ],
+      [
+        [
+          "archive_reader"
+        ],
+        "archive_reader"
+      ],
+      [
+        [
+          "observation_exit"
+        ],
+        "observation_exit"
+      ]
+    ],
+    "4": [
+      [
+        [
+          "test_balance"
+        ],
+        "test_balance"
+      ],
+      [
+        [
+          "sequence_panel"
+        ],
+        "sequence_panel"
+      ],
+      [
+        [
+          "test_circuit"
+        ],
+        "test_circuit"
+      ],
+      [
+        [
+          "test_exit"
+        ],
+        "test_exit"
+      ]
+    ],
+    "5": [
+      [
+        [
+          "f_assembly"
+        ],
+        "f_assembly"
+      ],
+      [
+        [
+          "f_rotors"
+        ],
+        "f_rotors"
+      ],
+      [
+        [
+          "f_exit"
+        ],
+        "f_exit"
+      ]
+    ]
+  }
+}

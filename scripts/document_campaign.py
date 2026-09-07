@@ -1,4 +1,4 @@
-"""Publish a complete v0.10 map/solution set using current game coordinates.
+"""Publish a complete v0.11 map/solution set using current game coordinates.
 
 Retains the detailed guides for levels 2-5 and adds a verified shortcut table
 for every level. Existing version folders are never edited.
@@ -15,7 +15,7 @@ from reportlab.platypus import SimpleDocTemplate,Paragraph,Table,TableStyle,Spac
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 R=Path(__file__).resolve().parents[1];D=R/'game/data';out=Path(sys.argv[1]);out.mkdir(parents=True,exist_ok=True)
-VERSION='0.10';font=str(R/'game/assets/Interface.ttf');pdfmetrics.registerFont(TTFont('Interface',font))
+VERSION='0.11';font=str(R/'game/assets/Interface.ttf');pdfmetrics.registerFont(TTFont('Interface',font))
 audit=json.loads((R/'game/tests/shortcut_audit.json').read_text())
 titles={1:'Le laboratoire',2:'Le département des machines',3:'Le département d’optique',4:'Le département des essais',5:'Le défi de Folamour'}
 styles={name:ParagraphStyle(name,fontName='Interface',fontSize=size,leading=leading,textColor=colors.HexColor(color),spaceAfter=after,keepWithNext=name in ['Main','Section','ReferenceHeading','Coordinate']) for name,size,leading,color,after in [('Main',25,31,'#173743',18),('Section',16,21,'#236878',12),('Body',10.5,16,'#162f38',11),('SmallCell',8.5,12,'#162f38',0),('Reference',10,13.2,'#162f38',6),('ReferenceHeading',13,17,'#236878',8),('Coordinate',10,13.2,'#162f38',6)]}
@@ -71,7 +71,7 @@ def make_guide(n,m,E,S):
  story=[];md=[f'# Niveau {n} - {titles[n]} - v{VERSION}\n\n**SPOILERS : solutions complètes et nouveaux raccourcis.**\n']
  def updated(t):
   t=str(t)
-  if not t.startswith('Les sauvegardes'):
+  if not t.startswith(('Les sauvegardes','Comparaison historique')):
    t=re.sub(r'(?i)(version |v)0\.[789]\b',lambda match:match[1]+VERSION,t)
   t=t.replace('« Tester directement le niveau 3 »','« Sélection de niveau / test », puis « Niveau 3 »').replace('« Tester directement le niveau 4 »','« Sélection de niveau / test », puis « Niveau 4 »')
   t=t.replace('Ils restent dans leurs ailes et ne contournent pas le sas principal.','Ils peuvent aussi relier une aile au hall après exploration des deux côtés, sans contourner le sas principal.')
@@ -89,7 +89,7 @@ def make_guide(n,m,E,S):
   story.extend([t,Spacer(1,10)]);md.append('\n'.join([' | '.join(rows[0]),' | '.join(['---']*len(rows[0]))]+[' | '.join(row) for row in rows[1:]])+'\n')
  if n==1:
   page('Niveau 1\nLe laboratoire')
-  p('SPOILERS / VERSION 0.10','Section')
+  p('SPOILERS / VERSION 0.11','Section')
   p('Les solutions des énigmes sont conservées. Cette édition déplace les raccourcis et recalcule leurs avantages sur les retours. Les numéros ci-dessous sont les références affichées dans le jeu, et non les numéros du vieux plan de correction.')
   steps=[('1 / Entrer','Lire les fragments 38 (3, 3) et 02 (11, 1). Ils donnent 47 puis 26. Saisir 4726 à l’accès 03 (16, 3).'),('2 / Soleil','Prendre la clé de cuivre 33 (13, 3) et l’utiliser à la réserve 29 (25, 3). Ramasser le disque S (25, 5) : Soleil = 6.'),('3 / Étoile','Lire les fiches 53 (11, 7) et 54 (31, 7). Suivre CUVE, BOBINE, FILTRE, LENTILLE : 8512. Ouvrir le verrou 87 (17, 12) et prendre E (19, 13) : Étoile = 9.'),('4 / Lune','Prendre l’artéfact 93 (27, 13) et l’installer en 19 (3, 18). Prendre L (3, 15) : Lune = 4.'),('5 / Calibration','Lire la fiche 20 (33, 1) : LUNE, SOLEIL, ÉTOILE. Conserver les trois disques. Le registre 21 aide à s’orienter.'),('6 / Sas à sens unique','Approcher un sas 50 depuis le nord : (13, 24) ou (27, 24). Les trois disques et la lecture de la fiche 20 sont obligatoires. Le départ est irréversible ; lire les secrets 61 et 84 avant de partir.'),('7 / Courant et sortie','Prendre le fusible F (1, 27), l’installer dans le tableau 65 (3, 30). Au pupitre 00 (17, 34), installer les trois disques et entrer 469. Continuer ensuite vers le niveau 2.')]
   for i,(title,text) in enumerate(steps):
@@ -125,7 +125,7 @@ def make_guide(n,m,E,S):
   first=next(i for i,v in enumerate(source.body) if isinstance(v,ast.Expr) and isinstance(v.value,ast.Call) and isinstance(v.value.func,ast.Name) and v.value.func.id=='page')
   last=next(i for i,v in enumerate(source.body) if isinstance(v,ast.FunctionDef) and v.name=='footer')
   exec(compile(ast.Module(body=source.body[first:last],type_ignores=[]),f'level{n}_guide','exec'),dict(p=p,page=page,table=table,E=E,S=S,by={e['id']:e for e in E}))
- page('Raccourcis v0.10\nLes nouveaux retours')
+ page('Raccourcis\nLes retours utiles')
  p('Déclenchement conservé','Section')
  p('Marcher sur chacune des deux cases indiquées suffit, dans n’importe quel ordre. Voir la case sur la carte ne suffit pas. Le mur devient ensuite un passage permanent de deux pas entre ses deux côtés, utilisable à pied, au clic et au toucher.')
  rows=[['ID','Mur (x, y)','Deux cases à parcourir','Détour seul','Gain minimal']]
@@ -135,9 +135,9 @@ def make_guide(n,m,E,S):
  p('« Détour seul » : distance entre les deux cases sans aucun raccourci, dans la zone située du même côté des verrous. « Gain minimal » : pas encore économisés par ce passage lorsque tous les autres raccourcis sont ouverts. Aucun passage ne traverse une porte d’énigme ni une limite de sas.')
  row=audit[n-1];before=row['benchmarks']['before'];after=row['benchmarks']['after']
  details=' ; '.join(f'{a["steps"]} → {b["steps"]} pas (gain : {a["steps"]-b["steps"]})' for a,b in zip(before,after))
- p('Comparaison de parcours : '+details+'.')
+ p('Comparaison historique v0.9 / v0.10 (disposition conservée en v0.11) : '+details+'.')
  p('Mesure sur les mêmes itinéraires de référence, carte connue, avec ouverture seulement après visite des deux côtés. Ce ne sont ni une durée ni un nombre de pas garantis pour une première exploration. Deux variantes sont vérifiées au niveau 1 (choix du sas) et au niveau 5 (ordre des ailes).')
- page('Sauvegarde et accès\nÉdition 0.10')
+ page('Sauvegarde et accès\nÉdition 0.11')
  p('Reprendre une ancienne partie','Section')
  p('Le niveau, le sac, les énigmes résolues et les manipulations partielles sont conservés. Les anciens identifiants de raccourcis ne déverrouillent pas leurs nouveaux emplacements : le jeu vérifie les deux cases réellement parcourues pour chaque passage actuel. Si elles l’ont déjà été, le passage s’ouvre à la reprise.')
  p('Si la sauvegarde se trouve dans un ancien passage redevenu mur, le personnage est replacé sur le sol déjà parcouru le plus proche. Les anciennes notes de raccourcis sont actualisées ; les notes d’énigmes sont conservées.')
@@ -146,6 +146,21 @@ def make_guide(n,m,E,S):
  p('Les sauvegardes restent propres au navigateur et à l’appareil. Aucun raccourci n’est nécessaire pour terminer : tous les objectifs restent accessibles par les chemins ordinaires.')
  p('Documents de cette édition','Section')
  p(f'Carte complète : Niveau-{n}-v{VERSION}-Map-vue-de-haut.png et .pdf.\nSolutions : Niveau-{n}-v{VERSION}-Cheatsheet-solutions.pdf et .md.\nLe dossier v{VERSION} regroupe les cinq niveaux et le résumé des modifications.')
+ page('Les nouveautés v0.11')
+ p('Aide facultative et objectif actuel','Section')
+ p('Le bouton « Objectif actuel » est accessible dans le jeu, le journal et la pause. Il suit les étapes réellement terminées. Au niveau 5, les deux premières ailes restent proposées tant qu’elles ne sont pas réussies ; leur ordre est libre.')
+ p('Chaque mécanisme propose « Indice facultatif ». Ouvrir ce panneau ne révèle rien : choisir ensuite une piste, une méthode et, seulement à la demande, la solution. Les paliers déjà lus sont sauvegardés et consultables depuis le journal. Aucune erreur ni perte d’objet n’est ajoutée.')
+ p('Musique et sons','Section')
+ p('Une composition originale de 48 secondes, en boucle : piano électrique doux, basse ronde, percussions discrètes et cloches légèrement étranges. Le volume musical initial est faible et diminue encore pendant la lecture. Les pas, portes, mécanismes et la réussite du chapitre ont leurs effets sonores.')
+ p('Dans « Réglages audio », au menu ou en pause : volume général 80 %, musique 22 %, effets 55 %, bruit des machines 40 %. Chaque canal peut être réglé à zéro ; un bouton coupe aussi tous les sons. Ces préférences sont conservées sur cet appareil, indépendamment de la progression. Le son et le chronomètre d’exploration s’arrêtent quand l’application perd le focus.')
+ p('Bilan du chapitre','Section')
+ p('Temps d’exploration, énigmes résolues, raccourcis découverts, indices consultés et secrets sont conservés par niveau. Le bilan final réunit les niveaux de la partie et ajoute une remarque de Folamour sur la candidature au stage. Le temps exclut les menus et la lecture. Une ancienne sauvegarde sans détail des niveaux précédents affiche une couverture partielle ; aucun résultat manquant n’est inventé.')
+ authored=json.loads((D/'guidance.json').read_text())['hints']
+ puzzles=[e for e in E if e['id'] in authored]
+ for i,e in enumerate(puzzles):
+  if i%3==0:page('Indices progressifs\nSolutions dévoilées')
+  p(str(e['ref'])+' - '+e['title'],'Section')
+  for tier,pair in enumerate(authored[e['id']]):p(['Piste : ','Méthode : ','Solution : '][tier]+pair[0])
  def footer(c,d):
   c.setFont('Interface',8);c.setFillColor(colors.HexColor('#57727c'));c.drawString(44,25,f'FOLAMOUR / V{VERSION} / NIVEAU {n} / SPOILERS');c.drawRightString(A4[0]-44,25,str(d.page))
  SimpleDocTemplate(str(out/f'Niveau-{n}-v{VERSION}-Cheatsheet-solutions.pdf'),pagesize=A4,leftMargin=44,rightMargin=44,topMargin=42,bottomMargin=45).build(story,onFirstPage=footer,onLaterPages=footer)
@@ -153,8 +168,19 @@ def make_guide(n,m,E,S):
 
 for n in range(1,6):
  m,E,S=data(n);make_map(n,m,E,S);make_guide(n,m,E,S);print('Level',n,'documents generated',flush=True)
-summary=['# Lab-Mazing - Version 0.10\n','## Des raccourcis utiles pour les cinq niveaux\n','Les 32 raccourcis ont été réévalués et leurs emplacements révisés. Chaque passage évite au moins 12 pas entre ses deux côtés, même avec tous les autres raccourcis de sa zone ouverts. Leur apparition reste liée à une visite physique des deux cases adjacentes ; voir les cases dans le brouillard dissipé ne suffit pas. Aucun raccourci ne contourne les portes d’énigmes ou les sas à sens unique.\n','## Comparaison de trajets\n','Niveau | Avant | Après | Pas évités','--- | --- | --- | ---']
-for row in audit:
- for i,(a,b) in enumerate(zip(row['benchmarks']['before'],row['benchmarks']['after'])):summary.append(f'{row["level"]}'+(f' / variante {i+1}' if len(row['benchmarks']['after'])>1 else '')+f' | {a["steps"]} | {b["steps"]} | {a["steps"]-b["steps"]}')
-summary+=['\nMême ordre d’objectifs avant/après, carte connue, ouverture dynamique après exploration physique des deux côtés. Cette simulation ne prédit pas le nombre de pas d’un joueur découvrant le labyrinthe. Les variantes correspondent aux deux sas du niveau 1 et aux deux ordres de visite des ailes du niveau 5.\n','## Sauvegardes\n','Progression et inventaire conservés. Les ouvertures sont recalculées selon les cases déjà parcourues aux nouveaux emplacements. Une position dans un ancien raccourci redevenu mur est replacée sur le sol connu le plus proche.\n','## Documents\n','Ce dossier contient les cartes exactes PNG/PDF et les cheatsheets PDF/Markdown des cinq niveaux. Chaque guide comprend les solutions, les nouvelles coordonnées des raccourcis et leurs gains mesurés. Les anciens dossiers de version restent archivés.\n','## Vérification\n','Comparaison des trajets des cinq niveaux, gain minimal de chaque raccourci, absence de contournement des verrous, collisions dans les deux sens, navigation au clic/toucher, apparition après deux visites et migration des anciennes sauvegardes.\n','Jeu : https://jfeffe.github.io/lab-mazing/\n']
+summary=[
+ '# Lab-Mazing - Version 0.11\n',
+ '## Le dossier du stagiaire\n',
+ 'Quatre finitions pour le chapitre 1 : indices progressifs, objectif actuel, ambiance sonore et bilan de candidature.\n',
+ '## Indices et objectifs\n',
+ 'Chaque mécanisme propose une aide facultative en trois paliers. Les énigmes de code et de manipulation ont des pistes rédigées spécifiquement ; les assemblages et portes renvoient aux pièces, établis et commandes correspondants. La troisième étape annonce clairement la solution. Le journal permet de relire les aides déjà révélées ; les sauvegardes les conservent. Le rappel d’objectif suit la progression sans donner les codes. Les deux ailes initiales du niveau 5 restent libres.\n',
+ '## Musique et audio\n',
+ 'Composition originale de 48 secondes en boucle, dans un style de musique d’ascenseur feutrée et légèrement ésotérique : piano électrique, basse, petites percussions et cloches. Fond musical faible, atténué pendant la lecture. Pas, portes, mécanismes et réussite du chapitre disposent de sons. Réglages séparés : général 80 %, musique 22 %, effets 55 %, machines 40 % par défaut ; zéro coupe le canal. Coupure générale disponible. Préférences persistantes ; interruption quand l’application perd le focus.\n',
+ '## Bilan et sauvegardes\n',
+ 'Le bilan affiche le temps d’exploration (hors lecture et menus), les énigmes résolues, les raccourcis découverts et les indices révélés. Les bilans de niveau gardent secrets et erreurs. Le chapitre se termine avec une remarque de Folamour sur la candidature au stage non rémunéré. Les anciens bilans sans détail sont signalés ; une partie commencée directement à un niveau produit un bilan partiel. Progression et manipulations existantes restent compatibles.\n',
+ '## Cartes et cheatsheets\n',
+ 'Les cinq cartes conservent les labyrinthes et les 32 raccourcis validés en v0.10. Les guides v0.11 ajoutent les nouvelles fonctions et les trois paliers des énigmes, avec les solutions complètes et les coordonnées. Les mesures de pas avant/après restent identifiées comme la comparaison historique v0.9 / v0.10.\n',
+ '## Vérification\n',
+ 'Parcours physiques complets des cinq niveaux, reprise des sauvegardes et manipulations, raccourcis, trois paliers d’aide sans modification de l’énigme, objectifs du niveau 5 dans les deux branches, bilan partiel, audio persistant et interfaces français/anglais en portrait/paysage.\n',
+ 'Jeu : https://jfeffe.github.io/lab-mazing/\n']
 (out/f'Resume-v{VERSION}.md').write_text('\n'.join(summary))
