@@ -1,5 +1,6 @@
 extends Control
 var game
+var route_preview=[]
 func _draw():
 	if game==null: return
 	var n=game.grid.size()
@@ -32,6 +33,14 @@ func _draw():
 		draw_rect(Rect2(c-Vector2.ONE*cell*0.4,Vector2.ONE*cell*0.8),Color("53cfaf"))
 		if cell>10:
 			draw_string(get_theme_default_font(),c+Vector2(-cell*0.5,3),sc.id,HORIZONTAL_ALIGNMENT_LEFT,-1,10,Color("122e29"))
+	var route=game.move_path if not game.move_path.is_empty() else route_preview
+	if not route.is_empty():
+		var last=offset+(Vector2(game.player.position.x,game.player.position.z)/game.TILE+Vector2.ONE*0.5)*cell
+		for step in route:
+			var point=offset+(Vector2(step)+Vector2.ONE*0.5)*cell
+			draw_line(last,point,Color("f3d58d"),max(1,cell*0.15))
+			last=point
+		draw_arc(last,max(4,cell*0.5),0,TAU,20,Color("fff1b8"),2)
 	var p=game.player.position/game.TILE
 	var c=offset+(Vector2(p.x,p.z)+Vector2.ONE*0.5)*cell
 	draw_circle(c,max(4,cell*0.35),Color("fff1d4"))

@@ -5,3 +5,6 @@
 *.tmp
 .DS_Store
 release/
+
+*.import
+web/

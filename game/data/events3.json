@@ -1,0 +1,322 @@
+[
+  {
+    "id": "o_welcome",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "100",
+    "title": "Département d’optique",
+    "text": "L’ascenseur débouche sur les archives optiques. Réparez le projecteur, calibrez les faisceaux puis ouvrez la chambre d’observation. Chaque secteur reste accessible après son ouverture.\n« La lumière au bout du tunnel est un équipement de laboratoire. Merci de ne pas la voler. » — Folamour"
+  },
+  {
+    "id": "lens",
+    "kind": "pickup",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "101",
+    "title": "Lentille convergente",
+    "text": "Une lentille intacte, trop fragile pour être montée sans sa bague de maintien.",
+    "resource": "lens",
+    "amount": 1
+  },
+  {
+    "id": "lens_mount",
+    "kind": "pickup",
+    "cell": [
+      1,
+      9
+    ],
+    "ref": "102",
+    "title": "Bague de maintien",
+    "text": "Une bague circulaire destinée à maintenir une lentille sur le banc optique.",
+    "resource": "lens_mount",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "optical_bench",
+    "kind": "craft",
+    "cell": [
+      15,
+      5
+    ],
+    "ref": "103",
+    "title": "Banc optique",
+    "text": "Le gabarit montre la lentille fixée dans sa bague. Les deux éléments forment un objectif prêt à installer.",
+    "requires": [
+      "lens",
+      "lens_mount"
+    ],
+    "grants": {
+      "objective": 1
+    },
+    "model": "bench",
+    "action": "Assembler l’objectif",
+    "success": "L’objectif est assemblé. Le projecteur peut maintenant le recevoir."
+  },
+  {
+    "id": "projector",
+    "kind": "mechanism",
+    "cell": [
+      29,
+      7
+    ],
+    "ref": "104",
+    "title": "Projecteur des archives",
+    "text": "Le logement de l’objectif est vide. Le projecteur commande le verrou de la galerie des faisceaux.",
+    "requires": [
+      "objective"
+    ],
+    "model": "projector",
+    "opens": [
+      "optics_gate"
+    ],
+    "success": "Le projecteur s’allume. La galerie des faisceaux est ouverte."
+  },
+  {
+    "id": "optics_gate",
+    "kind": "door",
+    "cell": [
+      17,
+      11
+    ],
+    "ref": "105",
+    "title": "Porte de la galerie",
+    "text": "Ce verrou est relié au projecteur 104.",
+    "axis": "y",
+    "controlled_by": "projector"
+  },
+  {
+    "id": "o_secret1",
+    "kind": "clue",
+    "cell": [
+      33,
+      9
+    ],
+    "ref": "106",
+    "title": "Note sur les lunettes",
+    "text": "« Les lunettes de protection ne permettent pas de voir les erreurs avant de les commettre. J’ai demandé un remboursement. » — Folamour",
+    "secret": true
+  },
+  {
+    "id": "prism",
+    "kind": "pickup",
+    "cell": [
+      33,
+      13
+    ],
+    "ref": "201",
+    "title": "Prisme de calibration",
+    "text": "Trois faces gravées : triangle, cercle et carré. Il se monte dans le répartiteur 206.",
+    "resource": "prism",
+    "amount": 1
+  },
+  {
+    "id": "beam_triangle",
+    "kind": "clue",
+    "cell": [
+      1,
+      15
+    ],
+    "ref": "202",
+    "title": "Étalon triangle",
+    "text": "TRIANGLE : intensité de référence 2. La forme identifie le faisceau ; sa couleur est seulement un repère visuel.",
+    "model": "gauge",
+    "value": 2,
+    "pipe_color": "c696e5"
+  },
+  {
+    "id": "beam_circle",
+    "kind": "clue",
+    "cell": [
+      31,
+      19
+    ],
+    "ref": "203",
+    "title": "Étalon cercle",
+    "text": "CERCLE : intensité de référence 3. La forme identifie le faisceau ; sa couleur est seulement un repère visuel.",
+    "model": "gauge",
+    "value": 3,
+    "pipe_color": "63d6cf"
+  },
+  {
+    "id": "beam_square",
+    "kind": "clue",
+    "cell": [
+      9,
+      21
+    ],
+    "ref": "204",
+    "title": "Étalon carré",
+    "text": "CARRÉ : intensité de référence 1. La forme identifie le faisceau ; sa couleur est seulement un repère visuel.",
+    "model": "gauge",
+    "value": 1,
+    "pipe_color": "edc675"
+  },
+  {
+    "id": "beam_plan",
+    "kind": "clue",
+    "cell": [
+      13,
+      13
+    ],
+    "ref": "205",
+    "title": "Permutation des faisceaux",
+    "text": "Depuis le prisme : GAUCHE reçoit le CERCLE ; CENTRE reçoit le CARRÉ ; DROITE reçoit le TRIANGLE. Reportez les intensités des trois étalons dans cet ordre."
+  },
+  {
+    "id": "beam_router",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      17
+    ],
+    "ref": "206",
+    "title": "Répartiteur prismatique",
+    "text": "Installez le prisme puis réglez les intensités GAUCHE, CENTRE et DROITE. Les étalons et le plan 205 permettent de déduire le réglage.",
+    "requires": [
+      "prism"
+    ],
+    "dials": [
+      "GAUCHE",
+      "CENTRE",
+      "DROITE"
+    ],
+    "answer": "312",
+    "question": "Quelles intensités arrivent à gauche, au centre et à droite ?",
+    "model": "projector",
+    "opens": [
+      "archive_gate"
+    ],
+    "success": "Les trois faisceaux sont alignés. Le verrou des archives se relève."
+  },
+  {
+    "id": "archive_gate",
+    "kind": "door",
+    "cell": [
+      25,
+      23
+    ],
+    "ref": "207",
+    "title": "Porte des archives",
+    "text": "La commande dépend du répartiteur 206.",
+    "axis": "y",
+    "controlled_by": "beam_router"
+  },
+  {
+    "id": "o_secret2",
+    "kind": "clue",
+    "cell": [
+      1,
+      21
+    ],
+    "ref": "208",
+    "title": "Budget des couleurs",
+    "text": "« Le service comptable demande de remplacer le turquoise par du bleu moins ambitieux. »",
+    "secret": true
+  },
+  {
+    "id": "archive_order",
+    "kind": "clue",
+    "cell": [
+      3,
+      19
+    ],
+    "ref": "209",
+    "title": "Ordre de lecture",
+    "text": "Les archives se lisent dans l’ordre du ciel : AUBE, ZÉNITH, CRÉPUSCULE. Le lecteur 305 demande un chiffre par plaque, dans cet ordre."
+  },
+  {
+    "id": "plate_dawn",
+    "kind": "clue",
+    "cell": [
+      1,
+      25
+    ],
+    "ref": "301",
+    "title": "Plaque de l’aube",
+    "text": "AUBE : 2 traits au-dessus de la ligne, 5 en dessous. Seuls les traits au-dessus de la ligne sont éclairés."
+  },
+  {
+    "id": "plate_zenith",
+    "kind": "clue",
+    "cell": [
+      33,
+      25
+    ],
+    "ref": "302",
+    "title": "Plaque du zénith",
+    "text": "ZÉNITH : 4 traits au-dessus de la ligne, 1 en dessous. Seuls les traits au-dessus de la ligne sont éclairés."
+  },
+  {
+    "id": "plate_dusk",
+    "kind": "clue",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "303",
+    "title": "Plaque du crépuscule",
+    "text": "CRÉPUSCULE : 3 traits au-dessus de la ligne, 6 en dessous. Seuls les traits au-dessus de la ligne sont éclairés."
+  },
+  {
+    "id": "reader_rule",
+    "kind": "clue",
+    "cell": [
+      9,
+      29
+    ],
+    "ref": "304",
+    "title": "Consigne du lecteur",
+    "text": "Ne compter que les traits éclairés, au-dessus de la ligne. Ignorer ceux du dessous. L’ordre des plaques est indiqué sur la note 209, dans la galerie précédente."
+  },
+  {
+    "id": "archive_reader",
+    "kind": "mechanism",
+    "cell": [
+      29,
+      29
+    ],
+    "ref": "305",
+    "title": "Lecteur des archives",
+    "text": "Trois emplacements : premier ciel, deuxième ciel, dernier ciel. Recoupez la note 209, les plaques 301 à 303 et la consigne 304.",
+    "answer": "243",
+    "question": "Quel code de trois chiffres révèle la lumière ?",
+    "model": "projector",
+    "success": "L’identité optique est validée. La chambre d’observation peut être ouverte."
+  },
+  {
+    "id": "observation_exit",
+    "kind": "exit",
+    "cell": [
+      17,
+      33
+    ],
+    "ref": "306",
+    "title": "Chambre d’observation",
+    "text": "Le sas attend la validation du lecteur 305 et la calibration des faisceaux 206.",
+    "axis": "y",
+    "prerequisites": [
+      "archive_reader",
+      "beam_router"
+    ],
+    "action": "Entrer dans la chambre",
+    "success": "Les volets s’ouvrent sur le ciel. Pour une fois, la lumière vient vraiment de l’extérieur."
+  },
+  {
+    "id": "o_secret3",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "307",
+    "title": "Évaluation du sujet",
+    "text": "« Sujet apte à l’observation, à la maintenance et au rangement. Éviter de lui montrer le contrat. » — Folamour",
+    "secret": true
+  }
+]

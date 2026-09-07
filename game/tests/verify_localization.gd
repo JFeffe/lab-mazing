@@ -23,7 +23,7 @@ func run():
 	game.show_title()
 	check("THE LABYRINTH" in texts(game.modal_box),"English title missing")
 	check("Langue / Language" in texts(game.modal_box),"Language option missing")
-	for number in [1,2]:
+	for number in [1,2,3]:
 		game.start_game(false,number)
 		for e in game.events:
 			for field in ["title","text","question","success","action","installed_text"]:
@@ -39,6 +39,7 @@ func run():
 			check(game.loc("Raccourci "+sc.id+" révélé — passage ouvert !")=="Shortcut "+sc.id+" revealed — passage open!","Shortcut toast")
 		game.show_map()
 		check("Your progress" in texts(game.modal_box),"Map heading")
+	game.start_game(false,2)
 	# Exercise actual menu callbacks and preserve progress, partial puzzle and old French journal.
 	game.inventory={"copper_coil":1,"ceramic_core":1}
 	game.done.installed_water_manifold=true

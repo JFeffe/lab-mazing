@@ -70,6 +70,7 @@ var code_entry:LineEdit
 var feedback:Label
 var zoom=22.0
 var auto_timer=0.0
+var save_status=""
 var fog_timer=0.0
 var toast_timer=0.0
 var accent=Color("e9be72")
@@ -161,6 +162,7 @@ func build_world():
 	sun.shadow_enabled=not OS.has_feature("web")
 	world.add_child(sun)
 	var palettes=[Color("648a83"),Color("7b83a4"),Color("9e8174")] if level==1 else [Color("9e8460"),Color("527f8e"),Color("858371")]
+	if level==3: palettes=[Color("7789a5"),Color("638f94"),Color("93839e")]
 	for y in range(grid.size()):
 		for x in range(grid.size()):
 			var k=key(x,y)
@@ -390,7 +392,7 @@ func button(text,callback,primary=false):
 	b.pressed.connect(callback,CONNECT_DEFERRED)
 	return b
 func content_width():
-	return minf(676.0,get_viewport().get_visible_rect().size.x-64.0)
+	return minf(676.0,get_viewport().get_visible_rect().size.x-84.0)
 func configure_viewport():
 	last_window_size=get_window().size
 	ui_mobile=mini(last_window_size.x,last_window_size.y)<720 or DisplayServer.is_touchscreen_available()
@@ -542,28 +544,36 @@ func close_modal():
 	modal_open=false
 	current_event={}
 	if playing: save_game()
-func has_save(): return FileAccess.file_exists(SAVE) or FileAccess.file_exists(LEGACY_SAVE)
+func has_save(): return not read_save().is_empty()
 func read_save():
-	var path=SAVE if FileAccess.file_exists(SAVE) else LEGACY_SAVE
-	if not FileAccess.file_exists(path): return {}
-	var data=JSON.parse_string(FileAccess.get_file_as_string(path))
-	return data if data is Dictionary and int(data.get("version",0)) in [2,4] else {}
+	for path in [SAVE,SAVE+".bak",LEGACY_SAVE]:
+		if not FileAccess.file_exists(path): continue
+		var parser=JSON.new()
+		if parser.parse(FileAccess.get_file_as_string(path))!=OK: continue
+		var data=parser.data
+		if data is Dictionary and int(data.get("version",0)) in [2,4] and int(data.get("level",1)) in [1,2,3]: return data
+	return {}
 func show_title():
 	DisplayServer.window_set_title(loc("LE LABYRINTHE")+" — Folamour")
 	playing=false
 	hud.hide()
-	clear_modal("DOCTEUR FOLAMOUR / DEUX EXPÉRIENCES","LE LABYRINTHE")
+	clear_modal("DOCTEUR FOLAMOUR / TROIS EXPÉRIENCES","LE LABYRINTHE")
 	paragraph("Le laboratoire vous attend.\nLes machines aussi.",22)
-	paragraph("Deux labyrinthes fixes à enchaîner. Objets à assembler, installations à remettre en marche et indices à recouper. Aucune limite de temps.")
-	if has_save(): modal_box.add_child(button("Continuer la partie",func(): start_game(true),true))
+	paragraph("Trois labyrinthes fixes à enchaîner. Objets à assembler, installations à remettre en marche et indices à recouper. Aucune limite de temps.")
+	var saved=read_save()
+	if not saved.is_empty():
+		modal_box.add_child(button("Continuer la partie",func(): start_game(true),true))
+		paragraph(loc("Sauvegarde : niveau %d • %02d:%02d") % [int(saved.get("level",1)),int(saved.get("elapsed",0))/60,int(saved.get("elapsed",0))%60],16)
+		if saved.get("won",false): paragraph("Niveau terminé : reprenez pour accéder à la suite.",16)
 	modal_box.add_child(button("Nouvelle partie — niveau 1",func(): confirm_new(1),not has_save()))
 	modal_box.add_child(button("Tester directement le niveau 2",func(): confirm_new(2)))
+	modal_box.add_child(button("Tester directement le niveau 3",func(): confirm_new(3)))
 	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("PROTOTYPE 0.6 · CLIC / TOUCHER",13)
+	paragraph("VERSION 0.7 · OPTIQUE / REPRISE",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
 func confirm_new(target=1):
-	if not FileAccess.file_exists(SAVE):
+	if not has_save():
 		start_game(false,target)
 		return
 	clear_modal("NOUVELLE PARTIE","Commencer au niveau "+str(target)+" ?")
@@ -575,7 +585,7 @@ func set_level(number):
 	signal_lights.clear()
 	decor.clear()
 	ambience_zone=-1
-	level=clampi(number,1,2)
+	level=clampi(number,1,3)
 	if is_instance_valid(world):
 		remove_child(world)
 		world.queue_free()
@@ -587,13 +597,13 @@ func set_level(number):
 	wall_bodies.clear()
 	shortcut_nodes.clear()
 	machine_parts.clear()
-	var suffix="" if level==1 else "2"
+	var suffix="" if level==1 else str(level)
 	level_data=JSON.parse_string(FileAccess.get_file_as_string("res://data/maze"+suffix+".json"))
 	grid=level_data.grid
 	start_cell=Vector2i(level_data.start[0],level_data.start[1])
 	events=JSON.parse_string(FileAccess.get_file_as_string("res://data/events"+suffix+".json"))
 	shortcuts=JSON.parse_string(FileAccess.get_file_as_string("res://data/shortcuts"+suffix+".json"))
-	item_catalog=JSON.parse_string(FileAccess.get_file_as_string("res://data/items2.json")) if level==2 else {}
+	item_catalog=JSON.parse_string(FileAccess.get_file_as_string("res://data/items"+suffix+".json")) if level>=2 else {}
 	world=Node3D.new()
 	add_child(world)
 	build_world()
@@ -614,6 +624,7 @@ func start_game(resume_v,target=1,keep_campaign=false):
 	inventory={}
 	elapsed=0
 	errors=0
+	auto_timer=0
 	won=false
 	nearest={}
 	current_event={}
@@ -634,11 +645,16 @@ func start_game(resume_v,target=1,keep_campaign=false):
 			clear_modal("NIVEAU 1 / LE LABORATOIRE","Bienvenue, sujet 16.")
 			paragraph("« Volontaire, vous ? Peu importe. Votre consentement est admirablement implicite. Voyons comment vous vous débrouillez avec quelques portes. »")
 			paragraph("Explorez le laboratoire. Approchez-vous des objets et terminaux puis appuyez sur E. Le journal conserve les découvertes.")
-		else:
+		elif level==2:
 			add_journal("intro","DÉPARTEMENT DES MACHINES\nRemettre l’ascenseur en marche. Les établis assemblent les objets trouvés. Les conduites et manomètres indiquent les réglages. I : sac ; J : journal. Les ateliers restent accessibles après ouverture des portes.")
 			clear_modal("NIVEAU 2 / SECTEUR DES MACHINES","Service de maintenance.")
 			paragraph("« Vous avez trouvé la sortie. Très bien. Quelqu’un a malheureusement oublié de réparer l’ascenseur. Votre polyvalence tombe à point. »")
 			paragraph("Votre ancien équipement a été consigné. Explorez les ateliers, assemblez les pièces et remettez les installations en service. Objectif : atteindre un ascenseur fonctionnel.")
+		else:
+			add_journal("intro","DÉPARTEMENT D’OPTIQUE\nRéparez le projecteur, calibrez les faisceaux puis déchiffrez les archives. Les formes et les textes permettent de résoudre les énigmes sans dépendre des couleurs.")
+			clear_modal("NIVEAU 3 / DÉPARTEMENT D’OPTIQUE","Que la lumière soit.")
+			paragraph("« Vous avez réparé mon ascenseur. Voyons maintenant si vous savez faire la lumière sur mes archives. »")
+			paragraph("Explorez trois secteurs : le banc optique, la galerie des faisceaux et les archives. Retrouvez les pièces, recoupez les notes et ouvrez la chambre d’observation.")
 		modal_box.add_child(button("Commencer l’exploration",close_modal,true))
 	save_game()
 func _physics_process(delta):
@@ -681,7 +697,7 @@ func _physics_process(delta):
 		update_fog()
 		find_nearest()
 		update_hud()
-	if auto_timer>8:
+	if auto_timer>4:
 		auto_timer=0
 		save_game()
 	for e in events:
@@ -754,11 +770,14 @@ func find_nearest():
 			nearest=e
 func update_hud():
 	title_label.text=loc((["N1 / OBSERVATION","N1 / DÉCISIONS","N1 / CONFINEMENT"] if level==1 else ["N2 / ATELIERS","N2 / HYDRAULIQUE","N2 / ASCENSEUR"])[zone(int(player.position.z/TILE))])
+	if level==3: title_label.text=loc(["N3 / OPTIQUE","N3 / FAISCEAUX","N3 / ARCHIVES"][zone(int(player.position.z/TILE))])
 	var held=0
 	for amount in inventory.values(): held+=int(amount)
 	status_label.text=loc("Objets  %d    •    Disques récupérés  %d / 3    •    %02d:%02d") % [held,int(done.has("disc_sun"))+int(done.has("disc_moon"))+int(done.has("disc_star")),int(elapsed)/60,int(elapsed)%60]
 	if level==2: status_label.text=loc("Objets  %d    •    Installations  %d / 4    •    %02d:%02d") % [held,int(done.has("generator"))+int(done.has("water_manifold"))+int(done.has("hoist"))+int(done.has("lift_power")),int(elapsed)/60,int(elapsed)%60]
+	if level==3: status_label.text=loc("Objets  %d    •    Installations  %d / 3    •    %02d:%02d") % [held,int(done.has("projector"))+int(done.has("beam_router"))+int(done.has("archive_reader")),int(elapsed)/60,int(elapsed)%60]
 	action_label.text=loc("["+nearest.ref+"] "+nearest.title if not nearest.is_empty() else "Cliquez / touchez le sol pour explorer")
+	if not move_path.is_empty(): action_label.text=loc("Destination : ")+ (loc(click_event.title) if not click_event.is_empty() else str(move_path[-1].x)+", "+str(move_path[-1].y))
 	if is_instance_valid(interact_button):
 		interact_button.disabled=nearest.is_empty()
 		interact_button.text=loc("Examiner" if nearest.is_empty() or nearest.kind!="pickup" else "Ramasser")
@@ -1025,9 +1044,11 @@ func show_journal(return_to={}):
 	if not return_to.is_empty(): modal_box.add_child(button("Retour au mécanisme",func(): show_puzzle(return_to),true))
 	else: modal_box.add_child(button("Reprendre",close_modal,true))
 func show_map():
+	var preview_path=move_path.duplicate()
 	clear_modal("CARTOGRAPHIE / ZONES DÉCOUVERTES","Votre progression")
 	var map=MapWidget.new()
 	map.game=self
+	map.route_preview=preview_path
 	map.custom_minimum_size=Vector2(content_width(),content_width()*0.82)
 	modal_box.add_child(map)
 	paragraph("Blanc : vous • Or : objet • Turquoise : indice\nBleu : mécanisme • Corail : porte • Vert : activé\nLes zones inconnues restent cachées.",14)
@@ -1035,7 +1056,9 @@ func show_map():
 func show_pause():
 	if not playing: return
 	clear_modal("EXPÉRIENCE EN PAUSE","Prenez votre temps.")
-	paragraph("Sauvegarde automatique. Le chronomètre s'arrête dans les menus et pendant la lecture.")
+	save_game()
+	paragraph("Sauvegarde automatique toutes les 4 secondes et après chaque action. Le chronomètre s’arrête dans les menus et pendant la lecture.")
+	paragraph(save_status,15)
 	paragraph("Les raccourcis se révèlent après un passage physique des deux côtés du même mur. Ils restent ouverts dans les deux sens. La carte seule ne suffit pas.",16)
 	modal_box.add_child(button("Reprendre",close_modal,true))
 	modal_box.add_child(button("Journal",show_journal))
@@ -1052,12 +1075,15 @@ func show_win():
 		if e.get("secret",false) and done.has(e.id): secrets+=1
 	level_stats[str(level)]={"time":elapsed,"secrets":secrets,"hints":h,"errors":errors}
 	save_game()
-	clear_modal("NIVEAU "+str(level)+" / TERMINÉ", "Le laboratoire est franchi." if level==1 else "L’ascenseur est en marche.")
-	paragraph("« Le prochain département sera ravi de vous recevoir. »" if level==1 else "« Vous avez réparé l’ascenseur. Et sans réclamer de salaire. Une expérience remarquable. »",21)
+	clear_modal("NIVEAU "+str(level)+" / TERMINÉ", "Le laboratoire est franchi." if level==1 else "L’ascenseur est en marche." if level==2 else "Le ciel vous appartient.")
+	paragraph("« Le prochain département sera ravi de vous recevoir. »" if level==1 else "« Vous avez réparé l’ascenseur. Et sans réclamer de salaire. Une expérience remarquable. »" if level==2 else "« Vous pouvez admirer le ciel. La fenêtre ne constitue pas une autorisation de congé. »",21)
 	paragraph(loc("Temps du niveau : %02d:%02d\nSecrets : %d / 3    •    Tentatives incorrectes : %d") % [int(elapsed)/60,int(elapsed)%60,secrets,errors],20)
 	if level==1:
 		paragraph("La suite : le secteur des machines. Votre inventaire sera remis à zéro. Le bilan du laboratoire sera conservé et la transition sera sauvegardée.",17)
 		modal_box.add_child(button("Continuer vers le niveau 2",func(): start_game(false,2,true),true))
+	elif level==2:
+		paragraph("La suite : le département d’optique. Votre inventaire sera remis à zéro ; les bilans précédents seront conservés.",17)
+		modal_box.add_child(button("Continuer vers le niveau 3",func(): start_game(false,3,true),true))
 	else:
 		var total=0.0
 		var found=0
@@ -1065,7 +1091,7 @@ func show_win():
 			total+=stat.time
 			found+=int(stat.secrets)
 		paragraph(loc("Bilan : %d niveau(x) terminé(s), %02d:%02d d’exploration, %d secrets.") % [level_stats.size(),int(total)/60,int(total)%60,found],17)
-		modal_box.add_child(button("Recommencer les deux niveaux",func(): confirm_new(1)))
+		modal_box.add_child(button("Recommencer les trois niveaux",func(): confirm_new(1)))
 	modal_box.add_child(button("Sauvegarder et revenir au menu",show_title))
 func save_game():
 	if test_mode: return
@@ -1073,8 +1099,18 @@ func save_game():
 	var f=FileAccess.open(SAVE+".tmp",FileAccess.WRITE)
 	if f:
 		f.store_string(JSON.stringify(data))
+		var write_error=f.get_error()
 		f.close()
-		DirAccess.rename_absolute(SAVE+".tmp",SAVE)
+		if write_error!=OK:
+			save_status="Sauvegarde impossible : espace de stockage indisponible."
+			return
+		if FileAccess.file_exists(SAVE):
+			var old=JSON.new()
+			if old.parse(FileAccess.get_file_as_string(SAVE))==OK and old.data is Dictionary: DirAccess.copy_absolute(SAVE,SAVE+".bak")
+		var result=DirAccess.rename_absolute(SAVE+".tmp",SAVE)
+		save_status="Progression sauvegardée sur cet appareil." if result==OK else "Sauvegarde impossible : espace de stockage indisponible."
+	else:
+		save_status="Sauvegarde impossible : espace de stockage indisponible."
 func load_game():
 	var data=read_save()
 	if data.is_empty(): return
@@ -1133,6 +1169,20 @@ func capture_preview():
 func build_machine(root,e,gold,dark):
 	var metal=material(Color("708994"))
 	match e.model:
+		"projector":
+			box(root,Vector3(1.3,0.85,0.8),Vector3(0,0.65,0),dark)
+			var optic=MeshInstance3D.new()
+			var lens_shape=CylinderMesh.new()
+			lens_shape.top_radius=0.36
+			lens_shape.bottom_radius=0.36
+			lens_shape.height=0.18
+			optic.mesh=lens_shape
+			optic.rotation.x=PI/2
+			optic.position=Vector3(0,0.9,-0.48)
+			optic.material_override=material(Color("9bdce9"),true)
+			root.add_child(optic)
+			for i in range(3):
+				box(root,Vector3(0.09,0.025,0.9),Vector3((i-1)*0.25,0.035,-1.02),material([Color("c696e5"),Color("63d6cf"),Color("edc675")][i],true))
 		"bench":
 			box(root,Vector3(1.7,0.16,1.25),Vector3(0,0.95,0),metal)
 			for x in [-0.65,0.65]: box(root,Vector3(0.16,0.9,0.9),Vector3(x,0.45,0),dark)
