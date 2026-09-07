@@ -1,63 +1,105 @@
 [
   {
-    "id": "R1",
     "cell": [
-      5,
-      2
+      31,
+      4
     ],
     "sides": [
       [
-        5,
+        31,
         3
       ],
       [
-        5,
-        1
+        31,
+        5
       ]
     ],
     "axis": "y",
-    "original_detour_cells": 74
+    "original_detour_steps": 18,
+    "id": "R1",
+    "minimum_saved_steps": 16
   },
   {
-    "id": "R2",
     "cell": [
-      17,
+      28,
+      9
+    ],
+    "sides": [
+      [
+        29,
+        9
+      ],
+      [
+        27,
+        9
+      ]
+    ],
+    "axis": "x",
+    "original_detour_steps": 34,
+    "id": "R2",
+    "minimum_saved_steps": 16
+  },
+  {
+    "cell": [
+      23,
       10
     ],
     "sides": [
       [
-        17,
-        11
+        23,
+        9
       ],
       [
-        17,
-        9
+        23,
+        11
       ]
     ],
     "axis": "y",
-    "original_detour_cells": 54
+    "original_detour_steps": 14,
+    "id": "R3",
+    "minimum_saved_steps": 12
   },
   {
-    "id": "R3",
     "cell": [
-      13,
-      2
+      26,
+      13
+    ],
+    "sides": [
+      [
+        27,
+        13
+      ],
+      [
+        25,
+        13
+      ]
+    ],
+    "axis": "x",
+    "original_detour_steps": 50,
+    "id": "R4",
+    "minimum_saved_steps": 16
+  },
+  {
+    "cell": [
+      12,
+      16
     ],
     "sides": [
       [
         13,
-        3
+        16
       ],
       [
-        13,
-        1
+        11,
+        16
       ]
     ],
-    "axis": "y",
-    "original_detour_cells": 38
+    "axis": "x",
+    "original_detour_steps": 68,
+    "id": "R5",
+    "minimum_saved_steps": 66
   },
   {
-    "id": "R4",
     "cell": [
       12,
       23
@@ -73,82 +115,48 @@
       ]
     ],
     "axis": "x",
-    "original_detour_cells": 114
-  },
-  {
-    "id": "R5",
-    "cell": [
-      22,
-      15
-    ],
-    "sides": [
-      [
-        23,
-        15
-      ],
-      [
-        21,
-        15
-      ]
-    ],
-    "axis": "x",
-    "original_detour_cells": 58
-  },
-  {
+    "original_detour_steps": 118,
     "id": "R6",
+    "minimum_saved_steps": 64
+  },
+  {
     "cell": [
-      10,
-      20
+      26,
+      23
     ],
     "sides": [
       [
-        11,
-        20
+        27,
+        23
       ],
       [
-        9,
-        20
+        25,
+        23
       ]
     ],
     "axis": "x",
-    "original_detour_cells": 48
-  },
-  {
+    "original_detour_steps": 46,
     "id": "R7",
-    "cell": [
-      15,
-      26
-    ],
-    "sides": [
-      [
-        15,
-        27
-      ],
-      [
-        15,
-        25
-      ]
-    ],
-    "axis": "y",
-    "original_detour_cells": 42
+    "minimum_saved_steps": 44
   },
   {
-    "id": "R8",
     "cell": [
-      30,
+      14,
       25
     ],
     "sides": [
       [
-        31,
+        15,
         25
       ],
       [
-        29,
+        13,
         25
       ]
     ],
     "axis": "x",
-    "original_detour_cells": 30
+    "original_detour_steps": 46,
+    "id": "R8",
+    "minimum_saved_steps": 44
   }
 ]

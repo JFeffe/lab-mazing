@@ -1,0 +1,3095 @@
+[
+  {
+    "level": 1,
+    "before": [
+      {
+        "id": "R1",
+        "cell": [
+          5,
+          2
+        ],
+        "sides": [
+          [
+            5,
+            3
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "axis": "y",
+        "original_detour_cells": 74
+      },
+      {
+        "id": "R2",
+        "cell": [
+          17,
+          10
+        ],
+        "sides": [
+          [
+            17,
+            11
+          ],
+          [
+            17,
+            9
+          ]
+        ],
+        "axis": "y",
+        "original_detour_cells": 54
+      },
+      {
+        "id": "R3",
+        "cell": [
+          13,
+          2
+        ],
+        "sides": [
+          [
+            13,
+            3
+          ],
+          [
+            13,
+            1
+          ]
+        ],
+        "axis": "y",
+        "original_detour_cells": 38
+      },
+      {
+        "id": "R4",
+        "cell": [
+          12,
+          23
+        ],
+        "sides": [
+          [
+            13,
+            23
+          ],
+          [
+            11,
+            23
+          ]
+        ],
+        "axis": "x",
+        "original_detour_cells": 114
+      },
+      {
+        "id": "R5",
+        "cell": [
+          22,
+          15
+        ],
+        "sides": [
+          [
+            23,
+            15
+          ],
+          [
+            21,
+            15
+          ]
+        ],
+        "axis": "x",
+        "original_detour_cells": 58
+      },
+      {
+        "id": "R6",
+        "cell": [
+          10,
+          20
+        ],
+        "sides": [
+          [
+            11,
+            20
+          ],
+          [
+            9,
+            20
+          ]
+        ],
+        "axis": "x",
+        "original_detour_cells": 48
+      },
+      {
+        "id": "R7",
+        "cell": [
+          15,
+          26
+        ],
+        "sides": [
+          [
+            15,
+            27
+          ],
+          [
+            15,
+            25
+          ]
+        ],
+        "axis": "y",
+        "original_detour_cells": 42
+      },
+      {
+        "id": "R8",
+        "cell": [
+          30,
+          25
+        ],
+        "sides": [
+          [
+            31,
+            25
+          ],
+          [
+            29,
+            25
+          ]
+        ],
+        "axis": "x",
+        "original_detour_cells": 30
+      }
+    ],
+    "after": [
+      {
+        "cell": [
+          31,
+          4
+        ],
+        "sides": [
+          [
+            31,
+            3
+          ],
+          [
+            31,
+            5
+          ]
+        ],
+        "axis": "y",
+        "original_detour_steps": 18,
+        "id": "R1",
+        "minimum_saved_steps": 16
+      },
+      {
+        "cell": [
+          28,
+          9
+        ],
+        "sides": [
+          [
+            29,
+            9
+          ],
+          [
+            27,
+            9
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 34,
+        "id": "R2",
+        "minimum_saved_steps": 16
+      },
+      {
+        "cell": [
+          23,
+          10
+        ],
+        "sides": [
+          [
+            23,
+            9
+          ],
+          [
+            23,
+            11
+          ]
+        ],
+        "axis": "y",
+        "original_detour_steps": 14,
+        "id": "R3",
+        "minimum_saved_steps": 12
+      },
+      {
+        "cell": [
+          26,
+          13
+        ],
+        "sides": [
+          [
+            27,
+            13
+          ],
+          [
+            25,
+            13
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 50,
+        "id": "R4",
+        "minimum_saved_steps": 16
+      },
+      {
+        "cell": [
+          12,
+          16
+        ],
+        "sides": [
+          [
+            13,
+            16
+          ],
+          [
+            11,
+            16
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 68,
+        "id": "R5",
+        "minimum_saved_steps": 66
+      },
+      {
+        "cell": [
+          12,
+          23
+        ],
+        "sides": [
+          [
+            13,
+            23
+          ],
+          [
+            11,
+            23
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 118,
+        "id": "R6",
+        "minimum_saved_steps": 64
+      },
+      {
+        "cell": [
+          26,
+          23
+        ],
+        "sides": [
+          [
+            27,
+            23
+          ],
+          [
+            25,
+            23
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 46,
+        "id": "R7",
+        "minimum_saved_steps": 44
+      },
+      {
+        "cell": [
+          14,
+          25
+        ],
+        "sides": [
+          [
+            15,
+            25
+          ],
+          [
+            13,
+            25
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 46,
+        "id": "R8",
+        "minimum_saved_steps": 44
+      }
+    ],
+    "benchmarks": {
+      "none": [
+        {
+          "steps": 586,
+          "opened": 0,
+          "crossings": {},
+          "legs": [
+            {
+              "id": "entry_left",
+              "steps": 8
+            },
+            {
+              "id": "entry_right",
+              "steps": 14
+            },
+            {
+              "id": "code03",
+              "steps": 6
+            },
+            {
+              "id": "copper_key",
+              "steps": 34
+            },
+            {
+              "id": "solar_vault",
+              "steps": 23
+            },
+            {
+              "id": "disc_sun",
+              "steps": 3
+            },
+            {
+              "id": "maintenance_a",
+              "steps": 32
+            },
+            {
+              "id": "maintenance_b",
+              "steps": 56
+            },
+            {
+              "id": "star_vault",
+              "steps": 58
+            },
+            {
+              "id": "disc_star",
+              "steps": 4
+            },
+            {
+              "id": "raw_artifact",
+              "steps": 64
+            },
+            {
+              "id": "moon_vault",
+              "steps": 86
+            },
+            {
+              "id": "disc_moon",
+              "steps": 4
+            },
+            {
+              "id": "exit_protocol",
+              "steps": 72
+            },
+            {
+              "id": "oneway_a",
+              "steps": 58
+            },
+            {
+              "id": "fuse",
+              "steps": 38
+            },
+            {
+              "id": "power_panel",
+              "steps": 5
+            },
+            {
+              "id": "final",
+              "steps": 21
+            }
+          ]
+        },
+        {
+          "steps": 574,
+          "opened": 0,
+          "crossings": {},
+          "legs": [
+            {
+              "id": "entry_left",
+              "steps": 8
+            },
+            {
+              "id": "entry_right",
+              "steps": 14
+            },
+            {
+              "id": "code03",
+              "steps": 6
+            },
+            {
+              "id": "copper_key",
+              "steps": 34
+            },
+            {
+              "id": "solar_vault",
+              "steps": 23
+            },
+            {
+              "id": "disc_sun",
+              "steps": 3
+            },
+            {
+              "id": "maintenance_a",
+              "steps": 32
+            },
+            {
+              "id": "maintenance_b",
+              "steps": 56
+            },
+            {
+              "id": "star_vault",
+              "steps": 58
+            },
+            {
+              "id": "disc_star",
+              "steps": 4
+            },
+            {
+              "id": "raw_artifact",
+              "steps": 64
+            },
+            {
+              "id": "moon_vault",
+              "steps": 86
+            },
+            {
+              "id": "disc_moon",
+              "steps": 4
+            },
+            {
+              "id": "exit_protocol",
+              "steps": 72
+            },
+            {
+              "id": "oneway_b",
+              "steps": 36
+            },
+            {
+              "id": "fuse",
+              "steps": 48
+            },
+            {
+              "id": "power_panel",
+              "steps": 5
+            },
+            {
+              "id": "final",
+              "steps": 21
+            }
+          ]
+        }
+      ],
+      "before": [
+        {
+          "steps": 586,
+          "opened": 1,
+          "crossings": {},
+          "legs": [
+            {
+              "id": "entry_left",
+              "steps": 8
+            },
+            {
+              "id": "entry_right",
+              "steps": 14
+            },
+            {
+              "id": "code03",
+              "steps": 6
+            },
+            {
+              "id": "copper_key",
+              "steps": 34
+            },
+            {
+              "id": "solar_vault",
+              "steps": 23
+            },
+            {
+              "id": "disc_sun",
+              "steps": 3
+            },
+            {
+              "id": "maintenance_a",
+              "steps": 32
+            },
+            {
+              "id": "maintenance_b",
+              "steps": 56
+            },
+            {
+              "id": "star_vault",
+              "steps": 58
+            },
+            {
+              "id": "disc_star",
+              "steps": 4
+            },
+            {
+              "id": "raw_artifact",
+              "steps": 64
+            },
+            {
+              "id": "moon_vault",
+              "steps": 86
+            },
+            {
+              "id": "disc_moon",
+              "steps": 4
+            },
+            {
+              "id": "exit_protocol",
+              "steps": 72
+            },
+            {
+              "id": "oneway_a",
+              "steps": 58
+            },
+            {
+              "id": "fuse",
+              "steps": 38
+            },
+            {
+              "id": "power_panel",
+              "steps": 5
+            },
+            {
+              "id": "final",
+              "steps": 21
+            }
+          ]
+        },
+        {
+          "steps": 574,
+          "opened": 1,
+          "crossings": {},
+          "legs": [
+            {
+              "id": "entry_left",
+              "steps": 8
+            },
+            {
+              "id": "entry_right",
+              "steps": 14
+            },
+            {
+              "id": "code03",
+              "steps": 6
+            },
+            {
+              "id": "copper_key",
+              "steps": 34
+            },
+            {
+              "id": "solar_vault",
+              "steps": 23
+            },
+            {
+              "id": "disc_sun",
+              "steps": 3
+            },
+            {
+              "id": "maintenance_a",
+              "steps": 32
+            },
+            {
+              "id": "maintenance_b",
+              "steps": 56
+            },
+            {
+              "id": "star_vault",
+              "steps": 58
+            },
+            {
+              "id": "disc_star",
+              "steps": 4
+            },
+            {
+              "id": "raw_artifact",
+              "steps": 64
+            },
+            {
+              "id": "moon_vault",
+              "steps": 86
+            },
+            {
+              "id": "disc_moon",
+              "steps": 4
+            },
+            {
+              "id": "exit_protocol",
+              "steps": 72
+            },
+            {
+              "id": "oneway_b",
+              "steps": 36
+            },
+            {
+              "id": "fuse",
+              "steps": 48
+            },
+            {
+              "id": "power_panel",
+              "steps": 5
+            },
+            {
+              "id": "final",
+              "steps": 21
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "steps": 486,
+          "opened": 5,
+          "crossings": {
+            "0": 2,
+            "2": 2,
+            "1": 2,
+            "3": 1
+          },
+          "legs": [
+            {
+              "id": "entry_left",
+              "steps": 8
+            },
+            {
+              "id": "entry_right",
+              "steps": 14
+            },
+            {
+              "id": "code03",
+              "steps": 6
+            },
+            {
+              "id": "copper_key",
+              "steps": 34
+            },
+            {
+              "id": "solar_vault",
+              "steps": 23
+            },
+            {
+              "id": "disc_sun",
+              "steps": 3
+            },
+            {
+              "id": "maintenance_a",
+              "steps": 32
+            },
+            {
+              "id": "maintenance_b",
+              "steps": 56
+            },
+            {
+              "id": "star_vault",
+              "steps": 42
+            },
+            {
+              "id": "disc_star",
+              "steps": 4
+            },
+            {
+              "id": "raw_artifact",
+              "steps": 28
+            },
+            {
+              "id": "moon_vault",
+              "steps": 46
+            },
+            {
+              "id": "disc_moon",
+              "steps": 4
+            },
+            {
+              "id": "exit_protocol",
+              "steps": 64
+            },
+            {
+              "id": "oneway_a",
+              "steps": 58
+            },
+            {
+              "id": "fuse",
+              "steps": 38
+            },
+            {
+              "id": "power_panel",
+              "steps": 5
+            },
+            {
+              "id": "final",
+              "steps": 21
+            }
+          ]
+        },
+        {
+          "steps": 474,
+          "opened": 4,
+          "crossings": {
+            "0": 2,
+            "2": 2,
+            "1": 2,
+            "3": 1
+          },
+          "legs": [
+            {
+              "id": "entry_left",
+              "steps": 8
+            },
+            {
+              "id": "entry_right",
+              "steps": 14
+            },
+            {
+              "id": "code03",
+              "steps": 6
+            },
+            {
+              "id": "copper_key",
+              "steps": 34
+            },
+            {
+              "id": "solar_vault",
+              "steps": 23
+            },
+            {
+              "id": "disc_sun",
+              "steps": 3
+            },
+            {
+              "id": "maintenance_a",
+              "steps": 32
+            },
+            {
+              "id": "maintenance_b",
+              "steps": 56
+            },
+            {
+              "id": "star_vault",
+              "steps": 42
+            },
+            {
+              "id": "disc_star",
+              "steps": 4
+            },
+            {
+              "id": "raw_artifact",
+              "steps": 28
+            },
+            {
+              "id": "moon_vault",
+              "steps": 46
+            },
+            {
+              "id": "disc_moon",
+              "steps": 4
+            },
+            {
+              "id": "exit_protocol",
+              "steps": 64
+            },
+            {
+              "id": "oneway_b",
+              "steps": 36
+            },
+            {
+              "id": "fuse",
+              "steps": 48
+            },
+            {
+              "id": "power_panel",
+              "steps": 5
+            },
+            {
+              "id": "final",
+              "steps": 21
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "level": 2,
+    "before": [
+      {
+        "id": "M1",
+        "cell": [
+          26,
+          3
+        ],
+        "sides": [
+          [
+            27,
+            3
+          ],
+          [
+            25,
+            3
+          ]
+        ],
+        "axis": "x"
+      },
+      {
+        "id": "M2",
+        "cell": [
+          10,
+          2
+        ],
+        "sides": [
+          [
+            11,
+            2
+          ],
+          [
+            9,
+            2
+          ]
+        ],
+        "axis": "x"
+      },
+      {
+        "id": "M3",
+        "cell": [
+          27,
+          18
+        ],
+        "sides": [
+          [
+            27,
+            19
+          ],
+          [
+            27,
+            17
+          ]
+        ],
+        "axis": "y"
+      },
+      {
+        "id": "M4",
+        "cell": [
+          8,
+          19
+        ],
+        "sides": [
+          [
+            9,
+            19
+          ],
+          [
+            7,
+            19
+          ]
+        ],
+        "axis": "x"
+      },
+      {
+        "id": "M5",
+        "cell": [
+          3,
+          30
+        ],
+        "sides": [
+          [
+            3,
+            31
+          ],
+          [
+            3,
+            29
+          ]
+        ],
+        "axis": "y"
+      },
+      {
+        "id": "M6",
+        "cell": [
+          22,
+          26
+        ],
+        "sides": [
+          [
+            22,
+            27
+          ],
+          [
+            22,
+            25
+          ]
+        ],
+        "axis": "y"
+      }
+    ],
+    "after": [
+      {
+        "cell": [
+          24,
+          1
+        ],
+        "sides": [
+          [
+            25,
+            1
+          ],
+          [
+            23,
+            1
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 46,
+        "id": "M1",
+        "minimum_saved_steps": 44
+      },
+      {
+        "cell": [
+          6,
+          13
+        ],
+        "sides": [
+          [
+            7,
+            13
+          ],
+          [
+            5,
+            13
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 26,
+        "id": "M2",
+        "minimum_saved_steps": 24
+      },
+      {
+        "cell": [
+          16,
+          13
+        ],
+        "sides": [
+          [
+            17,
+            13
+          ],
+          [
+            15,
+            13
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 26,
+        "id": "M3",
+        "minimum_saved_steps": 24
+      },
+      {
+        "cell": [
+          10,
+          20
+        ],
+        "sides": [
+          [
+            10,
+            19
+          ],
+          [
+            10,
+            21
+          ]
+        ],
+        "axis": "y",
+        "original_detour_steps": 16,
+        "id": "M4",
+        "minimum_saved_steps": 14
+      },
+      {
+        "cell": [
+          8,
+          21
+        ],
+        "sides": [
+          [
+            9,
+            21
+          ],
+          [
+            7,
+            21
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 46,
+        "id": "M5",
+        "minimum_saved_steps": 30
+      },
+      {
+        "cell": [
+          1,
+          30
+        ],
+        "sides": [
+          [
+            1,
+            29
+          ],
+          [
+            1,
+            31
+          ]
+        ],
+        "axis": "y",
+        "original_detour_steps": 62,
+        "id": "M6",
+        "minimum_saved_steps": 60
+      }
+    ],
+    "benchmarks": {
+      "none": [
+        {
+          "steps": 877,
+          "opened": 0,
+          "crossings": {},
+          "legs": [
+            {
+              "id": "m_welcome",
+              "steps": 1
+            },
+            {
+              "id": "coupling_notice",
+              "steps": 4
+            },
+            {
+              "id": "tool_handle",
+              "steps": 54
+            },
+            {
+              "id": "tool_head",
+              "steps": 46
+            },
+            {
+              "id": "tool_bench",
+              "steps": 18
+            },
+            {
+              "id": "generator",
+              "steps": 20
+            },
+            {
+              "id": "copper_coil",
+              "steps": 82
+            },
+            {
+              "id": "valve_wheel",
+              "steps": 80
+            },
+            {
+              "id": "pipe_plan",
+              "steps": 44
+            },
+            {
+              "id": "gauge_pump",
+              "steps": 26
+            },
+            {
+              "id": "gauge_filter",
+              "steps": 82
+            },
+            {
+              "id": "gauge_tank",
+              "steps": 44
+            },
+            {
+              "id": "water_manifold",
+              "steps": 12
+            },
+            {
+              "id": "ceramic_core",
+              "steps": 28
+            },
+            {
+              "id": "relay_bench",
+              "steps": 72
+            },
+            {
+              "id": "hoist_cable",
+              "steps": 112
+            },
+            {
+              "id": "lift_notice",
+              "steps": 52
+            },
+            {
+              "id": "hoist_hook",
+              "steps": 12
+            },
+            {
+              "id": "hoist",
+              "steps": 40
+            },
+            {
+              "id": "lift_power",
+              "steps": 32
+            },
+            {
+              "id": "lift_exit",
+              "steps": 16
+            }
+          ]
+        }
+      ],
+      "before": [
+        {
+          "steps": 781,
+          "opened": 1,
+          "crossings": {
+            "3": 4
+          },
+          "legs": [
+            {
+              "id": "m_welcome",
+              "steps": 1
+            },
+            {
+              "id": "coupling_notice",
+              "steps": 4
+            },
+            {
+              "id": "tool_handle",
+              "steps": 54
+            },
+            {
+              "id": "tool_head",
+              "steps": 46
+            },
+            {
+              "id": "tool_bench",
+              "steps": 18
+            },
+            {
+              "id": "generator",
+              "steps": 20
+            },
+            {
+              "id": "copper_coil",
+              "steps": 82
+            },
+            {
+              "id": "valve_wheel",
+              "steps": 56
+            },
+            {
+              "id": "pipe_plan",
+              "steps": 44
+            },
+            {
+              "id": "gauge_pump",
+              "steps": 26
+            },
+            {
+              "id": "gauge_filter",
+              "steps": 58
+            },
+            {
+              "id": "gauge_tank",
+              "steps": 44
+            },
+            {
+              "id": "water_manifold",
+              "steps": 12
+            },
+            {
+              "id": "ceramic_core",
+              "steps": 28
+            },
+            {
+              "id": "relay_bench",
+              "steps": 48
+            },
+            {
+              "id": "hoist_cable",
+              "steps": 88
+            },
+            {
+              "id": "lift_notice",
+              "steps": 52
+            },
+            {
+              "id": "hoist_hook",
+              "steps": 12
+            },
+            {
+              "id": "hoist",
+              "steps": 40
+            },
+            {
+              "id": "lift_power",
+              "steps": 32
+            },
+            {
+              "id": "lift_exit",
+              "steps": 16
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "steps": 725,
+          "opened": 4,
+          "crossings": {
+            "1": 3,
+            "2": 3,
+            "3": 1,
+            "4": 2
+          },
+          "legs": [
+            {
+              "id": "m_welcome",
+              "steps": 1
+            },
+            {
+              "id": "coupling_notice",
+              "steps": 4
+            },
+            {
+              "id": "tool_handle",
+              "steps": 54
+            },
+            {
+              "id": "tool_head",
+              "steps": 46
+            },
+            {
+              "id": "tool_bench",
+              "steps": 18
+            },
+            {
+              "id": "generator",
+              "steps": 20
+            },
+            {
+              "id": "copper_coil",
+              "steps": 82
+            },
+            {
+              "id": "valve_wheel",
+              "steps": 40
+            },
+            {
+              "id": "pipe_plan",
+              "steps": 28
+            },
+            {
+              "id": "gauge_pump",
+              "steps": 14
+            },
+            {
+              "id": "gauge_filter",
+              "steps": 54
+            },
+            {
+              "id": "gauge_tank",
+              "steps": 44
+            },
+            {
+              "id": "water_manifold",
+              "steps": 12
+            },
+            {
+              "id": "ceramic_core",
+              "steps": 28
+            },
+            {
+              "id": "relay_bench",
+              "steps": 48
+            },
+            {
+              "id": "hoist_cable",
+              "steps": 80
+            },
+            {
+              "id": "lift_notice",
+              "steps": 52
+            },
+            {
+              "id": "hoist_hook",
+              "steps": 12
+            },
+            {
+              "id": "hoist",
+              "steps": 40
+            },
+            {
+              "id": "lift_power",
+              "steps": 32
+            },
+            {
+              "id": "lift_exit",
+              "steps": 16
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "level": 3,
+    "before": [
+      {
+        "id": "O1",
+        "cell": [
+          2,
+          7
+        ],
+        "sides": [
+          [
+            1,
+            7
+          ],
+          [
+            3,
+            7
+          ]
+        ],
+        "axis": "x"
+      },
+      {
+        "id": "O2",
+        "cell": [
+          9,
+          2
+        ],
+        "sides": [
+          [
+            9,
+            1
+          ],
+          [
+            9,
+            3
+          ]
+        ],
+        "axis": "y"
+      },
+      {
+        "id": "O3",
+        "cell": [
+          4,
+          20
+        ],
+        "sides": [
+          [
+            3,
+            20
+          ],
+          [
+            5,
+            20
+          ]
+        ],
+        "axis": "x"
+      },
+      {
+        "id": "O4",
+        "cell": [
+          2,
+          20
+        ],
+        "sides": [
+          [
+            1,
+            20
+          ],
+          [
+            3,
+            20
+          ]
+        ],
+        "axis": "x"
+      },
+      {
+        "id": "O5",
+        "cell": [
+          10,
+          28
+        ],
+        "sides": [
+          [
+            10,
+            27
+          ],
+          [
+            10,
+            29
+          ]
+        ],
+        "axis": "y"
+      },
+      {
+        "id": "O6",
+        "cell": [
+          25,
+          26
+        ],
+        "sides": [
+          [
+            25,
+            25
+          ],
+          [
+            25,
+            27
+          ]
+        ],
+        "axis": "y"
+      }
+    ],
+    "after": [
+      {
+        "cell": [
+          14,
+          3
+        ],
+        "sides": [
+          [
+            15,
+            3
+          ],
+          [
+            13,
+            3
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 22,
+        "id": "O1",
+        "minimum_saved_steps": 20
+      },
+      {
+        "cell": [
+          23,
+          18
+        ],
+        "sides": [
+          [
+            23,
+            17
+          ],
+          [
+            23,
+            19
+          ]
+        ],
+        "axis": "y",
+        "original_detour_steps": 22,
+        "id": "O2",
+        "minimum_saved_steps": 20
+      },
+      {
+        "cell": [
+          30,
+          19
+        ],
+        "sides": [
+          [
+            31,
+            19
+          ],
+          [
+            29,
+            19
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 18,
+        "id": "O3",
+        "minimum_saved_steps": 16
+      },
+      {
+        "cell": [
+          8,
+          21
+        ],
+        "sides": [
+          [
+            9,
+            21
+          ],
+          [
+            7,
+            21
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 74,
+        "id": "O4",
+        "minimum_saved_steps": 72
+      },
+      {
+        "cell": [
+          24,
+          25
+        ],
+        "sides": [
+          [
+            25,
+            25
+          ],
+          [
+            23,
+            25
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 34,
+        "id": "O5",
+        "minimum_saved_steps": 32
+      },
+      {
+        "cell": [
+          14,
+          29
+        ],
+        "sides": [
+          [
+            15,
+            29
+          ],
+          [
+            13,
+            29
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 34,
+        "id": "O6",
+        "minimum_saved_steps": 32
+      }
+    ],
+    "benchmarks": {
+      "none": [
+        {
+          "steps": 1199,
+          "opened": 0,
+          "crossings": {},
+          "legs": [
+            {
+              "id": "o_welcome",
+              "steps": 0
+            },
+            {
+              "id": "lens",
+              "steps": 100
+            },
+            {
+              "id": "lens_mount",
+              "steps": 92
+            },
+            {
+              "id": "optical_bench",
+              "steps": 42
+            },
+            {
+              "id": "o_secret1",
+              "steps": 50
+            },
+            {
+              "id": "projector",
+              "steps": 14
+            },
+            {
+              "id": "prism",
+              "steps": 86
+            },
+            {
+              "id": "beam_plan",
+              "steps": 56
+            },
+            {
+              "id": "beam_triangle",
+              "steps": 46
+            },
+            {
+              "id": "beam_circle",
+              "steps": 110
+            },
+            {
+              "id": "beam_square",
+              "steps": 48
+            },
+            {
+              "id": "o_secret2",
+              "steps": 84
+            },
+            {
+              "id": "archive_order",
+              "steps": 4
+            },
+            {
+              "id": "beam_router",
+              "steps": 60
+            },
+            {
+              "id": "plate_dawn",
+              "steps": 152
+            },
+            {
+              "id": "plate_zenith",
+              "steps": 92
+            },
+            {
+              "id": "plate_dusk",
+              "steps": 8
+            },
+            {
+              "id": "reader_rule",
+              "steps": 80
+            },
+            {
+              "id": "o_secret3",
+              "steps": 12
+            },
+            {
+              "id": "archive_reader",
+              "steps": 40
+            },
+            {
+              "id": "observation_exit",
+              "steps": 23
+            }
+          ]
+        }
+      ],
+      "before": [
+        {
+          "steps": 1155,
+          "opened": 4,
+          "crossings": {
+            "3": 2,
+            "2": 2,
+            "4": 1,
+            "5": 2
+          },
+          "legs": [
+            {
+              "id": "o_welcome",
+              "steps": 0
+            },
+            {
+              "id": "lens",
+              "steps": 100
+            },
+            {
+              "id": "lens_mount",
+              "steps": 92
+            },
+            {
+              "id": "optical_bench",
+              "steps": 42
+            },
+            {
+              "id": "o_secret1",
+              "steps": 50
+            },
+            {
+              "id": "projector",
+              "steps": 14
+            },
+            {
+              "id": "prism",
+              "steps": 86
+            },
+            {
+              "id": "beam_plan",
+              "steps": 56
+            },
+            {
+              "id": "beam_triangle",
+              "steps": 46
+            },
+            {
+              "id": "beam_circle",
+              "steps": 106
+            },
+            {
+              "id": "beam_square",
+              "steps": 48
+            },
+            {
+              "id": "o_secret2",
+              "steps": 82
+            },
+            {
+              "id": "archive_order",
+              "steps": 4
+            },
+            {
+              "id": "beam_router",
+              "steps": 60
+            },
+            {
+              "id": "plate_dawn",
+              "steps": 152
+            },
+            {
+              "id": "plate_zenith",
+              "steps": 70
+            },
+            {
+              "id": "plate_dusk",
+              "steps": 8
+            },
+            {
+              "id": "reader_rule",
+              "steps": 64
+            },
+            {
+              "id": "o_secret3",
+              "steps": 12
+            },
+            {
+              "id": "archive_reader",
+              "steps": 40
+            },
+            {
+              "id": "observation_exit",
+              "steps": 23
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "steps": 883,
+          "opened": 6,
+          "crossings": {
+            "0": 2,
+            "1": 3,
+            "2": 2,
+            "3": 2,
+            "5": 3,
+            "4": 2
+          },
+          "legs": [
+            {
+              "id": "o_welcome",
+              "steps": 0
+            },
+            {
+              "id": "lens",
+              "steps": 100
+            },
+            {
+              "id": "lens_mount",
+              "steps": 72
+            },
+            {
+              "id": "optical_bench",
+              "steps": 26
+            },
+            {
+              "id": "o_secret1",
+              "steps": 50
+            },
+            {
+              "id": "projector",
+              "steps": 14
+            },
+            {
+              "id": "prism",
+              "steps": 86
+            },
+            {
+              "id": "beam_plan",
+              "steps": 36
+            },
+            {
+              "id": "beam_triangle",
+              "steps": 46
+            },
+            {
+              "id": "beam_circle",
+              "steps": 90
+            },
+            {
+              "id": "beam_square",
+              "steps": 32
+            },
+            {
+              "id": "o_secret2",
+              "steps": 12
+            },
+            {
+              "id": "archive_order",
+              "steps": 4
+            },
+            {
+              "id": "beam_router",
+              "steps": 28
+            },
+            {
+              "id": "plate_dawn",
+              "steps": 128
+            },
+            {
+              "id": "plate_zenith",
+              "steps": 40
+            },
+            {
+              "id": "plate_dusk",
+              "steps": 8
+            },
+            {
+              "id": "reader_rule",
+              "steps": 36
+            },
+            {
+              "id": "o_secret3",
+              "steps": 12
+            },
+            {
+              "id": "archive_reader",
+              "steps": 40
+            },
+            {
+              "id": "observation_exit",
+              "steps": 23
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "level": 4,
+    "before": [
+      {
+        "id": "T1",
+        "cell": [
+          26,
+          2
+        ],
+        "sides": [
+          [
+            25,
+            2
+          ],
+          [
+            27,
+            2
+          ]
+        ],
+        "axis": "x"
+      },
+      {
+        "id": "T2",
+        "cell": [
+          4,
+          2
+        ],
+        "sides": [
+          [
+            3,
+            2
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "axis": "x"
+      },
+      {
+        "id": "T3",
+        "cell": [
+          4,
+          16
+        ],
+        "sides": [
+          [
+            4,
+            15
+          ],
+          [
+            4,
+            17
+          ]
+        ],
+        "axis": "y"
+      },
+      {
+        "id": "T4",
+        "cell": [
+          26,
+          13
+        ],
+        "sides": [
+          [
+            25,
+            13
+          ],
+          [
+            27,
+            13
+          ]
+        ],
+        "axis": "x"
+      },
+      {
+        "id": "T5",
+        "cell": [
+          5,
+          26
+        ],
+        "sides": [
+          [
+            5,
+            25
+          ],
+          [
+            5,
+            27
+          ]
+        ],
+        "axis": "y"
+      },
+      {
+        "id": "T6",
+        "cell": [
+          25,
+          32
+        ],
+        "sides": [
+          [
+            25,
+            31
+          ],
+          [
+            25,
+            33
+          ]
+        ],
+        "axis": "y"
+      }
+    ],
+    "after": [
+      {
+        "cell": [
+          25,
+          4
+        ],
+        "sides": [
+          [
+            25,
+            3
+          ],
+          [
+            25,
+            5
+          ]
+        ],
+        "axis": "y",
+        "original_detour_steps": 22,
+        "id": "T1",
+        "minimum_saved_steps": 20
+      },
+      {
+        "cell": [
+          33,
+          6
+        ],
+        "sides": [
+          [
+            33,
+            5
+          ],
+          [
+            33,
+            7
+          ]
+        ],
+        "axis": "y",
+        "original_detour_steps": 22,
+        "id": "T2",
+        "minimum_saved_steps": 20
+      },
+      {
+        "cell": [
+          26,
+          21
+        ],
+        "sides": [
+          [
+            27,
+            21
+          ],
+          [
+            25,
+            21
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 14,
+        "id": "T3",
+        "minimum_saved_steps": 12
+      },
+      {
+        "cell": [
+          4,
+          25
+        ],
+        "sides": [
+          [
+            5,
+            25
+          ],
+          [
+            3,
+            25
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 78,
+        "id": "T4",
+        "minimum_saved_steps": 76
+      },
+      {
+        "cell": [
+          32,
+          25
+        ],
+        "sides": [
+          [
+            33,
+            25
+          ],
+          [
+            31,
+            25
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 14,
+        "id": "T5",
+        "minimum_saved_steps": 12
+      },
+      {
+        "cell": [
+          26,
+          29
+        ],
+        "sides": [
+          [
+            27,
+            29
+          ],
+          [
+            25,
+            29
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 30,
+        "id": "T6",
+        "minimum_saved_steps": 28
+      }
+    ],
+    "benchmarks": {
+      "none": [
+        {
+          "steps": 1039,
+          "opened": 0,
+          "crossings": {},
+          "legs": [
+            {
+              "id": "t_welcome",
+              "steps": 0
+            },
+            {
+              "id": "weight1",
+              "steps": 70
+            },
+            {
+              "id": "weight2",
+              "steps": 48
+            },
+            {
+              "id": "weight3",
+              "steps": 26
+            },
+            {
+              "id": "weight5",
+              "steps": 52
+            },
+            {
+              "id": "balance_note",
+              "steps": 82
+            },
+            {
+              "id": "t_secret1",
+              "steps": 56
+            },
+            {
+              "id": "test_balance",
+              "steps": 36
+            },
+            {
+              "id": "order_sun",
+              "steps": 26
+            },
+            {
+              "id": "order_moon",
+              "steps": 70
+            },
+            {
+              "id": "order_comet",
+              "steps": 48
+            },
+            {
+              "id": "magnet",
+              "steps": 56
+            },
+            {
+              "id": "cord",
+              "steps": 68
+            },
+            {
+              "id": "t_secret2",
+              "steps": 58
+            },
+            {
+              "id": "sequence_panel",
+              "steps": 38
+            },
+            {
+              "id": "service_duct",
+              "steps": 74
+            },
+            {
+              "id": "circuit_note",
+              "steps": 60
+            },
+            {
+              "id": "circuit_wiring",
+              "steps": 48
+            },
+            {
+              "id": "t_secret3",
+              "steps": 12
+            },
+            {
+              "id": "test_circuit",
+              "steps": 68
+            },
+            {
+              "id": "test_exit",
+              "steps": 43
+            }
+          ]
+        }
+      ],
+      "before": [
+        {
+          "steps": 1029,
+          "opened": 1,
+          "crossings": {
+            "0": 5
+          },
+          "legs": [
+            {
+              "id": "t_welcome",
+              "steps": 0
+            },
+            {
+              "id": "weight1",
+              "steps": 70
+            },
+            {
+              "id": "weight2",
+              "steps": 46
+            },
+            {
+              "id": "weight3",
+              "steps": 26
+            },
+            {
+              "id": "weight5",
+              "steps": 50
+            },
+            {
+              "id": "balance_note",
+              "steps": 80
+            },
+            {
+              "id": "t_secret1",
+              "steps": 54
+            },
+            {
+              "id": "test_balance",
+              "steps": 34
+            },
+            {
+              "id": "order_sun",
+              "steps": 26
+            },
+            {
+              "id": "order_moon",
+              "steps": 70
+            },
+            {
+              "id": "order_comet",
+              "steps": 48
+            },
+            {
+              "id": "magnet",
+              "steps": 56
+            },
+            {
+              "id": "cord",
+              "steps": 68
+            },
+            {
+              "id": "t_secret2",
+              "steps": 58
+            },
+            {
+              "id": "sequence_panel",
+              "steps": 38
+            },
+            {
+              "id": "service_duct",
+              "steps": 74
+            },
+            {
+              "id": "circuit_note",
+              "steps": 60
+            },
+            {
+              "id": "circuit_wiring",
+              "steps": 48
+            },
+            {
+              "id": "t_secret3",
+              "steps": 12
+            },
+            {
+              "id": "test_circuit",
+              "steps": 68
+            },
+            {
+              "id": "test_exit",
+              "steps": 43
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "steps": 963,
+          "opened": 5,
+          "crossings": {
+            "1": 1,
+            "0": 2,
+            "2": 1,
+            "4": 2,
+            "5": 1
+          },
+          "legs": [
+            {
+              "id": "t_welcome",
+              "steps": 0
+            },
+            {
+              "id": "weight1",
+              "steps": 70
+            },
+            {
+              "id": "weight2",
+              "steps": 48
+            },
+            {
+              "id": "weight3",
+              "steps": 26
+            },
+            {
+              "id": "weight5",
+              "steps": 52
+            },
+            {
+              "id": "balance_note",
+              "steps": 58
+            },
+            {
+              "id": "t_secret1",
+              "steps": 56
+            },
+            {
+              "id": "test_balance",
+              "steps": 36
+            },
+            {
+              "id": "order_sun",
+              "steps": 26
+            },
+            {
+              "id": "order_moon",
+              "steps": 70
+            },
+            {
+              "id": "order_comet",
+              "steps": 48
+            },
+            {
+              "id": "magnet",
+              "steps": 56
+            },
+            {
+              "id": "cord",
+              "steps": 68
+            },
+            {
+              "id": "t_secret2",
+              "steps": 58
+            },
+            {
+              "id": "sequence_panel",
+              "steps": 38
+            },
+            {
+              "id": "service_duct",
+              "steps": 62
+            },
+            {
+              "id": "circuit_note",
+              "steps": 60
+            },
+            {
+              "id": "circuit_wiring",
+              "steps": 36
+            },
+            {
+              "id": "t_secret3",
+              "steps": 12
+            },
+            {
+              "id": "test_circuit",
+              "steps": 68
+            },
+            {
+              "id": "test_exit",
+              "steps": 15
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "level": 5,
+    "before": [
+      {
+        "id": "F1",
+        "cell": [
+          6,
+          32
+        ],
+        "sides": [
+          [
+            6,
+            31
+          ],
+          [
+            6,
+            33
+          ]
+        ],
+        "axis": "y"
+      },
+      {
+        "id": "F2",
+        "cell": [
+          11,
+          18
+        ],
+        "sides": [
+          [
+            11,
+            17
+          ],
+          [
+            11,
+            19
+          ]
+        ],
+        "axis": "y"
+      },
+      {
+        "id": "F3",
+        "cell": [
+          30,
+          22
+        ],
+        "sides": [
+          [
+            29,
+            22
+          ],
+          [
+            31,
+            22
+          ]
+        ],
+        "axis": "x"
+      },
+      {
+        "id": "F4",
+        "cell": [
+          31,
+          30
+        ],
+        "sides": [
+          [
+            31,
+            29
+          ],
+          [
+            31,
+            31
+          ]
+        ],
+        "axis": "y"
+      },
+      {
+        "id": "F5",
+        "cell": [
+          11,
+          6
+        ],
+        "sides": [
+          [
+            11,
+            5
+          ],
+          [
+            11,
+            7
+          ]
+        ],
+        "axis": "y"
+      },
+      {
+        "id": "F6",
+        "cell": [
+          6,
+          7
+        ],
+        "sides": [
+          [
+            5,
+            7
+          ],
+          [
+            7,
+            7
+          ]
+        ],
+        "axis": "x"
+      }
+    ],
+    "after": [
+      {
+        "cell": [
+          6,
+          9
+        ],
+        "sides": [
+          [
+            7,
+            9
+          ],
+          [
+            5,
+            9
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 14,
+        "id": "F1",
+        "minimum_saved_steps": 12
+      },
+      {
+        "cell": [
+          20,
+          13
+        ],
+        "sides": [
+          [
+            21,
+            13
+          ],
+          [
+            19,
+            13
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 106,
+        "id": "F2",
+        "minimum_saved_steps": 48
+      },
+      {
+        "cell": [
+          1,
+          14
+        ],
+        "sides": [
+          [
+            1,
+            13
+          ],
+          [
+            1,
+            15
+          ]
+        ],
+        "axis": "y",
+        "original_detour_steps": 74,
+        "id": "F3",
+        "minimum_saved_steps": 72
+      },
+      {
+        "cell": [
+          28,
+          19
+        ],
+        "sides": [
+          [
+            29,
+            19
+          ],
+          [
+            27,
+            19
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 58,
+        "id": "F4",
+        "minimum_saved_steps": 48
+      },
+      {
+        "cell": [
+          20,
+          21
+        ],
+        "sides": [
+          [
+            21,
+            21
+          ],
+          [
+            19,
+            21
+          ]
+        ],
+        "axis": "x",
+        "original_detour_steps": 26,
+        "id": "F5",
+        "minimum_saved_steps": 24
+      },
+      {
+        "cell": [
+          33,
+          30
+        ],
+        "sides": [
+          [
+            33,
+            29
+          ],
+          [
+            33,
+            31
+          ]
+        ],
+        "axis": "y",
+        "original_detour_steps": 18,
+        "id": "F6",
+        "minimum_saved_steps": 16
+      }
+    ],
+    "benchmarks": {
+      "none": [
+        {
+          "steps": 595,
+          "opened": 0,
+          "crossings": {},
+          "legs": [
+            {
+              "id": "f_welcome",
+              "steps": 2
+            },
+            {
+              "id": "f_seal",
+              "steps": 4
+            },
+            {
+              "id": "f_hall_note",
+              "steps": 12
+            },
+            {
+              "id": "f_water_note",
+              "steps": 38
+            },
+            {
+              "id": "f_water_tip",
+              "steps": 70
+            },
+            {
+              "id": "f_secret1",
+              "steps": 14
+            },
+            {
+              "id": "f_dosing",
+              "steps": 12
+            },
+            {
+              "id": "f_tower_note",
+              "steps": 112
+            },
+            {
+              "id": "f_tower_tip",
+              "steps": 48
+            },
+            {
+              "id": "f_secret2",
+              "steps": 24
+            },
+            {
+              "id": "f_tower",
+              "steps": 52
+            },
+            {
+              "id": "f_assembly",
+              "steps": 30
+            },
+            {
+              "id": "f_rotor_note",
+              "steps": 34
+            },
+            {
+              "id": "f_rotor_wiring",
+              "steps": 52
+            },
+            {
+              "id": "f_secret3",
+              "steps": 40
+            },
+            {
+              "id": "f_rotors",
+              "steps": 36
+            },
+            {
+              "id": "f_exit",
+              "steps": 15
+            }
+          ]
+        },
+        {
+          "steps": 599,
+          "opened": 0,
+          "crossings": {},
+          "legs": [
+            {
+              "id": "f_welcome",
+              "steps": 2
+            },
+            {
+              "id": "f_seal",
+              "steps": 4
+            },
+            {
+              "id": "f_hall_note",
+              "steps": 12
+            },
+            {
+              "id": "f_tower_note",
+              "steps": 90
+            },
+            {
+              "id": "f_tower_tip",
+              "steps": 48
+            },
+            {
+              "id": "f_secret2",
+              "steps": 24
+            },
+            {
+              "id": "f_tower",
+              "steps": 52
+            },
+            {
+              "id": "f_water_note",
+              "steps": 64
+            },
+            {
+              "id": "f_water_tip",
+              "steps": 70
+            },
+            {
+              "id": "f_secret1",
+              "steps": 14
+            },
+            {
+              "id": "f_dosing",
+              "steps": 12
+            },
+            {
+              "id": "f_assembly",
+              "steps": 30
+            },
+            {
+              "id": "f_rotor_note",
+              "steps": 34
+            },
+            {
+              "id": "f_rotor_wiring",
+              "steps": 52
+            },
+            {
+              "id": "f_secret3",
+              "steps": 40
+            },
+            {
+              "id": "f_rotors",
+              "steps": 36
+            },
+            {
+              "id": "f_exit",
+              "steps": 15
+            }
+          ]
+        }
+      ],
+      "before": [
+        {
+          "steps": 591,
+          "opened": 2,
+          "crossings": {
+            "5": 1
+          },
+          "legs": [
+            {
+              "id": "f_welcome",
+              "steps": 2
+            },
+            {
+              "id": "f_seal",
+              "steps": 4
+            },
+            {
+              "id": "f_hall_note",
+              "steps": 12
+            },
+            {
+              "id": "f_water_note",
+              "steps": 38
+            },
+            {
+              "id": "f_water_tip",
+              "steps": 70
+            },
+            {
+              "id": "f_secret1",
+              "steps": 14
+            },
+            {
+              "id": "f_dosing",
+              "steps": 12
+            },
+            {
+              "id": "f_tower_note",
+              "steps": 112
+            },
+            {
+              "id": "f_tower_tip",
+              "steps": 48
+            },
+            {
+              "id": "f_secret2",
+              "steps": 24
+            },
+            {
+              "id": "f_tower",
+              "steps": 52
+            },
+            {
+              "id": "f_assembly",
+              "steps": 30
+            },
+            {
+              "id": "f_rotor_note",
+              "steps": 34
+            },
+            {
+              "id": "f_rotor_wiring",
+              "steps": 48
+            },
+            {
+              "id": "f_secret3",
+              "steps": 40
+            },
+            {
+              "id": "f_rotors",
+              "steps": 36
+            },
+            {
+              "id": "f_exit",
+              "steps": 15
+            }
+          ]
+        },
+        {
+          "steps": 595,
+          "opened": 2,
+          "crossings": {
+            "5": 1
+          },
+          "legs": [
+            {
+              "id": "f_welcome",
+              "steps": 2
+            },
+            {
+              "id": "f_seal",
+              "steps": 4
+            },
+            {
+              "id": "f_hall_note",
+              "steps": 12
+            },
+            {
+              "id": "f_tower_note",
+              "steps": 90
+            },
+            {
+              "id": "f_tower_tip",
+              "steps": 48
+            },
+            {
+              "id": "f_secret2",
+              "steps": 24
+            },
+            {
+              "id": "f_tower",
+              "steps": 52
+            },
+            {
+              "id": "f_water_note",
+              "steps": 64
+            },
+            {
+              "id": "f_water_tip",
+              "steps": 70
+            },
+            {
+              "id": "f_secret1",
+              "steps": 14
+            },
+            {
+              "id": "f_dosing",
+              "steps": 12
+            },
+            {
+              "id": "f_assembly",
+              "steps": 30
+            },
+            {
+              "id": "f_rotor_note",
+              "steps": 34
+            },
+            {
+              "id": "f_rotor_wiring",
+              "steps": 48
+            },
+            {
+              "id": "f_secret3",
+              "steps": 40
+            },
+            {
+              "id": "f_rotors",
+              "steps": 36
+            },
+            {
+              "id": "f_exit",
+              "steps": 15
+            }
+          ]
+        }
+      ],
+      "after": [
+        {
+          "steps": 559,
+          "opened": 4,
+          "crossings": {
+            "3": 2,
+            "5": 1,
+            "4": 1,
+            "0": 1
+          },
+          "legs": [
+            {
+              "id": "f_welcome",
+              "steps": 2
+            },
+            {
+              "id": "f_seal",
+              "steps": 4
+            },
+            {
+              "id": "f_hall_note",
+              "steps": 12
+            },
+            {
+              "id": "f_water_note",
+              "steps": 38
+            },
+            {
+              "id": "f_water_tip",
+              "steps": 70
+            },
+            {
+              "id": "f_secret1",
+              "steps": 14
+            },
+            {
+              "id": "f_dosing",
+              "steps": 12
+            },
+            {
+              "id": "f_tower_note",
+              "steps": 112
+            },
+            {
+              "id": "f_tower_tip",
+              "steps": 40
+            },
+            {
+              "id": "f_secret2",
+              "steps": 24
+            },
+            {
+              "id": "f_tower",
+              "steps": 32
+            },
+            {
+              "id": "f_assembly",
+              "steps": 26
+            },
+            {
+              "id": "f_rotor_note",
+              "steps": 34
+            },
+            {
+              "id": "f_rotor_wiring",
+              "steps": 48
+            },
+            {
+              "id": "f_secret3",
+              "steps": 40
+            },
+            {
+              "id": "f_rotors",
+              "steps": 36
+            },
+            {
+              "id": "f_exit",
+              "steps": 15
+            }
+          ]
+        },
+        {
+          "steps": 563,
+          "opened": 4,
+          "crossings": {
+            "3": 2,
+            "5": 1,
+            "4": 1,
+            "0": 1
+          },
+          "legs": [
+            {
+              "id": "f_welcome",
+              "steps": 2
+            },
+            {
+              "id": "f_seal",
+              "steps": 4
+            },
+            {
+              "id": "f_hall_note",
+              "steps": 12
+            },
+            {
+              "id": "f_tower_note",
+              "steps": 90
+            },
+            {
+              "id": "f_tower_tip",
+              "steps": 40
+            },
+            {
+              "id": "f_secret2",
+              "steps": 24
+            },
+            {
+              "id": "f_tower",
+              "steps": 32
+            },
+            {
+              "id": "f_water_note",
+              "steps": 60
+            },
+            {
+              "id": "f_water_tip",
+              "steps": 70
+            },
+            {
+              "id": "f_secret1",
+              "steps": 14
+            },
+            {
+              "id": "f_dosing",
+              "steps": 12
+            },
+            {
+              "id": "f_assembly",
+              "steps": 30
+            },
+            {
+              "id": "f_rotor_note",
+              "steps": 34
+            },
+            {
+              "id": "f_rotor_wiring",
+              "steps": 48
+            },
+            {
+              "id": "f_secret3",
+              "steps": 40
+            },
+            {
+              "id": "f_rotors",
+              "steps": 36
+            },
+            {
+              "id": "f_exit",
+              "steps": 15
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

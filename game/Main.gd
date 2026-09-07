@@ -1,6 +1,7 @@
 extends Node3D
 const TILE=2.6
 const MOVE_SPEED=7.0
+const SHORTCUT_LAYOUT_REVISION=2
 const SAVE="user://experience16_v4.json"
 const LEGACY_SAVE="user://experience16_v2.json"
 var localization=preload("res://Localization.gd").new()
@@ -587,7 +588,7 @@ func show_title():
 	modal_box.add_child(button("Choisir un chapitre",show_chapters,not has_save()))
 	modal_box.add_child(button("Sélection de niveau / test",show_level_select))
 	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("VERSION 0.9 · LE DÉFI DE FOLAMOUR",13)
+	paragraph("VERSION 0.10 · LES RACCOURCIS",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
 func show_chapters():
@@ -1169,7 +1170,7 @@ func show_win():
 	modal_box.add_child(button("Sauvegarder et revenir au menu",show_title))
 func save_game():
 	if test_mode: return
-	var data={"version":4,"level":level,"level_stats":level_stats,"dial_settings":dial_settings,"puzzle_states":puzzle_states,"walked":walked,"open_shortcuts":open_shortcuts,"journal_order":journal_order,"position":[player.position.x,player.position.y,player.position.z],"seen":seen,"done":done,"journal":journal,"hints":hints,"inventory":inventory,"elapsed":elapsed,"errors":errors,"won":won,"zoom":zoom,"muted":muted}
+	var data={"version":4,"shortcut_layout_revision":SHORTCUT_LAYOUT_REVISION,"level":level,"level_stats":level_stats,"dial_settings":dial_settings,"puzzle_states":puzzle_states,"walked":walked,"open_shortcuts":open_shortcuts,"journal_order":journal_order,"position":[player.position.x,player.position.y,player.position.z],"seen":seen,"done":done,"journal":journal,"hints":hints,"inventory":inventory,"elapsed":elapsed,"errors":errors,"won":won,"zoom":zoom,"muted":muted}
 	var f=FileAccess.open(SAVE+".tmp",FileAccess.WRITE)
 	if f:
 		f.store_string(JSON.stringify(data))
@@ -1197,7 +1198,7 @@ func load_game():
 	journal=data.get("journal",{})
 	journal_order=data.get("journal_order",journal.keys())
 	walked=data.get("walked",{})
-	open_shortcuts=data.get("open_shortcuts",{})
+	restore_shortcuts(data)
 	sync_shortcuts()
 	hints=data.get("hints",{})
 	inventory=data.get("inventory",{})
@@ -1207,7 +1208,32 @@ func load_game():
 	muted=data.get("muted",false)
 	var p=data.get("position",[start_cell.x*TILE,0.1,start_cell.y*TILE])
 	if floor_at(int(round(p[0]/TILE)),int(round(p[2]/TILE))): player.position=Vector3(p[0],0.1,p[2])
+	else:
+		# A checkpoint may be inside a shortcut wall removed by the new layout.
+		# Restore to the nearest already-walked base-floor cell, never unknown ground.
+		var best=INF
+		for y in range(grid.size()):
+			for x in range(grid[y].size()):
+				if grid[y][x]==0 or not walked.has(key(x,y)):continue
+				var candidate=Vector3(x*TILE,0.1,y*TILE)
+				var distance=candidate.distance_squared_to(Vector3(p[0],0.1,p[2]))
+				if distance<best:best=distance;player.position=candidate
 	if data.get("won",false): call_deferred("show_win")
+func restore_shortcuts(data):
+	open_shortcuts={}
+	var migrated=int(data.get("shortcut_layout_revision",0))!=SHORTCUT_LAYOUT_REVISION
+	for sc in shortcuts:
+		if migrated:
+			journal.erase(sc.id)
+			journal_order.erase(sc.id)
+		# IDs alone are insufficient after a relocation. Both current sides must
+		# have been physically visited; fog visibility never unlocks a shortcut.
+		if walked.has(key(sc.sides[0][0],sc.sides[0][1])) and walked.has(key(sc.sides[1][0],sc.sides[1][1])):
+			open_shortcuts[sc.id]=true
+			seen[key(sc.cell[0],sc.cell[1])]=true
+			if migrated or not journal.has(sc.id):
+				journal[sc.id]="Raccourci "+sc.id+" révélé\nVous avez parcouru les deux côtés du mur. Ce passage reste ouvert dans les deux sens et apparaît sur la carte."
+				if not journal_order.has(sc.id):journal_order.append(sc.id)
 func chime(frequency):
 	if muted or test_mode: return
 	var tone="success" if frequency>=800 else "error" if frequency<200 else "pickup" if frequency>=600 else "read"

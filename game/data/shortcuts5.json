@@ -1,110 +1,122 @@
 [
   {
-    "id": "F1",
     "cell": [
       6,
-      32
+      9
     ],
     "sides": [
       [
-        6,
-        31
+        7,
+        9
       ],
       [
-        6,
-        33
+        5,
+        9
       ]
     ],
-    "axis": "y"
+    "axis": "x",
+    "original_detour_steps": 14,
+    "id": "F1",
+    "minimum_saved_steps": 12
   },
   {
+    "cell": [
+      20,
+      13
+    ],
+    "sides": [
+      [
+        21,
+        13
+      ],
+      [
+        19,
+        13
+      ]
+    ],
+    "axis": "x",
+    "original_detour_steps": 106,
     "id": "F2",
+    "minimum_saved_steps": 48
+  },
+  {
     "cell": [
-      11,
-      18
+      1,
+      14
     ],
     "sides": [
       [
-        11,
-        17
+        1,
+        13
       ],
       [
-        11,
-        19
+        1,
+        15
       ]
     ],
-    "axis": "y"
+    "axis": "y",
+    "original_detour_steps": 74,
+    "id": "F3",
+    "minimum_saved_steps": 72
   },
   {
-    "id": "F3",
     "cell": [
-      30,
-      22
+      28,
+      19
     ],
     "sides": [
       [
         29,
-        22
+        19
       ],
       [
-        31,
-        22
+        27,
+        19
       ]
     ],
-    "axis": "x"
+    "axis": "x",
+    "original_detour_steps": 58,
+    "id": "F4",
+    "minimum_saved_steps": 48
   },
   {
-    "id": "F4",
     "cell": [
-      31,
+      20,
+      21
+    ],
+    "sides": [
+      [
+        21,
+        21
+      ],
+      [
+        19,
+        21
+      ]
+    ],
+    "axis": "x",
+    "original_detour_steps": 26,
+    "id": "F5",
+    "minimum_saved_steps": 24
+  },
+  {
+    "cell": [
+      33,
       30
     ],
     "sides": [
       [
-        31,
+        33,
         29
       ],
       [
-        31,
+        33,
         31
       ]
     ],
-    "axis": "y"
-  },
-  {
-    "id": "F5",
-    "cell": [
-      11,
-      6
-    ],
-    "sides": [
-      [
-        11,
-        5
-      ],
-      [
-        11,
-        7
-      ]
-    ],
-    "axis": "y"
-  },
-  {
+    "axis": "y",
+    "original_detour_steps": 18,
     "id": "F6",
-    "cell": [
-      6,
-      7
-    ],
-    "sides": [
-      [
-        5,
-        7
-      ],
-      [
-        7,
-        7
-      ]
-    ],
-    "axis": "x"
+    "minimum_saved_steps": 16
   }
 ]

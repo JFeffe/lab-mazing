@@ -551,5 +551,6 @@
   "Commande ": "Control ",
   "Dosage refusé : il faut exactement 4 L dans le grand réservoir.": "Dose rejected: the large tank must contain exactly 4 L.",
   "Transfert incomplet : les trois disques doivent être sur C.": "Transfer incomplete: all three discs must be on C.",
-  "Instable : visez A vers EST, B vers SUD et C vers OUEST.": "Unstable: point A EAST, B SOUTH and C WEST."
+  "Instable : visez A vers EST, B vers SUD et C vers OUEST.": "Unstable: point A EAST, B SOUTH and C WEST.",
+  "VERSION 0.10 · LES RACCOURCIS": "VERSION 0.10 · SHORTCUTS"
 }

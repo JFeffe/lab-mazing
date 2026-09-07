@@ -58,5 +58,5 @@ e=event('f_exit','exit',[17,1],405,('Validation du prototype','Prototype certifi
 prose(e,action=('Présenter le résultat à Folamour','Show Folamour the result'),success=('Prototype ZÉRO stabilisé. Défi accompli.','Prototype ZERO stabilized. Challenge complete.'))
 items={}
 for id,fr,eng,desc,edesc in [('transfer_seal','Joint de transfert','Transfer seal','Joint réutilisable pour le doseur 203.','Reusable seal for dispenser 203.'),('coolant4','Charge de 4 litres','4-litre charge','Refroidissement pour la station 103.','Coolant for station 103.'),('intact_core','Noyau intact','Intact core','Transféré sur C ; à assembler en 103.','Transferred to C; assemble at 103.'),('stable_cartridge','Cartouche stable','Stable cartridge','À installer dans le stabilisateur 403.','Install in stabilizer 403.')]:items[id]={'title':tr(fr,eng),'text':tr(desc,edesc)}
-for name,obj in [('maze5',{'grid':g,'start':[17,21]}),('events5',E),('items5',items),('shortcuts5',S),('en',en)]: (D/(name+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
-print('Built level 5:',len(E),'events;',len(S),'shortcuts')
+for name,obj in [('maze5',{'grid':g,'start':[17,21]}),('events5',E),('items5',items),('en',en)]: (D/(name+'.json')).write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
+print('Built level 5:',len(E),'events. Shortcut placement is maintained by scripts/optimize_shortcuts.py.')

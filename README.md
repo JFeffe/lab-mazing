@@ -1,6 +1,6 @@
 # Lab-mazing — Le Labyrinthe de Folamour
 
-Version 0.9 : jeu solo 3D isométrique, chapitre 1 complet (cinq niveaux), français/anglais, déplacement au clic et au toucher.
+Version 0.10 : jeu solo 3D isométrique, chapitre 1 complet (cinq niveaux), français/anglais, déplacement au clic et au toucher.
 
 Jouer dans le navigateur : https://jfeffe.github.io/lab-mazing/
 
@@ -11,6 +11,13 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Nouveautés v0.10
+Les 32 raccourcis des cinq niveaux sont réévalués pour réduire les retours dans les couloirs déjà explorés. Chaque passage économise au moins 12 pas entre ses deux côtés, même lorsque les autres raccourcis de sa zone sont ouverts. Les trajets de référence sont plus courts pour chacun des cinq niveaux ; `game/tests/shortcut_audit.json` conserve le détail avant/après et les conditions de mesure.
+
+L’apparition conserve sa règle : passage physique des deux côtés du mur. Les liens ne contournent aucun verrou d’énigme ni sas à sens unique. À la reprise, les anciens identifiants sont recalculés à partir des cases réellement parcourues ; une position dans un ancien raccourci redevenu mur est replacée sur le sol connu le plus proche.
+
+Validation : `python game/tests/validate_shortcuts.py` et Godot avec `--headless --path game --fixed-fps 60 --script res://tests/verify_shortcuts.gd`. Les cartes et guides complets des cinq niveaux sont générés avec `python scripts/document_campaign.py /chemin/de/sortie`. Les documents historiques restent archivés sous leurs versions.
 
 ## Nouveautés v0.9
 Le niveau 5 conclut le chapitre 1 : hall central, ailes ouest et est explorables dans les deux ordres, puis aile nord verrouillée. Trois nouvelles manipulations : dosage 5/3 litres, transfert de trois disques et rotors couplés. 18 repères, trois secrets, six raccourcis.
