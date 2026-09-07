@@ -85,6 +85,7 @@ var audio:AudioStreamPlayer
 var rng=RandomNumberGenerator.new()
 var muted=false
 var test_mode=false
+var box_mesh_cache={}
 
 func _ready():
 	rng.seed=16
@@ -135,9 +136,11 @@ func material(color,glow=false):
 
 func box(parent,dimensions,pos,mat):
 	var mesh=MeshInstance3D.new()
-	var shape=BoxMesh.new()
-	shape.size=dimensions
-	mesh.mesh=shape
+	if not box_mesh_cache.has(dimensions):
+		var shape=BoxMesh.new()
+		shape.size=dimensions
+		box_mesh_cache[dimensions]=shape
+	mesh.mesh=box_mesh_cache[dimensions]
 	mesh.position=pos
 	mesh.material_override=mat
 	parent.add_child(mesh)
@@ -431,6 +434,9 @@ func content_width():
 func configure_viewport():
 	last_window_size=get_window().size
 	ui_mobile=mini(last_window_size.x,last_window_size.y)<720 or DisplayServer.is_touchscreen_available()
+	# Keep UI sharp; cap only the 3D buffer on high-density touch screens.
+	Engine.max_fps=30 if ui_mobile else 60
+	get_viewport().scaling_3d_scale=clampf(960.0/maxf(last_window_size.x,last_window_size.y),0.25,0.75) if ui_mobile else 1.0
 	if ui_mobile:
 		var width=480 if last_window_size.x<last_window_size.y else 960
 		get_window().content_scale_size=Vector2i(width,roundi(float(width)*last_window_size.y/maxi(1,last_window_size.x)))
@@ -818,16 +824,21 @@ func update_fog():
 		seen[k]=true
 		if not floor_at(x,y): continue
 		for d in [Vector2i(1,0),Vector2i(-1,0),Vector2i(0,1),Vector2i(0,-1)]: frontier.append([x+d.x,y+d.y,item[2]+1])
-	for k in floors: floors[k].visible=seen.has(k) and (not wall_bodies.has(k) or shortcut_cells.has(k))
+	for k in floors: floors[k].visible=render_near(floors[k]) and seen.has(k) and (not wall_bodies.has(k) or shortcut_cells.has(k))
 	for k in walls:
 		var w=walls[k]
-		w.visible=seen.has(k) and not shortcut_cells.has(k)
+		w.visible=render_near(w) and seen.has(k) and not shortcut_cells.has(k)
+		if not w.visible:continue
 		var diff=w.position-player.position
 		w.scale.y=0.12 if diff.x+diff.z>0 and abs(diff.x-diff.z)<5 and Vector2(diff.x,diff.z).length()<7 else 1.0
-	for e in events: event_nodes[e.id].visible=seen.has(key(e.cell[0],e.cell[1])) and not (e.kind=="pickup" and done.has(e.id))
+	for e in events: event_nodes[e.id].visible=render_near(event_nodes[e.id]) and seen.has(key(e.cell[0],e.cell[1])) and not (e.kind=="pickup" and done.has(e.id))
 	for id in machine_parts:
 		if id.begins_with("pipe_"): machine_parts[id].visible=seen.has(machine_parts[id].get_meta("fog_cell"))
 	mini_map.queue_redraw()
+func render_near(node):
+	# Conservative horizontal radius covers maximum zoom in portrait and landscape.
+	var radius=maxf(zoom,camera.size)*1.6+TILE*3
+	return Vector2(node.global_position.x-player.position.x,node.global_position.z-player.position.z).length_squared()<radius*radius
 func find_nearest():
 	nearest={}
 	var best=3.0
@@ -1462,7 +1473,7 @@ func _process(delta):
 	update_ambience()
 	if level in [5,6] and is_instance_valid(folamour):
 		folamour.visible=playing and seen.has(key(roundi(folamour.position.x/TILE),roundi(folamour.position.z/TILE)))
-	for prop in decor: prop.visible=seen.has(prop.get_meta("fog_cell"))
+	for prop in decor: prop.visible=render_near(prop) and seen.has(prop.get_meta("fog_cell"))
 	if not playing or modal_open or level!=2 or machine_parts.is_empty(): return
 	if done.has("generator") and machine_parts.has("generator"): machine_parts.generator.rotate_y(delta*3)
 	if machine_parts.has("weight"): machine_parts.weight.position.y=lerpf(machine_parts.weight.position.y,1.75 if done.has("hoist") else 0.35,minf(1,delta*2))

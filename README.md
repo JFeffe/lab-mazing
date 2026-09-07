@@ -72,3 +72,7 @@ Le guide historique v0.6 décrit le ZIP avec export précompilé. Ce dépôt uti
 Progression, navigation, interfaces et traductions vérifiées dans Godot. La v0.6 a été testée sur cellulaire par le joueur. La v0.8 vérifie également les trois nouvelles énigmes en français/anglais, les panneaux en portrait/paysage, l’unicité des solutions et la reprise de chaque mécanisme partiellement résolu.
 
 Licences des composants tiers fournies à la racine.
+
+### Correctif mobile v0.12.1
+
+Partage des BoxMesh (serres : 4031 blocs / 54 ressources), limitation à 30 FPS sur écran tactile, résolution 3D plafonnée indépendamment des textes, décor distant masqué sans effacer la carte et verre opaque sur le Web. Énigmes, sauvegardes et solutions v0.12 conservées. Validation headless : parcours niveau 6, confort mobile, raccourcis, bilan de chapitre et partage des ressources des six niveaux. Les performances et les fermetures du navigateur restent à confirmer sur appareil réel.

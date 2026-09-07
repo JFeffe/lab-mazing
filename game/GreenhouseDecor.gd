@@ -32,7 +32,8 @@ static func model(g,root,e,gold,dark):
 static func decorate(g):
 	var glass=StandardMaterial3D.new()
 	glass.albedo_color=Color(.37,.7,.61,.28)
-	glass.transparency=BaseMaterial3D.TRANSPARENCY_ALPHA
+	glass.transparency=BaseMaterial3D.TRANSPARENCY_DISABLED if OS.has_feature("web") else BaseMaterial3D.TRANSPARENCY_ALPHA
+	if OS.has_feature("web"):glass.albedo_color=Color("76a798")
 	glass.roughness=.25
 	var frame=g.material(Color("476d60"))
 	for k in g.walls:
