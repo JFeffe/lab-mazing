@@ -1,0 +1,388 @@
+[
+  {
+    "id": "m_welcome",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "100",
+    "title": "Département des machines",
+    "text": "L’ascenseur est immobilisé. Le générateur du hall, les circuits hydrauliques et le treuil doivent être remis en service. Les établis permettent d’assembler les pièces récupérées. Les manomètres portent les réglages du circuit.\n\n« Nous avions un technicien. Vous avez deux mains. La différence est administrative. » — Folamour"
+  },
+  {
+    "id": "tool_handle",
+    "kind": "pickup",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "101",
+    "title": "Manche à cliquet",
+    "text": "Une poignée robuste. Son logement carré est vide ; elle ne peut saisir aucun écrou en l’état.",
+    "resource": "tool_handle",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "tool_head",
+    "kind": "pickup",
+    "cell": [
+      1,
+      9
+    ],
+    "ref": "102",
+    "title": "Douille carrée",
+    "text": "Une douille de grande taille, détachée de sa poignée. Le carré d’entraînement porte la même empreinte que celui d’un manche à cliquet.",
+    "resource": "tool_head",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "tool_bench",
+    "kind": "craft",
+    "cell": [
+      15,
+      5
+    ],
+    "ref": "103",
+    "title": "Établi d’assemblage",
+    "text": "Un étau, un axe de fixation et le dessin d’une clé à douille en deux parties. Le dessin montre un manche et une douille réunis par l’axe.",
+    "requires": [
+      "tool_handle",
+      "tool_head"
+    ],
+    "grants": {
+      "socket_tool": 1
+    },
+    "action": "Assembler la clé à douille",
+    "model": "bench",
+    "success": "La douille est fixée au manche. Vous récupérez une clé à douille complète."
+  },
+  {
+    "id": "generator",
+    "kind": "mechanism",
+    "cell": [
+      29,
+      7
+    ],
+    "ref": "104",
+    "title": "Générateur du hall",
+    "text": "Le volant d’entraînement est grippé. Au centre, un écrou carré permet de le débloquer. Une commande de démarrage est reliée au verrou du département hydraulique.",
+    "requires": [
+      "socket_tool"
+    ],
+    "opens": [
+      "power_gate"
+    ],
+    "model": "generator",
+    "success": "La clé reste engagée dans le volant. Le générateur démarre ; le verrou hydraulique se relève."
+  },
+  {
+    "id": "power_gate",
+    "kind": "door",
+    "cell": [
+      17,
+      11
+    ],
+    "ref": "105",
+    "title": "Porte du département hydraulique",
+    "text": "Une serrure électromagnétique, reliée au générateur du hall. Aucun clavier ni serrure manuelle.",
+    "axis": "y",
+    "controlled_by": "generator"
+  },
+  {
+    "id": "coupling_notice",
+    "kind": "clue",
+    "cell": [
+      3,
+      3
+    ],
+    "ref": "106",
+    "title": "Plan de l’accouplement",
+    "text": "Le croquis du générateur représente un écrou carré et une clé à douille. Une annotation indique : « Assemblage à l’étau avant mise en service. »"
+  },
+  {
+    "id": "valve_wheel",
+    "kind": "pickup",
+    "cell": [
+      33,
+      13
+    ],
+    "ref": "201",
+    "title": "Volant de distribution",
+    "text": "Un volant à trois branches. Une plaquette porte l’inscription : « Collecteur central — axe principal ». Il manque sur le collecteur du département hydraulique.",
+    "resource": "valve_wheel",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "gauge_pump",
+    "kind": "clue",
+    "cell": [
+      1,
+      15
+    ],
+    "ref": "202",
+    "title": "Manomètre de la pompe",
+    "text": "POMPE — conduite rouge.\nL’aiguille et les trois traits du cadran indiquent 3. Une gravure rappelle que les valeurs des cadrans sont les consignes de mise en service.",
+    "model": "gauge",
+    "value": 3,
+    "pipe_color": "d46052"
+  },
+  {
+    "id": "gauge_filter",
+    "kind": "clue",
+    "cell": [
+      31,
+      19
+    ],
+    "ref": "203",
+    "title": "Manomètre du filtre",
+    "text": "FILTRE — conduite turquoise.\nL’aiguille est alignée sur le premier trait : 1.",
+    "model": "gauge",
+    "value": 1,
+    "pipe_color": "59bfc3"
+  },
+  {
+    "id": "gauge_tank",
+    "kind": "clue",
+    "cell": [
+      9,
+      21
+    ],
+    "ref": "204",
+    "title": "Manomètre de la cuve",
+    "text": "CUVE — conduite jaune.\nL’aiguille est alignée sur le deuxième trait : 2.",
+    "model": "gauge",
+    "value": 2,
+    "pipe_color": "e6c45c"
+  },
+  {
+    "id": "pipe_plan",
+    "kind": "clue",
+    "cell": [
+      13,
+      13
+    ],
+    "ref": "205",
+    "title": "Repérage des conduites",
+    "text": "La gravure suit les trois conduites jusqu’au collecteur :\nRETOUR ← CUVE\nDÉPART ← POMPE\nPURGE ← FILTRE\n\nLes cadrans des machines fournissent les consignes. Les trois molettes du collecteur sont graduées de 0 à 3."
+  },
+  {
+    "id": "water_manifold",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      17
+    ],
+    "ref": "206",
+    "title": "Collecteur hydraulique",
+    "text": "Il manque le volant principal. Trois molettes commandent RETOUR, DÉPART et PURGE. Chaque conduite rejoint un manomètre dans le département.",
+    "requires": [
+      "valve_wheel"
+    ],
+    "dials": [
+      "RETOUR",
+      "DÉPART",
+      "PURGE"
+    ],
+    "answer": "231",
+    "question": "Régler les molettes selon les conduites et leurs manomètres.",
+    "opens": [
+      "water_gate"
+    ],
+    "model": "valves",
+    "success": "La pompe se stabilise. Le bassin se vide et la passerelle vers le treuil devient accessible.",
+    "installed_text": "Le volant principal est en place. Les trois molettes commandent RETOUR, DÉPART et PURGE. Les conduites permettent de retrouver les manomètres correspondants."
+  },
+  {
+    "id": "water_gate",
+    "kind": "door",
+    "cell": [
+      25,
+      23
+    ],
+    "ref": "207",
+    "title": "Passerelle du bassin",
+    "text": "Une barrière interdit la passerelle tant que le bassin n’est pas vidangé. Sa commande dépend du collecteur hydraulique.",
+    "axis": "y",
+    "controlled_by": "water_manifold"
+  },
+  {
+    "id": "copper_coil",
+    "kind": "pickup",
+    "cell": [
+      1,
+      13
+    ],
+    "ref": "208",
+    "title": "Bobine de cuivre",
+    "text": "Une bobine intacte pour un relais de puissance. Elle doit être montée autour d’un noyau isolant avant d’être utilisée.",
+    "resource": "copper_coil",
+    "amount": 1,
+    "appearance": "artifact"
+  },
+  {
+    "id": "ceramic_core",
+    "kind": "pickup",
+    "cell": [
+      33,
+      21
+    ],
+    "ref": "209",
+    "title": "Noyau céramique",
+    "text": "Un noyau isolant. Sa forme et ses contacts correspondent au support d’un relais de puissance.",
+    "resource": "ceramic_core",
+    "amount": 1,
+    "appearance": "artifact"
+  },
+  {
+    "id": "relay_bench",
+    "kind": "craft",
+    "cell": [
+      3,
+      19
+    ],
+    "ref": "210",
+    "title": "Établi électrique",
+    "text": "Le gabarit de montage présente un noyau céramique entouré d’une bobine. Deux contacts attendent le relais ainsi formé.",
+    "requires": [
+      "copper_coil",
+      "ceramic_core"
+    ],
+    "grants": {
+      "power_relay": 1
+    },
+    "action": "Assembler le relais de puissance",
+    "model": "bench",
+    "success": "La bobine est fixée autour du noyau. Vous récupérez un relais de puissance."
+  },
+  {
+    "id": "hoist_cable",
+    "kind": "pickup",
+    "cell": [
+      1,
+      25
+    ],
+    "ref": "301",
+    "title": "Câble de levage",
+    "text": "Un câble neuf, dépourvu de crochet. Il est dimensionné pour le treuil du contrepoids.",
+    "resource": "hoist_cable",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "hoist_hook",
+    "kind": "pickup",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "302",
+    "title": "Crochet de sécurité",
+    "text": "Un crochet avec une goupille intacte. Il peut être fixé à un câble pour rattacher le contrepoids au treuil.",
+    "resource": "hoist_hook",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "hoist",
+    "kind": "mechanism",
+    "cell": [
+      9,
+      29
+    ],
+    "ref": "303",
+    "title": "Treuil du contrepoids",
+    "text": "Le contrepoids repose au sol. Le câble s’est rompu et son crochet a disparu. Le treuil dispose d’un support où assembler et tendre le remplacement.",
+    "requires": [
+      "hoist_cable",
+      "hoist_hook"
+    ],
+    "model": "hoist",
+    "action": "Monter le câble et son crochet",
+    "success": "Le câble et le crochet sont assemblés sur le treuil. Le contrepoids remonte ; le frein de l’ascenseur est libéré."
+  },
+  {
+    "id": "lift_power",
+    "kind": "mechanism",
+    "cell": [
+      29,
+      29
+    ],
+    "ref": "304",
+    "title": "Armoire de l’ascenseur",
+    "text": "Le logement du relais de puissance est vide. Le schéma représente une bobine entourant un noyau isolant. Les ateliers électriques se trouvent dans le département hydraulique.",
+    "requires": [
+      "power_relay"
+    ],
+    "model": "cabinet",
+    "success": "Le relais est installé. L’armoire alimente les commandes de l’ascenseur."
+  },
+  {
+    "id": "lift_notice",
+    "kind": "clue",
+    "cell": [
+      33,
+      25
+    ],
+    "ref": "305",
+    "title": "Schéma de sécurité de l’ascenseur",
+    "text": "Deux témoins sont reliés à la cabine : ALIMENTATION et CONTREPOIDS. Le départ est impossible tant que l’un des deux circuits est ouvert.\n\nLa passerelle reste praticable après vidange : les ateliers sont accessibles si une pièce a été oubliée."
+  },
+  {
+    "id": "lift_exit",
+    "kind": "exit",
+    "cell": [
+      17,
+      34
+    ],
+    "ref": "306",
+    "title": "Commandes de l’ascenseur",
+    "text": "Le bouton de départ est relié à deux témoins de sécurité. L’ascenseur attend son alimentation et son contrepoids.",
+    "axis": "y",
+    "prerequisites": [
+      "lift_power",
+      "hoist"
+    ],
+    "action": "Monter dans l’ascenseur",
+    "success": "Le moteur entraîne la cabine. Vous quittez le département des machines."
+  },
+  {
+    "id": "secret_overtime",
+    "kind": "clue",
+    "cell": [
+      33,
+      9
+    ],
+    "ref": "107",
+    "title": "Feuille d’heures",
+    "text": "« Temps passé à réparer le générateur : 4 heures. Temps passé à expliquer pourquoi il ne fallait pas y verser de café : 6 heures. » — Ancien technicien",
+    "secret": true
+  },
+  {
+    "id": "secret_manual",
+    "kind": "clue",
+    "cell": [
+      1,
+      21
+    ],
+    "ref": "211",
+    "title": "Manuel de maintenance",
+    "text": "Page 1 : Ne rien forcer.\nPage 2, manuscrite : Sauf si le docteur regarde.\nToutes les autres pages servent à caler une table.",
+    "secret": true
+  },
+  {
+    "id": "secret_letter",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "307",
+    "title": "Message du technicien",
+    "text": "« Si vous êtes parvenu jusqu’ici, vous savez déjà faire mon travail. Ne le dites surtout pas au docteur. Il vous proposera un stage. »",
+    "secret": true
+  }
+]

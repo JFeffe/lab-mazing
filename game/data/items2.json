@@ -1,0 +1,10 @@
+{
+  "socket_tool": {
+    "title": "Clé à douille assemblée",
+    "text": "Le manche et la douille sont solidaires. La tête carrée permet de débloquer le volant du générateur."
+  },
+  "power_relay": {
+    "title": "Relais de puissance",
+    "text": "La bobine de cuivre est montée sur le noyau céramique. Le relais peut être installé dans l’armoire de l’ascenseur."
+  }
+}

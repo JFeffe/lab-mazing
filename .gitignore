@@ -1,0 +1,7 @@
+.godot/
+**/.godot/
+*.exe
+*.zip
+*.tmp
+.DS_Store
+release/

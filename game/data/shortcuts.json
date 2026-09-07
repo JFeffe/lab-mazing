@@ -1,0 +1,154 @@
+[
+  {
+    "id": "R1",
+    "cell": [
+      5,
+      2
+    ],
+    "sides": [
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        1
+      ]
+    ],
+    "axis": "y",
+    "original_detour_cells": 74
+  },
+  {
+    "id": "R2",
+    "cell": [
+      17,
+      10
+    ],
+    "sides": [
+      [
+        17,
+        11
+      ],
+      [
+        17,
+        9
+      ]
+    ],
+    "axis": "y",
+    "original_detour_cells": 54
+  },
+  {
+    "id": "R3",
+    "cell": [
+      13,
+      2
+    ],
+    "sides": [
+      [
+        13,
+        3
+      ],
+      [
+        13,
+        1
+      ]
+    ],
+    "axis": "y",
+    "original_detour_cells": 38
+  },
+  {
+    "id": "R4",
+    "cell": [
+      12,
+      23
+    ],
+    "sides": [
+      [
+        13,
+        23
+      ],
+      [
+        11,
+        23
+      ]
+    ],
+    "axis": "x",
+    "original_detour_cells": 114
+  },
+  {
+    "id": "R5",
+    "cell": [
+      22,
+      15
+    ],
+    "sides": [
+      [
+        23,
+        15
+      ],
+      [
+        21,
+        15
+      ]
+    ],
+    "axis": "x",
+    "original_detour_cells": 58
+  },
+  {
+    "id": "R6",
+    "cell": [
+      10,
+      20
+    ],
+    "sides": [
+      [
+        11,
+        20
+      ],
+      [
+        9,
+        20
+      ]
+    ],
+    "axis": "x",
+    "original_detour_cells": 48
+  },
+  {
+    "id": "R7",
+    "cell": [
+      15,
+      26
+    ],
+    "sides": [
+      [
+        15,
+        27
+      ],
+      [
+        15,
+        25
+      ]
+    ],
+    "axis": "y",
+    "original_detour_cells": 42
+  },
+  {
+    "id": "R8",
+    "cell": [
+      30,
+      25
+    ],
+    "sides": [
+      [
+        31,
+        25
+      ],
+      [
+        29,
+        25
+      ]
+    ],
+    "axis": "x",
+    "original_detour_cells": 30
+  }
+]

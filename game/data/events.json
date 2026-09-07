@@ -1,0 +1,358 @@
+[
+  {
+    "id": "welcome",
+    "kind": "clue",
+    "cell": [
+      9,
+      0
+    ],
+    "ref": "16",
+    "title": "Le protocole des trois disques",
+    "text": "Rassemblez les disques du Soleil, de l’Étoile et de la Lune. Leurs gravures servent au réglage de la sortie. Les objets ne fonctionnent qu’avec le mécanisme auquel ils correspondent. Toute découverte est conservée dans le journal (J), même après utilisation de l’objet.\n\nLes fiches et objets lumineux se consultent avec E. Votre sac s’ouvre avec I."
+  },
+  {
+    "id": "entry_left",
+    "kind": "clue",
+    "cell": [
+      3,
+      3
+    ],
+    "ref": "38",
+    "title": "Bordereau déchiré — gauche",
+    "text": "ACCÈS 03 — fragment gauche\n[ 4 7 | … … ]\nLe bord droit a été arraché. Une étiquette précise : « L’autre morceau est resté au pupitre du vestibule. »"
+  },
+  {
+    "id": "entry_right",
+    "kind": "clue",
+    "cell": [
+      11,
+      1
+    ],
+    "ref": "02",
+    "title": "Bordereau déchiré — droite",
+    "text": "ACCÈS 03 — fragment droit\n[ … … | 2 6 ]\nLe bord gauche a été arraché. Les deux morceaux portaient la même référence : ACCÈS 03."
+  },
+  {
+    "id": "code03",
+    "kind": "door",
+    "cell": [
+      16,
+      3
+    ],
+    "ref": "03",
+    "title": "Accès au laboratoire",
+    "text": "Un clavier à quatre chiffres. L’étiquette « ACCÈS 03 » correspond à un bordereau de livraison déchiré.",
+    "axis": "x",
+    "answer": "4726",
+    "question": "Reconstituez le numéro du bordereau.",
+    "success": "Accès 03 ouvert. Les trois ateliers sont maintenant accessibles."
+  },
+  {
+    "id": "copper_key",
+    "kind": "pickup",
+    "cell": [
+      13,
+      3
+    ],
+    "ref": "33",
+    "title": "Clé de cuivre",
+    "text": "Une petite clé portant le symbole d’un soleil. Son profil correspond à une serrure de cuivre.",
+    "resource": "copper_key",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "solar_vault",
+    "kind": "door",
+    "cell": [
+      25,
+      3
+    ],
+    "ref": "29",
+    "title": "Réserve solaire",
+    "text": "La porte barre le couloir de la réserve. Sa serrure de cuivre porte un soleil.",
+    "axis": "y",
+    "requires": [
+      "copper_key"
+    ],
+    "success": "La clé reste dans la serrure. La réserve solaire est ouverte."
+  },
+  {
+    "id": "disc_sun",
+    "kind": "pickup",
+    "cell": [
+      25,
+      5
+    ],
+    "ref": "S",
+    "title": "Disque du Soleil",
+    "text": "Un disque en laiton, gravé d’un SOLEIL et du chiffre 6. Il s’insère dans une des trois alvéoles du pupitre de sortie.",
+    "resource": "disc_sun",
+    "amount": 1,
+    "appearance": "artifact"
+  },
+  {
+    "id": "maintenance_a",
+    "kind": "clue",
+    "cell": [
+      11,
+      7
+    ],
+    "ref": "53",
+    "title": "Maintenance — circuit primaire",
+    "text": "Fiche 53-A\nCUVE : voyant 8\nBOBINE : voyant 5\n\nLes chiffres identifient les équipements. L’ordre de saisie est inscrit sur la porte de l’atelier. La seconde fiche se trouve dans le poste de contrôle, au nord-est."
+  },
+  {
+    "id": "maintenance_b",
+    "kind": "clue",
+    "cell": [
+      31,
+      7
+    ],
+    "ref": "54",
+    "title": "Maintenance — circuit secondaire",
+    "text": "Fiche 53-B\nFILTRE : voyant 1\nLENTILLE : voyant 2\n\nLes identifiants de la cuve et de la bobine figurent sur la fiche 53-A."
+  },
+  {
+    "id": "star_vault",
+    "kind": "door",
+    "cell": [
+      17,
+      12
+    ],
+    "ref": "87",
+    "title": "Atelier optique",
+    "text": "Quatre emplacements sont gravés au-dessus du clavier :\nCUVE → BOBINE → FILTRE → LENTILLE\n\n« Reporter les identifiants des deux fiches de maintenance. »",
+    "axis": "y",
+    "answer": "8512",
+    "question": "Entrez les quatre identifiants dans l’ordre gravé.",
+    "success": "Le verrou de l’atelier optique se retire."
+  },
+  {
+    "id": "disc_star",
+    "kind": "pickup",
+    "cell": [
+      19,
+      13
+    ],
+    "ref": "E",
+    "title": "Disque de l’Étoile",
+    "text": "Un disque sombre, gravé d’une ÉTOILE et du chiffre 9. Il s’insère dans une des trois alvéoles du pupitre de sortie.",
+    "resource": "disc_star",
+    "amount": 1,
+    "appearance": "artifact"
+  },
+  {
+    "id": "raw_artifact",
+    "kind": "pickup",
+    "cell": [
+      27,
+      13
+    ],
+    "ref": "93",
+    "title": "Artéfact de résonance",
+    "text": "Un cristal violet taillé en croissant. Sa base porte l’inscription « Chambre lunaire — réceptacle 19 ». Il sert à alimenter ce verrou précis.",
+    "resource": "raw_artifact",
+    "amount": 1,
+    "appearance": "artifact"
+  },
+  {
+    "id": "moon_vault",
+    "kind": "door",
+    "cell": [
+      3,
+      18
+    ],
+    "ref": "19",
+    "title": "Chambre lunaire",
+    "text": "Le verrou est hors tension. Un réceptacle en forme de croissant attend un artéfact de résonance. Le registre indique qu’il a été transporté vers le dépôt à l’est du laboratoire.",
+    "axis": "y",
+    "requires": [
+      "raw_artifact"
+    ],
+    "success": "L’artéfact reste dans le réceptacle. La chambre lunaire est ouverte."
+  },
+  {
+    "id": "disc_moon",
+    "kind": "pickup",
+    "cell": [
+      3,
+      15
+    ],
+    "ref": "L",
+    "title": "Disque de la Lune",
+    "text": "Un disque argenté, gravé d’une LUNE et du chiffre 4. Il s’insère dans une des trois alvéoles du pupitre de sortie.",
+    "resource": "disc_moon",
+    "amount": 1,
+    "appearance": "artifact"
+  },
+  {
+    "id": "exit_protocol",
+    "kind": "clue",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "20",
+    "title": "Fiche de calibration de la sortie",
+    "text": "PUPITRE DE SORTIE — disposition des alvéoles\n\nPremière : LUNE\nDeuxième : SOLEIL\nTroisième : ÉTOILE\n\nInstaller les trois disques, puis reporter leurs chiffres dans cet ordre. Le pupitre doit être alimenté par le tableau électrique du secteur de confinement. Conservez cette fiche : les sas ne permettent pas de revenir la chercher."
+  },
+  {
+    "id": "route_sign",
+    "kind": "clue",
+    "cell": [
+      20,
+      7
+    ],
+    "ref": "21",
+    "title": "Registre des ateliers",
+    "text": "Soleil : serrure de cuivre, réserve au nord.\nÉtoile : clavier de maintenance, atelier au centre.\nLune : réceptacle d’artéfact, chambre à l’ouest.\n\nAvant le confinement, récupérer les trois disques et la fiche de calibration conservée dans les archives, à l’extrémité nord-est."
+  },
+  {
+    "id": "oneway_a",
+    "kind": "oneway",
+    "cell": [
+      13,
+      24
+    ],
+    "ref": "50",
+    "title": "Sas de confinement",
+    "text": "",
+    "axis": "y",
+    "direction": [
+      0,
+      1
+    ],
+    "carry": [
+      "disc_sun",
+      "disc_star",
+      "disc_moon"
+    ],
+    "records": [
+      "exit_protocol"
+    ]
+  },
+  {
+    "id": "oneway_b",
+    "kind": "oneway",
+    "cell": [
+      27,
+      24
+    ],
+    "ref": "50",
+    "title": "Sas de confinement",
+    "text": "",
+    "axis": "y",
+    "direction": [
+      0,
+      1
+    ],
+    "carry": [
+      "disc_sun",
+      "disc_star",
+      "disc_moon"
+    ],
+    "records": [
+      "exit_protocol"
+    ]
+  },
+  {
+    "id": "fuse",
+    "kind": "pickup",
+    "cell": [
+      1,
+      27
+    ],
+    "ref": "F",
+    "title": "Fusible céramique",
+    "text": "Un fusible intact, marqué « Tableau 65 — alimentation du pupitre ». Il remplace la cartouche grillée du secteur de confinement.",
+    "resource": "fuse",
+    "amount": 1,
+    "appearance": "fuse"
+  },
+  {
+    "id": "power_panel",
+    "kind": "mechanism",
+    "cell": [
+      3,
+      30
+    ],
+    "ref": "65",
+    "title": "Tableau électrique",
+    "text": "Le pupitre de sortie est privé de courant. Un logement vide porte la mention « Fusible céramique ». La fiche d’intervention signale une pièce de rechange dans le magasin, au nord-ouest de ce secteur.",
+    "requires": [
+      "fuse"
+    ],
+    "success": "Le fusible est installé. Le pupitre de sortie est alimenté."
+  },
+  {
+    "id": "lower_sign",
+    "kind": "clue",
+    "cell": [
+      15,
+      27
+    ],
+    "ref": "24",
+    "title": "Dernière intervention",
+    "text": "Le tableau 65 alimente le pupitre de sortie. Son fusible a été retiré pour maintenance. La pièce de rechange est restée dans le magasin, au nord-ouest du confinement.\n\nLa sortie possède trois alvéoles : les disques que vous avez transportés sont nécessaires à son activation."
+  },
+  {
+    "id": "final",
+    "kind": "exit",
+    "cell": [
+      17,
+      34
+    ],
+    "ref": "00",
+    "title": "Pupitre de sortie",
+    "text": "Trois alvéoles attendent les disques du laboratoire. Un cadran se trouve sous chaque alvéole. La fiche de calibration précise leur ordre.",
+    "axis": "y",
+    "requires": [
+      "disc_moon",
+      "disc_sun",
+      "disc_star"
+    ],
+    "prerequisites": [
+      "power_panel"
+    ],
+    "answer": "469",
+    "question": "Reportez les gravures dans l’ordre de la fiche de calibration.",
+    "success": "Les trois cadrans s’alignent. Le verrou de sortie se retire."
+  },
+  {
+    "id": "secret_archive",
+    "kind": "clue",
+    "cell": [
+      5,
+      1
+    ],
+    "ref": "61",
+    "title": "Archive — les volontaires",
+    "text": "« Jour 1. Nous avions promis une visite guidée. Techniquement, les murs guident très bien les visiteurs. » — Folamour",
+    "secret": true
+  },
+  {
+    "id": "secret_cache",
+    "kind": "clue",
+    "cell": [
+      25,
+      23
+    ],
+    "ref": "84",
+    "title": "Note — inventaire du docteur",
+    "text": "« Les sujets ramassent tout. C’est pourquoi nous avons cessé de laisser traîner les clés de la cafétéria. » — Folamour",
+    "secret": true
+  },
+  {
+    "id": "secret_final",
+    "kind": "clue",
+    "cell": [
+      33,
+      27
+    ],
+    "ref": "41",
+    "title": "Lettre jamais envoyée",
+    "text": "« Si vous lisez ceci, vous avez pris le temps de regarder ailleurs que vers la sortie. C’était la seule partie de l’expérience que je n’avais pas prévue. » — Folamour",
+    "secret": true
+  }
+]
