@@ -1,0 +1,387 @@
+[
+  {
+    "id": "t_welcome",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "100",
+    "title": "Département des essais",
+    "text": "Trois essais vous attendent : répartition des masses, ordre de lancement et alimentation de secours. Les erreurs ne détruisent rien. Les mécanismes conservent vos réglages.\n« Nous ne cherchons pas le meilleur sujet. Nous cherchons celui qui revient après avoir lu la consigne. » — Folamour"
+  },
+  {
+    "id": "weight1",
+    "kind": "pickup",
+    "cell": [
+      31,
+      1
+    ],
+    "ref": "101",
+    "title": "Masse de 1 kg",
+    "text": "Une masse étalonnée de 1 kg. À installer dans la balance 106 ; son emplacement restera modifiable.",
+    "resource": "weight1",
+    "amount": 1,
+    "appearance": "weight",
+    "mass": 1
+  },
+  {
+    "id": "weight2",
+    "kind": "pickup",
+    "cell": [
+      3,
+      9
+    ],
+    "ref": "102",
+    "title": "Masse de 2 kg",
+    "text": "Une masse étalonnée de 2 kg. À installer dans la balance 106 ; son emplacement restera modifiable.",
+    "resource": "weight2",
+    "amount": 1,
+    "appearance": "weight",
+    "mass": 2
+  },
+  {
+    "id": "weight3",
+    "kind": "pickup",
+    "cell": [
+      21,
+      5
+    ],
+    "ref": "103",
+    "title": "Masse de 3 kg",
+    "text": "Une masse étalonnée de 3 kg. À installer dans la balance 106 ; son emplacement restera modifiable.",
+    "resource": "weight3",
+    "amount": 1,
+    "appearance": "weight",
+    "mass": 3
+  },
+  {
+    "id": "weight5",
+    "kind": "pickup",
+    "cell": [
+      33,
+      9
+    ],
+    "ref": "104",
+    "title": "Masse de 5 kg",
+    "text": "Une masse étalonnée de 5 kg. À installer dans la balance 106 ; son emplacement restera modifiable.",
+    "resource": "weight5",
+    "amount": 1,
+    "appearance": "weight",
+    "mass": 5
+  },
+  {
+    "id": "balance_note",
+    "kind": "clue",
+    "cell": [
+      1,
+      7
+    ],
+    "ref": "105",
+    "title": "Consigne de pesée",
+    "text": "Utiliser les quatre masses, exactement deux par plateau. Le plateau GAUCHE doit porter 1 kg de plus que le plateau DROIT. Une balance horizontale n’est donc pas la bonne réponse."
+  },
+  {
+    "id": "test_balance",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      7
+    ],
+    "ref": "106",
+    "title": "Balance différentielle",
+    "text": "Les quatre masses manquent. Une fois installées, touchez chaque masse pour la déplacer : réserve, gauche, droite. La consigne 105 précise la répartition attendue.",
+    "requires": [
+      "weight1",
+      "weight2",
+      "weight3",
+      "weight5"
+    ],
+    "puzzle_type": "balance",
+    "weights": [
+      1,
+      2,
+      3,
+      5
+    ],
+    "model": "balance",
+    "opens": [
+      "test_gate"
+    ],
+    "success": "Répartition validée. La salle des séquences est ouverte."
+  },
+  {
+    "id": "test_gate",
+    "kind": "door",
+    "cell": [
+      9,
+      11
+    ],
+    "ref": "107",
+    "title": "Porte des séquences",
+    "text": "Le verrou dépend de la balance 106.",
+    "axis": "y",
+    "controlled_by": "test_balance"
+  },
+  {
+    "id": "t_secret1",
+    "kind": "clue",
+    "cell": [
+      33,
+      3
+    ],
+    "ref": "108",
+    "title": "Régime expérimental",
+    "text": "« J’ai perdu deux kilos. Le laboratoire les a retrouvés dans le plateau de droite. » — Assistant du docteur",
+    "secret": true
+  },
+  {
+    "id": "order_sun",
+    "kind": "clue",
+    "cell": [
+      1,
+      13
+    ],
+    "ref": "201",
+    "title": "Rapport du soleil",
+    "text": "Le SOLEIL est toujours le troisième symbole du lancement. Chaque symbole est utilisé exactement une fois."
+  },
+  {
+    "id": "order_moon",
+    "kind": "clue",
+    "cell": [
+      33,
+      15
+    ],
+    "ref": "202",
+    "title": "Rapport de la lune",
+    "text": "La LUNE précède immédiatement l’ÉTOILE : rien ne peut se glisser entre les deux."
+  },
+  {
+    "id": "order_comet",
+    "kind": "clue",
+    "cell": [
+      7,
+      21
+    ],
+    "ref": "203",
+    "title": "Rapport de la comète",
+    "text": "La COMÈTE ferme la marche. La PLANÈTE arrive après le SOLEIL."
+  },
+  {
+    "id": "sequence_panel",
+    "kind": "mechanism",
+    "cell": [
+      19,
+      17
+    ],
+    "ref": "204",
+    "title": "Console de lancement",
+    "text": "Reconstituez un ordre de cinq symboles avec les rapports 201, 202 et 203. Les boutons ajoutent un symbole à la suite. Vous pouvez retirer le dernier ou recommencer.",
+    "puzzle_type": "sequence",
+    "symbols": [
+      "SOLEIL",
+      "LUNE",
+      "COMÈTE",
+      "ÉTOILE",
+      "PLANÈTE"
+    ],
+    "sequence": [
+      1,
+      3,
+      0,
+      4,
+      2
+    ],
+    "grants": {
+      "safety_fuse": 1
+    },
+    "model": "sequence",
+    "opens": [
+      "circuit_gate"
+    ],
+    "success": "Lancement simulé réussi. Un fusible de sécurité est délivré ; la salle électrique est ouverte."
+  },
+  {
+    "id": "magnet",
+    "kind": "pickup",
+    "cell": [
+      31,
+      21
+    ],
+    "ref": "205",
+    "title": "Aimant de récupération",
+    "text": "Un aimant puissant avec un anneau. Une corde permettrait de le descendre dans un conduit étroit.",
+    "resource": "magnet",
+    "amount": 1,
+    "appearance": "magnet"
+  },
+  {
+    "id": "cord",
+    "kind": "pickup",
+    "cell": [
+      3,
+      17
+    ],
+    "ref": "206",
+    "title": "Corde fine",
+    "text": "Une corde de trois mètres, assez fine pour passer dans une grille. Elle peut se fixer à l’anneau d’un aimant.",
+    "resource": "cord",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "circuit_gate",
+    "kind": "door",
+    "cell": [
+      27,
+      23
+    ],
+    "ref": "207",
+    "title": "Porte électrique",
+    "text": "La console de lancement 204 commande ce verrou.",
+    "axis": "y",
+    "controlled_by": "sequence_panel"
+  },
+  {
+    "id": "t_secret2",
+    "kind": "clue",
+    "cell": [
+      33,
+      13
+    ],
+    "ref": "208",
+    "title": "Compte rendu du lancement",
+    "text": "« Aucun départ réel n’a eu lieu. Nous avons toutefois facturé les frais de déplacement. »",
+    "secret": true
+  },
+  {
+    "id": "service_duct",
+    "kind": "mechanism",
+    "cell": [
+      1,
+      25
+    ],
+    "ref": "301",
+    "title": "Conduit de maintenance",
+    "text": "Un contact métallique brille sous la grille, hors de portée. Le passage est trop étroit pour une main. Un aimant suspendu à une corde pourrait le remonter.",
+    "requires": [
+      "magnet",
+      "cord"
+    ],
+    "grants": {
+      "bridge_contact": 1
+    },
+    "model": "recovery",
+    "action": "Nouer l’aimant et récupérer le contact",
+    "success": "Le contact remonte jusqu’à la grille. Il est ajouté au sac ; l’aimant et la corde restent fixés au conduit."
+  },
+  {
+    "id": "circuit_note",
+    "kind": "clue",
+    "cell": [
+      33,
+      25
+    ],
+    "ref": "302",
+    "title": "Règle des inverseurs",
+    "text": "Chaque levier INVERSE tous ses voyants : allumé devient éteint, éteint devient allumé. Deux pressions sur le même levier s’annulent. Il faut allumer A, B, C, D et E. « Réinitialiser » restaure seulement le circuit, jamais les objets installés."
+  },
+  {
+    "id": "circuit_wiring",
+    "kind": "clue",
+    "cell": [
+      9,
+      29
+    ],
+    "ref": "303",
+    "title": "Table des connexions",
+    "text": "Levier I : A + B\nLevier II : B + C\nLevier III : C + D\nLevier IV : A + D + E\n\nÉtat initial : A et D allumés. Les autres sont éteints."
+  },
+  {
+    "id": "test_circuit",
+    "kind": "mechanism",
+    "cell": [
+      29,
+      29
+    ],
+    "ref": "304",
+    "title": "Tableau des inverseurs",
+    "text": "Installer le fusible de la console 204 et le contact du conduit 301. Actionnez ensuite les leviers pour allumer les cinq voyants. Les notes 302 et 303 décrivent le fonctionnement.",
+    "requires": [
+      "safety_fuse",
+      "bridge_contact"
+    ],
+    "puzzle_type": "circuit",
+    "initial": [
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "masks": [
+      [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        1,
+        1
+      ]
+    ],
+    "model": "circuit",
+    "success": "Les cinq voyants sont allumés. L’alimentation du sas est stable."
+  },
+  {
+    "id": "test_exit",
+    "kind": "exit",
+    "cell": [
+      17,
+      33
+    ],
+    "ref": "305",
+    "title": "Sas de certification",
+    "text": "Les trois essais doivent être validés : balance, séquence et circuit. Aucun code supplémentaire n’est demandé.",
+    "axis": "y",
+    "prerequisites": [
+      "test_balance",
+      "sequence_panel",
+      "test_circuit"
+    ],
+    "action": "Terminer les essais",
+    "success": "Certification délivrée. Vous êtes officiellement trop compétent pour quitter le laboratoire."
+  },
+  {
+    "id": "t_secret3",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "306",
+    "title": "Certificat provisoire",
+    "text": "« A réussi les essais sans détruire le matériel. Qualification : suspect. » — Folamour",
+    "secret": true
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "safety_fuse": {
+    "title": "Fusible de sécurité",
+    "text": "Délivré par la console 204. Destiné au tableau 304."
+  },
+  "bridge_contact": {
+    "title": "Contact métallique",
+    "text": "Récupéré dans le conduit 301. Ferme la liaison manquante du tableau 304."
+  }
+}

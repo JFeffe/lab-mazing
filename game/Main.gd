@@ -7,6 +7,8 @@ var localization=preload("res://Localization.gd").new()
 var ui_layer:CanvasLayer
 var toast_source=""
 const MapWidget=preload("res://MapView.gd")
+const PuzzleControls=preload("res://PuzzleControls.gd")
+var puzzle_states={}
 const Navigator=preload("res://Navigation.gd")
 var move_path=[]
 var click_event={}
@@ -162,6 +164,7 @@ func build_world():
 	sun.shadow_enabled=not OS.has_feature("web")
 	world.add_child(sun)
 	var palettes=[Color("648a83"),Color("7b83a4"),Color("9e8174")] if level==1 else [Color("9e8460"),Color("527f8e"),Color("858371")]
+	if level==4: palettes=[Color("a18d72"),Color("788ba2"),Color("6b968d")]
 	if level==3: palettes=[Color("7789a5"),Color("638f94"),Color("93839e")]
 	for y in range(grid.size()):
 		for x in range(grid.size()):
@@ -252,7 +255,18 @@ func build_event(e):
 					arrow.rotation.y=side*PI/4
 	elif e.kind=="pickup":
 		box(root,Vector3(0.75,0.18,0.75),Vector3(0,0.08,0),dark)
-		if e.get("appearance", "artifact")=="key":
+		if e.get("appearance", "artifact")=="weight":
+			box(root,Vector3(0.55,0.4+float(e.mass)*0.06,0.55),Vector3(0,0.8,0),gold)
+			var number=Label3D.new()
+			number.text=str(int(e.mass))+" kg"
+			number.position=Vector3(0,1.3,0)
+			number.billboard=BaseMaterial3D.BILLBOARD_ENABLED
+			number.font_size=32
+			root.add_child(number)
+		elif e.get("appearance", "artifact")=="magnet":
+			for x in [-0.25,0.25]: box(root,Vector3(0.18,0.65,0.2),Vector3(x,0.85,0),material(Color("dc7869")))
+			box(root,Vector3(0.68,0.2,0.2),Vector3(0,0.55,0),gold)
+		elif e.get("appearance", "artifact")=="key":
 			box(root,Vector3(0.13,0.7,0.13),Vector3(0,0.9,0),gold)
 			box(root,Vector3(0.4,0.28,0.14),Vector3(0,1.27,0),gold)
 			box(root,Vector3(0.3,0.13,0.14),Vector3(0.1,0.62,0),gold)
@@ -551,25 +565,26 @@ func read_save():
 		var parser=JSON.new()
 		if parser.parse(FileAccess.get_file_as_string(path))!=OK: continue
 		var data=parser.data
-		if data is Dictionary and int(data.get("version",0)) in [2,4] and int(data.get("level",1)) in [1,2,3]: return data
+		if data is Dictionary and int(data.get("version",0)) in [2,4] and int(data.get("level",1)) in [1,2,3,4]: return data
 	return {}
 func show_title():
 	DisplayServer.window_set_title(loc("LE LABYRINTHE")+" — Folamour")
 	playing=false
 	hud.hide()
-	clear_modal("DOCTEUR FOLAMOUR / TROIS EXPÉRIENCES","LE LABYRINTHE")
+	clear_modal("DOCTEUR FOLAMOUR / QUATRE EXPÉRIENCES","LE LABYRINTHE")
 	paragraph("Le laboratoire vous attend.\nLes machines aussi.",22)
-	paragraph("Trois labyrinthes fixes à enchaîner. Objets à assembler, installations à remettre en marche et indices à recouper. Aucune limite de temps.")
+	paragraph("Quatre labyrinthes fixes à enchaîner. Objets à assembler, installations à remettre en marche et indices à recouper. Aucune limite de temps.")
 	var saved=read_save()
 	if not saved.is_empty():
 		modal_box.add_child(button("Continuer la partie",func(): start_game(true),true))
 		paragraph(loc("Sauvegarde : niveau %d • %02d:%02d") % [int(saved.get("level",1)),int(saved.get("elapsed",0))/60,int(saved.get("elapsed",0))%60],16)
-		if saved.get("won",false): paragraph("Niveau terminé : reprenez pour accéder à la suite.",16)
+		if saved.get("won",false) and int(saved.get("level",1))<4: paragraph("Niveau terminé : reprenez pour accéder à la suite.",16)
 	modal_box.add_child(button("Nouvelle partie — niveau 1",func(): confirm_new(1),not has_save()))
 	modal_box.add_child(button("Tester directement le niveau 2",func(): confirm_new(2)))
 	modal_box.add_child(button("Tester directement le niveau 3",func(): confirm_new(3)))
+	modal_box.add_child(button("Tester directement le niveau 4",func(): confirm_new(4)))
 	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("VERSION 0.7 · OPTIQUE / REPRISE",13)
+	paragraph("VERSION 0.8 · LES ESSAIS",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
 func confirm_new(target=1):
@@ -585,7 +600,7 @@ func set_level(number):
 	signal_lights.clear()
 	decor.clear()
 	ambience_zone=-1
-	level=clampi(number,1,3)
+	level=clampi(number,1,4)
 	if is_instance_valid(world):
 		remove_child(world)
 		world.queue_free()
@@ -620,6 +635,7 @@ func start_game(resume_v,target=1,keep_campaign=false):
 	open_shortcuts.clear()
 	shortcut_cells.clear()
 	dial_settings.clear()
+	puzzle_states.clear()
 	hints.clear()
 	inventory={}
 	elapsed=0
@@ -650,11 +666,16 @@ func start_game(resume_v,target=1,keep_campaign=false):
 			clear_modal("NIVEAU 2 / SECTEUR DES MACHINES","Service de maintenance.")
 			paragraph("« Vous avez trouvé la sortie. Très bien. Quelqu’un a malheureusement oublié de réparer l’ascenseur. Votre polyvalence tombe à point. »")
 			paragraph("Votre ancien équipement a été consigné. Explorez les ateliers, assemblez les pièces et remettez les installations en service. Objectif : atteindre un ascenseur fonctionnel.")
-		else:
+		elif level==3:
 			add_journal("intro","DÉPARTEMENT D’OPTIQUE\nRéparez le projecteur, calibrez les faisceaux puis déchiffrez les archives. Les formes et les textes permettent de résoudre les énigmes sans dépendre des couleurs.")
 			clear_modal("NIVEAU 3 / DÉPARTEMENT D’OPTIQUE","Que la lumière soit.")
 			paragraph("« Vous avez réparé mon ascenseur. Voyons maintenant si vous savez faire la lumière sur mes archives. »")
 			paragraph("Explorez trois secteurs : le banc optique, la galerie des faisceaux et les archives. Retrouvez les pièces, recoupez les notes et ouvrez la chambre d’observation.")
+		else:
+			add_journal("intro","DÉPARTEMENT DES ESSAIS\nRépartissez les masses, retrouvez l’ordre des symboles et alimentez les cinq voyants. Les objets installés restent en place ; les manipulations sont réversibles et sauvegardées.")
+			clear_modal("NIVEAU 4 / DÉPARTEMENT DES ESSAIS","La théorie ne suffit plus.")
+			paragraph("« Aujourd’hui, vous manipulerez le matériel. Les formulaires de responsabilité sont déjà signés. Par moi. »")
+			paragraph("Pesez, ordonnez, récupérez et inversez. Les notes donnent les règles ; les mécanismes vous laissent expérimenter sans perdre vos objets.")
 		modal_box.add_child(button("Commencer l’exploration",close_modal,true))
 	save_game()
 func _physics_process(delta):
@@ -771,11 +792,13 @@ func find_nearest():
 func update_hud():
 	title_label.text=loc((["N1 / OBSERVATION","N1 / DÉCISIONS","N1 / CONFINEMENT"] if level==1 else ["N2 / ATELIERS","N2 / HYDRAULIQUE","N2 / ASCENSEUR"])[zone(int(player.position.z/TILE))])
 	if level==3: title_label.text=loc(["N3 / OPTIQUE","N3 / FAISCEAUX","N3 / ARCHIVES"][zone(int(player.position.z/TILE))])
+	if level==4: title_label.text=loc(["N4 / MASSES","N4 / SÉQUENCES","N4 / CIRCUITS"][zone(int(player.position.z/TILE))])
 	var held=0
 	for amount in inventory.values(): held+=int(amount)
 	status_label.text=loc("Objets  %d    •    Disques récupérés  %d / 3    •    %02d:%02d") % [held,int(done.has("disc_sun"))+int(done.has("disc_moon"))+int(done.has("disc_star")),int(elapsed)/60,int(elapsed)%60]
 	if level==2: status_label.text=loc("Objets  %d    •    Installations  %d / 4    •    %02d:%02d") % [held,int(done.has("generator"))+int(done.has("water_manifold"))+int(done.has("hoist"))+int(done.has("lift_power")),int(elapsed)/60,int(elapsed)%60]
 	if level==3: status_label.text=loc("Objets  %d    •    Installations  %d / 3    •    %02d:%02d") % [held,int(done.has("projector"))+int(done.has("beam_router"))+int(done.has("archive_reader")),int(elapsed)/60,int(elapsed)%60]
+	if level==4: status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d") % [held,int(done.has("test_balance"))+int(done.has("sequence_panel"))+int(done.has("test_circuit")),int(elapsed)/60,int(elapsed)%60]
 	action_label.text=loc("["+nearest.ref+"] "+nearest.title if not nearest.is_empty() else "Cliquez / touchez le sol pour explorer")
 	if not move_path.is_empty(): action_label.text=loc("Destination : ")+ (loc(click_event.title) if not click_event.is_empty() else str(move_path[-1].x)+", "+str(move_path[-1].y))
 	if is_instance_valid(interact_button):
@@ -847,6 +870,8 @@ func show_puzzle(e):
 		var b=button(e.get("action","Installer les objets" if e.requires.size()>1 else "Utiliser "+item_name(e.requires[0])),func(): install_items(e),true)
 		b.disabled=not held_all(e.requires)
 		modal_box.add_child(b)
+	elif e.has("puzzle_type"):
+		PuzzleControls.render(self,e)
 	elif e.has("dials"):
 		paragraph(e.question,17)
 		if not dial_settings.has(e.id): dial_settings[e.id]=[0,0,0]
@@ -909,7 +934,7 @@ func install_items(e):
 	done["installed_"+e.id]=true
 	sync_event(e)
 	add_journal("installed_"+e.id,e.title+" — pièces assemblées ou installées. Descriptions conservées dans le journal.")
-	if e.has("answer"):
+	if e.has("answer") or e.has("puzzle_type"):
 		show_puzzle(e)
 		update_hud()
 		save_game()
@@ -920,6 +945,7 @@ func open_target(id):
 		if other.id==id: sync_event(other)
 func complete(e):
 	if done.has(e.id): return
+	if e.has("puzzle_type") and (not PuzzleControls.available(self,e) or not PuzzleControls.solved(self,e)): return
 	done[e.id]=true
 	for id in e.get("grants",{}):
 		inventory[id]=inventory.get(id,0)+e.grants[id]
@@ -934,6 +960,7 @@ func complete(e):
 	save_game()
 	if e.kind=="exit": show_win()
 func sync_event(e):
+	if e.has("puzzle_type"): PuzzleControls.sync(self,e)
 	for child in event_nodes[e.id].get_children():
 		if str(child.name).begins_with("Socket"):
 			child.material_override=material(accent if done.has("installed_"+e.id) else Color("101f29"))
@@ -1075,8 +1102,8 @@ func show_win():
 		if e.get("secret",false) and done.has(e.id): secrets+=1
 	level_stats[str(level)]={"time":elapsed,"secrets":secrets,"hints":h,"errors":errors}
 	save_game()
-	clear_modal("NIVEAU "+str(level)+" / TERMINÉ", "Le laboratoire est franchi." if level==1 else "L’ascenseur est en marche." if level==2 else "Le ciel vous appartient.")
-	paragraph("« Le prochain département sera ravi de vous recevoir. »" if level==1 else "« Vous avez réparé l’ascenseur. Et sans réclamer de salaire. Une expérience remarquable. »" if level==2 else "« Vous pouvez admirer le ciel. La fenêtre ne constitue pas une autorisation de congé. »",21)
+	clear_modal("NIVEAU "+str(level)+" / TERMINÉ", "Le laboratoire est franchi." if level==1 else "L’ascenseur est en marche." if level==2 else "Le ciel vous appartient." if level==3 else "Essais réussis.")
+	paragraph("« Le prochain département sera ravi de vous recevoir. »" if level==1 else "« Vous avez réparé l’ascenseur. Et sans réclamer de salaire. Une expérience remarquable. »" if level==2 else "« Vous pouvez admirer le ciel. La fenêtre ne constitue pas une autorisation de congé. »" if level==3 else "« Certification accordée. Le service des ressources humaines vous considère désormais comme une ressource. »",21)
 	paragraph(loc("Temps du niveau : %02d:%02d\nSecrets : %d / 3    •    Tentatives incorrectes : %d") % [int(elapsed)/60,int(elapsed)%60,secrets,errors],20)
 	if level==1:
 		paragraph("La suite : le secteur des machines. Votre inventaire sera remis à zéro. Le bilan du laboratoire sera conservé et la transition sera sauvegardée.",17)
@@ -1084,6 +1111,9 @@ func show_win():
 	elif level==2:
 		paragraph("La suite : le département d’optique. Votre inventaire sera remis à zéro ; les bilans précédents seront conservés.",17)
 		modal_box.add_child(button("Continuer vers le niveau 3",func(): start_game(false,3,true),true))
+	elif level==3:
+		paragraph("La suite : le département des essais. Le sac et les notes seront remis à zéro ; les bilans restent conservés.",17)
+		modal_box.add_child(button("Continuer vers le niveau 4",func(): start_game(false,4,true),true))
 	else:
 		var total=0.0
 		var found=0
@@ -1091,11 +1121,11 @@ func show_win():
 			total+=stat.time
 			found+=int(stat.secrets)
 		paragraph(loc("Bilan : %d niveau(x) terminé(s), %02d:%02d d’exploration, %d secrets.") % [level_stats.size(),int(total)/60,int(total)%60,found],17)
-		modal_box.add_child(button("Recommencer les trois niveaux",func(): confirm_new(1)))
+		modal_box.add_child(button("Recommencer les quatre niveaux",func(): confirm_new(1)))
 	modal_box.add_child(button("Sauvegarder et revenir au menu",show_title))
 func save_game():
 	if test_mode: return
-	var data={"version":4,"level":level,"level_stats":level_stats,"dial_settings":dial_settings,"walked":walked,"open_shortcuts":open_shortcuts,"journal_order":journal_order,"position":[player.position.x,player.position.y,player.position.z],"seen":seen,"done":done,"journal":journal,"hints":hints,"inventory":inventory,"elapsed":elapsed,"errors":errors,"won":won,"zoom":zoom,"muted":muted}
+	var data={"version":4,"level":level,"level_stats":level_stats,"dial_settings":dial_settings,"puzzle_states":puzzle_states,"walked":walked,"open_shortcuts":open_shortcuts,"journal_order":journal_order,"position":[player.position.x,player.position.y,player.position.z],"seen":seen,"done":done,"journal":journal,"hints":hints,"inventory":inventory,"elapsed":elapsed,"errors":errors,"won":won,"zoom":zoom,"muted":muted}
 	var f=FileAccess.open(SAVE+".tmp",FileAccess.WRITE)
 	if f:
 		f.store_string(JSON.stringify(data))
@@ -1116,6 +1146,7 @@ func load_game():
 	if data.is_empty(): return
 	level_stats=data.get("level_stats",{})
 	dial_settings=data.get("dial_settings",{})
+	puzzle_states=data.get("puzzle_states",{})
 	won=data.get("won",false)
 	seen=data.get("seen",{})
 	done=data.get("done",{})
@@ -1169,6 +1200,35 @@ func capture_preview():
 func build_machine(root,e,gold,dark):
 	var metal=material(Color("708994"))
 	match e.model:
+		"balance":
+			box(root,Vector3(1.5,0.18,1),Vector3(0,0.12,0),metal)
+			box(root,Vector3(0.16,1.3,0.16),Vector3(0,0.8,0),gold)
+			var beam=Node3D.new()
+			beam.name="BalanceBeam"
+			beam.position.y=1.5
+			root.add_child(beam)
+			box(beam,Vector3(1.8,0.1,0.1),Vector3.ZERO,gold)
+			for x in [-0.7,0.7]:
+				box(beam,Vector3(0.04,0.45,0.04),Vector3(x,-0.22,0),metal)
+				box(beam,Vector3(0.65,0.09,0.6),Vector3(x,-0.47,0),gold)
+			for i in range(4):
+				var weight=box(root,Vector3(0.18,0.14+0.025*i,0.18),Vector3((i-1.5)*0.3,0.33,0.35),gold)
+				weight.name="PlacedWeight"+str(i)
+				weight.hide()
+		"sequence":
+			box(root,Vector3(1.8,0.9,0.9),Vector3(0,0.5,0),metal)
+			for i in range(5):
+				box(root,Vector3(0.22,0.14,0.45),Vector3((i-2)*0.3,1,-0.05),material(Color("a2c5e1"),true))
+		"recovery":
+			for x in [-0.7,0.7]:box(root,Vector3(0.16,0.4,1.3),Vector3(x,0.2,0),metal)
+			for z in [-0.55,-0.25,0.05,0.35,0.6]:box(root,Vector3(1.5,0.06,0.07),Vector3(0,0.45,z),gold)
+			box(root,Vector3(0.24,0.08,0.24),Vector3(0,0.1,0),material(Color("c9774a"),true))
+		"circuit":
+			box(root,Vector3(1.9,1.5,0.6),Vector3(0,0.8,0),metal)
+			for i in range(5):
+				var lamp=box(root,Vector3(0.24,0.24,0.08),Vector3((i-2)*0.32,1.25,-0.36),gold)
+				lamp.name="CircuitLamp"+str(i)
+			for i in range(4):box(root,Vector3(0.1,0.3,0.18),Vector3((i-1.5)*0.38,0.7,-0.45),gold)
 		"projector":
 			box(root,Vector3(1.3,0.85,0.8),Vector3(0,0.65,0),dark)
 			var optic=MeshInstance3D.new()
