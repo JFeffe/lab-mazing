@@ -44,8 +44,9 @@ jobs:
           python3 game/tests/validate_level5.py
           python3 game/tests/validate_level6.py
           python3 game/tests/validate_level7.py
+          python3 game/tests/validate_level8.py
           python3 game/tests/validate_shortcuts.py
-          for test in verify_v03 verify_level2 verify_level3 verify_level4 verify_level5 verify_level6 verify_level7 verify_comfort verify_localization verify_shortcuts verify_chapter_polish verify_mobile_performance verify_audio_transitions; do
+          for test in verify_v03 verify_level2 verify_level3 verify_level4 verify_level5 verify_level6 verify_level7 verify_level8 verify_comfort verify_localization verify_shortcuts verify_chapter_polish verify_mobile_performance verify_audio_transitions; do
             XDG_DATA_HOME="$RUNNER_TEMP/lab-$test" /tmp/godot/Godot_v4.5.1-stable_linux.x86_64 --headless --path game --fixed-fps 60 --script "res://tests/$test.gd"
           done
       - uses: actions/upload-pages-artifact@v4

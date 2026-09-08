@@ -1,0 +1,158 @@
+{
+  "without_shortcuts": {
+    "steps": 661,
+    "opened": 0,
+    "crossings": {},
+    "legs": [
+      {
+        "id": "m_welcome",
+        "steps": 2
+      },
+      {
+        "id": "m_parcels",
+        "steps": 90
+      },
+      {
+        "id": "m_balance_note",
+        "steps": 24
+      },
+      {
+        "id": "m_balance_tip",
+        "steps": 58
+      },
+      {
+        "id": "m_secret1",
+        "steps": 8
+      },
+      {
+        "id": "m_balance",
+        "steps": 22
+      },
+      {
+        "id": "m_capsule",
+        "steps": 160
+      },
+      {
+        "id": "m_network_note",
+        "steps": 8
+      },
+      {
+        "id": "m_network_tip",
+        "steps": 34
+      },
+      {
+        "id": "m_secret2",
+        "steps": 8
+      },
+      {
+        "id": "m_network",
+        "steps": 12
+      },
+      {
+        "id": "m_label",
+        "steps": 92
+      },
+      {
+        "id": "m_secret3",
+        "steps": 28
+      },
+      {
+        "id": "m_directory",
+        "steps": 44
+      },
+      {
+        "id": "m_relocation",
+        "steps": 4
+      },
+      {
+        "id": "m_address",
+        "steps": 26
+      },
+      {
+        "id": "m_delivery",
+        "steps": 41
+      }
+    ]
+  },
+  "with_shortcuts": {
+    "steps": 633,
+    "opened": 5,
+    "crossings": {
+      "4": 1,
+      "0": 1,
+      "2": 2,
+      "3": 1,
+      "5": 1
+    },
+    "legs": [
+      {
+        "id": "m_welcome",
+        "steps": 2
+      },
+      {
+        "id": "m_parcels",
+        "steps": 90
+      },
+      {
+        "id": "m_balance_note",
+        "steps": 24
+      },
+      {
+        "id": "m_balance_tip",
+        "steps": 58
+      },
+      {
+        "id": "m_secret1",
+        "steps": 8
+      },
+      {
+        "id": "m_balance",
+        "steps": 22
+      },
+      {
+        "id": "m_capsule",
+        "steps": 156
+      },
+      {
+        "id": "m_network_note",
+        "steps": 8
+      },
+      {
+        "id": "m_network_tip",
+        "steps": 30
+      },
+      {
+        "id": "m_secret2",
+        "steps": 8
+      },
+      {
+        "id": "m_network",
+        "steps": 12
+      },
+      {
+        "id": "m_label",
+        "steps": 76
+      },
+      {
+        "id": "m_secret3",
+        "steps": 28
+      },
+      {
+        "id": "m_directory",
+        "steps": 44
+      },
+      {
+        "id": "m_relocation",
+        "steps": 4
+      },
+      {
+        "id": "m_address",
+        "steps": 26
+      },
+      {
+        "id": "m_delivery",
+        "steps": 37
+      }
+    ]
+  }
+}

@@ -135,7 +135,7 @@ func run():
 	check(game.modal_open and not game.playing,"Chapter menu")
 	var available=false
 	for child in game.modal_box.get_children():
-		if child is Button and child.text=="Start chapter 2":available=not child.disabled
+		if child is Button and child.text==game.level_name(6):available=not child.disabled
 	check(available,"Chapter 2 unavailable")
 	# A corrupt primary must recover the previous valid checkpoint.
 	var f=FileAccess.open(game.SAVE,FileAccess.WRITE)

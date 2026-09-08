@@ -1,8 +1,10 @@
 extends RefCounted
+const Mail=preload("res://MailControls.gd")
 const Office=preload("res://OfficeControls.gd")
 const Greenhouse=preload("res://GreenhouseControls.gd")
 # All moves are reversible; partial states live in the normal checkpoint.
 static func initial(e):
+	if e.puzzle_type in ["parcels","mailnet","address"]:return Mail.initial(e)
 	if e.puzzle_type in ["overlay","filing","copier"]:return Office.initial(e)
 	if e.puzzle_type in ["pipes","growth","blend"]:return Greenhouse.initial(e)
 	match e.puzzle_type:
@@ -24,6 +26,7 @@ static func available(g,e):
 	return true
 static func solved(g,e):
 	var values=state(g,e)
+	if e.puzzle_type in ["parcels","mailnet","address"]:return Mail.solved(e,values)
 	if e.puzzle_type in ["overlay","filing","copier"]:return Office.solved(e,values)
 	if e.puzzle_type in ["pipes","growth","blend"]:return Greenhouse.solved(e,values)
 	match e.puzzle_type:
@@ -42,6 +45,7 @@ static func solved(g,e):
 	return false
 static func render(g,e):
 	var values=state(g,e)
+	if e.puzzle_type in ["parcels","mailnet","address"]:Mail.render(g,e,values)
 	if e.puzzle_type in ["overlay","filing","copier"]:Office.render(g,e,values)
 	if e.puzzle_type in ["pipes","growth","blend"]:Greenhouse.render(g,e,values)
 	match e.puzzle_type:
@@ -109,6 +113,7 @@ static func move(g,e,index):
 	if not available(g,e):return
 	var values=state(g,e)
 	if index==-2:g.puzzle_states[e.id]=initial(e)
+	elif e.puzzle_type in ["parcels","mailnet","address"]:Mail.move(e,values,index)
 	elif e.puzzle_type in ["overlay","filing","copier"]:Office.move(e,values,index)
 	elif e.puzzle_type in ["pipes","growth","blend"]:Greenhouse.move(e,values,index)
 	elif e.puzzle_type=="jugs" and index in range(6):
@@ -146,13 +151,14 @@ static func submit(g,e):
 	if solved(g,e):g.complete(e)
 	else:
 		g.errors+=1
-		var messages={"overlay":"Les calques ne correspondent pas encore au modèle. Vérifiez les cases manquantes et les marques en trop.","filing":"Classement refusé. Un dossier par casier ; seule la directive validée fait foi.","copier":"Image différente du modèle. La rotation et le miroir agissent sur le résultat actuel.","pipes":"Circuit interrompu : reliez les ouvertures sans fuite, de l’ouest de A à l’est de B.","growth":"La liane ne pousse pas encore. Comparez les trois réglages avec la fiche de germination.","blend":"Mélange refusé : trois mesures, arôme 3, amertume 2, stabilité 2.","jugs":"Dosage refusé : il faut exactement 4 L dans le grand réservoir.","hanoi":"Transfert incomplet : les trois disques doivent être sur C.","rotors":"Instable : visez A vers EST, B vers SUD et C vers OUEST.","balance":"Répartition refusée : deux masses par plateau, gauche plus lourd de 1 kg. Les masses restent disponibles.","sequence":"Ordre refusé. Vérifiez les trois rapports ; chaque symbole doit apparaître une seule fois.","circuit":"Circuit incomplet : les cinq voyants doivent être allumés simultanément."}
+		var messages={"parcels":"Colis incorrect. Comparez des groupes de même taille et choisissez le plus lourd.","mailnet":"Le dernier essai doit atteindre EXPÉDITION. Réglez puis relancez la capsule.","address":"Adresse refusée. Croisez le fragment, la fonction du destinataire et l’avis de déménagement.","overlay":"Les calques ne correspondent pas encore au modèle. Vérifiez les cases manquantes et les marques en trop.","filing":"Classement refusé. Un dossier par casier ; seule la directive validée fait foi.","copier":"Image différente du modèle. La rotation et le miroir agissent sur le résultat actuel.","pipes":"Circuit interrompu : reliez les ouvertures sans fuite, de l’ouest de A à l’est de B.","growth":"La liane ne pousse pas encore. Comparez les trois réglages avec la fiche de germination.","blend":"Mélange refusé : trois mesures, arôme 3, amertume 2, stabilité 2.","jugs":"Dosage refusé : il faut exactement 4 L dans le grand réservoir.","hanoi":"Transfert incomplet : les trois disques doivent être sur C.","rotors":"Instable : visez A vers EST, B vers SUD et C vers OUEST.","balance":"Répartition refusée : deux masses par plateau, gauche plus lourd de 1 kg. Les masses restent disponibles.","sequence":"Ordre refusé. Vérifiez les trois rapports ; chaque symbole doit apparaître une seule fois.","circuit":"Circuit incomplet : les cinq voyants doivent être allumés simultanément."}
 		g.feedback.text=g.loc(messages[e.puzzle_type])
 		g.chime(170)
 		g.save_game()
 static func sync(g,e):
 	var values=state(g,e)
 	var root=g.event_nodes[e.id]
+	if e.puzzle_type in ["parcels","mailnet","address"]:Mail.sync(g,e,values)
 	if e.puzzle_type in ["overlay","filing","copier"]:Office.sync(g,e,values)
 	if e.puzzle_type in ["pipes","growth","blend"]:Greenhouse.sync(g,e,values)
 	if e.puzzle_type=="jugs":

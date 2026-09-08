@@ -1,0 +1,277 @@
+[
+  {
+    "id": "m_welcome",
+    "kind": "clue",
+    "cell": [
+      29,
+      19
+    ],
+    "ref": "100",
+    "title": "Circuit du courrier",
+    "text": "Le grand circuit fait le tour des entrepôts. À l’ouest : pesée des colis. Au centre : réseau pneumatique. Au sud : expédition. Livrez le colis au guichet 101, à la réception est."
+  },
+  {
+    "id": "m_delivery",
+    "kind": "exit",
+    "cell": [
+      27,
+      21
+    ],
+    "ref": "101",
+    "title": "Guichet de livraison",
+    "text": "Présentez le colis adressé par le terminal 403. La livraison termine la mission.",
+    "requires": [
+      "addressed_parcel"
+    ],
+    "prerequisites": [
+      "m_balance",
+      "m_network",
+      "m_address"
+    ],
+    "action": "Remettre le colis"
+  },
+  {
+    "id": "m_network_door",
+    "kind": "door",
+    "cell": [
+      25,
+      13
+    ],
+    "ref": "102",
+    "title": "Accès au tri pneumatique",
+    "text": "L’identification du colis à la balance 203 autorise l’entrée.",
+    "axis": "x",
+    "controlled_by": "m_balance"
+  },
+  {
+    "id": "m_dispatch_door",
+    "kind": "door",
+    "cell": [
+      17,
+      28
+    ],
+    "ref": "103",
+    "title": "Accès à l’expédition",
+    "text": "Le réseau 303 doit délivrer son bordereau avant l’ouverture.",
+    "axis": "y",
+    "controlled_by": "m_network"
+  },
+  {
+    "id": "m_parcels",
+    "kind": "pickup",
+    "cell": [
+      3,
+      3
+    ],
+    "ref": "201",
+    "title": "Lot de six colis",
+    "text": "Six colis A à F. Cinq ont exactement le même poids. Le colis à livrer est le seul PLUS LOURD. À installer sur la balance 203.",
+    "resource": "parcel_batch",
+    "amount": 1,
+    "appearance": "crate"
+  },
+  {
+    "id": "m_balance_note",
+    "kind": "clue",
+    "cell": [
+      11,
+      3
+    ],
+    "ref": "202",
+    "title": "Notice de pesée",
+    "text": "Touchez chaque colis pour le placer en réserve, à gauche ou à droite. Appuyez sur PESER pour comparer. Comparez autant de colis de chaque côté pour chercher le plus lourd. Choisissez ensuite le colis à livrer et validez. Les pesées sont illimitées."
+  },
+  {
+    "id": "m_balance",
+    "kind": "mechanism",
+    "cell": [
+      7,
+      15
+    ],
+    "ref": "203",
+    "title": "Balance des colis",
+    "text": "Installez le lot 201. Retrouvez le seul colis plus lourd grâce aux comparaisons, puis sélectionnez-le. Aucun colis n’est ouvert ni consommé pendant les essais.",
+    "requires": [
+      "parcel_batch"
+    ],
+    "puzzle_type": "parcels",
+    "model": "parcels",
+    "heavy": 4,
+    "opens": [
+      "m_network_door"
+    ],
+    "grants": {
+      "chosen_parcel": 1
+    },
+    "success": "Le colis E est identifié. L’accès au tri central s’ouvre. « Vous avez soupesé la situation. C’est plus que la plupart de mes employés. » — Folamour"
+  },
+  {
+    "id": "m_balance_tip",
+    "kind": "clue",
+    "cell": [
+      3,
+      25
+    ],
+    "ref": "204",
+    "title": "Méthode du magasinier",
+    "text": "Deux comparaisons suffisent : trois colis contre trois, puis deux colis du groupe le plus lourd l’un contre l’autre. Si ces deux-là s’équilibrent, le troisième est le bon."
+  },
+  {
+    "id": "m_capsule",
+    "kind": "pickup",
+    "cell": [
+      15,
+      3
+    ],
+    "ref": "301",
+    "title": "Capsule de transport",
+    "text": "Une capsule réutilisable pour le réseau 303. En cas de mauvaise destination, elle revient automatiquement au départ.",
+    "resource": "mail_capsule",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "m_network_note",
+    "kind": "clue",
+    "cell": [
+      23,
+      3
+    ],
+    "ref": "302",
+    "title": "Plan du tri",
+    "text": "Trois aiguillages A, B et C. Suivez les traits du schéma : la capsule doit arriver à EXPÉDITION. Chaque commande choisit la branche 1 ou 2. Lancez un essai pour voir son trajet ; une mauvaise branche renvoie la capsule au départ."
+  },
+  {
+    "id": "m_network",
+    "kind": "mechanism",
+    "cell": [
+      19,
+      17
+    ],
+    "ref": "303",
+    "title": "Réseau pneumatique",
+    "text": "Installez la capsule. Réglez les aiguillages et lancez un essai. Une fois la capsule arrivée à EXPÉDITION, validez pour obtenir le bordereau et ouvrir l’aile sud.",
+    "requires": [
+      "mail_capsule"
+    ],
+    "puzzle_type": "mailnet",
+    "model": "mailnet",
+    "opens": [
+      "m_dispatch_door"
+    ],
+    "grants": {
+      "dispatch_slip": 1
+    },
+    "success": "La capsule atteint l’expédition. Le bordereau est prêt et l’aile sud s’ouvre. « Notre courrier circule mieux que nos augmentations. » — Folamour"
+  },
+  {
+    "id": "m_network_tip",
+    "kind": "clue",
+    "cell": [
+      15,
+      25
+    ],
+    "ref": "304",
+    "title": "Consigne de retour",
+    "text": "Une nouvelle manipulation annule le résultat du dernier essai. Après chaque réglage, relancez la capsule. Elle reste disponible même après un retour."
+  },
+  {
+    "id": "m_label",
+    "kind": "pickup",
+    "cell": [
+      3,
+      29
+    ],
+    "ref": "401",
+    "title": "Fragment d’étiquette",
+    "text": "Destinataire : « F. — direction scientifique ». Le numéro et l’aile ont été déchirés. Croisez l’annuaire 402 et l’avis de déménagement 404.",
+    "resource": "label_fragment",
+    "amount": 1,
+    "appearance": "card"
+  },
+  {
+    "id": "m_directory",
+    "kind": "clue",
+    "cell": [
+      31,
+      29
+    ],
+    "ref": "402",
+    "title": "Annuaire du personnel",
+    "text": "Dr Folamour : direction scientifique, aile Nord, bureau 2. Mme Faraday : maintenance, aile Est, bureau 1. M. Foucault : comptabilité, aile Ouest, bureau 3. Attention : consulter les changements récents en 404."
+  },
+  {
+    "id": "m_address",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      33
+    ],
+    "ref": "403",
+    "title": "Terminal d’adressage",
+    "text": "Installez le colis, le bordereau et le fragment d’étiquette. Identifiez le destinataire et son adresse ACTUELLE. Le guichet de livraison 101 transmettra le colis au bureau choisi.",
+    "requires": [
+      "chosen_parcel",
+      "dispatch_slip",
+      "label_fragment"
+    ],
+    "puzzle_type": "address",
+    "model": "address",
+    "target": [
+      1,
+      2,
+      3
+    ],
+    "grants": {
+      "addressed_parcel": 1
+    },
+    "success": "Adresse validée : Dr Folamour, aile Ouest, bureau 4. Rapportez le colis au guichet 101."
+  },
+  {
+    "id": "m_relocation",
+    "kind": "clue",
+    "cell": [
+      31,
+      33
+    ],
+    "ref": "404",
+    "title": "Avis de déménagement — EN VIGUEUR",
+    "text": "La direction scientifique a quitté l’aile Nord. Elle occupe maintenant l’aile OUEST, dans le bureau immédiatement après le numéro 3. La maintenance et la comptabilité ne déménagent pas."
+  },
+  {
+    "id": "m_secret1",
+    "kind": "clue",
+    "cell": [
+      11,
+      25
+    ],
+    "ref": "205",
+    "title": "Archive du courrier 205",
+    "text": "Colis perdu : contient le manuel « Ne plus perdre de colis ». Dernière localisation : inconnue.",
+    "secret": true
+  },
+  {
+    "id": "m_secret2",
+    "kind": "clue",
+    "cell": [
+      23,
+      25
+    ],
+    "ref": "305",
+    "title": "Archive du courrier 305",
+    "text": "Le service courrier refuse de livrer les plaintes : elles dépassent la charge maximale autorisée.",
+    "secret": true
+  },
+  {
+    "id": "m_secret3",
+    "kind": "clue",
+    "cell": [
+      3,
+      33
+    ],
+    "ref": "405",
+    "title": "Archive du courrier 405",
+    "text": "Facture : sonnette de bureau. Option silence : supplément. Option stagiaire : incluse.",
+    "secret": true
+  }
+]

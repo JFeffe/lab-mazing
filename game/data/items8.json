@@ -1,0 +1,26 @@
+{
+  "parcel_batch": {
+    "title": "Lot de six colis",
+    "text": "Six colis A à F. Cinq ont exactement le même poids. Le colis à livrer est le seul PLUS LOURD. À installer sur la balance 203."
+  },
+  "mail_capsule": {
+    "title": "Capsule de transport",
+    "text": "Une capsule réutilisable pour le réseau 303. En cas de mauvaise destination, elle revient automatiquement au départ."
+  },
+  "label_fragment": {
+    "title": "Fragment d’étiquette",
+    "text": "Destinataire : « F. — direction scientifique ». Le numéro et l’aile ont été déchirés. Croisez l’annuaire 402 et l’avis de déménagement 404."
+  },
+  "chosen_parcel": {
+    "title": "Colis E",
+    "text": "Le colis le plus lourd, pour le terminal 403."
+  },
+  "dispatch_slip": {
+    "title": "Bordereau de tri",
+    "text": "Autorisation obtenue au réseau 303. Pour le terminal 403."
+  },
+  "addressed_parcel": {
+    "title": "Colis adressé",
+    "text": "Pour Folamour, aile Ouest, bureau 4. À remettre au guichet 101."
+  }
+}

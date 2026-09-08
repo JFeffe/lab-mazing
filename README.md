@@ -1,6 +1,6 @@
 # Lab-mazing — Le Labyrinthe de Folamour
 
-Version 0.13 : jeu solo 3D isométrique, chapitre 1 complet et deux missions du chapitre 2, français/anglais, déplacement au clic et au toucher.
+Version 0.14 : jeu solo 3D isométrique, chapitre 1 complet et trois missions du chapitre 2, français/anglais, déplacement au clic et au toucher.
 
 Jouer dans le navigateur : https://jfeffe.github.io/lab-mazing/
 
@@ -11,6 +11,19 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Nouveautés v0.14
+**Le courrier interne** est le niveau 3 du chapitre 2 (numéro interne 8). Folamour confie une livraison : identifier le seul colis plus lourd parmi six, acheminer une capsule par trois aiguillages, puis reconstituer une adresse à partir d’une étiquette, d’un annuaire et d’un avis de déménagement.
+
+Le nouveau circuit entoure deux entrepôts et une aile d’expédition. Il compte 19 repères, trois secrets et six raccourcis sans contournement des portes verrouillées. Parcours de référence : 661 → 633 pas avec révélation progressive des raccourcis.
+
+Le réseau utilise un schéma 2D animé uniquement pendant les essais. Pesées libres, capsule réutilisable, commandes réversibles et sauvegardes partielles. Les réglages de netteté mobile, les corrections audio et la vitesse +30 % sont conservés.
+
+Le menu sépare désormais les chapitres et leurs niveaux. Les trois missions du chapitre 2 sont accessibles directement. Les sauvegardes et confirmations reprennent ces noms. Après les photocopies, « Passer au courrier interne » conserve les bilans.
+
+Données : `python scripts/build_level8.py`. Vérification : `python game/tests/validate_level8.py`, puis Godot `--headless --path game --fixed-fps 60 --script res://tests/verify_level8.gd`. Documents : `python scripts/document_level8.py /chemin/de/sortie`.
+
+[Carte et cheatsheet v0.14](https://drive.google.com/drive/folders/1W1RC8XbgvQnBSvdAy9-I0HZruYXrlkQn).
 
 ## Nouveautés v0.13
 Le service des photocopies est la deuxième mission du chapitre 2 (niveau global 7). L’accueil central dessert trois ailes : préparation, archives et copies. Trois mécanismes distincts permettent de superposer des calques, classer des dossiers selon une directive validée et transformer une image par rotation ou miroir. Folamour introduit la mission et termine sur sa demande de recto verso.

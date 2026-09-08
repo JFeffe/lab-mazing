@@ -251,6 +251,48 @@
         "Après réinitialisation : une rotation de 90° dans le sens horaire, puis un miroir gauche-droite. Validez et livrez la copie en 101.",
         "After reset: one clockwise 90° rotation, then a left-right mirror. Validate and deliver the copy at 101."
       ]
+    ],
+    "m_balance": [
+      [
+        "Comparez des groupes contenant le même nombre de colis.",
+        "Compare groups containing the same number of parcels."
+      ],
+      [
+        "Pesez A+B+C contre D+E+F. Puis comparez deux colis du côté le plus lourd.",
+        "Weigh A+B+C against D+E+F. Then compare two parcels from the heavier side."
+      ],
+      [
+        "La droite est plus lourde. Remettez tout en réserve ; pesez D à gauche contre E à droite. E est plus lourd. Choisissez E puis validez.",
+        "The right is heavier. Return everything to reserve; weigh D on the left against E on the right. E is heavier. Select E and validate."
+      ]
+    ],
+    "m_network": [
+      [
+        "Suivez les traits qui relient le départ à l’expédition.",
+        "Follow the lines connecting the start to dispatch."
+      ],
+      [
+        "La bonne branche mène successivement à A, B, puis C. Évitez les sorties RETOUR.",
+        "The correct branch leads through A, B, then C. Avoid RETURN exits."
+      ],
+      [
+        "Réglez A sur branche 2, B sur branche 1 et C sur branche 2. Lancez la capsule, puis validez.",
+        "Set A to branch 2, B to branch 1 and C to branch 2. Launch the capsule, then validate."
+      ]
+    ],
+    "m_address": [
+      [
+        "Le fragment donne une fonction, pas seulement une initiale.",
+        "The fragment gives a role, not just an initial."
+      ],
+      [
+        "La direction scientifique désigne Folamour. L’annuaire indique son ancienne adresse ; appliquez le déménagement.",
+        "Scientific management identifies Folamour. The directory gives his old address; apply the relocation."
+      ],
+      [
+        "Destinataire Dr Folamour ; aile OUEST ; bureau 4. Validez, puis livrez le colis au guichet 101.",
+        "Recipient Dr Folamour; WEST wing; office 4. Validate, then deliver the parcel at counter 101."
+      ]
     ]
   },
   "objectives": {
@@ -385,6 +427,26 @@
     "p_delivery": [
       "Rapporter la copie approuvée au bac 101, à l’accueil central.",
       "Return the approved copy to tray 101 at central reception."
+    ],
+    "m_balance": [
+      "Récupérer le lot 201 et identifier le colis plus lourd sur la balance 203 à l’ouest.",
+      "Collect batch 201 and identify the heavier parcel at western balance 203."
+    ],
+    "m_network": [
+      "Trouver la capsule 301 puis l’acheminer à l’expédition par le réseau 303.",
+      "Find capsule 301 and route it to dispatch through network 303."
+    ],
+    "m_label": [
+      "Récupérer le fragment d’étiquette 401 dans l’aile sud.",
+      "Collect label fragment 401 in the southern wing."
+    ],
+    "m_address": [
+      "Croiser les références 401, 402 et 404 pour adresser le colis en 403.",
+      "Cross-check references 401, 402 and 404 to address the parcel at 403."
+    ],
+    "m_delivery": [
+      "Remettre le colis adressé au guichet 101, à la réception est.",
+      "Hand over the addressed parcel at counter 101, at eastern reception."
     ]
   },
   "stages": {
@@ -593,6 +655,38 @@
           "p_delivery"
         ],
         "p_delivery"
+      ]
+    ],
+    "8": [
+      [
+        [
+          "m_balance"
+        ],
+        "m_balance"
+      ],
+      [
+        [
+          "m_network"
+        ],
+        "m_network"
+      ],
+      [
+        [
+          "m_label"
+        ],
+        "m_label"
+      ],
+      [
+        [
+          "m_address"
+        ],
+        "m_address"
+      ],
+      [
+        [
+          "m_delivery"
+        ],
+        "m_delivery"
       ]
     ]
   }
