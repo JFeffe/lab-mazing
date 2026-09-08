@@ -1,0 +1,217 @@
+{
+  "11": [
+    {
+      "id": "c11_p1",
+      "solution": "Tester A, B et C avec 1. A double ; B complète à six ; C ajoute deux. Attribuer ces fonctions puis valider.",
+      "actions": [
+        1,
+        1,
+        2,
+        0,
+        2,
+        0,
+        2,
+        3,
+        4,
+        4
+      ],
+      "explanation": "Avec 1, les résultats possibles sont 3 (ajouter deux), 2 (doubler) et 5 (complément à six)."
+    },
+    {
+      "id": "c11_p2",
+      "solution": "Chaud 4 ; fragile 3 ; magnétique 2 ; bavard 1. Valider.",
+      "actions": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        2
+      ],
+      "explanation": "Chaud en 4 et bavard en 1. Le fragile ne peut pas occuper 2, voisin du bavard."
+    },
+    {
+      "id": "c11_p3",
+      "solution": "N, N, E, E, E, E, N, N. Tester puis valider.",
+      "actions": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        98
+      ],
+      "explanation": "Montez deux cases, traversez la ligne centrale, puis remontez vers la sortie."
+    }
+  ],
+  "12": [
+    {
+      "id": "c12_p1",
+      "solution": "Décalages A=10, B=1, C=9. Valider.",
+      "actions": [
+        100,
+        100,
+        1,
+        102,
+        102,
+        102
+      ],
+      "explanation": "A : 2 + 10 ; B : 11 + 1 ; C : 3 + 9. Les multiples de douze reviennent à zéro."
+    },
+    {
+      "id": "c12_p2",
+      "solution": "Vanne → débit → température → alarme → verrouillage. Tester puis valider.",
+      "actions": [
+        2,
+        4,
+        1,
+        0,
+        3,
+        98
+      ],
+      "explanation": "La vanne est la cause initiale. Le verrouillage est la dernière conséquence."
+    },
+    {
+      "id": "c12_p3",
+      "solution": "Secours OUI ; couper le son NON ; filtre OUI ; confinement NON. Tester puis valider.",
+      "actions": [
+        0,
+        2,
+        98
+      ],
+      "explanation": "Alimentez la ventilation de secours et protégez la vanne. Laissez l’alarme audible, sans confinement qui étouffe la ventilation."
+    }
+  ],
+  "13": [
+    {
+      "id": "c13_p1",
+      "solution": "A EST ; B OUEST ; C NORD. Tester puis valider.",
+      "actions": [
+        0,
+        1,
+        1,
+        1,
+        98
+      ],
+      "explanation": "Les cibles des bureaux sont à droite de A ; celles des sas à gauche de B ; les registres au-dessus de C."
+    },
+    {
+      "id": "c13_p2",
+      "solution": "A → C → F → D → B. Laisser E de côté. Tester puis valider.",
+      "actions": [
+        0,
+        2,
+        5,
+        3,
+        1,
+        98
+      ],
+      "explanation": "Écartez E, marquée M. L’ordre du trajet et les heures des autres cartes doivent concorder."
+    },
+    {
+      "id": "c13_p3",
+      "solution": "Lire Matière, Vêtement, Badge ; sélectionner Folamour puis valider.",
+      "actions": [
+        4,
+        5,
+        6,
+        2
+      ],
+      "explanation": "Croisez humain physique, blouse et badge révoqué. La projection n’est pas un humain."
+    }
+  ],
+  "14": [
+    {
+      "id": "c14_p1",
+      "solution": "Ventilation 3 ; archives 2 ; pompe 4 ; éclairage 3. Valider.",
+      "actions": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3
+      ],
+      "explanation": "Si ventilation = x, les besoins sont x, x−1, x+1, x. Leur somme vaut 4x = 12."
+    },
+    {
+      "id": "c14_p2",
+      "solution": "A vers B → B vers C → C vers A → B vers C → A vers B → B vers C → C vers A. Valider.",
+      "actions": [
+        0,
+        3,
+        4,
+        3,
+        0,
+        3,
+        4
+      ],
+      "explanation": "Commencez par remplir B puis C depuis B. Récupérez les petits restes pour former quatre unités."
+    },
+    {
+      "id": "c14_p3",
+      "solution": "N, N, E, E, O, N, N, E, E, S, E, N, N, E. Tester puis valider.",
+      "actions": [
+        0,
+        0,
+        1,
+        1,
+        3,
+        0,
+        0,
+        1,
+        1,
+        2,
+        1,
+        0,
+        0,
+        1,
+        98
+      ],
+      "explanation": "La station de B est décalée vers le bas. Utilisez les murs pour ajuster la synchronisation ; les ordres s’adressent à A."
+    }
+  ],
+  "15": [
+    {
+      "id": "c15_p1",
+      "solution": "Conserver A et E. Écarter B, C et D. Valider.",
+      "actions": [
+        0,
+        4
+      ],
+      "explanation": "C vient de B, D vient de C : ces deux textes proviennent donc aussi de MIROIR. A et E ont des capteurs physiques indépendants."
+    },
+    {
+      "id": "c15_p2",
+      "solution": "A VRAI ; B FAUX ; C VRAI ; D FAUX. Tester puis valider.",
+      "actions": [
+        0,
+        2,
+        98
+      ],
+      "explanation": "A et C ont le même statut. S’ils étaient tous deux faux, B devrait être vrai mais sa déclaration serait fausse."
+    },
+    {
+      "id": "c15_p3",
+      "solution": "I → II → III → ATTENDRE → ATTENDRE. Tester puis valider.",
+      "actions": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        98
+      ],
+      "explanation": "L’ordre des commandes peut varier, mais les deux derniers tours doivent laisser les échos se terminer. Examinez l’effet combiné de chaque commande et de son double."
+    }
+  ]
+}

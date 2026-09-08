@@ -1,0 +1,251 @@
+[
+  {
+    "id": "c15_n1",
+    "kind": "clue",
+    "cell": [
+      9,
+      1
+    ],
+    "ref": "201",
+    "title": "Origine des alertes",
+    "text": "A : observation de la caméra locale, hors MIROIR. B : prédiction de MIROIR. C : copie du rapport B. D : résumé du rapport C. E : relevé mécanique de pression, hors MIROIR."
+  },
+  {
+    "id": "c15_n2",
+    "kind": "clue",
+    "cell": [
+      25,
+      1
+    ],
+    "ref": "202",
+    "title": "Un témoin, plusieurs signatures",
+    "text": "Seules les mesures physiques indépendantes sont recevables. Une copie et un résumé héritent de l’origine de leur source, même avec une nouvelle signature. Conserver les pièces indépendantes et écarter toutes les autres."
+  },
+  {
+    "id": "c15_p1",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      3
+    ],
+    "ref": "203",
+    "title": "Audit des preuves",
+    "text": "Conserver ou écarter chacune des cinq pièces. Le diagramme montre les dépendances. Vérifier que plusieurs versions du même texte ne sont pas comptées comme plusieurs observations.",
+    "puzzle_type": "foresight",
+    "model": "foresight",
+    "mode": "audit",
+    "labels": [
+      "A · Caméra locale",
+      "B · Prévision MIROIR",
+      "C · Copie de B",
+      "D · Résumé de C",
+      "E · Manomètre"
+    ],
+    "requires": [
+      "c15_kit"
+    ],
+    "opens": [
+      "c15_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c15_n3",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "301",
+    "title": "Règles du débat",
+    "text": "Quatre voix A, B, C et D. Deux disent vrai et deux disent faux. Chaque voix parle de la véracité de la déclaration des autres, pas de leur opinion générale."
+  },
+  {
+    "id": "c15_n4",
+    "kind": "clue",
+    "cell": [
+      7,
+      33
+    ],
+    "ref": "302",
+    "title": "Déclarations signées",
+    "text": "A : « B dit faux. » B : « C ET D disent vrai. » C : « A dit vrai. » D : « A ET C disent faux. » Les quatre déclarations doivent être cohérentes avec les statuts attribués."
+  },
+  {
+    "id": "c15_p2",
+    "kind": "mechanism",
+    "cell": [
+      3,
+      17
+    ],
+    "ref": "303",
+    "title": "Les quatre voix",
+    "text": "Attribuer VRAI ou FAUX à chaque voix. Le tableau rappelle les déclarations ; deux voix seulement doivent être vraies. Tester la cohérence puis valider.",
+    "puzzle_type": "foresight",
+    "model": "foresight",
+    "mode": "logic",
+    "statements": [
+      "A : B dit faux.",
+      "B : C ET D disent vrai.",
+      "C : A dit vrai.",
+      "D : A ET C disent faux."
+    ],
+    "prerequisites": [
+      "c15_p1"
+    ],
+    "opens": [
+      "c15_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c15_n5",
+    "kind": "clue",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "401",
+    "title": "Commandes et échos",
+    "text": "Six voyants numérotés 1 à 6. I inverse 1 et 2 ; II inverse 3 et 4 ; III inverse 2, 4 et 5. Inverser allume un voyant éteint et éteint un voyant allumé."
+  },
+  {
+    "id": "c15_n6",
+    "kind": "clue",
+    "cell": [
+      27,
+      33
+    ],
+    "ref": "402",
+    "title": "Retard du double",
+    "text": "Chaque commande est copiée deux tours plus tard, avec ses cibles décalées de +1 : après 6 revient 1. ATTENDRE avance un tour sans nouvelle commande. Terminer avec les six voyants allumés ET aucun écho en attente. Aucun temps réel : seul un ordre avance le système."
+  },
+  {
+    "id": "c15_p3",
+    "kind": "mechanism",
+    "cell": [
+      31,
+      17
+    ],
+    "ref": "403",
+    "title": "Le pupitre des échos",
+    "text": "Programmer les commandes et les tours d’attente. Tester affiche les six voyants après chaque tour et les échos restant à exécuter. Valider seulement lorsque le système est stable.",
+    "puzzle_type": "foresight",
+    "model": "foresight",
+    "mode": "echoes",
+    "masks": [
+      3,
+      12,
+      26
+    ],
+    "max_commands": 12,
+    "prerequisites": [
+      "c15_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c15_welcome",
+    "kind": "clue",
+    "cell": [
+      19,
+      19
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Un amphithéâtre annulaire entoure la fosse du conseil. Les coulisses ouest abritent le débat ; l’aile est contient le pupitre des échos. La circulation revient toujours vers l’anneau central."
+  },
+  {
+    "id": "c15_kit",
+    "kind": "pickup",
+    "cell": [
+      15,
+      19
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c15_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c15_gate1",
+    "kind": "door",
+    "cell": [
+      8,
+      17
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "x",
+    "controlled_by": "c15_p1"
+  },
+  {
+    "id": "c15_gate2",
+    "kind": "door",
+    "cell": [
+      26,
+      17
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "x",
+    "controlled_by": "c15_p2"
+  },
+  {
+    "id": "c15_secret1",
+    "kind": "clue",
+    "cell": [
+      25,
+      19
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "Le conseil demande un avis indépendant. La demande est adressée au conseil.",
+    "secret": true
+  },
+  {
+    "id": "c15_secret2",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "Procès-verbal provisoire : « La réunion se félicite d’avoir démontré la nécessité de la réunion. »",
+    "secret": true
+  },
+  {
+    "id": "c15_secret3",
+    "kind": "clue",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "Budget du complexe : validé avant estimation, au nom de la prudence.",
+    "secret": true
+  },
+  {
+    "id": "c15_exit",
+    "kind": "exit",
+    "cell": [
+      29,
+      33
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c15_p1",
+      "c15_p2",
+      "c15_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]

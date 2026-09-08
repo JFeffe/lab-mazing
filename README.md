@@ -1,6 +1,6 @@
 # Lab-mazing — Le Labyrinthe de Folamour
 
-Version 0.16 : jeu solo 3D isométrique, chapitre 1 complet et cinq missions du chapitre 2, français/anglais, déplacement au clic et au toucher.
+Version 0.17 : jeu solo 3D isométrique, trois chapitres complets et quinze niveaux, français/anglais, déplacement au clic et au toucher.
 
 Jouer dans le navigateur : https://jfeffe.github.io/lab-mazing/
 
@@ -11,6 +11,27 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Nouveautés v0.17
+
+Le chapitre 3, **Le département de la prévoyance**, est jouable du début à la fin. Après MIROIR, Folamour transforme la prévention en problème administratif : les prédictions se copient, la surveillance le dénonce et le conseil réclame un complexe souterrain.
+
+| Niveau | Plan original | Trois défis |
+| --- | --- | --- |
+| 1 — Le magasin des prototypes | Entrepôts en peigne et galerie de livraison | Mesurer les appareils, ranger les prototypes, programmer un chariot |
+| 2 — Le bureau des incidents futurs | Bureaux en trois terrasses | Synchroniser les horloges, retrouver la causalité, prévenir sans étouffer la ventilation |
+| 3 — La centrale de surveillance | Trois cours autour d’un vide | Orienter les caméras, remonter un film, identifier le visiteur |
+| 4 — Le simulateur de crise | Plateformes et passerelles autour des bassins | Répartir douze unités, équilibrer trois cuves, évacuer deux équipes aux commandes opposées |
+| 5 — Le conseil de prévention | Amphithéâtre annulaire et coulisses | Écarter les preuves copiées, résoudre les quatre voix, stabiliser les échos retardés |
+
+- Quinze nouveaux essais, quinze secrets et vingt raccourcis, avec indices graduels en français et en anglais.
+- Mesures et programmes conservés ; simulations sans temps réel ; annulation des ordres et des transvasements ; remise à zéro sans perte du matériel installé.
+- Transition archives → chapitre 3, cinq missions enchaînées, reprise des essais partiels et bilan du chapitre. Le chapitre 4 est annoncé, sans accès jouable.
+- Panneaux vérifiés en portrait et paysage ; déplacements, collisions, solutions, sauvegardes et raccourcis couverts par les tests Godot.
+
+[Cartes et cheatsheets v0.17 — cinq dossiers de niveau](https://drive.google.com/drive/folders/1tSsCdJEI-DX_fy_I0nd6jUn9xzBYUkn0).
+
+Les données sont générées avec `python3 scripts/build_chapter3.py`. Les guides français (cartes PNG/PDF A3, solutions PDF A4/Markdown) sont générés avec `python3 scripts/document_chapter3.py /chemin/de/sortie`. Vérification : `python3 game/tests/validate_chapter3.py`, puis Godot avec `--headless --path game --fixed-fps 60 --script res://tests/verify_chapter3.gd`.
 
 ## Nouveautés v0.16
 **Le service des archives**, niveau 5 du chapitre 2 (numéro interne 10), poursuit le projet MIROIR : rayonnages à commandes couplées, authentification de rapports par trois preuves indépendantes, puis reproduction de quatre états dans une salle jumelle physique.

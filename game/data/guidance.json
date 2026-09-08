@@ -377,6 +377,216 @@
         "Lampe ALLUMÉE ; bobine GAUCHE ; projecteur EST ; ventilation ABAISSÉE. Testez puis validez.",
         "Lamp ON; coil LEFT; projector EAST; ventilation DOWN. Test, then validate."
       ]
+    ],
+    "c11_p1": [
+      [
+        "Choisissez une entrée qui distingue les trois opérations.",
+        "Choose an input that distinguishes all three operations."
+      ],
+      [
+        "Avec 1, les résultats possibles sont 3 (ajouter deux), 2 (doubler) et 5 (complément à six).",
+        "With 1, possible results are 3 (add two), 2 (double) and 5 (complement to six)."
+      ],
+      [
+        "Tester A, B et C avec 1. A double ; B complète à six ; C ajoute deux. Attribuer ces fonctions puis valider.",
+        "Test A, B and C with 1. A doubles; B complements to six; C adds two. Assign these functions and validate."
+      ]
+    ],
+    "c11_p2": [
+      [
+        "Commencez par les casiers spécialisés.",
+        "Start with the specialised lockers."
+      ],
+      [
+        "Chaud en 4 et bavard en 1. Le fragile ne peut pas occuper 2, voisin du bavard.",
+        "Hot in 4 and talkative in 1. Fragile cannot take 2, next to talkative."
+      ],
+      [
+        "Chaud 4 ; fragile 3 ; magnétique 2 ; bavard 1. Valider.",
+        "Hot 4; fragile 3; magnetic 2; talkative 1. Validate."
+      ]
+    ],
+    "c11_p3": [
+      [
+        "Repérez les ouvertures dans les murs de la grille.",
+        "Find the openings in the grid walls."
+      ],
+      [
+        "Montez deux cases, traversez la ligne centrale, puis remontez vers la sortie.",
+        "Move up two cells, cross the middle row, then move up to the exit."
+      ],
+      [
+        "N, N, E, E, E, E, N, N. Tester puis valider.",
+        "N, N, E, E, E, E, N, N. Test and validate."
+      ]
+    ],
+    "c12_p1": [
+      [
+        "Pour chaque cadran, trouvez ce qui manque pour revenir à zéro.",
+        "For each dial, find what is missing to return to zero."
+      ],
+      [
+        "A : 2 + 10 ; B : 11 + 1 ; C : 3 + 9. Les multiples de douze reviennent à zéro.",
+        "A: 2 + 10; B: 11 + 1; C: 3 + 9. Multiples of twelve return to zero."
+      ],
+      [
+        "Décalages A=10, B=1, C=9. Valider.",
+        "Offsets A=10, B=1, C=9. Validate."
+      ]
+    ],
+    "c12_p2": [
+      [
+        "Cherchez l’action qui n’a besoin d’aucun autre événement.",
+        "Find the action that needs no preceding event."
+      ],
+      [
+        "La vanne est la cause initiale. Le verrouillage est la dernière conséquence.",
+        "The valve is the initial cause. Locking is the last effect."
+      ],
+      [
+        "Vanne → débit → température → alarme → verrouillage. Tester puis valider.",
+        "Valve → flow → temperature → alarm → locking. Test and validate."
+      ]
+    ],
+    "c12_p3": [
+      [
+        "Corrigez les causes plutôt que l’avertissement.",
+        "Fix causes rather than the warning."
+      ],
+      [
+        "Alimentez la ventilation de secours et protégez la vanne. Laissez l’alarme audible, sans confinement qui étouffe la ventilation.",
+        "Supply backup ventilation and protect the valve. Keep the alarm audible, without containment choking ventilation."
+      ],
+      [
+        "Secours OUI ; couper le son NON ; filtre OUI ; confinement NON. Tester puis valider.",
+        "Backup YES; mute NO; filter YES; containment NO. Test and validate."
+      ]
+    ],
+    "c13_p1": [
+      [
+        "Suivez les lignes des cibles à partir de chaque caméra.",
+        "Follow target lines from each camera."
+      ],
+      [
+        "Les cibles des bureaux sont à droite de A ; celles des sas à gauche de B ; les registres au-dessus de C.",
+        "Office targets are right of A; gate targets left of B; logs above C."
+      ],
+      [
+        "A EST ; B OUEST ; C NORD. Tester puis valider.",
+        "A EAST; B WEST; C NORTH. Test and validate."
+      ]
+    ],
+    "c13_p2": [
+      [
+        "Vérifiez l’origine avant de regarder l’heure.",
+        "Check the source before looking at the time."
+      ],
+      [
+        "Écartez E, marquée M. L’ordre du trajet et les heures des autres cartes doivent concorder.",
+        "Exclude E, marked M. The route and remaining timestamps must agree."
+      ],
+      [
+        "A → C → F → D → B. Laisser E de côté. Tester puis valider.",
+        "A → C → F → D → B. Leave E out. Test and validate."
+      ]
+    ],
+    "c13_p3": [
+      [
+        "Le badge seul ne suffit pas : deux apparitions ont un statut invalide.",
+        "The badge alone is insufficient: two appearances have invalid status."
+      ],
+      [
+        "Croisez humain physique, blouse et badge révoqué. La projection n’est pas un humain.",
+        "Cross physical human, coat and revoked badge. A projection is not a human."
+      ],
+      [
+        "Lire Matière, Vêtement, Badge ; sélectionner Folamour puis valider.",
+        "Read Material, Clothing, Badge; select Folamour and validate."
+      ]
+    ],
+    "c14_p1": [
+      [
+        "Exprimez chaque besoin à partir de celui de la ventilation.",
+        "Express each demand using ventilation as the reference."
+      ],
+      [
+        "Si ventilation = x, les besoins sont x, x−1, x+1, x. Leur somme vaut 4x = 12.",
+        "If ventilation = x, demands are x, x−1, x+1, x. Their sum is 4x = 12."
+      ],
+      [
+        "Ventilation 3 ; archives 2 ; pompe 4 ; éclairage 3. Valider.",
+        "Ventilation 3; archives 2; pump 4; lighting 3. Validate."
+      ]
+    ],
+    "c14_p2": [
+      [
+        "La petite cuve mesure trois unités ; la moyenne en contient cinq.",
+        "The small tank measures three units; the middle one holds five."
+      ],
+      [
+        "Commencez par remplir B puis C depuis B. Récupérez les petits restes pour former quatre unités.",
+        "Start by filling B, then C from B. Use the small remainders to form four units."
+      ],
+      [
+        "A vers B → B vers C → C vers A → B vers C → A vers B → B vers C → C vers A. Valider.",
+        "A to B, B to C, C to A, B to C, A to B, B to C, C to A. Validate."
+      ]
+    ],
+    "c14_p3": [
+      [
+        "Observez les deux cartes après chaque essai : une équipe peut avancer quand l’autre est bloquée.",
+        "Inspect both maps after testing: one team can move while the other is blocked."
+      ],
+      [
+        "La station de B est décalée vers le bas. Utilisez les murs pour ajuster la synchronisation ; les ordres s’adressent à A.",
+        "B’s station is lower. Use walls to adjust synchronisation; commands are addressed to A."
+      ],
+      [
+        "N, N, E, E, O, N, N, E, E, S, E, N, N, E. Tester puis valider.",
+        "N, N, E, E, W, N, N, E, E, S, E, N, N, E. Test and validate."
+      ]
+    ],
+    "c15_p1": [
+      [
+        "Remontez de chaque document jusqu’à sa première source.",
+        "Trace every document back to its first source."
+      ],
+      [
+        "C vient de B, D vient de C : ces deux textes proviennent donc aussi de MIROIR. A et E ont des capteurs physiques indépendants.",
+        "C comes from B, D from C: both therefore also originate in MIRROR. A and E have independent physical sensors."
+      ],
+      [
+        "Conserver A et E. Écarter B, C et D. Valider.",
+        "Keep A and E. Exclude B, C and D. Validate."
+      ]
+    ],
+    "c15_p2": [
+      [
+        "La déclaration de C relie directement son statut à celui de A.",
+        "C’s statement directly links its status to A’s."
+      ],
+      [
+        "A et C ont le même statut. S’ils étaient tous deux faux, B devrait être vrai mais sa déclaration serait fausse.",
+        "A and C share a status. If both were false, B would have to be true while its statement would be false."
+      ],
+      [
+        "A VRAI ; B FAUX ; C VRAI ; D FAUX. Tester puis valider.",
+        "A TRUE; B FALSE; C TRUE; D FALSE. Test and validate."
+      ]
+    ],
+    "c15_p3": [
+      [
+        "Une commande agit deux fois : directement, puis sur les voyants voisins avec retard.",
+        "Each command acts twice: directly, then on neighbouring indicators after a delay."
+      ],
+      [
+        "L’ordre des commandes peut varier, mais les deux derniers tours doivent laisser les échos se terminer. Examinez l’effet combiné de chaque commande et de son double.",
+        "Command order can vary, but the last two turns must let echoes finish. Inspect the combined effect of each command and its double."
+      ],
+      [
+        "I → II → III → ATTENDRE → ATTENDRE. Tester puis valider.",
+        "I → II → III → WAIT → WAIT. Test and validate."
+      ]
     ]
   },
   "objectives": {
@@ -575,6 +785,106 @@
     "a_final": [
       "Apporter le sceau au dossier MIROIR 105 et l’ouvrir.",
       "Bring the seal to MIRROR file 105 and open it."
+    ],
+    "c11_p1": [
+      "Résoudre 203 : Banc des appareils inconnus.",
+      "Solve 203: Unknown device bench."
+    ],
+    "c11_p2": [
+      "Résoudre 303 : Rangement des prototypes.",
+      "Solve 303: Prototype storage."
+    ],
+    "c11_p3": [
+      "Résoudre 403 : Chariot de livraison.",
+      "Solve 403: Delivery trolley."
+    ],
+    "c11_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c11_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c12_p1": [
+      "Résoudre 203 : Horloges décalées.",
+      "Solve 203: Offset clocks."
+    ],
+    "c12_p2": [
+      "Résoudre 303 : Chronologie de l’incident.",
+      "Solve 303: Incident timeline."
+    ],
+    "c12_p3": [
+      "Résoudre 403 : Prévention sans incident.",
+      "Solve 403: Incident-free prevention."
+    ],
+    "c12_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c12_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c13_p1": [
+      "Résoudre 203 : Orientation des caméras.",
+      "Solve 203: Camera orientation."
+    ],
+    "c13_p2": [
+      "Résoudre 303 : Reconstitution du passage.",
+      "Solve 303: Reconstructing the passage."
+    ],
+    "c13_p3": [
+      "Résoudre 403 : Réhabilitation du visiteur.",
+      "Solve 403: Visitor reinstatement."
+    ],
+    "c13_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c13_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c14_p1": [
+      "Résoudre 203 : Répartition d’urgence.",
+      "Solve 203: Emergency allocation."
+    ],
+    "c14_p2": [
+      "Résoudre 303 : Équilibrage des cuves.",
+      "Solve 303: Tank balancing."
+    ],
+    "c14_p3": [
+      "Résoudre 403 : Évacuation à deux équipes.",
+      "Solve 403: Two-team evacuation."
+    ],
+    "c14_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c14_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c15_p1": [
+      "Résoudre 203 : Audit des preuves.",
+      "Solve 203: Evidence audit."
+    ],
+    "c15_p2": [
+      "Résoudre 303 : Les quatre voix.",
+      "Solve 303: The four voices."
+    ],
+    "c15_p3": [
+      "Résoudre 403 : Le pupitre des échos.",
+      "Solve 403: The echo console."
+    ],
+    "c15_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c15_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
     ]
   },
   "stages": {
@@ -885,6 +1195,166 @@
           "a_final"
         ],
         "a_final"
+      ]
+    ],
+    "11": [
+      [
+        [
+          "c11_kit"
+        ],
+        "c11_kit"
+      ],
+      [
+        [
+          "c11_p1"
+        ],
+        "c11_p1"
+      ],
+      [
+        [
+          "c11_p2"
+        ],
+        "c11_p2"
+      ],
+      [
+        [
+          "c11_p3"
+        ],
+        "c11_p3"
+      ],
+      [
+        [
+          "c11_exit"
+        ],
+        "c11_exit"
+      ]
+    ],
+    "12": [
+      [
+        [
+          "c12_kit"
+        ],
+        "c12_kit"
+      ],
+      [
+        [
+          "c12_p1"
+        ],
+        "c12_p1"
+      ],
+      [
+        [
+          "c12_p2"
+        ],
+        "c12_p2"
+      ],
+      [
+        [
+          "c12_p3"
+        ],
+        "c12_p3"
+      ],
+      [
+        [
+          "c12_exit"
+        ],
+        "c12_exit"
+      ]
+    ],
+    "13": [
+      [
+        [
+          "c13_kit"
+        ],
+        "c13_kit"
+      ],
+      [
+        [
+          "c13_p1"
+        ],
+        "c13_p1"
+      ],
+      [
+        [
+          "c13_p2"
+        ],
+        "c13_p2"
+      ],
+      [
+        [
+          "c13_p3"
+        ],
+        "c13_p3"
+      ],
+      [
+        [
+          "c13_exit"
+        ],
+        "c13_exit"
+      ]
+    ],
+    "14": [
+      [
+        [
+          "c14_kit"
+        ],
+        "c14_kit"
+      ],
+      [
+        [
+          "c14_p1"
+        ],
+        "c14_p1"
+      ],
+      [
+        [
+          "c14_p2"
+        ],
+        "c14_p2"
+      ],
+      [
+        [
+          "c14_p3"
+        ],
+        "c14_p3"
+      ],
+      [
+        [
+          "c14_exit"
+        ],
+        "c14_exit"
+      ]
+    ],
+    "15": [
+      [
+        [
+          "c15_kit"
+        ],
+        "c15_kit"
+      ],
+      [
+        [
+          "c15_p1"
+        ],
+        "c15_p1"
+      ],
+      [
+        [
+          "c15_p2"
+        ],
+        "c15_p2"
+      ],
+      [
+        [
+          "c15_p3"
+        ],
+        "c15_p3"
+      ],
+      [
+        [
+          "c15_exit"
+        ],
+        "c15_exit"
       ]
     ]
   }

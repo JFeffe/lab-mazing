@@ -1,0 +1,283 @@
+[
+  {
+    "id": "c14_n1",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "201",
+    "title": "Priorités électriques",
+    "text": "Douze unités au total. Ventilation et éclairage consomment la même quantité. La pompe prend une unité de plus que la ventilation. Les archives prennent une unité de moins. Aucune unité ne doit rester en réserve."
+  },
+  {
+    "id": "c14_n2",
+    "kind": "clue",
+    "cell": [
+      13,
+      13
+    ],
+    "ref": "202",
+    "title": "Simulation de surcharge",
+    "text": "Les unités sont transférées depuis la réserve : + attribue une unité, − la restitue. La somme reste toujours égale à douze. Trouver une distribution qui respecte les quatre besoins simultanément."
+  },
+  {
+    "id": "c14_p1",
+    "kind": "mechanism",
+    "cell": [
+      7,
+      3
+    ],
+    "ref": "203",
+    "title": "Répartition d’urgence",
+    "text": "Distribuer les douze unités entre ventilation, archives, pompe et éclairage. Les barres affichent les quantités et la réserve.",
+    "puzzle_type": "foresight",
+    "model": "foresight",
+    "mode": "budget",
+    "labels": [
+      "Ventilation",
+      "Archives",
+      "Pompe",
+      "Éclairage"
+    ],
+    "budget": 12,
+    "requires": [
+      "c14_kit"
+    ],
+    "opens": [
+      "c14_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c14_n3",
+    "kind": "clue",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "301",
+    "title": "Circuit fermé",
+    "text": "Trois cuves de capacités 8, 5 et 3 unités. La cuve A contient les huit unités initiales. Transvaser continue jusqu’à vider la source ou remplir la destination. Aucun ajout, aucune perte."
+  },
+  {
+    "id": "c14_n4",
+    "kind": "clue",
+    "cell": [
+      21,
+      13
+    ],
+    "ref": "302",
+    "title": "Équilibre hydraulique",
+    "text": "Obtenir quatre unités dans A et quatre dans B, sans liquide dans C. C sert de mesure intermédiaire. Le bouton Annuler restitue le transvasement précédent."
+  },
+  {
+    "id": "c14_p2",
+    "kind": "mechanism",
+    "cell": [
+      27,
+      3
+    ],
+    "ref": "303",
+    "title": "Équilibrage des cuves",
+    "text": "Transvaser dans le circuit fermé. Les jauges changent après chaque action. Les essais et l’historique des transvasements sont sauvegardés.",
+    "puzzle_type": "foresight",
+    "model": "foresight",
+    "mode": "tanks",
+    "capacities": [
+      8,
+      5,
+      3
+    ],
+    "prerequisites": [
+      "c14_p1"
+    ],
+    "opens": [
+      "c14_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c14_n5",
+    "kind": "clue",
+    "cell": [
+      5,
+      21
+    ],
+    "ref": "401",
+    "title": "Deux équipes, un signal",
+    "text": "L’équipe A suit vos directions. L’équipe B reçoit les directions opposées : N devient S, E devient O. Si une équipe bute contre un mur, elle reste sur place ; l’autre continue."
+  },
+  {
+    "id": "c14_n6",
+    "kind": "clue",
+    "cell": [
+      29,
+      33
+    ],
+    "ref": "402",
+    "title": "Procédure d’évacuation",
+    "text": "Sur chaque plan, aller de D à S en visitant *. Les positions initiales sont opposées mais les murs sont différents. Un obstacle peut servir à décaler les deux équipes. Vingt-quatre ordres au maximum."
+  },
+  {
+    "id": "c14_p3",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      23
+    ],
+    "ref": "403",
+    "title": "Évacuation à deux équipes",
+    "text": "Programmer les deux équipes ensemble. Tester affiche leurs traces et leurs positions finales. Réinitialiser ou retirer un ordre permet de reprendre sans danger.",
+    "puzzle_type": "foresight",
+    "model": "foresight",
+    "mode": "duet",
+    "board": [
+      "...#S",
+      ".###.",
+      "..*..",
+      ".###.",
+      "D#..."
+    ],
+    "board_b": [
+      "....D",
+      ".#...",
+      "..#..",
+      "..*#.",
+      "S...."
+    ],
+    "start": [
+      0,
+      4
+    ],
+    "start_b": [
+      4,
+      0
+    ],
+    "goal": [
+      4,
+      0
+    ],
+    "goal_b": [
+      0,
+      4
+    ],
+    "checkpoint": [
+      2,
+      2
+    ],
+    "checkpoint_b": [
+      2,
+      3
+    ],
+    "max_commands": 24,
+    "prerequisites": [
+      "c14_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c14_welcome",
+    "kind": "clue",
+    "cell": [
+      1,
+      11
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Trois plateformes autour de bassins techniques : distribution au nord-ouest, hydraulique au nord-est et évacuation au sud. Des passerelles étroites relient les plateformes."
+  },
+  {
+    "id": "c14_kit",
+    "kind": "pickup",
+    "cell": [
+      3,
+      13
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c14_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c14_gate1",
+    "kind": "door",
+    "cell": [
+      17,
+      3
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "x",
+    "controlled_by": "c14_p1"
+  },
+  {
+    "id": "c14_gate2",
+    "kind": "door",
+    "cell": [
+      31,
+      17
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "y",
+    "controlled_by": "c14_p2"
+  },
+  {
+    "id": "c14_secret1",
+    "kind": "clue",
+    "cell": [
+      13,
+      1
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "Simulation 46 : panne du bouton « panne ». Résultat jugé trop rassurant.",
+    "secret": true
+  },
+  {
+    "id": "c14_secret2",
+    "kind": "clue",
+    "cell": [
+      33,
+      13
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "Le bassin est vide. Un panneau interdit néanmoins de rassurer les visiteurs.",
+    "secret": true
+  },
+  {
+    "id": "c14_secret3",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "Pour augmenter le réalisme, le simulateur souhaite un simulateur qui simule ses erreurs.",
+    "secret": true
+  },
+  {
+    "id": "c14_exit",
+    "kind": "exit",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c14_p1",
+      "c14_p2",
+      "c14_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]

@@ -1,0 +1,317 @@
+[
+  {
+    "id": "c13_n1",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "201",
+    "title": "Angles morts",
+    "text": "Orienter les trois caméras pour couvrir tous les points marqués *. Une caméra voit en ligne droite jusqu’au premier mur. La grille indique le nord en haut. Les trois appareils ont chacun une orientation indépendante."
+  },
+  {
+    "id": "c13_n2",
+    "kind": "clue",
+    "cell": [
+      15,
+      1
+    ],
+    "ref": "202",
+    "title": "Plan de surveillance",
+    "text": "A se trouve à l’ouest de la ligne des bureaux, B à l’est de la ligne des sas, C au sud de la colonne des registres. Couvrir les points marqués suffit ; filmer un mur ne compte pas."
+  },
+  {
+    "id": "c13_p1",
+    "kind": "mechanism",
+    "cell": [
+      7,
+      7
+    ],
+    "ref": "203",
+    "title": "Orientation des caméras",
+    "text": "Tourner A, B et C. Le plan affiche les cases visibles et les points à couvrir. Tester la couverture avant validation.",
+    "puzzle_type": "foresight",
+    "model": "foresight",
+    "mode": "cameras",
+    "board": [
+      ".#...",
+      "A**#.",
+      ".**.B",
+      ".*...",
+      ".C..."
+    ],
+    "cameras": [
+      [
+        0,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        1,
+        4
+      ]
+    ],
+    "targets": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    "requires": [
+      "c13_kit"
+    ],
+    "opens": [
+      "c13_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c13_n3",
+    "kind": "clue",
+    "cell": [
+      19,
+      1
+    ],
+    "ref": "301",
+    "title": "Images originales",
+    "text": "Une personne passe par le vestibule, le couloir, l’atelier, le lecteur de badges puis la sortie. Le trajet ne revient jamais en arrière. Cinq vues physiques et une image de synthèse sont mélangées."
+  },
+  {
+    "id": "c13_n4",
+    "kind": "clue",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "302",
+    "title": "Filigrane MIROIR",
+    "text": "Les images portant le filigrane M sont des reconstitutions, pas des preuves de passage. Écarter cette carte puis ordonner les cinq autres. Les heures affichées sur les cartes physiques viennent de la même horloge."
+  },
+  {
+    "id": "c13_p2",
+    "kind": "mechanism",
+    "cell": [
+      27,
+      17
+    ],
+    "ref": "303",
+    "title": "Reconstitution du passage",
+    "text": "Ajouter seulement les cinq vues physiques dans l’ordre. L’image synthétique doit rester hors du montage. Tester puis valider.",
+    "puzzle_type": "foresight",
+    "model": "foresight",
+    "mode": "film",
+    "cards": [
+      "A · Vestibule · 09:00",
+      "B · Sortie · 09:07",
+      "C · Couloir · 09:01",
+      "D · Badge · 09:05",
+      "E · Bureau · 09:03 · M",
+      "F · Atelier · 09:04"
+    ],
+    "sequence": [
+      0,
+      2,
+      5,
+      3,
+      1
+    ],
+    "max_commands": 5,
+    "prerequisites": [
+      "c13_p1"
+    ],
+    "opens": [
+      "c13_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c13_n5",
+    "kind": "clue",
+    "cell": [
+      1,
+      19
+    ],
+    "ref": "401",
+    "title": "Description du visiteur",
+    "text": "Le visiteur est un humain physique en blouse, portant un badge révoqué. Il ne s’agit ni d’une projection ni du drone de maintenance. Le contrôle doit établir son identité, pas seulement repérer un badge invalide."
+  },
+  {
+    "id": "c13_n6",
+    "kind": "clue",
+    "cell": [
+      15,
+      33
+    ],
+    "ref": "402",
+    "title": "Trois vérifications",
+    "text": "Consulter les trois relevés : matière, vêtement, statut du badge. Un humain en veste n’est pas la personne recherchée. Le propriétaire du laboratoire est soumis au même contrôle que les autres."
+  },
+  {
+    "id": "c13_p3",
+    "kind": "mechanism",
+    "cell": [
+      7,
+      27
+    ],
+    "ref": "403",
+    "title": "Réhabilitation du visiteur",
+    "text": "Lire les trois relevés, comparer les quatre apparitions, puis choisir la personne correspondant à tous les indices. Valider pour rétablir son accès.",
+    "puzzle_type": "foresight",
+    "model": "foresight",
+    "mode": "identity",
+    "people": [
+      "Aster (projection)",
+      "Technicien",
+      "Folamour",
+      "Drone"
+    ],
+    "observations": [
+      [
+        "Projection",
+        "Humain",
+        "Humain",
+        "Machine"
+      ],
+      [
+        "Blouse",
+        "Veste",
+        "Blouse",
+        "Carénage"
+      ],
+      [
+        "Révoqué",
+        "Valide",
+        "Révoqué",
+        "Valide"
+      ]
+    ],
+    "prerequisites": [
+      "c13_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c13_welcome",
+    "kind": "clue",
+    "cell": [
+      1,
+      13
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Trois cours de surveillance entourent un vide central : optiques au nord-ouest, enregistrements à l’est, contrôle d’identité au sud-ouest. Les deux sas imposent un parcours autour du centre."
+  },
+  {
+    "id": "c13_kit",
+    "kind": "pickup",
+    "cell": [
+      3,
+      15
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c13_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c13_gate1",
+    "kind": "door",
+    "cell": [
+      17,
+      7
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "x",
+    "controlled_by": "c13_p1"
+  },
+  {
+    "id": "c13_gate2",
+    "kind": "door",
+    "cell": [
+      17,
+      27
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "x",
+    "controlled_by": "c13_p2"
+  },
+  {
+    "id": "c13_secret1",
+    "kind": "clue",
+    "cell": [
+      15,
+      15
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "Caméra 19 : chargée de surveiller les autres caméras lorsqu’elles regardent ailleurs.",
+    "secret": true
+  },
+  {
+    "id": "c13_secret2",
+    "kind": "clue",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "Une chaise vide figure sur la liste des personnes à interroger. Elle refuse de coopérer.",
+    "secret": true
+  },
+  {
+    "id": "c13_secret3",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "Motif de révocation de Folamour : « Se comporte comme si tout lui appartenait. »",
+    "secret": true
+  },
+  {
+    "id": "c13_exit",
+    "kind": "exit",
+    "cell": [
+      13,
+      33
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c13_p1",
+      "c13_p2",
+      "c13_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]

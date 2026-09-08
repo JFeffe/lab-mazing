@@ -1,0 +1,269 @@
+[
+  {
+    "id": "c11_n1",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "201",
+    "title": "Protocole du banc",
+    "text": "Les appareils A, B et C effectuent chacun une opération différente : ajouter deux, doubler, ou retrancher l’entrée à six. Testez des valeurs de 1 à 3. Une seule mesure à 2 ne permet pas de les distinguer : les trois donnent 4."
+  },
+  {
+    "id": "c11_n2",
+    "kind": "clue",
+    "cell": [
+      9,
+      1
+    ],
+    "ref": "202",
+    "title": "Registre d’essais",
+    "text": "Avant homologation, chaque appareil doit avoir été testé au moins une fois avec 1 ou 3. Les mesures sont conservées au banc. Comparez les résultats, puis attribuez les trois fonctions."
+  },
+  {
+    "id": "c11_p1",
+    "kind": "mechanism",
+    "cell": [
+      5,
+      13
+    ],
+    "ref": "203",
+    "title": "Banc des appareils inconnus",
+    "text": "Installer la mallette. Choisir l’appareil et l’entrée, mesurer, puis attribuer une fonction à A, B et C. Le registre affiche les mesures réellement prises.",
+    "puzzle_type": "foresight",
+    "model": "foresight",
+    "mode": "assay",
+    "functions": [
+      1,
+      2,
+      0
+    ],
+    "requires": [
+      "c11_kit"
+    ],
+    "opens": [
+      "c11_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c11_n3",
+    "kind": "clue",
+    "cell": [
+      13,
+      1
+    ],
+    "ref": "301",
+    "title": "Casiers de confinement",
+    "text": "Quatre casiers en ligne, numérotés 1 à 4 de gauche à droite. L’appareil chaud doit être dans le casier ventilé 4. Le bavard exige le casier insonorisé 1."
+  },
+  {
+    "id": "c11_n4",
+    "kind": "clue",
+    "cell": [
+      21,
+      1
+    ],
+    "ref": "302",
+    "title": "Incompatibilités",
+    "text": "Le fragile refuse d’être voisin du bavard. Le magnétique occupe la dernière place libre. Un seul appareil par casier. Les étiquettes 301 décrivent les propriétés mesurées, pas les promesses du fabricant."
+  },
+  {
+    "id": "c11_p2",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      13
+    ],
+    "ref": "303",
+    "title": "Rangement des prototypes",
+    "text": "Affecter les appareils aux quatre casiers. La vue montre les collisions de rangement. Utiliser les propriétés et les incompatibilités des notes 301 et 302.",
+    "puzzle_type": "foresight",
+    "model": "foresight",
+    "mode": "lockers",
+    "labels": [
+      "Chaud",
+      "Fragile",
+      "Magnétique",
+      "Bavard"
+    ],
+    "target": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "prerequisites": [
+      "c11_p1"
+    ],
+    "opens": [
+      "c11_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c11_n5",
+    "kind": "clue",
+    "cell": [
+      25,
+      1
+    ],
+    "ref": "401",
+    "title": "Guide du chariot",
+    "text": "Programmer le trajet depuis D jusqu’à S en passant par la station marquée *. Nord en haut. Un ordre déplace le chariot d’une case ; un mur l’immobilise pour cet ordre. Douze ordres au maximum."
+  },
+  {
+    "id": "c11_n6",
+    "kind": "clue",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "402",
+    "title": "Livraison sans chauffeur",
+    "text": "La grille du pupitre est le plan miniature du circuit d’essai, pas la carte de l’entrepôt. Tester exécute toute la liste. Modifier un ordre oblige à retester ; retirer le dernier ordre permet de corriger sans tout effacer."
+  },
+  {
+    "id": "c11_p3",
+    "kind": "mechanism",
+    "cell": [
+      29,
+      13
+    ],
+    "ref": "403",
+    "title": "Chariot de livraison",
+    "text": "Ajouter des directions, tester le trajet et observer la trace. Le chariot doit visiter * avant S. Le test est une simulation réversible.",
+    "puzzle_type": "foresight",
+    "model": "foresight",
+    "mode": "courier",
+    "board": [
+      "...#S",
+      ".###.",
+      "..*..",
+      ".###.",
+      "D#..."
+    ],
+    "start": [
+      0,
+      4
+    ],
+    "goal": [
+      4,
+      0
+    ],
+    "checkpoint": [
+      2,
+      2
+    ],
+    "max_commands": 12,
+    "prerequisites": [
+      "c11_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c11_welcome",
+    "kind": "clue",
+    "cell": [
+      7,
+      33
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Trois entrepôts en peigne débouchent sur une galerie de livraison au sud. Commencez à l’ouest : banc 203, casiers 303 au centre, chariot 403 à l’est."
+  },
+  {
+    "id": "c11_kit",
+    "kind": "pickup",
+    "cell": [
+      1,
+      31
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c11_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c11_gate1",
+    "kind": "door",
+    "cell": [
+      17,
+      29
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "y",
+    "controlled_by": "c11_p1"
+  },
+  {
+    "id": "c11_gate2",
+    "kind": "door",
+    "cell": [
+      29,
+      29
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "y",
+    "controlled_by": "c11_p2"
+  },
+  {
+    "id": "c11_secret1",
+    "kind": "clue",
+    "cell": [
+      9,
+      27
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "L’aspirateur expérimental a aspiré sa propre garantie.",
+    "secret": true
+  },
+  {
+    "id": "c11_secret2",
+    "kind": "clue",
+    "cell": [
+      21,
+      27
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "Appareil silencieux : ne fonctionne plus. Classement validé.",
+    "secret": true
+  },
+  {
+    "id": "c11_secret3",
+    "kind": "clue",
+    "cell": [
+      33,
+      27
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "Inventaire : trois inventions disparues. Deux ont signé le registre de sortie.",
+    "secret": true
+  },
+  {
+    "id": "c11_exit",
+    "kind": "exit",
+    "cell": [
+      33,
+      25
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c11_p1",
+      "c11_p2",
+      "c11_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]

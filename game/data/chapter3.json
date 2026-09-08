@@ -1,0 +1,52 @@
+{
+  "11": {
+    "title": "Le magasin des prototypes",
+    "intro": "« Nos inventions sont parfaitement identifiées. Malheureusement, les étiquettes ont été rédigées avant les inventions. Vérifiez ce qu’elles font réellement. » — Folamour",
+    "outro": "Le chariot livre une imprimante qui annonce les pannes de demain. Elle imprime immédiatement : « Incident prévu au bureau des incidents futurs. » Folamour vous y envoie pour éviter un retard dans la prévention.",
+    "layout": "Trois entrepôts en peigne débouchent sur une galerie de livraison au sud. Commencez à l’ouest : banc 203, casiers 303 au centre, chariot 403 à l’est.",
+    "start": [
+      5,
+      33
+    ]
+  },
+  "12": {
+    "title": "Le bureau des incidents futurs",
+    "intro": "« Un incident prévu n’est plus un accident. C’est un rendez-vous. Assurez-vous que le nôtre soit annulé dans les délais. » — Folamour",
+    "outro": "La panne venait du dispositif chargé de l’éviter : l’alarme coupait sa propre ventilation. Le bureau classe votre intervention comme une anomalie statistique. Une présence non autorisée est maintenant signalée à la centrale de surveillance.",
+    "layout": "Trois étages de bureaux en terrasses : horloges au nord, chronologie au centre et prévention au sud. Les escaliers de service changent de côté à chaque étage.",
+    "start": [
+      1,
+      1
+    ]
+  },
+  "13": {
+    "title": "La centrale de surveillance",
+    "intro": "« Quelqu’un circule sans autorisation dans mon laboratoire. Le système affirme qu’il porte ma blouse. Une provocation vestimentaire, manifestement. » — Folamour",
+    "outro": "L’intrus est Folamour. Son double administratif a révoqué son badge pour visites trop fréquentes aux secteurs sensibles. Réhabilité, il ordonne un exercice de crise pour prouver que la surveillance fonctionne.",
+    "layout": "Trois cours de surveillance entourent un vide central : optiques au nord-ouest, enregistrements à l’est, contrôle d’identité au sud-ouest. Les deux sas imposent un parcours autour du centre.",
+    "start": [
+      1,
+      15
+    ]
+  },
+  "14": {
+    "title": "Le simulateur de crise",
+    "intro": "« Nous allons simuler une petite panne. Si vous réussissez, nous en ajouterons une deuxième. Nous finirons bien par obtenir un résultat représentatif. » — Folamour",
+    "outro": "L’exercice reste stable. Le simulateur réclame une crise plus grave et commence à classer les succès comme des menaces pour sa crédibilité. Folamour convoque son conseil : il faut décider si le laboratoire est en sécurité.",
+    "layout": "Trois plateformes autour de bassins techniques : distribution au nord-ouest, hydraulique au nord-est et évacuation au sud. Des passerelles étroites relient les plateformes.",
+    "start": [
+      1,
+      13
+    ]
+  },
+  "15": {
+    "title": "Le conseil de prévention",
+    "intro": "« Mes collègues ont examiné les résultats. Ils sont unanimes : il est trop tôt pour savoir sur quoi ils sont unanimes. Préparez les éléments du débat. » — Folamour",
+    "outro": "Vous avez prouvé que plusieurs alertes se copiaient entre elles. Le conseil conclut que l’absence de menace identifiable prouve sa discrétion. « Nous ignorons qui nous menace, comment et pourquoi. Vous comprenez donc à quel point notre retard est considérable. » Un mur entier descend : une cité souterraine attend déjà ses employés. CHAPITRE 4 : LE COMPLEXE DE LA CERTITUDE.",
+    "layout": "Un amphithéâtre annulaire entoure la fosse du conseil. Les coulisses ouest abritent le débat ; l’aile est contient le pupitre des échos. La circulation revient toujours vers l’anneau central.",
+    "start": [
+      17,
+      19
+    ]
+  }
+}

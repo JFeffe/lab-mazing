@@ -1,0 +1,78 @@
+[
+  {
+    "id": "P21",
+    "cell": [
+      14,
+      25
+    ],
+    "axis": "x",
+    "sides": [
+      [
+        15,
+        25
+      ],
+      [
+        13,
+        25
+      ]
+    ],
+    "minimum_saved_steps": 24
+  },
+  {
+    "id": "P22",
+    "cell": [
+      12,
+      9
+    ],
+    "axis": "x",
+    "sides": [
+      [
+        13,
+        9
+      ],
+      [
+        11,
+        9
+      ]
+    ],
+    "minimum_saved_steps": 64
+  },
+  {
+    "id": "P23",
+    "cell": [
+      15,
+      26
+    ],
+    "axis": "y",
+    "sides": [
+      [
+        15,
+        25
+      ],
+      [
+        15,
+        27
+      ]
+    ],
+    "minimum_saved_steps": 24
+  },
+  {
+    "id": "P24",
+    "cell": [
+      8,
+      33
+    ],
+    "axis": "x",
+    "sides": [
+      [
+        9,
+        33
+      ],
+      [
+        7,
+        33
+      ]
+    ],
+    "minimum_saved_steps": 40
+  }
+]
