@@ -42,7 +42,7 @@ func run():
 	await process_frame
 	game.show_pause()
 	check(game.modal_scroll.size.y<=game.get_viewport().get_visible_rect().size.y,"Landscape menu exceeds viewport")
-	for number in [4,5,6,7,8,9]:
+	for number in [4,5,6,7,8,9,10]:
 		game.start_game(false,number)
 		for language in ["fr","en"]:
 			game.localization.choose(language,false)
@@ -54,6 +54,7 @@ func run():
 				for e in game.events:
 					if not e.has("puzzle_type"):continue
 					game.done["installed_"+e.id]=true
+					for required in e.get("prerequisites",[]):game.done[required]=true
 					game.show_puzzle(e)
 					await process_frame
 					await process_frame

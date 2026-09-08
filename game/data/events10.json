@@ -1,0 +1,225 @@
+[
+  {
+    "id": "a_welcome",
+    "kind": "clue",
+    "cell": [
+      15,
+      23
+    ],
+    "ref": "100",
+    "title": "Consignes des archives",
+    "text": "Trois validations pour le dossier MIROIR : dégager les rayonnages 203, authentifier un rapport en 303 et corriger la copie en 403. Le hall relie les secteurs. Les commandes sont réversibles et sans limite de temps."
+  },
+  {
+    "id": "a_final",
+    "kind": "exit",
+    "cell": [
+      21,
+      19
+    ],
+    "ref": "105",
+    "title": "Dossier MIROIR - UNIFICATION",
+    "text": "Le sceau des archives et les trois validations sont nécessaires. Le dossier contient aussi une fiche à votre nom.",
+    "requires": [
+      "archive_seal"
+    ],
+    "prerequisites": [
+      "a_stacks",
+      "a_reports",
+      "a_twin"
+    ],
+    "action": "Ouvrir le dossier MIROIR"
+  },
+  {
+    "id": "a_rails",
+    "kind": "clue",
+    "cell": [
+      13,
+      11
+    ],
+    "ref": "201",
+    "title": "Plan des rails",
+    "text": "Vue du nord vers le sud : rangées A, B, C. Les ouvertures ont trois positions : OUEST, CENTRE, EST. Pour dégager le chemin balisé : A à EST, B à OUEST, C au CENTRE. Les couloirs entre les rangées permettent de changer de côté."
+  },
+  {
+    "id": "a_manual",
+    "kind": "clue",
+    "cell": [
+      21,
+      25
+    ],
+    "ref": "202",
+    "title": "Notice des commandes couplées",
+    "text": "Les rails avancent en boucle : OUEST → CENTRE → EST → OUEST. Commande I : A et B. Commande II : B et C. Commande III : A et C. Le bouton de remise à zéro replace toutes les ouvertures à OUEST. Valider immobilise les rayonnages en position sûre."
+  },
+  {
+    "id": "a_stacks",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      14
+    ],
+    "ref": "203",
+    "title": "Console des rayonnages",
+    "text": "Déplacez les trois rangées selon le plan 201 et la notice 202. Le plan affiche leurs ouvertures actuelles. Les rayonnages bougent réellement dans la salle au nord. Après validation, traversez-les pour récupérer le sceau 204.",
+    "puzzle_type": "stacks",
+    "model": "stacks",
+    "success": "Rayonnages immobilisés. Le chemin balisé est libre. Récupérez le sceau 204 au nord. « Ne vous perdez pas. Les disparitions sont classées par ordre alphabétique. » — Folamour"
+  },
+  {
+    "id": "a_seal",
+    "kind": "pickup",
+    "cell": [
+      17,
+      1
+    ],
+    "ref": "204",
+    "title": "Sceau des archives",
+    "text": "Sceau original requis pour ouvrir le dossier 105. Numéro de série : 0001. Sur son socle, une étiquette indique : « Copie certifiée originale ».",
+    "resource": "archive_seal",
+    "amount": 1,
+    "appearance": "key",
+    "prerequisites": [
+      "a_stacks"
+    ]
+  },
+  {
+    "id": "a_access",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "301",
+    "title": "Preuve : registre d’accès",
+    "text": "Incident du 12 avril. Seul badge entré entre 14 h 00 et 14 h 30 : B-6. Entrée 14 h 12, sortie 14 h 24. B-6 appartient à Boréal. Le registre mécanique est indépendant de MIROIR."
+  },
+  {
+    "id": "a_clock",
+    "kind": "clue",
+    "cell": [
+      9,
+      1
+    ],
+    "ref": "302",
+    "title": "Preuve : horloge arrêtée",
+    "text": "L’horloge s’est arrêtée à 14 h 17 lors de la coupure. Son mécanisme a été scellé immédiatement. L’incident précède donc la sortie du porteur du badge B-6."
+  },
+  {
+    "id": "a_reports",
+    "kind": "mechanism",
+    "cell": [
+      5,
+      17
+    ],
+    "ref": "303",
+    "title": "Lecteur de rapports",
+    "text": "Comparez les trois rapports aux preuves 301, 302 et 304. Sélectionnez le rapport authentique, puis associez à chaque preuve le fait qu’elle établit. Toutes les informations utiles sont dans ce niveau et le journal.",
+    "puzzle_type": "reports",
+    "model": "reports",
+    "opens": [
+      "a_copydoor"
+    ],
+    "success": "Rapport B authentifié. La salle copiée est ouverte. Les deux autres versions ont été produites par MIROIR. « Une erreur répétée trois fois devient parfois un compte rendu. » — Folamour"
+  },
+  {
+    "id": "a_object",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "304",
+    "title": "Preuve : objet retrouvé",
+    "text": "Sur le socle : une bobine de cuivre, encore dans son support. Aucun prisme et aucun disque. La photographie argentique du constat confirme cet objet ; elle n’a pas été retouchée par MIROIR."
+  },
+  {
+    "id": "a_original",
+    "kind": "clue",
+    "cell": [
+      29,
+      7
+    ],
+    "ref": "401",
+    "title": "Salle originale : relevé physique",
+    "text": "Relevé depuis l’entrée sud, nord en haut : lampe ALLUMÉE, bobine sur le socle de GAUCHE, projecteur vers l’EST, interrupteur de ventilation ABAISSÉ. Reproduisez ces quatre états dans la salle copiée au sud. La copie conserve les mêmes points cardinaux : ce n’est pas une réflexion gauche-droite."
+  },
+  {
+    "id": "a_copydoor",
+    "kind": "door",
+    "cell": [
+      29,
+      20
+    ],
+    "ref": "402",
+    "title": "Accès à la salle copiée",
+    "text": "L’authentification du rapport 303 autorise l’entrée.",
+    "axis": "y",
+    "controlled_by": "a_reports"
+  },
+  {
+    "id": "a_twin",
+    "kind": "mechanism",
+    "cell": [
+      29,
+      25
+    ],
+    "ref": "403",
+    "title": "Correction de la salle jumelle",
+    "text": "Ajustez la lampe, le socle de la bobine, le projecteur et la ventilation d’après la salle originale 401. Les objets changent aussi dans la pièce. Testez la copie, puis validez. Chaque nouvelle modification annule le test.",
+    "prerequisites": [
+      "a_reports",
+      "a_original"
+    ],
+    "puzzle_type": "twin",
+    "model": "twin",
+    "success": "Copie conforme. MIROIR avait inversé l’orientation, déplacé la bobine et modifié les deux états électriques. Rejoignez le dossier 105 avec le sceau."
+  },
+  {
+    "id": "a_twin_note",
+    "kind": "clue",
+    "cell": [
+      27,
+      17
+    ],
+    "ref": "404",
+    "title": "Note de maintenance MIROIR",
+    "text": "La salle bleue reproduit la salle ambrée. Les couleurs d’éclairage ne sont pas des indices. Les états des objets, les positions et les points cardinaux font foi. Le test affiche le nombre de correspondances, sans corriger vos réglages."
+  },
+  {
+    "id": "a_secret1",
+    "kind": "clue",
+    "cell": [
+      9,
+      33
+    ],
+    "ref": "305",
+    "title": "Archive confidentielle 305",
+    "text": "Version alternative des serres : « Le stagiaire a demandé à être rémunéré en café. » Annotation manuscrite : FAUX.",
+    "secret": true
+  },
+  {
+    "id": "a_secret2",
+    "kind": "clue",
+    "cell": [
+      13,
+      33
+    ],
+    "ref": "205",
+    "title": "Archive confidentielle 205",
+    "text": "Ancien formulaire : « Si vous rencontrez votre double, vérifiez d’abord lequel a réservé ses vacances. »",
+    "secret": true
+  },
+  {
+    "id": "a_secret3",
+    "kind": "clue",
+    "cell": [
+      33,
+      3
+    ],
+    "ref": "405",
+    "title": "Archive confidentielle 405",
+    "text": "Essai MIROIR 07 : six instances de Folamour créées pour simuler un comité. Étape suivante : reproduire les lieux et les habitudes. L’unification attend une copie stable.",
+    "secret": true
+  }
+]

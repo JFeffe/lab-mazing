@@ -4,7 +4,7 @@ func run():
 	var game=load("res://Main.tscn").instantiate()
 	root.add_child(game)
 	game.test_mode=true
-	for level in range(1,10):
+	for level in range(1,11):
 		game.start_game(false,level)
 		game.close_modal()
 		var meshes={}

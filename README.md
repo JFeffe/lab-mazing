@@ -1,6 +1,6 @@
 # Lab-mazing — Le Labyrinthe de Folamour
 
-Version 0.15 : jeu solo 3D isométrique, chapitre 1 complet et quatre missions du chapitre 2, français/anglais, déplacement au clic et au toucher.
+Version 0.16 : jeu solo 3D isométrique, chapitre 1 complet et cinq missions du chapitre 2, français/anglais, déplacement au clic et au toucher.
 
 Jouer dans le navigateur : https://jfeffe.github.io/lab-mazing/
 
@@ -11,6 +11,19 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Nouveautés v0.16
+**Le service des archives**, niveau 5 du chapitre 2 (numéro interne 10), poursuit le projet MIROIR : rayonnages à commandes couplées, authentification de rapports par trois preuves indépendantes, puis reproduction de quatre états dans une salle jumelle physique.
+
+17 repères, trois archives secrètes et quatre raccourcis à découvrir. Les 27 configurations des rayonnages laissent une issue ; une sécurité interdit leur déplacement si le personnage est à l’intérieur. La carte et les déplacements au clic/toucher suivent leurs ouvertures réelles. Les indices restent consultables dans le journal.
+
+Accès direct **Chapitre 2 · Niveau 5 — Le service des archives**, ou « Passer au service des archives » après la réunion, avec conservation des bilans. Commandes, objectifs, indices et histoire FR/EN. Les essais partiels, tests de la copie, rayonnages et raccourcis sont sauvegardés. Netteté mobile, vitesse +30 % et audio conservés.
+
+Validation : parcours physique complet, porte verrouillée, sécurité des rayonnages, deux ordres d’exploration, reprise des essais, sauvegarde finale et panneaux portrait/paysage. Le secteur des prototypes est annoncé à la conclusion mais n’est pas encore un niveau jouable.
+
+Données : `python scripts/build_level10.py`. Tests : `python game/tests/validate_level10.py`, puis Godot `--headless --path game --fixed-fps 60 --script res://tests/verify_level10.gd`. Documents : `python scripts/document_level10.py /chemin/de/sortie`.
+
+[Carte et cheatsheet v0.16](https://drive.google.com/drive/folders/1HoAb0Sl6SiNdCjGv-oFSRIIqAsvMKovn).
 
 ## Nouveautés v0.15
 **La salle de réunion**, niveau 4 du chapitre 2 (numéro interne 9), poursuit le stage : placer six invités selon leurs contraintes, organiser quatre interventions en une heure et brancher les circuits image/son. Folamour présente son comité et prépare la suite autour du projet MIROIR.

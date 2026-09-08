@@ -335,6 +335,48 @@
         "Caméra B ; Micro D ; Archives vidéo A ; Projecteur C. Testez, puis validez.",
         "Camera B; Microphone D; Video archive A; Projector C. Test, then validate."
       ]
+    ],
+    "a_stacks": [
+      [
+        "Les commandes déplacent deux rangées à la fois. Notez la cible et partez de zéro.",
+        "Controls move two rows at once. Note the target and start from reset."
+      ],
+      [
+        "La cible du nord au sud est EST, OUEST, CENTRE. Une commande peut être utilisée plusieurs fois.",
+        "The north-to-south target is EAST, WEST, CENTRE. Controls can be used multiple times."
+      ],
+      [
+        "Réinitialisez. Appuyez deux fois sur I et une fois sur II ; ne touchez pas III. Validez : A EST, B OUEST, C CENTRE.",
+        "Reset. Press I twice and II once; do not press III. Validate: A EAST, B WEST, C CENTRE."
+      ]
+    ],
+    "a_reports": [
+      [
+        "Chaque preuve vérifie un champ du rapport, indépendamment de MIROIR.",
+        "Each piece of evidence verifies one report field independently of MIRROR."
+      ],
+      [
+        "Le registre identifie Boréal. L’heure vient de l’horloge et l’objet de la photo argentique.",
+        "The log identifies Boreal. The clock gives the time and the film photo gives the object."
+      ],
+      [
+        "Choisissez le rapport B ; registre Boréal ; horloge 14:17 ; objet Bobine de cuivre. Validez.",
+        "Select report B; log Boreal; clock 14:17; object Copper coil. Validate."
+      ]
+    ],
+    "a_twin": [
+      [
+        "Lisez le relevé 401. La copie garde les mêmes points cardinaux que l’original.",
+        "Read record 401. The copy keeps the original’s cardinal directions."
+      ],
+      [
+        "Comparez quatre détails : lampe, socle, orientation et ventilation. Un essai donne le nombre de correspondances.",
+        "Compare four details: lamp, stand, orientation and ventilation. A test gives the number of matches."
+      ],
+      [
+        "Lampe ALLUMÉE ; bobine GAUCHE ; projecteur EST ; ventilation ABAISSÉE. Testez puis validez.",
+        "Lamp ON; coil LEFT; projector EAST; ventilation DOWN. Test, then validate."
+      ]
     ]
   },
   "objectives": {
@@ -509,6 +551,30 @@
     "r_final": [
       "Ouvrir la réunion au pupitre 105 dans la salle centrale.",
       "Open the meeting at lectern 105 in the central room."
+    ],
+    "a_stacks": [
+      "Dégager le chemin aux rayonnages 203 avec les notes 201 et 202.",
+      "Clear the route at stacks 203 using notes 201 and 202."
+    ],
+    "a_seal": [
+      "Traverser les rayonnages et ramasser le sceau 204 au nord.",
+      "Cross the stacks and collect seal 204 in the north."
+    ],
+    "a_reports": [
+      "Authentifier un rapport au lecteur 303 avec les preuves 301, 302 et 304.",
+      "Authenticate a report at reader 303 using evidence 301, 302 and 304."
+    ],
+    "a_original": [
+      "Observer la salle originale et lire son relevé 401.",
+      "Observe the original room and read record 401."
+    ],
+    "a_twin": [
+      "Corriger les quatre états de la salle copiée en 403, tester et valider.",
+      "Correct the four copied room states at 403, test and validate."
+    ],
+    "a_final": [
+      "Apporter le sceau au dossier MIROIR 105 et l’ouvrir.",
+      "Bring the seal to MIRROR file 105 and open it."
     ]
   },
   "stages": {
@@ -781,6 +847,44 @@
           "r_final"
         ],
         "r_final"
+      ]
+    ],
+    "10": [
+      [
+        [
+          "a_stacks"
+        ],
+        "a_stacks"
+      ],
+      [
+        [
+          "a_seal"
+        ],
+        "a_seal"
+      ],
+      [
+        [
+          "a_reports"
+        ],
+        "a_reports"
+      ],
+      [
+        [
+          "a_original"
+        ],
+        "a_original"
+      ],
+      [
+        [
+          "a_twin"
+        ],
+        "a_twin"
+      ],
+      [
+        [
+          "a_final"
+        ],
+        "a_final"
       ]
     ]
   }
