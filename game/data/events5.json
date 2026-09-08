@@ -251,6 +251,7 @@
   },
   {
     "id": "f_exit",
+    "wall_face": [0, -1],
     "kind": "exit",
     "cell": [
       17,
