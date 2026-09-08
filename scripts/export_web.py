@@ -6,6 +6,7 @@ root=Path(__file__).resolve().parents[1]
 subprocess.run([sys.argv[1] if len(sys.argv)>1 else 'godot','--headless','--path',str(root/'game'),'--export-release','Web',str(root/'web/index.html')],check=True)
 p=root/'web/index.html'
 s=p.read_text().replace('</style>','canvas { touch-action: none; }\nhtml, body { overscroll-behavior: none; }\n</style>')
+s=s.replace('</body>', '<script>document.getElementById("canvas").addEventListener("contextmenu", function(event) { event.preventDefault(); });</script>\n</body>')
 p.write_text(s)
 (root/'web/.nojekyll').touch()
 

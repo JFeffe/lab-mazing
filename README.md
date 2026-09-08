@@ -1,6 +1,6 @@
 # Lab-mazing — Le Labyrinthe de Folamour
 
-Version 0.19 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
+Version 0.19.1 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
 
 Jouer dans le navigateur : https://jfeffe.github.io/lab-mazing/
 
@@ -11,6 +11,13 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Générer les ambiances originales avec `python3 scripts/compose_finale_audio.py`, puis ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Ajustements v0.19.1
+
+- Recul maximal du zoom augmenté de 36 à 48.
+- Clic droit sur un passage découvert et accessible dans la carte : elle se ferme et le personnage s’y rend.
+- Boutons Examiner / Ramasser à 16 px, sur une seule ligne.
+- Sas 305 du chapitre 1, niveau 4, monté contre le mur sud pour dégager le couloir.
 
 ## Nouveautés v0.19
 

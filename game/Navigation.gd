@@ -5,7 +5,7 @@ static func passable(game,c):
 	for e in game.events:
 		if Vector2i(e.cell[0],e.cell[1])==c:
 			if e.kind=="oneway": return false
-			if e.kind in ["door","exit","creature"] and not game.done.has(e.id): return false
+			if e.kind in ["door","exit","creature"] and not game.done.has(e.id) and not e.has("wall_face"): return false
 	return true
 static func route(game,start,goal):
 	if not passable(game,goal): return []

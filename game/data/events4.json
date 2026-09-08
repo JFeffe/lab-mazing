@@ -362,6 +362,7 @@
     ],
     "ref": "305",
     "title": "Sas de certification",
+    "wall_face": [0, 1],
     "text": "Les trois essais doivent être validés : balance, séquence et circuit. Aucun code supplémentaire n’est demandé.",
     "axis": "y",
     "prerequisites": [

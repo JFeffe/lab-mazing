@@ -1,6 +1,20 @@
 extends Control
 var game
 var route_preview=[]
+var navigation_enabled=false
+
+func _gui_input(event):
+	if not navigation_enabled or game==null or not game.playing or game.won: return
+	if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:
+		accept_event()
+		var n=game.grid.size()
+		var cell=min(size.x,size.y)/float(n)
+		var offset=(size-Vector2.ONE*cell*n)/2
+		var point=(event.position-offset)/cell
+		if point.x<0 or point.y<0 or point.x>=n or point.y>=n: return
+		var goal=Vector2i(floori(point.x),floori(point.y))
+		if game.request_cell(goal): game.close_modal()
+
 func _draw():
 	if game==null: return
 	var n=game.grid.size()

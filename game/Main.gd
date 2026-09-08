@@ -266,6 +266,9 @@ func build_world():
 func build_event(e):
 	var root=Node3D.new()
 	root.position=Vector3(e.cell[0]*TILE,0,e.cell[1]*TILE)
+	# Mount the exit just in front of the adjacent wall, keeping its discovery cell.
+	if e.has("wall_face"):
+		root.position+=Vector3(e.wall_face[0],0,e.wall_face[1])*TILE*0.45
 	world.add_child(root)
 	event_nodes[e.id]=root
 	var gold=material(accent,true)
@@ -545,6 +548,8 @@ func build_ui():
 		elif not nearest.is_empty():interact(nearest)
 	,true)
 	interact_button.custom_minimum_size.x=125
+	interact_button.add_theme_font_size_override("font_size",16)
+	interact_button.autowrap_mode=TextServer.AUTOWRAP_OFF
 	action_row.add_child(interact_button)
 	var nav=HBoxContainer.new()
 	nav.add_theme_constant_override("separation",7)
@@ -639,7 +644,7 @@ func show_title():
 	modal_box.add_child(button("Choisir un chapitre",show_chapters,not has_save()))
 	modal_box.add_child(button("Sélection de niveau / test",show_level_select))
 	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("VERSION 0.19 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE",13)
+	paragraph("VERSION 0.19.1 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
 	modal_box.add_child(button("Réglages audio",func(): show_audio(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
@@ -864,8 +869,8 @@ func _unhandled_input(event):
 	if event is InputEventKey and event.pressed and event.keycode==KEY_F11:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED if DisplayServer.window_get_mode()==DisplayServer.WINDOW_MODE_FULLSCREEN else DisplayServer.WINDOW_MODE_FULLSCREEN)
 	if event is InputEventMouseButton and event.pressed and not modal_open:
-		if event.button_index==MOUSE_BUTTON_WHEEL_UP: zoom=max(16,zoom-1.5)
-		if event.button_index==MOUSE_BUTTON_WHEEL_DOWN: zoom=min(36,zoom+1.5)
+		if event.button_index==MOUSE_BUTTON_WHEEL_UP: zoom=maxf(16.0,zoom-1.5)
+		if event.button_index==MOUSE_BUTTON_WHEEL_DOWN: zoom=minf(48.0,zoom+1.5)
 	if event.is_action_pressed("pause"):
 		if modal_open and playing and not won: close_modal()
 		elif playing: show_pause()
@@ -1275,8 +1280,10 @@ func show_map():
 	var map=MapWidget.new()
 	map.game=self
 	map.route_preview=preview_path
+	map.navigation_enabled=true
 	map.custom_minimum_size=Vector2(content_width(),content_width()*0.82)
 	modal_box.add_child(map)
+	paragraph("Clic droit sur un passage découvert : fermer la carte et s’y rendre.",14)
 	paragraph("Blanc : vous • Or : objet • Turquoise : indice\nBleu : mécanisme • Corail : porte • Vert : activé\nLes zones inconnues restent cachées.",14)
 	modal_box.add_child(button("Reprendre",close_modal,true))
 func show_pause():
