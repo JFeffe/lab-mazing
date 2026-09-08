@@ -5,6 +5,8 @@ const SHORTCUT_LAYOUT_REVISION=2
 const SAVE="user://experience16_v4.json"
 const LEGACY_SAVE="user://experience16_v2.json"
 const ForesightChapter=preload("res://ForesightChapter.gd")
+const CertaintyChapter=preload("res://CertaintyChapter.gd")
+var chapter4_data=JSON.parse_string(FileAccess.get_file_as_string("res://data/chapter4.json"))
 var chapter3_data=JSON.parse_string(FileAccess.get_file_as_string("res://data/chapter3.json"))
 const Guidance=preload("res://Guidance.gd")
 var guidance_data=JSON.parse_string(FileAccess.get_file_as_string("res://data/guidance.json"))
@@ -178,7 +180,7 @@ func build_world():
 	sun.shadow_enabled=not OS.has_feature("web")
 	world.add_child(sun)
 	var palettes=[Color("648a83"),Color("7b83a4"),Color("9e8174")] if level==1 else [Color("9e8460"),Color("527f8e"),Color("858371")]
-	if level>=11:palettes=[[Color("ab8e68"),Color("809a96"),Color("8797b2")],[Color("a2a084"),Color("8e9cae"),Color("8cab98")],[Color("6c97a2"),Color("8f85a4"),Color("88a798")],[Color("849fa2"),Color("b49a6d"),Color("8e8eae")],[Color("9582a8"),Color("8c9c98"),Color("ae986f")]][level-11]
+	if level in range(11,16):palettes=[[Color("ab8e68"),Color("809a96"),Color("8797b2")],[Color("a2a084"),Color("8e9cae"),Color("8cab98")],[Color("6c97a2"),Color("8f85a4"),Color("88a798")],[Color("849fa2"),Color("b49a6d"),Color("8e8eae")],[Color("9582a8"),Color("8c9c98"),Color("ae986f")]][level-11]
 	if level==10: palettes=[Color("a48a64"),Color("638ba5"),Color("819990")]
 	if level==9: palettes=[Color("7e8ba5"),Color("aa9276"),Color("749e94")]
 	if level==8: palettes=[Color("ac9679"),Color("829cac"),Color("8a9e80")]
@@ -187,6 +189,7 @@ func build_world():
 	if level==5: palettes=[Color("659b9d"),Color("ac9070"),Color("8982a9")]
 	if level==4: palettes=[Color("a18d72"),Color("788ba2"),Color("6b968d")]
 	if level==3: palettes=[Color("7789a5"),Color("638f94"),Color("93839e")]
+	if level>=16:palettes=[[Color("b59e79"),Color("8c9c99"),Color("869bb5")],[Color("96b09a"),Color("b4a27d"),Color("8d9cab")],[Color("779daa"),Color("9f94ae"),Color("91b9ae")],[Color("ac8964"),Color("909eaa"),Color("b19d7a")],[Color("aa91b7"),Color("829c95"),Color("b4a080")]][level-16]
 	for y in range(grid.size()):
 		for x in range(grid.size()):
 			var k=key(x,y)
@@ -321,7 +324,8 @@ func build_event(e):
 		else:
 			for i in range(min(e.get("amount",1),4)): box(root,Vector3(0.45,0.12,0.45),Vector3(0,0.4+i*0.15,0),gold)
 	elif e.has("model"):
-		if e.model=="foresight":preload("res://ForesightDecor.gd").model(self,root,e,gold,dark)
+		if e.model=="certainty":preload("res://CertaintyDecor.gd").model(self,root,e,gold,dark)
+		elif e.model=="foresight":preload("res://ForesightDecor.gd").model(self,root,e,gold,dark)
 		elif e.model in ["stacks","reports","twin"]:preload("res://ArchiveDecor.gd").model(self,root,e,gold,dark)
 		elif e.model in ["seating","schedule","conference"]:preload("res://MeetingDecor.gd").model(self,root,e,gold,dark)
 		elif e.model in ["parcels","mailnet","address"]:preload("res://MailDecor.gd").model(self,root,e,gold,dark)
@@ -608,7 +612,7 @@ func read_save():
 		var parser=JSON.new()
 		if parser.parse(FileAccess.get_file_as_string(path))!=OK: continue
 		var data=parser.data
-		if data is Dictionary and int(data.get("version",0)) in [2,4] and int(data.get("level",1)) in range(1,16): return data
+		if data is Dictionary and int(data.get("version",0)) in [2,4] and int(data.get("level",1)) in range(1,21): return data
 	return {}
 func show_title():
 	DisplayServer.window_set_title(loc("LE LABYRINTHE")+" — Folamour")
@@ -627,7 +631,7 @@ func show_title():
 	modal_box.add_child(button("Choisir un chapitre",show_chapters,not has_save()))
 	modal_box.add_child(button("Sélection de niveau / test",show_level_select))
 	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("VERSION 0.17 · LE DÉPARTEMENT DE LA PRÉVOYANCE",13)
+	paragraph("VERSION 0.18 · LE COMPLEXE DE LA CERTITUDE",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
 	modal_box.add_child(button("Réglages audio",func(): show_audio(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
@@ -652,6 +656,10 @@ func show_chapters():
 	if not saved.is_empty() and int(saved.get("level",1)) in range(11,16):
 		modal_box.add_child(button("Reprendre le chapitre 3",func():start_game(true),true))
 	for n in range(11,16):modal_box.add_child(button(level_name(n),func():confirm_new(n)))
+	paragraph("Chapitre 4 — Le complexe de la certitude",22)
+	if not saved.is_empty() and int(saved.get("level",1)) in range(16,21):
+		modal_box.add_child(button("Reprendre le chapitre 4",func():start_game(true),true))
+	for n in range(16,21):modal_box.add_child(button(level_name(n),func():confirm_new(n)))
 	modal_box.add_child(button("Retour",show_title))
 func show_level_select():
 	clear_modal("TEST / NIVEAUX","Choisir un niveau")
@@ -662,10 +670,12 @@ func show_level_select():
 	for n in range(6,11):modal_box.add_child(button(level_name(n),func(): confirm_new(n)))
 	paragraph("Chapitre 3 — Le département de la prévoyance",22)
 	for n in range(11,16):modal_box.add_child(button(level_name(n),func():confirm_new(n)))
+	paragraph("Chapitre 4 — Le complexe de la certitude",22)
+	for n in range(16,21):modal_box.add_child(button(level_name(n),func():confirm_new(n)))
 	modal_box.add_child(button("Retour",show_title))
 func level_name(number):
 	var names=["Le laboratoire","Le département des machines","Le département d’optique","Le département des essais","Le défi de Folamour","Les serres expérimentales","Le service des photocopies","Le courrier interne","La salle de réunion","Le service des archives"]
-	return loc("Chapitre %d · Niveau %d — %s") % [int((number-1)/5)+1,(number-1)%5+1,loc(names[number-1] if number<=10 else chapter3_data[str(number)].title)]
+	return loc("Chapitre %d · Niveau %d — %s") % [int((number-1)/5)+1,(number-1)%5+1,loc(names[number-1] if number<=10 else chapter3_data[str(number)].title if number<=15 else chapter4_data[str(number)].title)]
 
 func confirm_new(target=1):
 	if not has_save():
@@ -680,7 +690,7 @@ func set_level(number):
 	signal_lights.clear()
 	decor.clear()
 	ambience_zone=-1
-	level=clampi(number,1,15)
+	level=clampi(number,1,20)
 	archive_blocks.clear()
 	if is_instance_valid(world):
 		remove_child(world)
@@ -704,7 +714,8 @@ func set_level(number):
 	add_child(world)
 	build_world()
 	if level==10:preload("res://ArchiveDecor.gd").setup(self)
-	if level>=11:preload("res://ForesightDecor.gd").setup(self)
+	if level in range(11,16):preload("res://ForesightDecor.gd").setup(self)
+	if level>=16:preload("res://CertaintyDecor.gd").setup(self)
 func start_game(resume_v,target=1,keep_campaign=false):
 	playing=false
 	var data=read_save() if resume_v else {}
@@ -766,7 +777,8 @@ func start_game(resume_v,target=1,keep_campaign=false):
 		elif level==8:show_mail_intro()
 		elif level==9:show_meeting_intro()
 		elif level==10:show_archive_intro()
-		else:ForesightChapter.intro(self)
+		elif level<=15:ForesightChapter.intro(self)
+		else:CertaintyChapter.intro(self)
 		if level<5:modal_box.add_child(button("Commencer l’exploration",close_modal,true))
 	elif level==5 and not won and not done.has("folamour_met"):
 		show_folamour_intro()
@@ -781,7 +793,8 @@ func start_game(resume_v,target=1,keep_campaign=false):
 	elif level==10 and not won and not done.has("a_met"):
 		show_archive_intro()
 	elif level>=11 and not won and not done.has("c%d_met"%level):
-		ForesightChapter.intro(self)
+		if level<=15:ForesightChapter.intro(self)
+		else:CertaintyChapter.intro(self)
 	save_game()
 func _physics_process(delta):
 	if not playing or modal_open or won or (is_instance_valid(soundscape) and not soundscape.focused): return
@@ -855,6 +868,11 @@ func update_camera(delta):
 func key(x,y): return str(int(x))+","+str(int(y))
 func floor_at(x,y): return not archive_blocks.has(key(x,y)) and y>=0 and x>=0 and y<grid.size() and x<grid.size() and (grid[y][x]==1 or shortcut_cells.has(key(x,y)))
 func zone(y,x=17):
+	if level==16:return 0 if y<16 else 1 if x<17 else 2
+	if level==17:return 0 if x<17 else 1 if y<17 else 2
+	if level==18:return 2 if x in range(15,20) and y in range(15,20) else 1 if x in range(9,26) and y in range(9,26) else 0
+	if level==19:return 0 if x<13 else 1 if x<25 else 2
+	if level==20:return 1 if x<12 else 2 if x>22 else 0
 	if level==11:return mini(2,int(x/12))
 	if level==12:return mini(2,int(y/12))
 	if level==13:return 1 if x>17 else 0 if y<17 else 2
@@ -938,7 +956,7 @@ func update_hud():
 		title_label.text=loc("C2 / MISSION 5 / ARCHIVES")
 		status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d") % [held,int(done.has("a_stacks"))+int(done.has("a_reports"))+int(done.has("a_twin")),int(elapsed)/60,int(elapsed)%60]
 	if level>=11:
-		title_label.text=loc("C3 / MISSION %d")%(level-10)
+		title_label.text=loc("C3 / MISSION %d" if level<=15 else "C4 / MISSION %d")%((level-1)%5+1)
 		status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d")%[held,int(done.has("c%d_p1"%level))+int(done.has("c%d_p2"%level))+int(done.has("c%d_p3"%level)),int(elapsed)/60,int(elapsed)%60]
 	if level==4: status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d") % [held,int(done.has("test_balance"))+int(done.has("sequence_panel"))+int(done.has("test_circuit")),int(elapsed)/60,int(elapsed)%60]
 	action_label.text=loc("["+nearest.ref+"] "+nearest.title if not nearest.is_empty() else "Cliquez / touchez le sol pour explorer")
@@ -1262,8 +1280,11 @@ func show_win():
 		if Guidance.is_challenge(e) and done.has(e.id):puzzles+=1
 	var first_completion=not level_stats.has(str(level))
 	level_stats[str(level)]={"time":elapsed,"secrets":secrets,"hints":h,"errors":errors,"puzzles":puzzles,"shortcuts":open_shortcuts.size()}
-	if first_completion and level in [5,10,15] and is_instance_valid(soundscape):soundscape.effect(self,"chapter_complete")
+	if first_completion and level in [5,10,15,20] and is_instance_valid(soundscape):soundscape.effect(self,"chapter_complete")
 	save_game()
+	if level>=16:
+		CertaintyChapter.finish(self)
+		return
 	if level>=11:
 		ForesightChapter.finish(self)
 		return

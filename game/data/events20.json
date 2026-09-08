@@ -1,0 +1,328 @@
+[
+  {
+    "id": "c20_n1",
+    "kind": "clue",
+    "cell": [
+      13,
+      1
+    ],
+    "ref": "201",
+    "title": "Consigne 201",
+    "text": "Cinq bureaux : habitat, météo, sécurité, industrie, transport. Affecter à chacun une preuve originale. Le dossier d’arrivée ne va ni à la météo ni à l’industrie. Le pluviomètre va au service qui annonce le temps."
+  },
+  {
+    "id": "c20_n2",
+    "kind": "clue",
+    "cell": [
+      21,
+      9
+    ],
+    "ref": "202",
+    "title": "Consigne 202",
+    "text": "Le film du chariot va à la sécurité. Le bon des coques va à l’industrie. Le test de l’ascenseur va au transport. Chaque preuve et chaque bureau sont utilisés une fois."
+  },
+  {
+    "id": "c20_p1",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      17
+    ],
+    "ref": "203",
+    "title": "Cinq faits contre cinq certitudes",
+    "text": "Affecter une preuve à chaque bureau, sans doublon. Les copies ont été retirées ; les cinq originaux sont disponibles, même lors d’un accès direct à ce niveau.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "exhibits",
+    "labels": [
+      "Habitat",
+      "Météo",
+      "Sécurité",
+      "Industrie",
+      "Transport"
+    ],
+    "choices": [
+      [
+        "Film",
+        "Commande",
+        "Dossier",
+        "Ascenseur",
+        "Pluviomètre"
+      ],
+      [
+        "Film",
+        "Commande",
+        "Dossier",
+        "Ascenseur",
+        "Pluviomètre"
+      ],
+      [
+        "Film",
+        "Commande",
+        "Dossier",
+        "Ascenseur",
+        "Pluviomètre"
+      ],
+      [
+        "Film",
+        "Commande",
+        "Dossier",
+        "Ascenseur",
+        "Pluviomètre"
+      ],
+      [
+        "Film",
+        "Commande",
+        "Dossier",
+        "Ascenseur",
+        "Pluviomètre"
+      ]
+    ],
+    "target": [
+      2,
+      4,
+      0,
+      1,
+      3
+    ],
+    "requires": [
+      "c20_kit"
+    ],
+    "opens": [
+      "c20_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c20_n3",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "301",
+    "title": "Consigne 301",
+    "text": "A peut croire B ou le capteur X. B peut croire C ou A. C peut croire A ou le capteur Y. D peut croire E ou B. E peut croire D ou C. X et Y sont les seuls constats physiques."
+  },
+  {
+    "id": "c20_n4",
+    "kind": "clue",
+    "cell": [
+      9,
+      33
+    ],
+    "ref": "302",
+    "title": "Consigne 302",
+    "text": "A et B doivent finir sur X ; C, D et E doivent finir sur Y. Aucune boucle n’est recevable. Une chaîne de copies aboutissant au bon capteur est recevable, mais ne multiplie pas les preuves."
+  },
+  {
+    "id": "c20_p2",
+    "kind": "mechanism",
+    "cell": [
+      5,
+      17
+    ],
+    "ref": "303",
+    "title": "Le réseau de confiance",
+    "text": "Choisir une source pour chaque bureau. A et B doivent remonter à X ; C, D et E à Y. Tester trace toutes les chaînes et signale les boucles.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "trust",
+    "edges": [
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "names": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "X",
+      "Y"
+    ],
+    "goals": [
+      5,
+      5,
+      6,
+      6,
+      6
+    ],
+    "prerequisites": [
+      "c20_p1"
+    ],
+    "opens": [
+      "c20_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c20_n5",
+    "kind": "clue",
+    "cell": [
+      25,
+      1
+    ],
+    "ref": "401",
+    "title": "Consigne 401",
+    "text": "Quatre copies portent leurs dossiers au cinquième Folamour par une passerelle. Durées : A=1, B=2, C=5, D=8 unités. Au plus deux copies traversent ensemble. Le sceau unique doit accompagner chaque traversée et chaque retour."
+  },
+  {
+    "id": "c20_n6",
+    "kind": "clue",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "402",
+    "title": "Consigne 402",
+    "text": "Une traversée coûte la durée du plus lent. Tout le monde part côté bureaux. Amener les quatre copies et le sceau au conseil en 15 unités maximum. Le temps avance uniquement quand vous appuyez sur Traverser. Annuler restitue le temps."
+  },
+  {
+    "id": "c20_p3",
+    "kind": "mechanism",
+    "cell": [
+      29,
+      17
+    ],
+    "ref": "403",
+    "title": "Le sceau à usage collectif",
+    "text": "Sélectionner une ou deux copies du côté du sceau, puis Traverser. Coût = durée du plus lent : A1, B2, C5, D8. Tous au conseil en 15 unités maximum. Aucune limite en temps réel. Annulation et remise à zéro disponibles.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "seal",
+    "times": [
+      1,
+      2,
+      5,
+      8
+    ],
+    "budget": 15,
+    "prerequisites": [
+      "c20_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c20_welcome",
+    "kind": "clue",
+    "cell": [
+      19,
+      21
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Une salle de décision centrale dessert cinq bureaux : un au nord, deux à l’ouest et deux à l’est. Les couloirs latéraux contournent les bureaux, tandis que les deux sas gardent les réseaux du conseil."
+  },
+  {
+    "id": "c20_kit",
+    "kind": "pickup",
+    "cell": [
+      15,
+      21
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c20_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c20_gate1",
+    "kind": "door",
+    "cell": [
+      11,
+      17
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "x",
+    "controlled_by": "c20_p1"
+  },
+  {
+    "id": "c20_gate2",
+    "kind": "door",
+    "cell": [
+      23,
+      17
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "x",
+    "controlled_by": "c20_p2"
+  },
+  {
+    "id": "c20_secret1",
+    "kind": "clue",
+    "cell": [
+      21,
+      1
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "Folamour original : « Les quatre autres sont des copies. » Exemplaire 5 sur 5.",
+    "secret": true
+  },
+  {
+    "id": "c20_secret2",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "Le conseil a voté l’interdiction des votes divisés. Résultat : cinq versions différentes du procès-verbal.",
+    "secret": true
+  },
+  {
+    "id": "c20_secret3",
+    "kind": "clue",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "Programme HORIZON. Destination : suffisamment loin. Retour : non prévu au formulaire.",
+    "secret": true
+  },
+  {
+    "id": "c20_exit",
+    "kind": "exit",
+    "cell": [
+      17,
+      3
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c20_p1",
+      "c20_p2",
+      "c20_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]

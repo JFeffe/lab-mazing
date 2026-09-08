@@ -1,4 +1,5 @@
 extends RefCounted
+const Certainty=preload("res://CertaintyControls.gd")
 const Foresight=preload("res://ForesightControls.gd")
 const Archives=preload("res://ArchiveControls.gd")
 const Meeting=preload("res://MeetingControls.gd")
@@ -7,6 +8,7 @@ const Office=preload("res://OfficeControls.gd")
 const Greenhouse=preload("res://GreenhouseControls.gd")
 # All moves are reversible; partial states live in the normal checkpoint.
 static func initial(e):
+	if e.puzzle_type=="certainty":return Certainty.initial(e)
 	if e.puzzle_type=="foresight":return Foresight.initial(e)
 	if e.puzzle_type in Archives.TYPES:return Archives.initial(e)
 	if e.puzzle_type in ["seating","schedule","conference"]:return Meeting.initial(e)
@@ -32,6 +34,7 @@ static func available(g,e):
 	return true
 static func solved(g,e):
 	var values=state(g,e)
+	if e.puzzle_type=="certainty":return Certainty.solved(g,e,values)
 	if e.puzzle_type=="foresight":return Foresight.solved(e,values)
 	if e.puzzle_type in Archives.TYPES:return Archives.solved(e,values)
 	if e.puzzle_type in ["seating","schedule","conference"]:return Meeting.solved(e,values)
@@ -54,6 +57,7 @@ static func solved(g,e):
 	return false
 static func render(g,e):
 	var values=state(g,e)
+	if e.puzzle_type=="certainty":Certainty.render(g,e,values)
 	if e.puzzle_type=="foresight":Foresight.render(g,e,values)
 	if e.puzzle_type in Archives.TYPES:Archives.render(g,e,values)
 	if e.puzzle_type in ["seating","schedule","conference"]:Meeting.render(g,e,values)
@@ -123,12 +127,17 @@ static func render(g,e):
 	g.modal_box.add_child(g.button("Consulter le journal",func(): g.show_journal(e)))
 static func move(g,e,index):
 	if not available(g,e):return
+	if e.puzzle_type=="certainty" and not Certainty.can_move(g,e):
+		g.toast("Modifier ces accès exige de revenir au pupitre.")
+		return
+	if e.puzzle_type=="certainty" and e.has("world_gates"):g.stop_navigation()
 	if e.puzzle_type in Archives.TYPES and not Archives.can_move(g,e):
 		g.toast("Les rayonnages ne bougent pas lorsqu’une personne se trouve entre les rangées. Revenez à la console au sud.")
 		return
 	if e.puzzle_type=="stacks":g.stop_navigation()
 	var values=state(g,e)
 	if index==-2:g.puzzle_states[e.id]=initial(e)
+	elif e.puzzle_type=="certainty":Certainty.move(e,values,index)
 	elif e.puzzle_type=="foresight":Foresight.move(e,values,index)
 	elif e.puzzle_type in Archives.TYPES:Archives.move(e,values,index)
 	elif e.puzzle_type in ["seating","schedule","conference"]:Meeting.move(e,values,index)
@@ -170,12 +179,13 @@ static func submit(g,e):
 	if solved(g,e):g.complete(e)
 	else:
 		g.errors+=1
-		var messages={"foresight":"Essai non conforme : consultez les observations, vérifiez les contraintes et relancez la simulation si nécessaire.","stacks":"Rayonnages non conformes : comparez les ouvertures au plan 201.","reports":"Rapport ou preuves incohérents : recoupez les trois constats.","twin":"Copie non conforme : reproduisez les quatre états et relancez le test.","seating":"Disposition refusée : un invité par place et toutes les demandes respectées.","schedule":"Planning refusé : respectez les durées, l’ordre, les bornes et l’absence de chevauchement.","conference":"Conférence refusée : testez les deux trajets, sans boucle ni entrée partagée.","parcels":"Colis incorrect. Comparez des groupes de même taille et choisissez le plus lourd.","mailnet":"Le dernier essai doit atteindre EXPÉDITION. Réglez puis relancez la capsule.","address":"Adresse refusée. Croisez le fragment, la fonction du destinataire et l’avis de déménagement.","overlay":"Les calques ne correspondent pas encore au modèle. Vérifiez les cases manquantes et les marques en trop.","filing":"Classement refusé. Un dossier par casier ; seule la directive validée fait foi.","copier":"Image différente du modèle. La rotation et le miroir agissent sur le résultat actuel.","pipes":"Circuit interrompu : reliez les ouvertures sans fuite, de l’ouest de A à l’est de B.","growth":"La liane ne pousse pas encore. Comparez les trois réglages avec la fiche de germination.","blend":"Mélange refusé : trois mesures, arôme 3, amertume 2, stabilité 2.","jugs":"Dosage refusé : il faut exactement 4 L dans le grand réservoir.","hanoi":"Transfert incomplet : les trois disques doivent être sur C.","rotors":"Instable : visez A vers EST, B vers SUD et C vers OUEST.","balance":"Répartition refusée : deux masses par plateau, gauche plus lourd de 1 kg. Les masses restent disponibles.","sequence":"Ordre refusé. Vérifiez les trois rapports ; chaque symbole doit apparaître une seule fois.","circuit":"Circuit incomplet : les cinq voyants doivent être allumés simultanément."}
+		var messages={"certainty":"Essai non conforme : vérifier les règles, les lectures physiques et le dernier test.","foresight":"Essai non conforme : consultez les observations, vérifiez les contraintes et relancez la simulation si nécessaire.","stacks":"Rayonnages non conformes : comparez les ouvertures au plan 201.","reports":"Rapport ou preuves incohérents : recoupez les trois constats.","twin":"Copie non conforme : reproduisez les quatre états et relancez le test.","seating":"Disposition refusée : un invité par place et toutes les demandes respectées.","schedule":"Planning refusé : respectez les durées, l’ordre, les bornes et l’absence de chevauchement.","conference":"Conférence refusée : testez les deux trajets, sans boucle ni entrée partagée.","parcels":"Colis incorrect. Comparez des groupes de même taille et choisissez le plus lourd.","mailnet":"Le dernier essai doit atteindre EXPÉDITION. Réglez puis relancez la capsule.","address":"Adresse refusée. Croisez le fragment, la fonction du destinataire et l’avis de déménagement.","overlay":"Les calques ne correspondent pas encore au modèle. Vérifiez les cases manquantes et les marques en trop.","filing":"Classement refusé. Un dossier par casier ; seule la directive validée fait foi.","copier":"Image différente du modèle. La rotation et le miroir agissent sur le résultat actuel.","pipes":"Circuit interrompu : reliez les ouvertures sans fuite, de l’ouest de A à l’est de B.","growth":"La liane ne pousse pas encore. Comparez les trois réglages avec la fiche de germination.","blend":"Mélange refusé : trois mesures, arôme 3, amertume 2, stabilité 2.","jugs":"Dosage refusé : il faut exactement 4 L dans le grand réservoir.","hanoi":"Transfert incomplet : les trois disques doivent être sur C.","rotors":"Instable : visez A vers EST, B vers SUD et C vers OUEST.","balance":"Répartition refusée : deux masses par plateau, gauche plus lourd de 1 kg. Les masses restent disponibles.","sequence":"Ordre refusé. Vérifiez les trois rapports ; chaque symbole doit apparaître une seule fois.","circuit":"Circuit incomplet : les cinq voyants doivent être allumés simultanément."}
 		g.feedback.text=g.loc(messages[e.puzzle_type])
 		g.chime(170)
 		g.save_game()
 static func sync(g,e):
 	var values=state(g,e)
+	if e.puzzle_type=="certainty":Certainty.sync(g,e,values)
 	if e.puzzle_type=="foresight":Foresight.sync(g,e,values)
 	if e.puzzle_type in Archives.TYPES:Archives.sync(g,e,values)
 	var root=g.event_nodes[e.id]

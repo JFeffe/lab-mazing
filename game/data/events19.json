@@ -1,0 +1,294 @@
+[
+  {
+    "id": "c19_n1",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "201",
+    "title": "Consigne 201",
+    "text": "Trois générateurs A, B, C distribuent six unités au total. La presse reçoit A+B et demande 5. Le refroidissement reçoit B+C et demande 4. Le guidage reçoit A+C et demande 3."
+  },
+  {
+    "id": "c19_n2",
+    "kind": "clue",
+    "cell": [
+      11,
+      33
+    ],
+    "ref": "202",
+    "title": "Consigne 202",
+    "text": "Une unité de générateur alimente deux postes par les circuits existants. Il ne faut pas additionner les besoins comme s’ils étaient indépendants. Les jauges affichent chaque somme."
+  },
+  {
+    "id": "c19_p1",
+    "kind": "mechanism",
+    "cell": [
+      5,
+      9
+    ],
+    "ref": "203",
+    "title": "L’énergie compte deux fois",
+    "text": "Répartir six unités entre A, B et C. Atteindre simultanément A+B=5, B+C=4 et A+C=3. Les jauges réagissent immédiatement.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "energy",
+    "budget": 6,
+    "requires": [
+      "c19_kit"
+    ],
+    "opens": [
+      "c19_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c19_n3",
+    "kind": "clue",
+    "cell": [
+      15,
+      1
+    ],
+    "ref": "301",
+    "title": "Consigne 301",
+    "text": "Le convoyeur part de D. À chaque case numérotée, l’aiguillage choisit sa sortie 0 ou 1. La pièce doit être moulée M, refroidie R, puis contrôlée C avant la sortie S."
+  },
+  {
+    "id": "c19_n4",
+    "kind": "clue",
+    "cell": [
+      23,
+      33
+    ],
+    "ref": "302",
+    "title": "Consigne 302",
+    "text": "Un passage à C avant R échoue ; R avant M échoue. La pièce peut repasser par un aiguillage, mais un circuit qui répète exactement le même état est une boucle. Les pièces d’essai sont toujours récupérées."
+  },
+  {
+    "id": "c19_p2",
+    "kind": "mechanism",
+    "cell": [
+      19,
+      19
+    ],
+    "ref": "303",
+    "title": "La pièce qui repasse",
+    "text": "Régler les trois aiguillages. Le trajet doit visiter M → R → C → S. Les sorties possibles et les stations apparaissent sur le schéma. Tester fournit une trace et la cause d’un refus.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "conveyor",
+    "edges": [
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        1,
+        5
+      ]
+    ],
+    "names": [
+      "1",
+      "2",
+      "3",
+      "M",
+      "R",
+      "C",
+      "S"
+    ],
+    "fixed": {
+      "3": 1,
+      "4": 2,
+      "5": 6
+    },
+    "stations": {
+      "3": 0,
+      "4": 1,
+      "5": 2
+    },
+    "prerequisites": [
+      "c19_p1"
+    ],
+    "opens": [
+      "c19_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c19_n5",
+    "kind": "clue",
+    "cell": [
+      27,
+      1
+    ],
+    "ref": "401",
+    "title": "Consigne 401",
+    "text": "Monter le socle avant le moteur et le guide. Le moteur doit précéder la courroie. Le guide doit précéder le capot. La courroie doit précéder le capot. Le contrôle clôt l’assemblage."
+  },
+  {
+    "id": "c19_n6",
+    "kind": "clue",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "402",
+    "title": "Consigne 402",
+    "text": "Le moteur et le guide peuvent être montés dans les deux ordres. Aucun ordre arbitraire n’est imposé si toutes les dépendances sont respectées. Tester indique la première dépendance manquante."
+  },
+  {
+    "id": "c19_p3",
+    "kind": "mechanism",
+    "cell": [
+      29,
+      27
+    ],
+    "ref": "403",
+    "title": "Une petite pièce dans une grande machine",
+    "text": "Programmer les six opérations selon les dépendances : socle avant moteur/guide ; moteur avant courroie ; guide et courroie avant capot ; capot avant contrôle. Tester puis valider.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "assembly",
+    "cards": [
+      "Socle",
+      "Moteur",
+      "Guide",
+      "Courroie",
+      "Capot",
+      "Contrôle"
+    ],
+    "dependencies": [
+      [],
+      [
+        0
+      ],
+      [
+        0
+      ],
+      [
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4
+      ]
+    ],
+    "max_commands": 6,
+    "prerequisites": [
+      "c19_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c19_welcome",
+    "kind": "clue",
+    "cell": [
+      1,
+      31
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Trois chaînes en tresses traversent le complexe : énergie à l’ouest, convoyeurs au centre, assemblage à l’est. Les passerelles changent de hauteur sur le plan ; les ateliers latéraux forment des boucles de retour."
+  },
+  {
+    "id": "c19_kit",
+    "kind": "pickup",
+    "cell": [
+      3,
+      33
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c19_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c19_gate1",
+    "kind": "door",
+    "cell": [
+      13,
+      27
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "x",
+    "controlled_by": "c19_p1"
+  },
+  {
+    "id": "c19_gate2",
+    "kind": "door",
+    "cell": [
+      25,
+      7
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "x",
+    "controlled_by": "c19_p2"
+  },
+  {
+    "id": "c19_secret1",
+    "kind": "clue",
+    "cell": [
+      11,
+      1
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "Commande : 1 pièce d’ascenseur. Emballage : 400 tonnes de matériel préventif.",
+    "secret": true
+  },
+  {
+    "id": "c19_secret2",
+    "kind": "clue",
+    "cell": [
+      23,
+      1
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "Les capsules de tranquillité ne doivent jamais être secouées par le doute.",
+    "secret": true
+  },
+  {
+    "id": "c19_secret3",
+    "kind": "clue",
+    "cell": [
+      27,
+      33
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "Objectif de production : suffisamment. Nouveau quota : davantage.",
+    "secret": true
+  },
+  {
+    "id": "c19_exit",
+    "kind": "exit",
+    "cell": [
+      33,
+      19
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c19_p1",
+      "c19_p2",
+      "c19_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]

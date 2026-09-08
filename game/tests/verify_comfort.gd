@@ -42,7 +42,7 @@ func run():
 	await process_frame
 	game.show_pause()
 	check(game.modal_scroll.size.y<=game.get_viewport().get_visible_rect().size.y,"Landscape menu exceeds viewport")
-	for number in range(4,16):
+	for number in range(4,21):
 		game.start_game(false,number)
 		for language in ["fr","en"]:
 			game.localization.choose(language,false)

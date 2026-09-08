@@ -1,6 +1,6 @@
 # Lab-mazing — Le Labyrinthe de Folamour
 
-Version 0.17 : jeu solo 3D isométrique, trois chapitres complets et quinze niveaux, français/anglais, déplacement au clic et au toucher.
+Version 0.18 : jeu solo 3D isométrique, quatre chapitres complets et vingt niveaux, français/anglais, déplacement au clic et au toucher.
 
 Jouer dans le navigateur : https://jfeffe.github.io/lab-mazing/
 
@@ -11,6 +11,31 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Nouveautés v0.18
+
+Le chapitre 4, **Le complexe de la certitude**, prolonge directement la v0.17 : cinq niveaux dans une cité souterraine où les prédictions de MIROIR remplacent les observations. Le programme HORIZON est annoncé à la conclusion ; le chapitre 5 reste à venir.
+
+| Niveau | Labyrinthe | Défis |
+| --- | --- | --- |
+| 1 — Bienvenue, vous habitez ici | Gare en éventail et deux ailes de maintenance | Badges et visites physiques, identité croisée, deux capsules dans un réseau |
+| 2 — Le quartier témoin | Rue verticale, maisons à horaires variables, deux quartiers | Phases matin/midi/soir, planning de livraisons, témoin et preuves indépendantes |
+| 3 — Le ministère des regards | Deux anneaux et tour centrale | Portes liées aux caméras, raccords d’un film, origine des rapports |
+| 4 — La fabrique du lendemain | Trois bandes de production, passerelles alternées | Alimentation partagée, convoyeur, dépendances d’assemblage |
+| 5 — L’unanimité absolue | Cinq branches autour du conseil | Affectation des preuves, réseau de confiance, traversées avec un sceau commun |
+
+- Quinze énigmes, quinze secrets, seize raccourcis et neuf accès variables. Les anneaux du niveau 3 offrent déjà des retours directs, sans raccourcis cachés.
+- Les badges, phases et orientations modifient les portes physiques, la carte et les trajets au clic/toucher. Les changements se font au pupitre pour éviter tout enfermement ; les trois registres doivent être visités. Une fois validé, le secteur reste accessible.
+- États et observations sauvegardés, essais réversibles, temps du dernier casse-tête avancé uniquement par les traversées. Plusieurs assemblages valides sont acceptés.
+- Menus distincts par chapitre, accès direct aux cinq niveaux, transition depuis le chapitre 3 et reprise des sauvegardes existantes. Textes et indices FR/EN, réglages mobiles et audio conservés.
+- Vérifications : parcours physiques complets, quinze solutions via les boutons réels, sauvegardes partielles/finales, indices, portes dans les deux sens, configurations des réseaux, annulation, variantes d’assemblage, interface portrait/paysage et régressions des anciens chapitres. Un essai sur téléphone réel reste à faire.
+
+[Cartes et cheatsheets v0.18 — cinq dossiers de niveau](https://drive.google.com/drive/folders/1QZKSCzC91o7R5nYe43ddt9DZUd3X6jYj).
+
+Données : `python3 scripts/build_chapter4.py`. Documents : `python3 scripts/document_chapter4.py /chemin/de/sortie`.
+Tests : `python3 game/tests/validate_chapter4.py`, puis Godot 4.5.1 `--headless --path game --fixed-fps 60 --script res://tests/verify_chapter4.gd` et `res://tests/verify_certainty_states.gd`. Les nouveaux tests et les contrôles mobiles sont intégrés au workflow de publication.
+
+Les principes de conception et les sources consultées figurent dans [le résumé](docs/v0.18/Resume-v0.18.md).
 
 ## Nouveautés v0.17
 

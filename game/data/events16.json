@@ -1,0 +1,382 @@
+[
+  {
+    "id": "c16_obs0",
+    "kind": "clue",
+    "cell": [
+      7,
+      3
+    ],
+    "ref": "210",
+    "title": "Registre local A",
+    "text": "A / Résident : le sujet 16 a une clé triangulaire. Aucune clé carrée ne lui appartient."
+  },
+  {
+    "id": "c16_obs1",
+    "kind": "clue",
+    "cell": [
+      17,
+      3
+    ],
+    "ref": "211",
+    "title": "Registre local B",
+    "text": "B / Technicien : le sujet 16 est arrivé par le quai C. Le lecteur garde la trace du badge, pas celle de la personne."
+  },
+  {
+    "id": "c16_obs2",
+    "kind": "clue",
+    "cell": [
+      27,
+      3
+    ],
+    "ref": "212",
+    "title": "Registre local C",
+    "text": "C / Inspecteur : le dossier valable a un tampon AJOURNÉ. Un dossier ANTICIPÉ décrit un événement qui n’a pas eu lieu."
+  },
+  {
+    "id": "c16_n1",
+    "kind": "clue",
+    "cell": [
+      1,
+      11
+    ],
+    "ref": "201",
+    "title": "Consigne 201",
+    "text": "Le terminal 203 change votre badge. Résident ouvre A ; technicien ouvre B ; inspecteur ouvre C. Un seul badge actif. Les autres portes se ferment."
+  },
+  {
+    "id": "c16_n2",
+    "kind": "clue",
+    "cell": [
+      33,
+      11
+    ],
+    "ref": "202",
+    "title": "Consigne 202",
+    "text": "Lire les trois registres 210, 211 et 212, puis revenir au 203 en inspecteur pour certifier la présence. Les changements se font uniquement près du terminal. Les registres lus restent dans le journal."
+  },
+  {
+    "id": "c16_p1",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      11
+    ],
+    "ref": "203",
+    "title": "Le droit d’exister",
+    "text": "Installer la mallette. Changer de badge ici, visiter chaque guichet, puis revenir. Lire A en résident, B en technicien et C en inspecteur ; certifier avec le badge inspecteur.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "badges",
+    "observations": [
+      "c16_obs0",
+      "c16_obs1",
+      "c16_obs2"
+    ],
+    "labels": [
+      "Résident",
+      "Technicien",
+      "Inspecteur"
+    ],
+    "world_gates": [
+      {
+        "cell": [
+          7,
+          7
+        ],
+        "channel": 0,
+        "allowed": [
+          0
+        ],
+        "label": "A"
+      },
+      {
+        "cell": [
+          17,
+          7
+        ],
+        "channel": 0,
+        "allowed": [
+          1
+        ],
+        "label": "B"
+      },
+      {
+        "cell": [
+          27,
+          7
+        ],
+        "channel": 0,
+        "allowed": [
+          2
+        ],
+        "label": "C"
+      }
+    ],
+    "requires": [
+      "c16_kit"
+    ],
+    "opens": [
+      "c16_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c16_n3",
+    "kind": "clue",
+    "cell": [
+      1,
+      17
+    ],
+    "ref": "301",
+    "title": "Consigne 301",
+    "text": "Les trois registres du hall décrivent votre dossier : forme de clé, quai et tampon. Les cinq dossiers du pupitre sont complets. Un seul respecte les trois constats ensemble."
+  },
+  {
+    "id": "c16_n4",
+    "kind": "clue",
+    "cell": [
+      15,
+      33
+    ],
+    "ref": "302",
+    "title": "Consigne 302",
+    "text": "A : triangle / B / ajourné. B : carré / C / ajourné. C : triangle / C / anticipé. D : triangle / C / ajourné. E : carré / B / anticipé."
+  },
+  {
+    "id": "c16_p2",
+    "kind": "mechanism",
+    "cell": [
+      7,
+      23
+    ],
+    "ref": "303",
+    "title": "La personne qui n’est pas arrivée",
+    "text": "Choisir le dossier, puis associer les trois preuves physiques : clé, quai, tampon. Un dossier anticipé ne prouve pas une arrivée.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "records",
+    "labels": [
+      "Dossier",
+      "Clé",
+      "Quai",
+      "Tampon"
+    ],
+    "choices": [
+      [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      [
+        "Carré",
+        "Triangle"
+      ],
+      [
+        "A",
+        "B",
+        "C"
+      ],
+      [
+        "Anticipé",
+        "Ajourné"
+      ]
+    ],
+    "target": [
+      3,
+      1,
+      2,
+      1
+    ],
+    "prerequisites": [
+      "c16_p1"
+    ],
+    "opens": [
+      "c16_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c16_n5",
+    "kind": "clue",
+    "cell": [
+      19,
+      17
+    ],
+    "ref": "401",
+    "title": "Consigne 401",
+    "text": "Deux capsules partent de A puis D. Les aiguillages conservent le même réglage pendant les deux trajets. La capsule de A doit visiter B puis arriver à X. Celle de D doit visiter C puis arriver à Y."
+  },
+  {
+    "id": "c16_n6",
+    "kind": "clue",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "402",
+    "title": "Consigne 402",
+    "text": "Chaque aiguillage a deux sorties indiquées sur le schéma. Une boucle est refusée. Tester montre les deux trajets complets ; changer un réglage efface la certification du test."
+  },
+  {
+    "id": "c16_p3",
+    "kind": "mechanism",
+    "cell": [
+      27,
+      23
+    ],
+    "ref": "403",
+    "title": "Les tubes de régularisation",
+    "text": "Régler A, B, C et D pour acheminer A → B → X et D → C → Y, avec les mêmes aiguillages. Le diagramme affiche les deux sorties possibles de chaque nœud. Tester puis valider.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "tubes",
+    "edges": [
+      [
+        2,
+        1
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "names": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "X",
+      "Y"
+    ],
+    "starts": [
+      0,
+      3
+    ],
+    "goals": [
+      4,
+      5
+    ],
+    "via": [
+      1,
+      2
+    ],
+    "prerequisites": [
+      "c16_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c16_welcome",
+    "kind": "clue",
+    "cell": [
+      19,
+      13
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Une gare en éventail : trois guichets au nord, un hall commun, puis deux labyrinthes de maintenance au sud. Les badges commandent les trois guichets ; le sas 111 mène aux dossiers et le sas 112 aux tubes."
+  },
+  {
+    "id": "c16_kit",
+    "kind": "pickup",
+    "cell": [
+      15,
+      11
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c16_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c16_gate1",
+    "kind": "door",
+    "cell": [
+      3,
+      15
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "y",
+    "controlled_by": "c16_p1"
+  },
+  {
+    "id": "c16_gate2",
+    "kind": "door",
+    "cell": [
+      17,
+      29
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "x",
+    "controlled_by": "c16_p2"
+  },
+  {
+    "id": "c16_secret1",
+    "kind": "clue",
+    "cell": [
+      1,
+      13
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "Toute personne absente est priée de se présenter immédiatement.",
+    "secret": true
+  },
+  {
+    "id": "c16_secret2",
+    "kind": "clue",
+    "cell": [
+      15,
+      17
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "Le logement de fonction est équipé d’une fenêtre donnant sur la prochaine fenêtre.",
+    "secret": true
+  },
+  {
+    "id": "c16_secret3",
+    "kind": "clue",
+    "cell": [
+      19,
+      33
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "Votre recours a été accepté comme preuve de votre insatisfaction.",
+    "secret": true
+  },
+  {
+    "id": "c16_exit",
+    "kind": "exit",
+    "cell": [
+      33,
+      25
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c16_p1",
+      "c16_p2",
+      "c16_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]

@@ -1,0 +1,383 @@
+[
+  {
+    "id": "c18_obs0",
+    "kind": "clue",
+    "cell": [
+      27,
+      7
+    ],
+    "ref": "210",
+    "title": "Registre local A",
+    "text": "A / La caméra archive le chariot à 09:10. Il transporte un balai. Aucun autre véhicule n’est visible."
+  },
+  {
+    "id": "c18_obs1",
+    "kind": "clue",
+    "cell": [
+      27,
+      17
+    ],
+    "ref": "211",
+    "title": "Registre local B",
+    "text": "B / Le poste B déclenche un verrou lorsqu’il regarde vers l’ouest. Son image montre une copie de l’écran A, pas une deuxième caméra."
+  },
+  {
+    "id": "c18_obs2",
+    "kind": "clue",
+    "cell": [
+      27,
+      27
+    ],
+    "ref": "212",
+    "title": "Registre local C",
+    "text": "C / La transmission mécanique confirme le passage du même chariot. La signature de MIROIR est ajoutée après la copie."
+  },
+  {
+    "id": "c18_n1",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "201",
+    "title": "Consigne 201",
+    "text": "A ouvre la niche A en regardant EST. B ferme la niche B en regardant OUEST : toute autre direction la libère. C ouvre la niche C en regardant NORD."
+  },
+  {
+    "id": "c18_n2",
+    "kind": "clue",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "202",
+    "title": "Consigne 202",
+    "text": "Lire les trois registres 210-212 puis laisser les trois accès ouverts. Le panneau montre les orientations et l’état réel des portes. Les réglages se font au poste 203 seulement."
+  },
+  {
+    "id": "c18_p1",
+    "kind": "mechanism",
+    "cell": [
+      31,
+      17
+    ],
+    "ref": "203",
+    "title": "Voir pour ouvrir, détourner pour passer",
+    "text": "Installer la mallette. A vers EST ouvre A ; B vers OUEST ferme B ; C vers NORD ouvre C. Régler les caméras, lire les trois niches physiques, puis valider avec tous les accès ouverts.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "gaze",
+    "observations": [
+      "c18_obs0",
+      "c18_obs1",
+      "c18_obs2"
+    ],
+    "world_gates": [
+      {
+        "cell": [
+          28,
+          7
+        ],
+        "channel": 0,
+        "allowed": [
+          1
+        ],
+        "label": "A"
+      },
+      {
+        "cell": [
+          28,
+          17
+        ],
+        "channel": 1,
+        "allowed": [
+          0,
+          1,
+          2
+        ],
+        "label": "B"
+      },
+      {
+        "cell": [
+          28,
+          27
+        ],
+        "channel": 2,
+        "allowed": [
+          0
+        ],
+        "label": "C"
+      }
+    ],
+    "requires": [
+      "c18_kit"
+    ],
+    "opens": [
+      "c18_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c18_n3",
+    "kind": "clue",
+    "cell": [
+      9,
+      9
+    ],
+    "ref": "301",
+    "title": "Consigne 301",
+    "text": "Chaque fragment montre le début et la fin d’une action. Relier la fin d’un fragment au début du suivant. Commencer PORTE FERMÉE, finir RUE VIDE. Utiliser chaque fragment une seule fois."
+  },
+  {
+    "id": "c18_n4",
+    "kind": "clue",
+    "cell": [
+      25,
+      25
+    ],
+    "ref": "302",
+    "title": "Consigne 302",
+    "text": "A : chariot → balai. B : porte fermée → porte ouverte. C : balai → chariot. D : porte ouverte → chariot. E : chariot → rue vide. Sortir trop tôt par E abandonne le nettoyage."
+  },
+  {
+    "id": "c18_p2",
+    "kind": "mechanism",
+    "cell": [
+      11,
+      17
+    ],
+    "ref": "303",
+    "title": "Le film coupé trop court",
+    "text": "Assembler les cinq fragments en raccordant leurs états. Départ porte fermée, fin rue vide. Chaque fragment une fois. Tester montre les raccords, y compris un éventuel retour au chariot.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "splice",
+    "cards": [
+      "A · Chariot → balai",
+      "B · Porte fermée → ouverte",
+      "C · Balai → chariot",
+      "D · Porte ouverte → chariot",
+      "E · Chariot → rue vide"
+    ],
+    "joins": [
+      [
+        2,
+        3
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        4
+      ]
+    ],
+    "max_commands": 5,
+    "prerequisites": [
+      "c18_p1"
+    ],
+    "opens": [
+      "c18_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c18_n5",
+    "kind": "clue",
+    "cell": [
+      15,
+      15
+    ],
+    "ref": "401",
+    "title": "Consigne 401",
+    "text": "R1 cite R2. R2 cite R3. R3 cite MIROIR. R4 vient du capteur mécanique. R5 copie R4. Une copie conserve l’origine et ne crée jamais une mesure indépendante."
+  },
+  {
+    "id": "c18_n6",
+    "kind": "clue",
+    "cell": [
+      19,
+      19
+    ],
+    "ref": "402",
+    "title": "Consigne 402",
+    "text": "Attribuer à R1-R5 leur origine ultime. Puis annoncer combien de familles de mesures physiques indépendantes figurent dans ces cinq rapports. Une famille copiée compte une seule fois."
+  },
+  {
+    "id": "c18_p3",
+    "kind": "mechanism",
+    "cell": [
+      15,
+      17
+    ],
+    "ref": "403",
+    "title": "Une rumeur en cinq exemplaires",
+    "text": "Remonter R1 → R2 → R3 → MIROIR et R5 → R4 → capteur. Classer chaque origine ultime et compter les familles physiques indépendantes.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "origins",
+    "labels": [
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "R5",
+      "Familles physiques"
+    ],
+    "choices": [
+      [
+        "MIROIR",
+        "Capteur"
+      ],
+      [
+        "MIROIR",
+        "Capteur"
+      ],
+      [
+        "MIROIR",
+        "Capteur"
+      ],
+      [
+        "MIROIR",
+        "Capteur"
+      ],
+      [
+        "MIROIR",
+        "Capteur"
+      ],
+      [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    ],
+    "target": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "prerequisites": [
+      "c18_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c18_welcome",
+    "kind": "clue",
+    "cell": [
+      5,
+      31
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Deux anneaux de surveillance entourent une tour centrale. Depuis l’anneau extérieur, trois niches à l’est se ferment selon les caméras. Un pont ouest mène aux montages ; une entrée nord mène aux sources."
+  },
+  {
+    "id": "c18_kit",
+    "kind": "pickup",
+    "cell": [
+      1,
+      31
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c18_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c18_gate1",
+    "kind": "door",
+    "cell": [
+      7,
+      17
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "x",
+    "controlled_by": "c18_p1"
+  },
+  {
+    "id": "c18_gate2",
+    "kind": "door",
+    "cell": [
+      17,
+      13
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "y",
+    "controlled_by": "c18_p2"
+  },
+  {
+    "id": "c18_secret1",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "Pour votre intimité, cette caméra est équipée d’un rideau dessiné.",
+    "secret": true
+  },
+  {
+    "id": "c18_secret2",
+    "kind": "clue",
+    "cell": [
+      25,
+      9
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "Le service des angles morts refuse de communiquer son adresse.",
+    "secret": true
+  },
+  {
+    "id": "c18_secret3",
+    "kind": "clue",
+    "cell": [
+      19,
+      15
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "Une caméra surveille le voyant indiquant qu’elle ne surveille personne.",
+    "secret": true
+  },
+  {
+    "id": "c18_exit",
+    "kind": "exit",
+    "cell": [
+      17,
+      19
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c18_p1",
+      "c18_p2",
+      "c18_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]

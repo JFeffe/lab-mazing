@@ -587,6 +587,216 @@
         "I → II → III → ATTENDRE → ATTENDRE. Tester puis valider.",
         "I → II → III → WAIT → WAIT. Test and validate."
       ]
+    ],
+    "c16_p1": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "Chaque badge donne un accès différent. Aucun ne suffit seul. Les trois lectures restent acquises quand vous changez de badge.",
+        "Each badge grants a different access. None suffices alone. All three readings remain recorded when you change badges."
+      ],
+      [
+        "Depuis 203 : résident → lire 210 → retour ; technicien → lire 211 → retour ; inspecteur → lire 212 → retour. Choisir inspecteur et valider.",
+        "From 203: resident → read 210 → return; technician → read 211 → return; inspector → read 212 → return. Select inspector and validate."
+      ]
+    ],
+    "c16_p2": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "Le registre A impose triangle, B impose quai C, C impose ajourné. D est le seul dossier qui combine les trois.",
+        "Record A requires triangle, B requires platform C, C requires deferred. D is the only file combining all three."
+      ],
+      [
+        "Dossier D ; clé triangle ; quai C ; tampon ajourné. Valider.",
+        "File D; triangular key; platform C; deferred stamp. Validate."
+      ]
+    ],
+    "c16_p3": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "Fixer d’abord les arrivées : B doit viser X et C doit viser Y. A rejoint B ; D rejoint C.",
+        "Set the destinations first: B points to X and C to Y. A connects to B; D connects to C."
+      ],
+      [
+        "A → B ; B → X ; C → Y ; D → C. Tester puis valider.",
+        "A → B; B → X; C → Y; D → C. Test and validate."
+      ]
+    ],
+    "c17_p1": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "Les portes changent avec la phase, les constats s’accumulent. Après les trois visites, midi est la phase de l’alerte.",
+        "Doors change with the phase; records accumulate. After all three visits, noon is the phase of the alert."
+      ],
+      [
+        "Matin → lire 210 → retour ; midi → lire 211 → retour ; soir → lire 212 → retour. Régler MIDI et valider.",
+        "Morning → read 210 → return; noon → read 211 → return; evening → read 212 → return. Set NOON and validate."
+      ]
+    ],
+    "c17_p2": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "Le duo Cyril-Daria ne peut occuper 12-14. S’il occupait 10-12, Ada serait forcée à 8. Donc Cyril 8, Daria 10, Ada 12, Boris 14.",
+        "Cyril-Daria cannot occupy 12-14. At 10-12, Ada would be forced to 8. Therefore Cyril 8, Daria 10, Ada 12, Boris 14."
+      ],
+      [
+        "Ada 12 ; Boris 14 ; Cyril 8 ; Daria 10. Valider.",
+        "Ada 12; Boris 14; Cyril 8; Daria 10. Validate."
+      ]
+    ],
+    "c17_p3": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "Ada voit directement la rue. Le pluviomètre et la vitre vérifient son constat sans dépendre de MIROIR.",
+        "Ada sees the street directly. The rain gauge and window verify her observation independently of MIRROR."
+      ],
+      [
+        "Ada ; conserver pluviomètre et vitre réelle ; écarter radio et rapport de Boris. Valider.",
+        "Ada; keep rain gauge and real window; exclude radio and Boris’s report. Validate."
+      ]
+    ],
+    "c18_p1": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "La caméra B inverse la règle : il faut détourner son regard. Les directions nord, est et sud sont toutes valables pour B.",
+        "Camera B reverses the rule: look away. North, east and south all work for B."
+      ],
+      [
+        "A EST ; B SUD (ou NORD/EST) ; C NORD. Visiter 210, 211 et 212. Retour au 203, tester puis valider.",
+        "A EAST; B SOUTH (or NORTH/EAST); C NORTH. Visit 210, 211 and 212. Return to 203, test and validate."
+      ]
+    ],
+    "c18_p2": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "B ouvre la porte, D fait entrer le chariot. Le détour A-C explique le nettoyage. E termine le film.",
+        "B opens the door, D brings in the cart. The A-C detour explains the cleaning. E ends the film."
+      ],
+      [
+        "B → D → A → C → E. Tester puis valider.",
+        "B → D → A → C → E. Test and validate."
+      ]
+    ],
+    "c18_p3": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "R1, R2 et R3 sont issus de MIROIR. R4 et R5 sont une seule famille mécanique. Le nombre de signatures ne compte pas.",
+        "R1, R2 and R3 come from MIRROR. R4 and R5 form one mechanical family. Signature count is irrelevant."
+      ],
+      [
+        "R1-R3 : MIROIR ; R4-R5 : capteur ; familles physiques : 1. Valider.",
+        "R1-R3: MIRROR; R4-R5: sensor; physical families: 1. Validate."
+      ]
+    ],
+    "c19_p1": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "Comparer les sommes : A est une unité plus grand que C ; B est deux unités plus grand que C. Avec six unités, C=1, A=2, B=3.",
+        "Compare sums: A is one greater than C; B is two greater than C. With six units, C=1, A=2, B=3."
+      ],
+      [
+        "A=2 ; B=3 ; C=1. Valider.",
+        "A=2; B=3; C=1. Validate."
+      ]
+    ],
+    "c19_p2": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "Le premier aiguillage doit entrer dans M. Le deuxième doit envoyer vers R. Le dernier rejoint C, qui mène à S. Les autres sorties recirculent ou sautent une opération.",
+        "The first switch must enter M. The second sends to R. The last joins C, leading to S. Other outputs recirculate or skip an operation."
+      ],
+      [
+        "Aiguillages 1=1 ; 2=0 ; 3=1. Tester : D → 1 → M → 2 → R → 3 → C → S. Valider.",
+        "Switches 1=1; 2=0; 3=1. Test: D → 1 → M → 2 → R → 3 → C → S. Validate."
+      ]
+    ],
+    "c19_p3": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "Le socle est premier, le contrôle dernier. Entre les deux, conserver les liens de dépendance ; plusieurs ordres intermédiaires sont acceptés.",
+        "Base comes first, inspection last. Preserve dependencies between them; multiple intermediate orders are accepted."
+      ],
+      [
+        "Socle → moteur → guide → courroie → capot → contrôle. Tester puis valider. Guide et moteur peuvent être inversés.",
+        "Base → motor → guide → belt → cover → inspection. Test and validate. Guide and motor may be swapped."
+      ]
+    ],
+    "c20_p1": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "Sécurité reçoit film, industrie reçoit commande, transport reçoit ascenseur, météo reçoit pluviomètre. Le dossier d’arrivée reste pour habitat.",
+        "Security gets film, industry gets order, transport gets lift, weather gets rain gauge. The arrival file remains for housing."
+      ],
+      [
+        "Habitat : dossier ; météo : pluviomètre ; sécurité : film ; industrie : commande ; transport : ascenseur. Valider.",
+        "Housing: file; weather: rain gauge; security: film; industry: order; transport: lift. Validate."
+      ]
+    ],
+    "c20_p2": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "A doit joindre X, B doit joindre A, C doit joindre Y. D ne peut passer par B (origine X) : il rejoint E, qui rejoint C.",
+        "A must join X, B must join A, C must join Y. D cannot use B (origin X): it joins E, which joins C."
+      ],
+      [
+        "A → X ; B → A ; C → Y ; D → E ; E → C. Tester puis valider.",
+        "A → X; B → A; C → Y; D → E; E → C. Test and validate."
+      ]
+    ],
+    "c20_p3": [
+      [
+        "Recoupez les deux notes du secteur et observez le résultat de vos manipulations.",
+        "Compare both sector notes and observe the effect of your changes."
+      ],
+      [
+        "Faire voyager C et D ensemble économise leurs longs trajets. A et B servent de passeurs du sceau. Le plus rapide ne doit pas faire tous les retours.",
+        "Send C and D together to combine their long crossings. A and B shuttle the seal. The fastest should not make every return."
+      ],
+      [
+        "A+B aller (2), A retour (1), C+D aller (8), B retour (2), A+B aller (2). Total 15. Valider.",
+        "A+B across (2), A returns (1), C+D across (8), B returns (2), A+B across (2). Total 15. Validate."
+      ]
     ]
   },
   "objectives": {
@@ -883,6 +1093,106 @@
       "Collect kit 101 for station 203."
     ],
     "c15_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c16_p1": [
+      "Résoudre 203 : Le droit d’exister.",
+      "Solve 203: The right to exist."
+    ],
+    "c16_p2": [
+      "Résoudre 303 : La personne qui n’est pas arrivée.",
+      "Solve 303: The person who never arrived."
+    ],
+    "c16_p3": [
+      "Résoudre 403 : Les tubes de régularisation.",
+      "Solve 403: Regularisation tubes."
+    ],
+    "c16_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c16_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c17_p1": [
+      "Résoudre 203 : Une journée parfaitement normale.",
+      "Solve 203: A perfectly normal day."
+    ],
+    "c17_p2": [
+      "Résoudre 303 : Le facteur qui livre hier.",
+      "Solve 303: The postman delivering yesterday."
+    ],
+    "c17_p3": [
+      "Résoudre 403 : L’anomalie est dans le bulletin.",
+      "Solve 403: The anomaly is in the bulletin."
+    ],
+    "c17_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c17_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c18_p1": [
+      "Résoudre 203 : Voir pour ouvrir, détourner pour passer.",
+      "Solve 203: Look to open, look away to pass."
+    ],
+    "c18_p2": [
+      "Résoudre 303 : Le film coupé trop court.",
+      "Solve 303: The film cut too short."
+    ],
+    "c18_p3": [
+      "Résoudre 403 : Une rumeur en cinq exemplaires.",
+      "Solve 403: A rumour in five copies."
+    ],
+    "c18_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c18_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c19_p1": [
+      "Résoudre 203 : L’énergie compte deux fois.",
+      "Solve 203: Power counts twice."
+    ],
+    "c19_p2": [
+      "Résoudre 303 : La pièce qui repasse.",
+      "Solve 303: The returning part."
+    ],
+    "c19_p3": [
+      "Résoudre 403 : Une petite pièce dans une grande machine.",
+      "Solve 403: A small part in a big machine."
+    ],
+    "c19_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c19_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c20_p1": [
+      "Résoudre 203 : Cinq faits contre cinq certitudes.",
+      "Solve 203: Five facts against five certainties."
+    ],
+    "c20_p2": [
+      "Résoudre 303 : Le réseau de confiance.",
+      "Solve 303: The trust network."
+    ],
+    "c20_p3": [
+      "Résoudre 403 : Le sceau à usage collectif.",
+      "Solve 403: The shared seal."
+    ],
+    "c20_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c20_exit": [
       "Rejoindre le passage 900 et terminer la mission.",
       "Reach passage 900 and complete the assignment."
     ]
@@ -1355,6 +1665,166 @@
           "c15_exit"
         ],
         "c15_exit"
+      ]
+    ],
+    "16": [
+      [
+        [
+          "c16_kit"
+        ],
+        "c16_kit"
+      ],
+      [
+        [
+          "c16_p1"
+        ],
+        "c16_p1"
+      ],
+      [
+        [
+          "c16_p2"
+        ],
+        "c16_p2"
+      ],
+      [
+        [
+          "c16_p3"
+        ],
+        "c16_p3"
+      ],
+      [
+        [
+          "c16_exit"
+        ],
+        "c16_exit"
+      ]
+    ],
+    "17": [
+      [
+        [
+          "c17_kit"
+        ],
+        "c17_kit"
+      ],
+      [
+        [
+          "c17_p1"
+        ],
+        "c17_p1"
+      ],
+      [
+        [
+          "c17_p2"
+        ],
+        "c17_p2"
+      ],
+      [
+        [
+          "c17_p3"
+        ],
+        "c17_p3"
+      ],
+      [
+        [
+          "c17_exit"
+        ],
+        "c17_exit"
+      ]
+    ],
+    "18": [
+      [
+        [
+          "c18_kit"
+        ],
+        "c18_kit"
+      ],
+      [
+        [
+          "c18_p1"
+        ],
+        "c18_p1"
+      ],
+      [
+        [
+          "c18_p2"
+        ],
+        "c18_p2"
+      ],
+      [
+        [
+          "c18_p3"
+        ],
+        "c18_p3"
+      ],
+      [
+        [
+          "c18_exit"
+        ],
+        "c18_exit"
+      ]
+    ],
+    "19": [
+      [
+        [
+          "c19_kit"
+        ],
+        "c19_kit"
+      ],
+      [
+        [
+          "c19_p1"
+        ],
+        "c19_p1"
+      ],
+      [
+        [
+          "c19_p2"
+        ],
+        "c19_p2"
+      ],
+      [
+        [
+          "c19_p3"
+        ],
+        "c19_p3"
+      ],
+      [
+        [
+          "c19_exit"
+        ],
+        "c19_exit"
+      ]
+    ],
+    "20": [
+      [
+        [
+          "c20_kit"
+        ],
+        "c20_kit"
+      ],
+      [
+        [
+          "c20_p1"
+        ],
+        "c20_p1"
+      ],
+      [
+        [
+          "c20_p2"
+        ],
+        "c20_p2"
+      ],
+      [
+        [
+          "c20_p3"
+        ],
+        "c20_p3"
+      ],
+      [
+        [
+          "c20_exit"
+        ],
+        "c20_exit"
       ]
     ]
   }

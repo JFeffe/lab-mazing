@@ -1,0 +1,386 @@
+[
+  {
+    "id": "c17_obs0",
+    "kind": "clue",
+    "cell": [
+      13,
+      5
+    ],
+    "ref": "210",
+    "title": "Registre local A",
+    "text": "MATIN / 08 h : le pluviomètre mécanique indique 0 mm. Le volet de la maison A est fermé. Le pain attend à la boulangerie."
+  },
+  {
+    "id": "c17_obs1",
+    "kind": "clue",
+    "cell": [
+      13,
+      17
+    ],
+    "ref": "211",
+    "title": "Registre local B",
+    "text": "MIDI / 12 h : le pluviomètre indique encore 0 mm. Ada observe une rue sèche. Le bulletin annonce pourtant une averse. Le volet A est ouvert."
+  },
+  {
+    "id": "c17_obs2",
+    "kind": "clue",
+    "cell": [
+      13,
+      29
+    ],
+    "ref": "212",
+    "title": "Registre local C",
+    "text": "SOIR / 18 h : le pluviomètre reste à 0 mm. Boris et Cyril répètent le bulletin de midi. La vitre réelle n’a aucune goutte."
+  },
+  {
+    "id": "c17_n1",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "201",
+    "title": "Consigne 201",
+    "text": "Le pupitre 203 change toute la rue entre matin, midi et soir. Aucune horloge réelle. Maison A ouverte le matin, B à midi, C le soir. Les habitants et les volets suivent la phase choisie."
+  },
+  {
+    "id": "c17_n2",
+    "kind": "clue",
+    "cell": [
+      5,
+      33
+    ],
+    "ref": "202",
+    "title": "Consigne 202",
+    "text": "Visiter 210, 211 et 212 dans leurs phases respectives. Après les trois observations, revenir à midi pour figer l’état contesté. Les constats restent dans le journal."
+  },
+  {
+    "id": "c17_p1",
+    "kind": "mechanism",
+    "cell": [
+      5,
+      17
+    ],
+    "ref": "203",
+    "title": "Une journée parfaitement normale",
+    "text": "Installer la mallette, choisir une phase, puis visiter la maison accessible. Enregistrer matin, midi et soir. Revenir au pupitre et choisir midi avant de valider.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "routine",
+    "observations": [
+      "c17_obs0",
+      "c17_obs1",
+      "c17_obs2"
+    ],
+    "labels": [
+      "Matin",
+      "Midi",
+      "Soir"
+    ],
+    "world_gates": [
+      {
+        "cell": [
+          9,
+          5
+        ],
+        "channel": 0,
+        "allowed": [
+          0
+        ],
+        "label": "A"
+      },
+      {
+        "cell": [
+          9,
+          17
+        ],
+        "channel": 0,
+        "allowed": [
+          1
+        ],
+        "label": "B"
+      },
+      {
+        "cell": [
+          9,
+          29
+        ],
+        "channel": 0,
+        "allowed": [
+          2
+        ],
+        "label": "C"
+      }
+    ],
+    "requires": [
+      "c17_kit"
+    ],
+    "opens": [
+      "c17_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c17_n3",
+    "kind": "clue",
+    "cell": [
+      19,
+      1
+    ],
+    "ref": "301",
+    "title": "Consigne 301",
+    "text": "Quatre livraisons aux heures 8, 10, 12 et 14, une par créneau. Ada est livrée avant Boris. Cyril est livré immédiatement avant Daria."
+  },
+  {
+    "id": "c17_n4",
+    "kind": "clue",
+    "cell": [
+      33,
+      15
+    ],
+    "ref": "302",
+    "title": "Consigne 302",
+    "text": "Ada n’est pas livrée à 8 h. Daria n’est pas livrée à 14 h. Utilisez les tickets physiques, pas les heures du bulletin."
+  },
+  {
+    "id": "c17_p2",
+    "kind": "mechanism",
+    "cell": [
+      25,
+      7
+    ],
+    "ref": "303",
+    "title": "Le facteur qui livre hier",
+    "text": "Une livraison à 8, 10, 12 et 14 h. Ada avant Boris ; Cyril immédiatement avant Daria ; Ada pas à 8 h ; Daria pas à 14 h. Une seule personne par heure.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "timetable",
+    "labels": [
+      "Ada",
+      "Boris",
+      "Cyril",
+      "Daria"
+    ],
+    "choices": [
+      [
+        "08:00",
+        "10:00",
+        "12:00",
+        "14:00"
+      ],
+      [
+        "08:00",
+        "10:00",
+        "12:00",
+        "14:00"
+      ],
+      [
+        "08:00",
+        "10:00",
+        "12:00",
+        "14:00"
+      ],
+      [
+        "08:00",
+        "10:00",
+        "12:00",
+        "14:00"
+      ]
+    ],
+    "target": [
+      2,
+      3,
+      0,
+      1
+    ],
+    "prerequisites": [
+      "c17_p1"
+    ],
+    "opens": [
+      "c17_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c17_n5",
+    "kind": "clue",
+    "cell": [
+      19,
+      19
+    ],
+    "ref": "401",
+    "title": "Consigne 401",
+    "text": "Ada : « La rue est sèche à midi. » Boris : « Averse confirmée par la radio. » Cyril : « Averse confirmée par Boris. » Daria : « Le volet A reste fermé toute la journée. »"
+  },
+  {
+    "id": "c17_n6",
+    "kind": "clue",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "402",
+    "title": "Consigne 402",
+    "text": "Une observation fiable doit correspondre aux trois relevés et provenir d’un constat direct. La radio diffuse MIROIR. Choisir le témoin et les deux instruments indépendants, pas les copies."
+  },
+  {
+    "id": "c17_p3",
+    "kind": "mechanism",
+    "cell": [
+      27,
+      25
+    ],
+    "ref": "403",
+    "title": "L’anomalie est dans le bulletin",
+    "text": "Choisir le témoin fiable. Joindre exactement deux preuves indépendantes parmi pluviomètre, radio, vitre réelle et rapport de Boris.",
+    "puzzle_type": "certainty",
+    "model": "certainty",
+    "mode": "anomaly",
+    "labels": [
+      "Témoin",
+      "Pluviomètre",
+      "Radio",
+      "Vitre réelle",
+      "Rapport de Boris"
+    ],
+    "choices": [
+      [
+        "Ada",
+        "Boris",
+        "Cyril",
+        "Daria"
+      ],
+      [
+        "Écarter",
+        "Conserver"
+      ],
+      [
+        "Écarter",
+        "Conserver"
+      ],
+      [
+        "Écarter",
+        "Conserver"
+      ],
+      [
+        "Écarter",
+        "Conserver"
+      ]
+    ],
+    "target": [
+      0,
+      1,
+      0,
+      1,
+      0
+    ],
+    "prerequisites": [
+      "c17_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c17_welcome",
+    "kind": "clue",
+    "cell": [
+      7,
+      27
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Une rue verticale dessert trois maisons à horaires décalés, à l’ouest d’un jardin inaccessible. Deux quartiers labyrinthiques occupent le nord-est et le sud-est, reliés par une ruelle étroite."
+  },
+  {
+    "id": "c17_kit",
+    "kind": "pickup",
+    "cell": [
+      7,
+      31
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c17_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c17_gate1",
+    "kind": "door",
+    "cell": [
+      17,
+      1
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "x",
+    "controlled_by": "c17_p1"
+  },
+  {
+    "id": "c17_gate2",
+    "kind": "door",
+    "cell": [
+      31,
+      17
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "y",
+    "controlled_by": "c17_p2"
+  },
+  {
+    "id": "c17_secret1",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "Le bonheur est obligatoire. Toute amélioration sera considérée comme une critique.",
+    "secret": true
+  },
+  {
+    "id": "c17_secret2",
+    "kind": "clue",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "Le facteur a livré demain. Sa ponctualité fait l’objet d’une enquête.",
+    "secret": true
+  },
+  {
+    "id": "c17_secret3",
+    "kind": "clue",
+    "cell": [
+      19,
+      33
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "Le jardin est interdit aux plantes non prévues au plan.",
+    "secret": true
+  },
+  {
+    "id": "c17_exit",
+    "kind": "exit",
+    "cell": [
+      33,
+      23
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c17_p1",
+      "c17_p2",
+      "c17_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]
