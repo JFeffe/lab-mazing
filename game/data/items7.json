@@ -1,0 +1,26 @@
+{
+  "layers": {
+    "title": "Pochette de transparents",
+    "text": "Trois calques A, B et C pour la table 203. Les marques noires se superposent : elles ne s’effacent jamais."
+  },
+  "files": {
+    "title": "Dossiers à classer",
+    "text": "Quatre dossiers : Lune, Miroir, Serre et Zéro. À installer dans le classeur 303."
+  },
+  "paper": {
+    "title": "Papier homologué",
+    "text": "Une rame entière pour une copie. La machine 403 conserve le papier pendant les essais."
+  },
+  "toner": {
+    "title": "Cartouche de toner",
+    "text": "Du toner noir pour la machine 403. Aucun essai ne gaspille la cartouche."
+  },
+  "master": {
+    "title": "Original validé",
+    "text": "À installer au photocopieur 403."
+  },
+  "approved_copy": {
+    "title": "Copie conforme",
+    "text": "À livrer au bac 101."
+  }
+}

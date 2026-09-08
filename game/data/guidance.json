@@ -209,6 +209,48 @@
         "Après installation des quatre récoltes : Grain 1, Pétale 1, Mousse 1, Sel 0. Trois mesures donnent arôme 3, amertume 2 et stabilité 2. Validez.",
         "After installing all four crops: Bean 1, Petal 1, Moss 1, Salt 0. Three measures give aroma 3, bitterness 2 and stability 2. Validate."
       ]
+    ],
+    "p_overlay": [
+      [
+        "Comparez d’abord les cases blanches du modèle.",
+        "First compare the white cells in the reference."
+      ],
+      [
+        "Chaque calque se tourne séparément ; les marques superposées restent noires.",
+        "Each layer turns independently; overlapping marks stay black."
+      ],
+      [
+        "Après réinitialisation : A une fois (90°), B trois fois (270°), C deux fois (180°). Validez.",
+        "After reset: A once (90°), B three times (270°), C twice (180°). Validate."
+      ]
+    ],
+    "p_filing": [
+      [
+        "Écartez la directive annulée. Cherchez une extrémité imposée.",
+        "Ignore the cancelled directive. Look for a forced end slot."
+      ],
+      [
+        "Zéro est en 1. Le bloc Serre–Miroir doit laisser une place à Lune sur sa droite.",
+        "Zero is in 1. The Greenhouse–Mirror block must leave a slot for Moon to its right."
+      ],
+      [
+        "De gauche à droite : Zéro, Serre, Miroir, Lune. Réglages Lune 4, Miroir 3, Serre 2, Zéro 1. Validez.",
+        "Left to right: Zero, Greenhouse, Mirror, Moon. Settings: Moon 4, Mirror 3, Greenhouse 2, Zero 1. Validate."
+      ]
+    ],
+    "p_copier": [
+      [
+        "Repérez le groupe de trois marques et la marque isolée.",
+        "Locate the group of three marks and the isolated mark."
+      ],
+      [
+        "Une rotation seule ne suffit pas : le modèle est aussi réfléchi.",
+        "A rotation alone is not enough: the reference is reflected too."
+      ],
+      [
+        "Après réinitialisation : une rotation de 90° dans le sens horaire, puis un miroir gauche-droite. Validez et livrez la copie en 101.",
+        "After reset: one clockwise 90° rotation, then a left-right mirror. Validate and deliver the copy at 101."
+      ]
     ]
   },
   "objectives": {
@@ -323,6 +365,26 @@
     "g_coffee": [
       "Servir le café à la cafetière 105 avec la tasse et la préparation validée.",
       "Serve coffee at machine 105 with the mug and approved preparation."
+    ],
+    "p_overlay": [
+      "Trouver les calques à l’ouest et reproduire le modèle à la table 203.",
+      "Find the western layers and match the reference at table 203."
+    ],
+    "p_filing": [
+      "Récupérer les dossiers aux archives et les classer en 303 selon la directive validée 302.",
+      "Collect the archive files and sort them at 303 using approved directive 302."
+    ],
+    "p_supplies": [
+      "Récupérer le papier 401 et le toner 402 dans l’aile sud.",
+      "Collect paper 401 and toner 402 in the southern wing."
+    ],
+    "p_copier": [
+      "Installer le matériel en 403 et transformer l’image pour reproduire le modèle.",
+      "Install the supplies at 403 and transform the image to match the reference."
+    ],
+    "p_delivery": [
+      "Rapporter la copie approuvée au bac 101, à l’accueil central.",
+      "Return the approved copy to tray 101 at central reception."
     ]
   },
   "stages": {
@@ -498,6 +560,39 @@
           "g_coffee"
         ],
         "g_coffee"
+      ]
+    ],
+    "7": [
+      [
+        [
+          "p_overlay"
+        ],
+        "p_overlay"
+      ],
+      [
+        [
+          "p_filing"
+        ],
+        "p_filing"
+      ],
+      [
+        [
+          "p_paper",
+          "p_toner"
+        ],
+        "p_supplies"
+      ],
+      [
+        [
+          "p_copier"
+        ],
+        "p_copier"
+      ],
+      [
+        [
+          "p_delivery"
+        ],
+        "p_delivery"
       ]
     ]
   }

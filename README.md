@@ -1,6 +1,6 @@
 # Lab-mazing — Le Labyrinthe de Folamour
 
-Version 0.10 : jeu solo 3D isométrique, chapitre 1 complet (cinq niveaux), français/anglais, déplacement au clic et au toucher.
+Version 0.13 : jeu solo 3D isométrique, chapitre 1 complet et deux missions du chapitre 2, français/anglais, déplacement au clic et au toucher.
 
 Jouer dans le navigateur : https://jfeffe.github.io/lab-mazing/
 
@@ -11,6 +11,19 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Nouveautés v0.13
+Le service des photocopies est la deuxième mission du chapitre 2 (niveau global 7). L’accueil central dessert trois ailes : préparation, archives et copies. Trois mécanismes distincts permettent de superposer des calques, classer des dossiers selon une directive validée et transformer une image par rotation ou miroir. Folamour introduit la mission et termine sur sa demande de recto verso.
+
+Les six raccourcis évitent 88 pas sur le parcours de référence (747 → 659), après visite physique de leurs deux côtés. Les deux portes ne peuvent pas être contournées. Trois archives secrètes, objectifs et indices progressifs FR/EN, sauvegardes des essais et bilans des missions précédentes.
+
+La vitesse passe de 7 à 9,1 unités/s (+30 %) dans tous les niveaux, au clavier et sur les trajets au clic/toucher. Les corrections audio et les réglages de netteté/stabilité mobiles de v0.12.4 sont conservés ; aucun bruit de pas.
+
+Accès : après la mission des serres, « Passer aux photocopies », ou menu de test → Niveau 7. La troisième mission reste à venir.
+
+Données : `python scripts/build_level7.py`. Validation : `python game/tests/validate_level7.py` et Godot `--headless --path game --fixed-fps 60 --script res://tests/verify_level7.gd`. Documents : `python scripts/document_level7.py /chemin/de/sortie`.
+
+[Cartes et solutions v0.13](https://drive.google.com/drive/folders/1Xt0fg-rjPgT0MS-oH0x1QC_dWd52Rj8p).
 
 ## Nouveautés v0.12
 Le chapitre 2 commence avec **Les serres expérimentales**, première mission du stage non rémunéré. Folamour demande un café : le joueur rétablit l’irrigation avec quatre coudes orientables, fait pousser une liane-pont, récolte quatre ingrédients et compose un mélange selon trois propriétés. Le nouveau labyrinthe possède une serre centrale, quatre branches, des parois vitrées, 20 repères, trois secrets et six raccourcis de retour.

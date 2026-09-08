@@ -1,0 +1,158 @@
+{
+  "without_shortcuts": {
+    "steps": 747,
+    "opened": 0,
+    "crossings": {},
+    "legs": [
+      {
+        "id": "p_welcome",
+        "steps": 2
+      },
+      {
+        "id": "p_layers",
+        "steps": 80
+      },
+      {
+        "id": "p_overlay_note",
+        "steps": 54
+      },
+      {
+        "id": "p_overlay_tip",
+        "steps": 34
+      },
+      {
+        "id": "p_secret1",
+        "steps": 18
+      },
+      {
+        "id": "p_overlay",
+        "steps": 26
+      },
+      {
+        "id": "p_valid_note",
+        "steps": 98
+      },
+      {
+        "id": "p_files",
+        "steps": 58
+      },
+      {
+        "id": "p_old_note",
+        "steps": 20
+      },
+      {
+        "id": "p_secret2",
+        "steps": 26
+      },
+      {
+        "id": "p_filing",
+        "steps": 24
+      },
+      {
+        "id": "p_paper",
+        "steps": 42
+      },
+      {
+        "id": "p_secret3",
+        "steps": 80
+      },
+      {
+        "id": "p_copy_note",
+        "steps": 84
+      },
+      {
+        "id": "p_toner",
+        "steps": 16
+      },
+      {
+        "id": "p_copier",
+        "steps": 64
+      },
+      {
+        "id": "p_delivery",
+        "steps": 21
+      }
+    ]
+  },
+  "with_shortcuts": {
+    "steps": 659,
+    "opened": 5,
+    "crossings": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "5": 1,
+      "4": 1
+    },
+    "legs": [
+      {
+        "id": "p_welcome",
+        "steps": 2
+      },
+      {
+        "id": "p_layers",
+        "steps": 80
+      },
+      {
+        "id": "p_overlay_note",
+        "steps": 38
+      },
+      {
+        "id": "p_overlay_tip",
+        "steps": 34
+      },
+      {
+        "id": "p_secret1",
+        "steps": 18
+      },
+      {
+        "id": "p_overlay",
+        "steps": 26
+      },
+      {
+        "id": "p_valid_note",
+        "steps": 70
+      },
+      {
+        "id": "p_files",
+        "steps": 58
+      },
+      {
+        "id": "p_old_note",
+        "steps": 20
+      },
+      {
+        "id": "p_secret2",
+        "steps": 26
+      },
+      {
+        "id": "p_filing",
+        "steps": 24
+      },
+      {
+        "id": "p_paper",
+        "steps": 42
+      },
+      {
+        "id": "p_secret3",
+        "steps": 80
+      },
+      {
+        "id": "p_copy_note",
+        "steps": 68
+      },
+      {
+        "id": "p_toner",
+        "steps": 16
+      },
+      {
+        "id": "p_copier",
+        "steps": 36
+      },
+      {
+        "id": "p_delivery",
+        "steps": 21
+      }
+    ]
+  }
+}

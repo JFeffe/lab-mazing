@@ -8,7 +8,7 @@ func point(c):return Vector3(c[0]*game.TILE,0.1,c[1]*game.TILE)
 func push(direction,frames=65):
 	for frame in range(frames):
 		await physics_frame
-		game.player.velocity=direction*6
+		game.player.velocity=direction*game.MOVE_SPEED
 		game.player.velocity.y=-2
 		game.player.move_and_slide()
 		game.record_walk()
@@ -17,7 +17,7 @@ func run():
 	root.add_child(game)
 	game.test_mode=true
 	var audit=JSON.parse_string(FileAccess.get_file_as_string("res://tests/shortcut_audit.json"))
-	for number in range(1,6):
+	for number in range(1,8):
 		game.start_game(false,number)
 		game.close_modal()
 		game.playing=false
@@ -47,6 +47,9 @@ func run():
 			game.player.position=a
 			await push((b-a).normalized())
 			check((game.player.position-a).dot((b-a).normalized())>game.TILE,"Reverse shortcut blocked "+sc.id)
+		if number>=6:
+			print("LEVEL ",number," SHORTCUT COLLISIONS + TWO-SIDE REVEAL PASS")
+			continue
 		# Old revision: checkpoint is inside a former shortcut wall.
 		var old=audit[number-1].before[0]
 		game.test_mode=false

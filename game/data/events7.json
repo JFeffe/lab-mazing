@@ -1,0 +1,339 @@
+[
+  {
+    "id": "p_welcome",
+    "kind": "clue",
+    "cell": [
+      17,
+      17
+    ],
+    "ref": "100",
+    "title": "Service des photocopies",
+    "text": "Accueil central. Préparation à l’ouest, archives au nord-est, salle des copies au sud. Le badge des archives est délivré par la table lumineuse 203. Le classement 303 ouvre la salle des copies."
+  },
+  {
+    "id": "p_delivery",
+    "kind": "exit",
+    "cell": [
+      21,
+      19
+    ],
+    "ref": "101",
+    "title": "Bac de livraison",
+    "text": "Déposez la copie approuvée par la machine 403. Folamour attend UNE copie conforme au modèle.",
+    "requires": [
+      "approved_copy"
+    ],
+    "prerequisites": [
+      "p_overlay",
+      "p_filing",
+      "p_copier"
+    ],
+    "action": "Livrer la copie"
+  },
+  {
+    "id": "p_archive_door",
+    "kind": "door",
+    "cell": [
+      25,
+      15
+    ],
+    "ref": "102",
+    "title": "Porte des archives",
+    "text": "La table lumineuse 203 autorise l’accès aux archives.",
+    "axis": "y",
+    "controlled_by": "p_overlay"
+  },
+  {
+    "id": "p_copy_door",
+    "kind": "door",
+    "cell": [
+      17,
+      20
+    ],
+    "ref": "103",
+    "title": "Porte de la salle des copies",
+    "text": "Le classement validé en 303 déverrouille cette porte.",
+    "axis": "y",
+    "controlled_by": "p_filing"
+  },
+  {
+    "id": "p_layers",
+    "kind": "pickup",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "201",
+    "title": "Pochette de transparents",
+    "text": "Trois calques A, B et C pour la table 203. Les marques noires se superposent : elles ne s’effacent jamais.",
+    "resource": "layers",
+    "amount": 1,
+    "appearance": "card"
+  },
+  {
+    "id": "p_overlay_note",
+    "kind": "clue",
+    "cell": [
+      15,
+      1
+    ],
+    "ref": "202",
+    "title": "Notice de la table",
+    "text": "Tournez séparément les calques A, B et C par quarts de tour. Une case est noire si AU MOINS UN calque la marque. Reproduisez exactement le modèle, sans case noire supplémentaire. Les trois petits tableaux montrent chaque calque orienté."
+  },
+  {
+    "id": "p_overlay",
+    "kind": "mechanism",
+    "cell": [
+      9,
+      9
+    ],
+    "ref": "203",
+    "title": "Table lumineuse",
+    "text": "Installez la pochette 201. Superposez les trois calques pour reproduire le modèle. Le résultat change à chaque rotation.",
+    "requires": [
+      "layers"
+    ],
+    "puzzle_type": "overlay",
+    "model": "overlay",
+    "masks": [
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0
+      ]
+    ],
+    "target": [
+      1,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    "opens": [
+      "p_archive_door"
+    ],
+    "success": "Les marques concordent. Les archives sont accessibles. « Bravo. Vous venez de rendre trois feuilles aussi utiles qu’une seule. » — Folamour"
+  },
+  {
+    "id": "p_overlay_tip",
+    "kind": "clue",
+    "cell": [
+      1,
+      13
+    ],
+    "ref": "204",
+    "title": "Note du technicien",
+    "text": "Commencez par éviter les cases que le modèle laisse blanches. Ensuite, cherchez les marques manquantes. Chaque calque peut couvrir une marque déjà présente."
+  },
+  {
+    "id": "p_files",
+    "kind": "pickup",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "301",
+    "title": "Dossiers à classer",
+    "text": "Quatre dossiers : Lune, Miroir, Serre et Zéro. À installer dans le classeur 303.",
+    "resource": "files",
+    "amount": 1,
+    "appearance": "card"
+  },
+  {
+    "id": "p_valid_note",
+    "kind": "clue",
+    "cell": [
+      19,
+      1
+    ],
+    "ref": "302",
+    "title": "Directive VALIDÉE — version B",
+    "text": "Seule la version B fait foi. Quatre casiers numérotés de gauche à droite, un dossier par casier. MIROIR est immédiatement à droite de SERRE. LUNE est à droite de MIROIR. ZÉRO occupe une extrémité, mais pas le casier 4."
+  },
+  {
+    "id": "p_filing",
+    "kind": "mechanism",
+    "cell": [
+      29,
+      11
+    ],
+    "ref": "303",
+    "title": "Classeur de validation",
+    "text": "Installez les dossiers 301. Touchez chaque dossier pour choisir son casier de 1 à 4. Les doublons sont permis pendant les essais, mais la validation exige un dossier par casier et le respect de la directive VALIDÉE 302.",
+    "requires": [
+      "files"
+    ],
+    "puzzle_type": "filing",
+    "model": "filing",
+    "opens": [
+      "p_copy_door"
+    ],
+    "grants": {
+      "master": 1
+    },
+    "success": "Classement approuvé. La salle des copies est ouverte et l’original est récupéré. « Les dossiers étaient déjà classés. Mais maintenant, ils le sont correctement. » — Folamour"
+  },
+  {
+    "id": "p_old_note",
+    "kind": "clue",
+    "cell": [
+      33,
+      13
+    ],
+    "ref": "304",
+    "title": "Directive ANNULÉE — version A",
+    "text": "ANNULÉE : « Lune dans le casier 1 ; Zéro dans le casier 4. » Tampon : remplacée par la version B, référence 302. Ce document explique l’ancien classement ; ne pas l’appliquer."
+  },
+  {
+    "id": "p_paper",
+    "kind": "pickup",
+    "cell": [
+      1,
+      21
+    ],
+    "ref": "401",
+    "title": "Papier homologué",
+    "text": "Une rame entière pour une copie. La machine 403 conserve le papier pendant les essais.",
+    "resource": "paper",
+    "amount": 1,
+    "appearance": "card"
+  },
+  {
+    "id": "p_toner",
+    "kind": "pickup",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "402",
+    "title": "Cartouche de toner",
+    "text": "Du toner noir pour la machine 403. Aucun essai ne gaspille la cartouche.",
+    "resource": "toner",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "p_copier",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      29
+    ],
+    "ref": "403",
+    "title": "Photocopieur expérimental",
+    "text": "Installez l’original, le papier et le toner. Reproduisez le modèle en tournant l’image et en utilisant le miroir gauche-droite. Les transformations agissent sur l’image actuelle : leur ordre compte.",
+    "requires": [
+      "master",
+      "paper",
+      "toner"
+    ],
+    "puzzle_type": "copier",
+    "model": "copier",
+    "initial": [
+      1,
+      1,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "target": [
+      1,
+      0,
+      0,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1
+    ],
+    "grants": {
+      "approved_copy": 1
+    },
+    "success": "Copie conforme. Rapportez-la au bac 101 dans l’accueil central. « Incroyable. Du papier qui ressemble à du papier. » — Folamour"
+  },
+  {
+    "id": "p_copy_note",
+    "kind": "clue",
+    "cell": [
+      33,
+      21
+    ],
+    "ref": "404",
+    "title": "Notice des transformations",
+    "text": "Rotation : un quart de tour dans le sens horaire. Miroir : échange la gauche et la droite, sans échanger le haut et le bas. On peut toujours annuler : quatre rotations ou deux miroirs retrouvent l’image de départ."
+  },
+  {
+    "id": "p_secret1",
+    "kind": "clue",
+    "cell": [
+      15,
+      13
+    ],
+    "ref": "205",
+    "title": "Archive administrative 205",
+    "text": "Formulaire 8 : demande d’autorisation de demander une autorisation. À fournir en trois exemplaires identiques.",
+    "secret": true
+  },
+  {
+    "id": "p_secret2",
+    "kind": "clue",
+    "cell": [
+      19,
+      13
+    ],
+    "ref": "305",
+    "title": "Archive administrative 305",
+    "text": "Rapport RH : « Le stage est enrichissant. » La comptabilité confirme que cela ne concerne pas le stagiaire.",
+    "secret": true
+  },
+  {
+    "id": "p_secret3",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "405",
+    "title": "Archive administrative 405",
+    "text": "La touche « économie » réduit la consommation de toner et augmente le temps de travail. Gain net pour le laboratoire.",
+    "secret": true
+  }
+]
