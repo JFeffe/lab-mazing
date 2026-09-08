@@ -1,0 +1,14 @@
+{
+  "guest_badges": {
+    "title": "Invitations du comité",
+    "text": "Six invités : Aster, Boréal, Cobalt, Delta, Écho et Fermi. Aucun n’a indiqué de préférence alimentaire. Les six signatures sont étrangement identiques. Pour le pupitre 203."
+  },
+  "agenda_file": {
+    "title": "Dossier de séance",
+    "text": "Quatre interventions à programmer entre 09 h 00 et 10 h 00. Un créneau dure dix minutes. Installez le dossier au planning 303."
+  },
+  "conference_cables": {
+    "title": "Valise de câbles",
+    "text": "Quatre liaisons pour la conférence 403. Elles restent installées pendant les essais. Les branchements sont simulés sans endommager le matériel."
+  }
+}

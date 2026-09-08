@@ -17,7 +17,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 R=Path(__file__).resolve().parents[1];D=R/'game/data';out=Path(sys.argv[1]);out.mkdir(parents=True,exist_ok=True)
 VERSION='0.11';font=str(R/'game/assets/Interface.ttf');pdfmetrics.registerFont(TTFont('Interface',font))
 audit=json.loads((R/'game/tests/shortcut_audit.json').read_text())
-titles={1:'Le laboratoire',2:'Le département des machines',3:'Le département d’optique',4:'Le département des essais',5:'Le défi de Folamour',6:'Les serres expérimentales',7:'Le service des photocopies',8:'Le courrier interne'}
+titles={1:'Le laboratoire',2:'Le département des machines',3:'Le département d’optique',4:'Le département des essais',5:'Le défi de Folamour',6:'Les serres expérimentales',7:'Le service des photocopies',8:'Le courrier interne',9:'La salle de réunion'}
 styles={name:ParagraphStyle(name,fontName='Interface',fontSize=size,leading=leading,textColor=colors.HexColor(color),spaceAfter=after,keepWithNext=name in ['Main','Section','ReferenceHeading','Coordinate']) for name,size,leading,color,after in [('Main',25,31,'#173743',18),('Section',16,21,'#236878',12),('Body',10.5,16,'#162f38',11),('SmallCell',8.5,12,'#162f38',0),('Reference',10,13.2,'#162f38',6),('ReferenceHeading',13,17,'#236878',8),('Coordinate',10,13.2,'#162f38',6)]}
 cs={'pickup':'#e9be72','clue':'#8eddd5','craft':'#93aff0','mechanism':'#93aff0','door':'#ee9478','oneway':'#ee9478','exit':'#ffffff'}
 def data(n):
@@ -32,10 +32,10 @@ def make_map(n,m,E,S):
  txt(65,80,titles[n].upper(),44)
  txt(65,143,'Raccourcis révisés : revenir plus vite dans les couloirs déjà parcourus',24)
  ox,oy,c=95,220,38
- palettes={1:['#648a83','#7b83a4','#9e8174'],2:['#9e8460','#527f8e','#858371'],3:['#7789a5','#638f94','#93839e'],4:['#a18d72','#788ba2','#6b968d'],5:['#659b9d','#ac9070','#8982a9'],6:['#729d77','#82aaa0','#af986d'],7:['#9aa7b0','#b19c7b','#839c9a'],8:['#ac9679','#829cac','#8a9e80']}
+ palettes={1:['#648a83','#7b83a4','#9e8174'],2:['#9e8460','#527f8e','#858371'],3:['#7789a5','#638f94','#93839e'],4:['#a18d72','#788ba2','#6b968d'],5:['#659b9d','#ac9070','#8982a9'],6:['#729d77','#82aaa0','#af986d'],7:['#9aa7b0','#b19c7b','#839c9a'],8:['#ac9679','#829cac','#8a9e80'],9:['#7e8ba5','#aa9276','#749e94']}
  for y,row in enumerate(m['grid']):
   for x,v in enumerate(row):
-   zone=(2 if y>=28 else 0 if x<14 else 1) if n==8 else (2 if y>=20 else 0 if x<17 else 1) if n==7 else (0 if x<13 else 1 if x>23 else 2) if n==6 else (2 if y<12 else 0 if x<15 else 1 if x>19 else 2) if n==5 else (0 if y<(11 if n==1 else 12) else 1 if y<24 else 2)
+   zone=(0 if x<12 else 1 if x>23 else 2) if n==9 else (2 if y>=28 else 0 if x<14 else 1) if n==8 else (2 if y>=20 else 0 if x<17 else 1) if n==7 else (0 if x<13 else 1 if x>23 else 2) if n==6 else (2 if y<12 else 0 if x<15 else 1 if x>19 else 2) if n==5 else (0 if y<(11 if n==1 else 12) else 1 if y<24 else 2)
    dr.rectangle((ox+x*c,oy+y*c,ox+(x+1)*c-1,oy+(y+1)*c-1),fill=palettes[n][zone] if v else '#20313e')
  for k in range(len(m['grid'])):
   txt(ox+k*c+7,oy-28,str(k),16,'#b7c7cf');txt(ox-35,oy+k*c+8,str(k),16,'#b7c7cf')

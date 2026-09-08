@@ -175,6 +175,7 @@ func build_world():
 	sun.shadow_enabled=not OS.has_feature("web")
 	world.add_child(sun)
 	var palettes=[Color("648a83"),Color("7b83a4"),Color("9e8174")] if level==1 else [Color("9e8460"),Color("527f8e"),Color("858371")]
+	if level==9: palettes=[Color("7e8ba5"),Color("aa9276"),Color("749e94")]
 	if level==8: palettes=[Color("ac9679"),Color("829cac"),Color("8a9e80")]
 	if level==7: palettes=[Color("9aa7b0"),Color("b19c7b"),Color("839c9a")]
 	if level==6: palettes=[Color("729d77"),Color("82aaa0"),Color("af986d")]
@@ -246,9 +247,9 @@ func build_world():
 	build_readability_decor()
 	if level==2: build_machine_decor()
 	if level==6:preload("res://GreenhouseDecor.gd").decorate(self)
-	if level in [5,6,7,8]:
+	if level in [5,6,7,8,9]:
 		folamour=make_folamour(world)
-		folamour.position=Vector3(29*TILE,0,21*TILE) if level==8 else Vector3(17*TILE,0,19*TILE) if level==5 else Vector3(15*TILE,0,(19 if level==7 else 23)*TILE)
+		folamour.position=Vector3(19*TILE,0,23*TILE) if level==9 else Vector3(29*TILE,0,21*TILE) if level==8 else Vector3(17*TILE,0,19*TILE) if level==5 else Vector3(15*TILE,0,(19 if level==7 else 23)*TILE)
 	update_camera(1)
 
 func build_event(e):
@@ -315,7 +316,8 @@ func build_event(e):
 		else:
 			for i in range(min(e.get("amount",1),4)): box(root,Vector3(0.45,0.12,0.45),Vector3(0,0.4+i*0.15,0),gold)
 	elif e.has("model"):
-		if e.model in ["parcels","mailnet","address"]:preload("res://MailDecor.gd").model(self,root,e,gold,dark)
+		if e.model in ["seating","schedule","conference"]:preload("res://MeetingDecor.gd").model(self,root,e,gold,dark)
+		elif e.model in ["parcels","mailnet","address"]:preload("res://MailDecor.gd").model(self,root,e,gold,dark)
 		elif e.model in ["overlay","filing","copier"]:preload("res://OfficeDecor.gd").model(self,root,e,gold,dark)
 		elif e.model in ["pipes","growth","blend"]:preload("res://GreenhouseDecor.gd").model(self,root,e,gold,dark)
 		else:build_machine(root,e,gold,dark)
@@ -599,7 +601,7 @@ func read_save():
 		var parser=JSON.new()
 		if parser.parse(FileAccess.get_file_as_string(path))!=OK: continue
 		var data=parser.data
-		if data is Dictionary and int(data.get("version",0)) in [2,4] and int(data.get("level",1)) in [1,2,3,4,5,6,7,8]: return data
+		if data is Dictionary and int(data.get("version",0)) in [2,4] and int(data.get("level",1)) in [1,2,3,4,5,6,7,8,9]: return data
 	return {}
 func show_title():
 	DisplayServer.window_set_title(loc("LE LABYRINTHE")+" — Folamour")
@@ -608,7 +610,7 @@ func show_title():
 	clear_modal("DOCTEUR FOLAMOUR / EXPÉRIENCES","LE LABYRINTHE")
 	paragraph("Le laboratoire vous attend.\nLes machines aussi.",22)
 	paragraph("Cinq labyrinthes forment le chapitre 1, du laboratoire au défi final de Folamour. Objets à assembler, énigmes à manipuler et indices à recouper. Aucune limite de temps.")
-	paragraph("Le chapitre 2 propose trois missions : les serres, les photocopies et le courrier interne.",17)
+	paragraph("Le chapitre 2 propose quatre missions : les serres, les photocopies, le courrier et la salle de réunion.",17)
 	var saved=read_save()
 	if not saved.is_empty():
 		modal_box.add_child(button("Continuer la partie",func(): start_game(true),true))
@@ -617,7 +619,7 @@ func show_title():
 	modal_box.add_child(button("Choisir un chapitre",show_chapters,not has_save()))
 	modal_box.add_child(button("Sélection de niveau / test",show_level_select))
 	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("VERSION 0.14 · LE COURRIER INTERNE",13)
+	paragraph("VERSION 0.15 · LA SALLE DE RÉUNION",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
 	modal_box.add_child(button("Réglages audio",func(): show_audio(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
@@ -630,12 +632,13 @@ func show_chapters():
 		modal_box.add_child(button("Reprendre le chapitre 1",func(): start_game(true),true))
 	modal_box.add_child(button("Commencer le chapitre 1",func(): confirm_new(1)))
 	paragraph("Chapitre 2 — Le stage non rémunéré",22)
-	paragraph("Trois missions disponibles : les serres, les photocopies, puis le courrier interne.",17)
+	paragraph("Quatre missions disponibles : les serres, les photocopies, le courrier et la réunion.",17)
 	if not saved.is_empty() and int(saved.get("level",1))>=6:
 		modal_box.add_child(button("Reprendre le chapitre 2",func(): start_game(true),true))
 	modal_box.add_child(button(level_name(6),func(): confirm_new(6)))
 	modal_box.add_child(button(level_name(7),func(): confirm_new(7)))
 	modal_box.add_child(button(level_name(8),func(): confirm_new(8)))
+	modal_box.add_child(button(level_name(9),func(): confirm_new(9)))
 	modal_box.add_child(button("Retour",show_title))
 func show_level_select():
 	clear_modal("TEST / NIVEAUX","Choisir un niveau")
@@ -643,10 +646,10 @@ func show_level_select():
 	paragraph("Chapitre 1 — Le labyrinthe de Folamour",22)
 	for n in range(1,6):modal_box.add_child(button(level_name(n),func(): confirm_new(n)))
 	paragraph("Chapitre 2 — Le stage non rémunéré",22)
-	for n in range(6,9):modal_box.add_child(button(level_name(n),func(): confirm_new(n)))
+	for n in range(6,10):modal_box.add_child(button(level_name(n),func(): confirm_new(n)))
 	modal_box.add_child(button("Retour",show_title))
 func level_name(number):
-	var names=["Le laboratoire","Le département des machines","Le département d’optique","Le département des essais","Le défi de Folamour","Les serres expérimentales","Le service des photocopies","Le courrier interne"]
+	var names=["Le laboratoire","Le département des machines","Le département d’optique","Le département des essais","Le défi de Folamour","Les serres expérimentales","Le service des photocopies","Le courrier interne","La salle de réunion"]
 	return loc("Chapitre %d · Niveau %d — %s") % [1 if number<=5 else 2,number if number<=5 else number-5,loc(names[number-1])]
 
 func confirm_new(target=1):
@@ -662,7 +665,7 @@ func set_level(number):
 	signal_lights.clear()
 	decor.clear()
 	ambience_zone=-1
-	level=clampi(number,1,8)
+	level=clampi(number,1,9)
 	if is_instance_valid(world):
 		remove_child(world)
 		world.queue_free()
@@ -742,8 +745,9 @@ func start_game(resume_v,target=1,keep_campaign=false):
 			show_folamour_intro()
 		elif level==6:show_greenhouse_intro()
 		elif level==7:show_office_intro()
-		else:show_mail_intro()
-		if level not in [5,6,7,8]:modal_box.add_child(button("Commencer l’exploration",close_modal,true))
+		elif level==8:show_mail_intro()
+		else:show_meeting_intro()
+		if level not in [5,6,7,8,9]:modal_box.add_child(button("Commencer l’exploration",close_modal,true))
 	elif level==5 and not won and not done.has("folamour_met"):
 		show_folamour_intro()
 	elif level==6 and not won and not done.has("g_met"):
@@ -752,6 +756,8 @@ func start_game(resume_v,target=1,keep_campaign=false):
 		show_office_intro()
 	elif level==8 and not won and not done.has("m_met"):
 		show_mail_intro()
+	elif level==9 and not won and not done.has("r_met"):
+		show_meeting_intro()
 	save_game()
 func _physics_process(delta):
 	if not playing or modal_open or won or (is_instance_valid(soundscape) and not soundscape.focused): return
@@ -825,6 +831,7 @@ func update_camera(delta):
 func key(x,y): return str(int(x))+","+str(int(y))
 func floor_at(x,y): return y>=0 and x>=0 and y<grid.size() and x<grid.size() and (grid[y][x]==1 or shortcut_cells.has(key(x,y)))
 func zone(y,x=17):
+	if level==9:return 0 if x<12 else 1 if x>23 else 2
 	if level==8:return 2 if y>=28 else 0 if x<14 else 1
 	if level==7:return 2 if y>=20 else 0 if x<17 else 1
 	if level==6:return 0 if x<13 else 1 if x>23 else 2
@@ -894,6 +901,9 @@ func update_hud():
 	if level==8:
 		title_label.text=loc("C2 / MISSION 3 / COURRIER")
 		status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d") % [held,int(done.has("m_balance"))+int(done.has("m_network"))+int(done.has("m_address")),int(elapsed)/60,int(elapsed)%60]
+	if level==9:
+		title_label.text=loc("C2 / MISSION 4 / RÉUNION")
+		status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d") % [held,int(done.has("r_seating"))+int(done.has("r_schedule"))+int(done.has("r_conference")),int(elapsed)/60,int(elapsed)%60]
 	if level==4: status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d") % [held,int(done.has("test_balance"))+int(done.has("sequence_panel"))+int(done.has("test_circuit")),int(elapsed)/60,int(elapsed)%60]
 	action_label.text=loc("["+nearest.ref+"] "+nearest.title if not nearest.is_empty() else "Cliquez / touchez le sol pour explorer")
 	if not move_path.is_empty(): action_label.text=loc("Destination : ")+ (loc(click_event.title) if not click_event.is_empty() else str(move_path[-1].x)+", "+str(move_path[-1].y))
@@ -1214,6 +1224,9 @@ func show_win():
 	level_stats[str(level)]={"time":elapsed,"secrets":secrets,"hints":h,"errors":errors,"puzzles":puzzles,"shortcuts":open_shortcuts.size()}
 	if first_completion and level==5 and is_instance_valid(soundscape):soundscape.effect(self,"chapter_complete")
 	save_game()
+	if level==9:
+		show_meeting_win()
+		return
 	if level==8:
 		show_mail_win()
 		return
@@ -1503,7 +1516,7 @@ func build_machine_decor():
 func _process(delta):
 	if is_instance_valid(soundscape):soundscape.update(self,delta)
 	update_ambience()
-	if level in [5,6,7,8] and is_instance_valid(folamour):
+	if level in [5,6,7,8,9] and is_instance_valid(folamour):
 		folamour.visible=playing and seen.has(key(roundi(folamour.position.x/TILE),roundi(folamour.position.z/TILE)))
 	for prop in decor: prop.visible=render_near(prop) and seen.has(prop.get_meta("fog_cell"))
 	if not playing or modal_open or level!=2 or machine_parts.is_empty(): return
@@ -1897,6 +1910,32 @@ func show_mail_win():
 	var stat=level_stats["8"]
 	paragraph(loc("Temps du niveau : %02d:%02d\nSecrets : %d / 3    •    Tentatives incorrectes : %d") % [int(elapsed)/60,int(elapsed)%60,stat.secrets,errors],20)
 	paragraph(loc("Énigmes résolues : %d • Raccourcis découverts : %d • Indices révélés : %d") % [stat.puzzles,stat.shortcuts,stat.hints],17)
-	paragraph("Mission réussie. Le colis est livré et votre bilan est sauvegardé. La suite du stage arrivera plus tard.",17)
+	paragraph("Le colis est livré. La quatrième mission du stage est disponible.",17)
+	modal_box.add_child(button("Passer à la salle de réunion",func():start_game(false,9,true),true))
+	modal_box.add_child(button("Choisir un chapitre",func():playing=false;hud.hide();show_chapters(),true))
+	modal_box.add_child(button("Sauvegarder et revenir au menu",show_title))
+
+func show_meeting_intro():
+	clear_modal("CHAPITRE 2 / LE STAGE NON RÉMUNÉRÉ","Mission 4 — La salle de réunion")
+	folamour_portrait()
+	paragraph("« Aujourd’hui, vous allez rencontrer mes collègues. Des esprits brillants, exigeants… et particulièrement difficiles à faire venir depuis l’incident. Préparez la salle. Je m’occupe des excuses. » — Folamour",20)
+	paragraph("Placez les invités à l’ouest, préparez le planning à l’est, puis branchez la conférence dans la salle centrale. Les bureaux au nord et au sud contiennent du matériel et des indices.",17)
+	modal_box.add_child(button("Accepter la mission",func():
+		done.r_met=true
+		add_journal("intro","STAGE / QUATRIÈME MISSION\nPréparer le comité : placement 203, planning 303, conférence 403 puis ouverture en 105.")
+		close_modal(),true))
+func show_meeting_win():
+	for e in events:
+		if e.id=="r_conference":PuzzleControls.sync(self,e)
+	clear_modal("CHAPITRE 2 / MISSION 4 TERMINÉE","Un comité très indépendant.")
+	folamour_portrait()
+	paragraph("Les six écrans s’allument : chacun affiche Folamour, avec une voix et un titre différents. Aster réclame une pause ; Boréal ouvre la séance ; Cobalt conteste sa présidence.",17)
+	paragraph("« Des versions artificielles de moi-même. Pour obtenir des avis indépendants. Elles ne sont d’accord sur rien… sauf sur votre rémunération. Aucun changement, à l’unanimité. » — Folamour",20)
+	paragraph("« Une réunion productive : nous avons confirmé une décision prise avant votre arrivée. Vous commencez à comprendre le fonctionnement du laboratoire. » — Folamour",20)
+	paragraph("Sur les écrans, un nouveau dossier apparaît : PROJET MIROIR — UNIFICATION. Folamour coupe la transmission avant que vous puissiez en lire davantage.",17)
+	var stat=level_stats["9"]
+	paragraph(loc("Temps du niveau : %02d:%02d\nSecrets : %d / 3    •    Tentatives incorrectes : %d") % [int(elapsed)/60,int(elapsed)%60,stat.secrets,errors],20)
+	paragraph(loc("Énigmes résolues : %d • Raccourcis découverts : %d • Indices révélés : %d") % [stat.puzzles,stat.shortcuts,stat.hints],17)
+	paragraph("Mission réussie. Votre bilan est sauvegardé. Le dernier niveau du chapitre 2 arrivera plus tard.",17)
 	modal_box.add_child(button("Choisir un chapitre",func():playing=false;hud.hide();show_chapters(),true))
 	modal_box.add_child(button("Sauvegarder et revenir au menu",show_title))

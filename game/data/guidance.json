@@ -293,6 +293,48 @@
         "Destinataire Dr Folamour ; aile OUEST ; bureau 4. Validez, puis livrez le colis au guichet 101.",
         "Recipient Dr Folamour; WEST wing; office 4. Validate, then deliver the parcel at counter 101."
       ]
+    ],
+    "r_seating": [
+      [
+        "Fixez d’abord les places d’Aster et du président officiel.",
+        "First fix Aster’s seat and the official chair’s seat."
+      ],
+      [
+        "Aster est en 1, Boréal en 4. Delta suit Aster, puis placez Écho en face de Delta.",
+        "Aster is in 1, Boreal in 4. Delta follows Aster; then place Echo opposite Delta."
+      ],
+      [
+        "Aster 1 ; Boréal 4 ; Cobalt 6 ; Delta 2 ; Écho 5 ; Fermi 3. Validez.",
+        "Aster 1; Boreal 4; Cobalt 6; Delta 2; Echo 5; Fermi 3. Validate."
+      ]
+    ],
+    "r_schedule": [
+      [
+        "L’ouverture et le vote fixent les deux extrémités de la séance.",
+        "Opening and vote fix the two ends of the session."
+      ],
+      [
+        "Il reste quatre créneaux pour le rapport puis la démonstration, deux chacun.",
+        "Four slots remain for the report then demonstration, two each."
+      ],
+      [
+        "Ouverture 09:00 ; Rapport 09:10 ; Démonstration 09:30 ; Vote 09:50. Validez.",
+        "Opening 09:00; Report 09:10; Demonstration 09:30; Vote 09:50. Validate."
+      ]
+    ],
+    "r_conference": [
+      [
+        "L’image doit être conservée avant d’être diffusée. Le son suit une liaison séparée.",
+        "The image must be saved before broadcast. Sound follows a separate connection."
+      ],
+      [
+        "Caméra vers archives, archives vers projecteur, projecteur vers écrans. Micro vers amplificateur.",
+        "Camera to archive, archive to projector, projector to screens. Microphone to amplifier."
+      ],
+      [
+        "Caméra B ; Micro D ; Archives vidéo A ; Projecteur C. Testez, puis validez.",
+        "Camera B; Microphone D; Video archive A; Projector C. Test, then validate."
+      ]
     ]
   },
   "objectives": {
@@ -447,6 +489,26 @@
     "m_delivery": [
       "Remettre le colis adressé au guichet 101, à la réception est.",
       "Hand over the addressed parcel at counter 101, at eastern reception."
+    ],
+    "r_seating": [
+      "Trouver les invitations 201 et préparer le plan de table 203 avec les notes 202 et 204.",
+      "Find invitations 201 and prepare seating plan 203 with notes 202 and 204."
+    ],
+    "r_schedule": [
+      "Récupérer le dossier 301 et organiser les interventions au planning 303.",
+      "Collect file 301 and organise the items at planner 303."
+    ],
+    "r_cables": [
+      "Trouver la valise de câbles 401 dans les bureaux au sud.",
+      "Find cable case 401 in the southern offices."
+    ],
+    "r_conference": [
+      "Brancher et tester le système 403 selon le schéma 402.",
+      "Connect and test system 403 using plan 402."
+    ],
+    "r_final": [
+      "Ouvrir la réunion au pupitre 105 dans la salle centrale.",
+      "Open the meeting at lectern 105 in the central room."
     ]
   },
   "stages": {
@@ -687,6 +749,38 @@
           "m_delivery"
         ],
         "m_delivery"
+      ]
+    ],
+    "9": [
+      [
+        [
+          "r_seating"
+        ],
+        "r_seating"
+      ],
+      [
+        [
+          "r_schedule"
+        ],
+        "r_schedule"
+      ],
+      [
+        [
+          "r_cables"
+        ],
+        "r_cables"
+      ],
+      [
+        [
+          "r_conference"
+        ],
+        "r_conference"
+      ],
+      [
+        [
+          "r_final"
+        ],
+        "r_final"
       ]
     ]
   }

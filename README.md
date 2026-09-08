@@ -1,6 +1,6 @@
 # Lab-mazing — Le Labyrinthe de Folamour
 
-Version 0.14 : jeu solo 3D isométrique, chapitre 1 complet et trois missions du chapitre 2, français/anglais, déplacement au clic et au toucher.
+Version 0.15 : jeu solo 3D isométrique, chapitre 1 complet et quatre missions du chapitre 2, français/anglais, déplacement au clic et au toucher.
 
 Jouer dans le navigateur : https://jfeffe.github.io/lab-mazing/
 
@@ -11,6 +11,19 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Nouveautés v0.15
+**La salle de réunion**, niveau 4 du chapitre 2 (numéro interne 9), poursuit le stage : placer six invités selon leurs contraintes, organiser quatre interventions en une heure et brancher les circuits image/son. Folamour présente son comité et prépare la suite autour du projet MIROIR.
+
+Grande salle centrale, quatre ailes de bureaux, 20 repères et trois archives facultatives. Le placement ouvre les bureaux est ; le planning ouvre trois accès à la salle. Six raccourcis évitent 166 pas sur le parcours de référence (753 → 587), après visite physique des deux côtés, sans contourner les portes.
+
+Accès direct **Chapitre 2 · Niveau 4 — La salle de réunion**, ou « Passer à la salle de réunion » après le courrier, avec conservation des bilans. Commandes, objectifs et indices FR/EN ; places, horaires et branchements sauvegardés. Déplacement +30 %, réglages de netteté mobile et corrections audio conservés ; aucun bruit de pas. Six portraits simples, sans rendu vidéo supplémentaire.
+
+Validation : solutions uniques, parcours physique complet, quatre barrières, reprises partielles, transition depuis le courrier et affichage FR/EN en portrait/paysage. Les quinze suites de tests ont réussi ; aucun essai sur appareil réel n’a été effectué dans cette livraison.
+
+Données : `python scripts/build_level9.py`. Vérification : `python game/tests/validate_level9.py`, puis Godot `--headless --path game --fixed-fps 60 --script res://tests/verify_level9.gd`. Documents : `python scripts/document_level9.py /chemin/de/sortie`.
+
+[Carte et cheatsheet v0.15](https://drive.google.com/drive/folders/1NUGzcN74ws1MmmJIdCcqbLfzREa1iyhz).
 
 ## Nouveautés v0.14
 **Le courrier interne** est le niveau 3 du chapitre 2 (numéro interne 8). Folamour confie une livraison : identifier le seul colis plus lourd parmi six, acheminer une capsule par trois aiguillages, puis reconstituer une adresse à partir d’une étiquette, d’un annuaire et d’un avis de déménagement.
@@ -52,7 +65,7 @@ Cartes, solutions et résumé v0.12 : https://drive.google.com/drive/folders/1NI
 ## Nouveautés v0.11
 Les cinq niveaux proposent des indices facultatifs en trois paliers : piste, méthode, puis solution annoncée. L’objectif actuel est consultable depuis le jeu, le journal et la pause ; les deux ailes du niveau 5 restent explorables dans les deux ordres. Les aides révélées sont sauvegardées sans modifier les énigmes.
 
-Une composition originale de 48 secondes accompagne l’exploration à faible volume : piano électrique, basse et cloches légèrement étranges. Des sons ponctuent les pas, les portes, les machines et la fin du chapitre. Les réglages séparés (général, musique, effets, machines) sont persistants, avec coupure générale et interruption en arrière-plan. La musique s’atténue pendant la lecture. `scripts/compose_audio.py` permet de recréer les assets avec NumPy et ffmpeg, sans échantillons tiers.
+Une composition originale de 48 secondes accompagne l’exploration à faible volume : piano électrique, basse et cloches légèrement étranges. Des sons ponctuent les portes, les machines et la fin du chapitre ; les bruits de pas ont été retirés. Les réglages séparés (général, musique, effets, machines) sont persistants, avec coupure générale et interruption en arrière-plan. La musique s’atténue pendant la lecture. `scripts/compose_audio.py` permet de recréer les assets avec NumPy et ffmpeg, sans échantillons tiers.
 
 Le dossier de candidature final additionne temps d’exploration, énigmes, raccourcis et aides des niveaux terminés. Les bilans historiques sans ces détails sont signalés comme partiels. Validation supplémentaire : `verify_chapter_polish.gd` (aides, objectifs, sauvegardes, anciens bilans, audio et disposition mobile FR/EN).
 
