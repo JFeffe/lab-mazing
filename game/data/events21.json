@@ -1,0 +1,406 @@
+[
+  {
+    "id": "c21_obs0",
+    "kind": "clue",
+    "cell": [
+      17,
+      5
+    ],
+    "ref": "210",
+    "title": "Inspection A",
+    "text": "PATIENCE : capacité de cinq caisses-unités. Le dossier de poids 3 lui est affecté. Aucun équipement réel ne figure sur ce manifeste : seulement des formulaires."
+  },
+  {
+    "id": "c21_obs1",
+    "kind": "clue",
+    "cell": [
+      17,
+      17
+    ],
+    "ref": "211",
+    "title": "Inspection B",
+    "text": "TENDRESSE : capacité cinq. La caisse de poids 1 accompagne celle de poids 4. Les caisses ne peuvent être divisées."
+  },
+  {
+    "id": "c21_obs2",
+    "kind": "clue",
+    "cell": [
+      17,
+      29
+    ],
+    "ref": "212",
+    "title": "Inspection C",
+    "text": "MODÉRATION : capacité six. Le dossier de poids 6 voyage seul. Le coût du formulaire dépasse celui de son contenu."
+  },
+  {
+    "id": "c21_n1",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "201",
+    "title": "Consigne 201",
+    "text": "Les trois ponts tournent sur trois crans : 0 est aligné, 1 et 2 sont fermés. I déplace A et B ; II déplace B et C ; III déplace A et C. Les flèches inverses annulent un cran."
+  },
+  {
+    "id": "c21_n2",
+    "kind": "clue",
+    "cell": [
+      3,
+      33
+    ],
+    "ref": "202",
+    "title": "Consigne 202",
+    "text": "Départ A=1, B=2, C=0. Alignez les trois ponts, visitez les inspections 210/211/212, puis revenez certifier au poste 203. Les ponts ne se commandent qu’ici."
+  },
+  {
+    "id": "c21_p1",
+    "kind": "mechanism",
+    "cell": [
+      9,
+      17
+    ],
+    "ref": "203",
+    "title": "Trois ponts pour une petite signature",
+    "text": "Installer la mallette. Trois crans par pont ; 0 ouvre le passage. I agit sur A+B, II sur B+C, III sur A+C. Aligner les trois, lire 210/211/212 et revenir valider. Départ : 1/2/0.",
+    "puzzle_type": "finale",
+    "model": "finale",
+    "mode": "gantry",
+    "initial": [
+      1,
+      2,
+      0
+    ],
+    "masks": [
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        1,
+        1
+      ],
+      [
+        1,
+        0,
+        1
+      ]
+    ],
+    "observations": [
+      "c21_obs0",
+      "c21_obs1",
+      "c21_obs2"
+    ],
+    "world_gates": [
+      {
+        "cell": [
+          13,
+          5
+        ],
+        "channel": 0,
+        "allowed": [
+          0
+        ],
+        "label": "A"
+      },
+      {
+        "cell": [
+          13,
+          17
+        ],
+        "channel": 1,
+        "allowed": [
+          0
+        ],
+        "label": "B"
+      },
+      {
+        "cell": [
+          13,
+          29
+        ],
+        "channel": 2,
+        "allowed": [
+          0
+        ],
+        "label": "C"
+      }
+    ],
+    "requires": [
+      "c21_kit"
+    ],
+    "opens": [
+      "c21_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c21_n3",
+    "kind": "clue",
+    "cell": [
+      23,
+      1
+    ],
+    "ref": "301",
+    "title": "Consigne 301",
+    "text": "Répartir une fois chacune les caisses 1, 2, 3, 4 et 6 entre PATIENCE (5), TENDRESSE (5) et MODÉRATION (6). Aucun reste au dépôt."
+  },
+  {
+    "id": "c21_n4",
+    "kind": "clue",
+    "cell": [
+      33,
+      15
+    ],
+    "ref": "302",
+    "title": "Consigne 302",
+    "text": "Le relevé A affecte 3 à PATIENCE. Le relevé B groupe 1 avec 4. Le relevé C isole 6. Les capacités sont exactes."
+  },
+  {
+    "id": "c21_p2",
+    "kind": "mechanism",
+    "cell": [
+      29,
+      9
+    ],
+    "ref": "303",
+    "title": "Le poids de la paperasse",
+    "text": "Caisses indivisibles 1/2/3/4/6 ; capacités exactes P=5, T=5, M=6. La caisse 3 va à P ; 1 accompagne 4 ; 6 reste seule. Toutes les caisses doivent quitter le dépôt.",
+    "puzzle_type": "finale",
+    "model": "finale",
+    "mode": "manifest",
+    "weights": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "capacities": [
+      5,
+      5,
+      6
+    ],
+    "labels": [
+      "Caisse 1",
+      "Caisse 2",
+      "Caisse 3",
+      "Caisse 4",
+      "Caisse 6"
+    ],
+    "choices": [
+      [
+        "Dépôt",
+        "PATIENCE",
+        "TENDRESSE",
+        "MODÉRATION"
+      ],
+      [
+        "Dépôt",
+        "PATIENCE",
+        "TENDRESSE",
+        "MODÉRATION"
+      ],
+      [
+        "Dépôt",
+        "PATIENCE",
+        "TENDRESSE",
+        "MODÉRATION"
+      ],
+      [
+        "Dépôt",
+        "PATIENCE",
+        "TENDRESSE",
+        "MODÉRATION"
+      ],
+      [
+        "Dépôt",
+        "PATIENCE",
+        "TENDRESSE",
+        "MODÉRATION"
+      ]
+    ],
+    "prerequisites": [
+      "c21_p1"
+    ],
+    "opens": [
+      "c21_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c21_n5",
+    "kind": "clue",
+    "cell": [
+      23,
+      19
+    ],
+    "ref": "401",
+    "title": "Consigne 401",
+    "text": "La capsule factice part de D. Elle doit passer par le tampon * puis rentrer en R. X est le conduit HORIZON : ne pas y entrer. Le plan reste toujours orienté nord en haut."
+  },
+  {
+    "id": "c21_n6",
+    "kind": "clue",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "402",
+    "title": "Consigne 402",
+    "text": "Programmez des pas N/E/S/O. Un mur bloque un pas. Tester montre la trace entière ; retirer le dernier ordre ou réinitialiser permet de tout corriger."
+  },
+  {
+    "id": "c21_p3",
+    "kind": "mechanism",
+    "cell": [
+      27,
+      27
+    ],
+    "ref": "403",
+    "title": "Le retour absent du formulaire",
+    "text": "Capsule d’essai uniquement. Partir de D, visiter *, atteindre R sans jamais toucher X. Un mur bloque un pas. Maximum 18 ordres, puis tester et valider.",
+    "puzzle_type": "finale",
+    "model": "finale",
+    "mode": "courier",
+    "boards": [
+      [
+        "D..#R",
+        "##.#.",
+        "...*.",
+        ".###.",
+        "....X"
+      ]
+    ],
+    "starts": [
+      [
+        0,
+        0
+      ]
+    ],
+    "goals": [
+      [
+        4,
+        0
+      ]
+    ],
+    "checkpoints": [
+      [
+        3,
+        2
+      ]
+    ],
+    "max_commands": 18,
+    "prerequisites": [
+      "c21_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c21_welcome",
+    "kind": "clue",
+    "cell": [
+      9,
+      33
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Une épine de maintenance longe trois baies de silos. Les ponts A/B/C donnent accès aux inspections. Le sas 111 conduit à la comptabilité au nord-est, le sas 112 au retour des capsules au sud-est."
+  },
+  {
+    "id": "c21_kit",
+    "kind": "pickup",
+    "cell": [
+      11,
+      31
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c21_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c21_gate1",
+    "kind": "door",
+    "cell": [
+      21,
+      5
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "x",
+    "controlled_by": "c21_p1"
+  },
+  {
+    "id": "c21_gate2",
+    "kind": "door",
+    "cell": [
+      29,
+      17
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "y",
+    "controlled_by": "c21_p2"
+  },
+  {
+    "id": "c21_secret1",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "Notre capacité de modération a doublé. Veuillez applaudir modérément, mais deux fois.",
+    "secret": true
+  },
+  {
+    "id": "c21_secret2",
+    "kind": "clue",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "Commande initiale : une cafetière. Avenant 486 : élargir légèrement la notion de pression.",
+    "secret": true
+  },
+  {
+    "id": "c21_secret3",
+    "kind": "clue",
+    "cell": [
+      23,
+      33
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "Le formulaire RETOUR a été supprimé : il suggérait un manque de confiance dans le départ.",
+    "secret": true
+  },
+  {
+    "id": "c21_exit",
+    "kind": "exit",
+    "cell": [
+      33,
+      29
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c21_p1",
+      "c21_p2",
+      "c21_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]

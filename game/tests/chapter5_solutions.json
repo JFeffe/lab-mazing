@@ -1,0 +1,221 @@
+{
+  "21": [
+    {
+      "id": "c21_p1",
+      "solution": "II une fois, III deux fois : A/B/C = 0/0/0. Lire 210, 211, 212 puis revenir à 203 et valider.",
+      "actions": [
+        1,
+        2,
+        2
+      ],
+      "explanation": "Un cran après 2 revient à 0. Choisissez les mouvements par leurs effets communs ; une flèche inverse permet toujours de revenir."
+    },
+    {
+      "id": "c21_p2",
+      "solution": "1 → TENDRESSE ; 2 → PATIENCE ; 3 → PATIENCE ; 4 → TENDRESSE ; 6 → MODÉRATION. Valider.",
+      "actions": [
+        0,
+        0,
+        1,
+        2,
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "explanation": "Six remplit MODÉRATION. Le duo 1+4 remplit TENDRESSE ; 2 complète le dossier 3 dans PATIENCE."
+    },
+    {
+      "id": "c21_p3",
+      "solution": "E, E, S, S, E, E, N, N. Tester puis valider.",
+      "actions": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        1,
+        0,
+        0,
+        98
+      ],
+      "explanation": "Le passage haut est coupé. Descendez par la colonne 3 jusqu’au tampon, traversez à droite et remontez vers R."
+    }
+  ],
+  "22": [
+    {
+      "id": "c22_p1",
+      "solution": "A : +2 ; B : −1 ; C : +1. Valider.",
+      "actions": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        2,
+        2,
+        2
+      ],
+      "explanation": "B vaut −1. Donc A vaut +2 et C vaut +1. Soustraire ces valeurs remet les rapports à la même heure."
+    },
+    {
+      "id": "c22_p2",
+      "solution": "Cuisine → prévision → sirène → volets → confirmation. Tester puis valider.",
+      "actions": [
+        2,
+        4,
+        0,
+        3,
+        1,
+        98
+      ],
+      "explanation": "Les heures corrigées sont 12:00 cuisine, 12:01 prévision, 12:02 sirène, 12:03 volets, 12:04 confirmation."
+    },
+    {
+      "id": "c22_p3",
+      "solution": "Suspendre B → A et D → C uniquement. Tester puis valider.",
+      "actions": [
+        2,
+        5,
+        98
+      ],
+      "explanation": "Chaque copie revient vers son propre ancêtre. Retirer B→A et D→C laisse les deux chaînes d’observation ouvertes."
+    }
+  ],
+  "23": [
+    {
+      "id": "c23_p1",
+      "solution": "Inviter A, C et E. Laisser B et D absents. Valider.",
+      "actions": [
+        0,
+        2,
+        4
+      ],
+      "explanation": "E exclut D, donc B ne peut pas venir. Les trois places sont nécessairement A, C et E."
+    },
+    {
+      "id": "c23_p2",
+      "solution": "PROTÉGER → les gens → même lorsque → leur avis change → sans confondre → un doute avec une faute. Tester et valider.",
+      "actions": [
+        3,
+        1,
+        5,
+        0,
+        4,
+        2,
+        98
+      ],
+      "explanation": "Les copies citaient seulement « protéger les gens ». Les quatre derniers fragments protègent aussi leur droit à l’incertitude."
+    },
+    {
+      "id": "c23_p3",
+      "solution": "Accord explicite ; constat indépendant ; retour possible. Tester : seul le cas 1 est autorisé. Valider.",
+      "actions": [
+        0,
+        1,
+        2,
+        98
+      ],
+      "explanation": "Une approbation explicite n’est pas un silence. Un constat n’est pas une prévision. Une issue praticable n’est pas une promesse."
+    }
+  ],
+  "24": [
+    {
+      "id": "c24_p1",
+      "solution": "Photographier → suspendre les copies → isoler le secours → arrêter → sceller. Tester puis valider.",
+      "actions": [
+        2,
+        4,
+        1,
+        0,
+        3,
+        98
+      ],
+      "explanation": "Conserver une trace permet de suspendre les copies. Retirer ensuite le mécanisme qui réannule les arrêts, puis arrêter et protéger la décision."
+    },
+    {
+      "id": "c24_p2",
+      "solution": "II puis III puis IV : tous les relais sont éteints. L’ordre de ces trois leviers est libre. Tester et valider.",
+      "actions": [
+        1,
+        2,
+        3,
+        98
+      ],
+      "explanation": "I et II ensemble éteignent A/C/D/E, mais B est inversé deux fois. Avec III, les trois premiers retrouvent leur état. Cherchez plutôt une combinaison qui touche chaque relais un nombre impair de fois."
+    },
+    {
+      "id": "c24_p3",
+      "solution": "E, E, E, E, S, S, O, O, O, O. Tester les deux trajets puis valider.",
+      "actions": [
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        98
+      ],
+      "explanation": "Sur A, longer le haut vers l’est, descendre à la troisième ligne puis revenir vers l’ouest. B suit le reflet de ce trajet."
+    }
+  ],
+  "25": [
+    {
+      "id": "c25_p1",
+      "solution": "Dans l’ordre : FAIT, INCONNU, HYPOTHÈSE, FAIT, INCONNU, HYPOTHÈSE. Valider.",
+      "actions": [
+        0,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        4,
+        4,
+        4,
+        5,
+        5
+      ],
+      "explanation": "Deux observations filmées, deux explications possibles, deux questions sans donnée. Répartir les six propositions selon leur fondement, pas leur ton assuré."
+    },
+    {
+      "id": "c25_p2",
+      "solution": "Couloir 3–4 ; cour 2–4 ; jardin 1–2. Valider.",
+      "actions": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        4,
+        5,
+        5
+      ],
+      "explanation": "L’intersection conserve [3,4], [2,4] et [1,2]. Il reste plusieurs possibles, et c’est une réponse correcte."
+    },
+    {
+      "id": "c25_p3",
+      "solution": "« Je ne sais pas. » → « Protéger aussi leur droit de changer d’avis. » → « Ouvrir les portes. Chacun choisira de sortir. » Puis valider et rejoindre 900.",
+      "actions": [
+        1,
+        0,
+        2
+      ],
+      "explanation": "Ne promettez pas une certitude absente des données. Rappelez le droit de changer d’avis, puis proposez une ouverture volontaire et réversible."
+    }
+  ]
+}

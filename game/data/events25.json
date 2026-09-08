@@ -1,0 +1,416 @@
+[
+  {
+    "id": "c25_n1",
+    "kind": "clue",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "201",
+    "title": "Consigne 201",
+    "text": "FAIT : observation directement établie, y compris une limite constatée. HYPOTHÈSE : interprétation possible qui demande encore une preuve. INCONNU : aucune donnée permettant de répondre."
+  },
+  {
+    "id": "c25_n2",
+    "kind": "clue",
+    "cell": [
+      1,
+      9
+    ],
+    "ref": "202",
+    "title": "Consigne 202",
+    "text": "Le journal contient : une fenêtre allumée ; aucune image de la pièce ; une hypothèse de dîner ; volets fermés après la sirène ; aucune prévision fiable pour demain ; une hypothèse de peur."
+  },
+  {
+    "id": "c25_p1",
+    "kind": "mechanism",
+    "cell": [
+      29,
+      5
+    ],
+    "ref": "203",
+    "title": "Ce que nous savons vraiment",
+    "text": "Classer six propositions. FAIT = observation établie ; HYPOTHÈSE = explication possible ; INCONNU = données absentes. Le nombre de personnes et une garantie sur demain sont inconnus. Dîner et peur sont des hypothèses, pas des faits.",
+    "puzzle_type": "finale",
+    "model": "finale",
+    "mode": "epistemic",
+    "labels": [
+      "La fenêtre est allumée (image)",
+      "Le nombre de personnes dans la pièce",
+      "Quelqu’un prépare peut-être le dîner",
+      "Les volets ferment après la sirène (film)",
+      "La journée de demain sera sans erreur",
+      "Les habitants ont peut-être eu peur"
+    ],
+    "choices": [
+      [
+        "À examiner",
+        "FAIT",
+        "HYPOTHÈSE",
+        "INCONNU"
+      ],
+      [
+        "À examiner",
+        "FAIT",
+        "HYPOTHÈSE",
+        "INCONNU"
+      ],
+      [
+        "À examiner",
+        "FAIT",
+        "HYPOTHÈSE",
+        "INCONNU"
+      ],
+      [
+        "À examiner",
+        "FAIT",
+        "HYPOTHÈSE",
+        "INCONNU"
+      ],
+      [
+        "À examiner",
+        "FAIT",
+        "HYPOTHÈSE",
+        "INCONNU"
+      ],
+      [
+        "À examiner",
+        "FAIT",
+        "HYPOTHÈSE",
+        "INCONNU"
+      ]
+    ],
+    "target": [
+      1,
+      3,
+      2,
+      1,
+      3,
+      2
+    ],
+    "requires": [
+      "c25_kit"
+    ],
+    "opens": [
+      "c25_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c25_n3",
+    "kind": "clue",
+    "cell": [
+      1,
+      13
+    ],
+    "ref": "301",
+    "title": "Consigne 301",
+    "text": "Deux relevés bornent chaque quantité, bornes incluses. Garder toute l’intersection : couloir entre 2 et 5 puis entre 3 et 4 ; cour entre 1 et 4 puis entre 2 et 5 ; jardin entre 0 et 3 puis entre 1 et 2."
+  },
+  {
+    "id": "c25_n4",
+    "kind": "clue",
+    "cell": [
+      33,
+      21
+    ],
+    "ref": "302",
+    "title": "Consigne 302",
+    "text": "On ne sait pas choisir une valeur unique dans ces intervalles. Réduire davantage inventerait une précision. Inscrire la borne basse la plus haute et la borne haute la plus basse."
+  },
+  {
+    "id": "c25_p2",
+    "kind": "mechanism",
+    "cell": [
+      5,
+      17
+    ],
+    "ref": "303",
+    "title": "Une marge pour le réel",
+    "text": "Conserver exactement toutes les valeurs compatibles, bornes incluses. Couloir : [2,5] et [3,4]. Cour : [1,4] et [2,5]. Jardin : [0,3] et [1,2]. Fixer les bornes basses et hautes ; ne pas inventer une valeur unique.",
+    "puzzle_type": "finale",
+    "model": "finale",
+    "mode": "intervals",
+    "labels": [
+      "Couloir · minimum",
+      "Couloir · maximum",
+      "Cour · minimum",
+      "Cour · maximum",
+      "Jardin · minimum",
+      "Jardin · maximum"
+    ],
+    "choices": [
+      [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ]
+    ],
+    "target": [
+      3,
+      4,
+      2,
+      4,
+      1,
+      2
+    ],
+    "ranges": [
+      [
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      [
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ]
+    ],
+    "prerequisites": [
+      "c25_p1"
+    ],
+    "opens": [
+      "c25_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c25_n5",
+    "kind": "clue",
+    "cell": [
+      7,
+      25
+    ],
+    "ref": "401",
+    "title": "Consigne 401",
+    "text": "Mandat original rétabli : protéger les gens, même lorsque leur avis change. Les mesures exigent accord, constat et possibilité de retour. On ne dispose d’aucune garantie sur demain."
+  },
+  {
+    "id": "c25_n6",
+    "kind": "clue",
+    "cell": [
+      27,
+      25
+    ],
+    "ref": "402",
+    "title": "Consigne 402",
+    "text": "État matériel : fusées immobilisées ; commandes de reprise isolées ; portes de la cité déverrouillables. Le départ des habitants doit rester un choix."
+  },
+  {
+    "id": "c25_p3",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      29
+    ],
+    "ref": "403",
+    "title": "La réponse interdite",
+    "text": "Parler à Folamour. Appuyer les réponses sur le mandat et les constats. Une réponse peut être reprise sans danger ; les machines restent en sécurité.",
+    "puzzle_type": "finale",
+    "model": "finale",
+    "mode": "dialogue",
+    "questions": [
+      "FOLAMOUR : « Pouvez-vous me garantir que demain se passera bien ? »",
+      "FOLAMOUR : « Alors comment les protéger s’ils changent encore d’avis ? »",
+      "FOLAMOUR : « Et maintenant… qu’est-ce que je fais ? »"
+    ],
+    "answers": [
+      [
+        "Oui. MIROIR peut encore tout prévoir.",
+        "Je ne sais pas.",
+        "Personne ne fera plus jamais d’erreur."
+      ],
+      [
+        "Protéger aussi leur droit de changer d’avis.",
+        "Interdire les changements d’avis.",
+        "Demander une copie supplémentaire."
+      ],
+      [
+        "Remplacer le docteur par une copie.",
+        "Obliger tout le monde à sortir.",
+        "Ouvrir les portes. Chacun choisira de sortir."
+      ]
+    ],
+    "correct": [
+      1,
+      0,
+      2
+    ],
+    "responses": [
+      "Il regarde les intervalles sur l’écran. « C’est donc une réponse… recevable. »",
+      "Il relit le mandat. « C’était écrit depuis le début. J’avais fini par sauter cette ligne. »",
+      "Il déplace la tasse froide et dégage le bouton. « D’accord. Sans garantie. »"
+    ],
+    "prerequisites": [
+      "c25_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c25_welcome",
+    "kind": "clue",
+    "cell": [
+      1,
+      3
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Trois terrasses successives : les faits au nord, les marges d’incertitude au milieu, puis un passage étroit vers un petit bureau. Les machines entourent encore les couloirs, mais chaque correction leur retire une certitude."
+  },
+  {
+    "id": "c25_kit",
+    "kind": "pickup",
+    "cell": [
+      3,
+      1
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c25_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c25_gate1",
+    "kind": "door",
+    "cell": [
+      31,
+      11
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "y",
+    "controlled_by": "c25_p1"
+  },
+  {
+    "id": "c25_gate2",
+    "kind": "door",
+    "cell": [
+      3,
+      23
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "y",
+    "controlled_by": "c25_p2"
+  },
+  {
+    "id": "c25_secret1",
+    "kind": "clue",
+    "cell": [
+      19,
+      9
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "Ancien carnet : « Penser à demander aux gens de quoi ils ont besoin. » La page suivante est vierge.",
+    "secret": true
+  },
+  {
+    "id": "c25_secret2",
+    "kind": "clue",
+    "cell": [
+      13,
+      21
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "Inventaire : 1 tasse, 486 avenants, 3 fusées, 0 conversation avec le voisin.",
+    "secret": true
+  },
+  {
+    "id": "c25_secret3",
+    "kind": "clue",
+    "cell": [
+      31,
+      25
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "Une plante non homologuée a poussé dans un joint. Le service botanique propose de lui demander son avis.",
+    "secret": true
+  },
+  {
+    "id": "c25_exit",
+    "kind": "exit",
+    "cell": [
+      17,
+      33
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c25_p1",
+      "c25_p2",
+      "c25_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]

@@ -1,0 +1,325 @@
+[
+  {
+    "id": "c23_n1",
+    "kind": "clue",
+    "cell": [
+      1,
+      1
+    ],
+    "ref": "201",
+    "title": "Consigne 201",
+    "text": "Former un groupe de exactement trois signataires parmi A/B/C/D/E. E, l’auditeur, doit être présent. A exige C ; C exige A."
+  },
+  {
+    "id": "c23_n2",
+    "kind": "clue",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "202",
+    "title": "Consigne 202",
+    "text": "B exige D. D refuse tout groupe contenant E. Une exigence ne s’applique que si son auteur signe. Tous les présents doivent accepter le groupe."
+  },
+  {
+    "id": "c23_p1",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      17
+    ],
+    "ref": "203",
+    "title": "Le quorum des désaccords",
+    "text": "Choisir exactement trois copies, dont E. A signe seulement avec C ; C seulement avec A ; B seulement avec D ; D refuse E. Les exigences des copies absentes ne comptent pas.",
+    "puzzle_type": "finale",
+    "model": "finale",
+    "mode": "quorum",
+    "labels": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "choices": [
+      [
+        "Absent",
+        "Signataire"
+      ],
+      [
+        "Absent",
+        "Signataire"
+      ],
+      [
+        "Absent",
+        "Signataire"
+      ],
+      [
+        "Absent",
+        "Signataire"
+      ],
+      [
+        "Absent",
+        "Signataire"
+      ]
+    ],
+    "requires": [
+      "c23_kit"
+    ],
+    "opens": [
+      "c23_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c23_n3",
+    "kind": "clue",
+    "cell": [
+      1,
+      23
+    ],
+    "ref": "301",
+    "title": "Consigne 301",
+    "text": "Six fragments du mandat original. Une phrase commence par PROTÉGER. « les gens » suit ce verbe. « même lorsque » introduit « leur avis change »."
+  },
+  {
+    "id": "c23_n4",
+    "kind": "clue",
+    "cell": [
+      13,
+      33
+    ],
+    "ref": "302",
+    "title": "Consigne 302",
+    "text": "La réserve « sans confondre » vient après le changement d’avis. Elle se termine par « un doute avec une faute ». Utiliser chaque fragment une fois."
+  },
+  {
+    "id": "c23_p2",
+    "kind": "mechanism",
+    "cell": [
+      7,
+      27
+    ],
+    "ref": "303",
+    "title": "La phrase que personne ne cite",
+    "text": "Restaurer les six fragments : PROTÉGER en premier, puis les gens. Même lorsque précède leur avis change. Sans confondre vient ensuite ; un doute avec une faute termine. Tester la lecture complète.",
+    "puzzle_type": "finale",
+    "model": "finale",
+    "mode": "redaction",
+    "cards": [
+      "leur avis change",
+      "les gens",
+      "un doute avec une faute",
+      "PROTÉGER",
+      "sans confondre",
+      "même lorsque"
+    ],
+    "sequence": [
+      3,
+      1,
+      5,
+      0,
+      4,
+      2
+    ],
+    "max_commands": 6,
+    "prerequisites": [
+      "c23_p1"
+    ],
+    "opens": [
+      "c23_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c23_n5",
+    "kind": "clue",
+    "cell": [
+      21,
+      23
+    ],
+    "ref": "401",
+    "title": "Consigne 401",
+    "text": "Une mesure originale doit satisfaire ensemble trois clauses : accord explicite, observation indépendante, possibilité de retour. Le silence, la prévision et un retour seulement promis ne suffisent pas."
+  },
+  {
+    "id": "c23_n6",
+    "kind": "clue",
+    "cell": [
+      33,
+      33
+    ],
+    "ref": "402",
+    "title": "Consigne 402",
+    "text": "Le banc présente cinq cas. Seul le premier satisfait les trois clauses. Les quatre autres manquent au moins une protection. Reconstruire les clauses, tester les cinq cas, puis approuver le droit d’arrêt."
+  },
+  {
+    "id": "c23_p3",
+    "kind": "mechanism",
+    "cell": [
+      27,
+      27
+    ],
+    "ref": "403",
+    "title": "Une permission de dire non",
+    "text": "Rétablir une politique avec trois conditions ET. Cas autorisé : accord + constat + retour. Refuser les cas : silence seul ; prévision seule ; retour seulement promis ; aucun des trois. Les options affichent leurs effets sur le banc. Tester avant validation.",
+    "puzzle_type": "finale",
+    "model": "finale",
+    "mode": "policy",
+    "labels": [
+      "Consentement",
+      "Preuve",
+      "Issue"
+    ],
+    "choices": [
+      [
+        "Silence accepté",
+        "Accord explicite",
+        "Accord présumé"
+      ],
+      [
+        "Prévision admise",
+        "Constat indépendant",
+        "Copie admise"
+      ],
+      [
+        "Retour promis",
+        "Retour possible",
+        "Retour inutile"
+      ]
+    ],
+    "clause_masks": [
+      [
+        31,
+        13,
+        15
+      ],
+      [
+        31,
+        11,
+        15
+      ],
+      [
+        31,
+        7,
+        15
+      ]
+    ],
+    "expected": 1,
+    "cases": [
+      "1 · Accord, constat, retour",
+      "2 · Consentement absent",
+      "3 · Constat absent",
+      "4 · Retour absent",
+      "5 · Trois protections absentes"
+    ],
+    "prerequisites": [
+      "c23_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c23_welcome",
+    "kind": "clue",
+    "cell": [
+      3,
+      17
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Une rosace de bureaux entoure le conseil. L’aile sud-ouest contient les fragments du mandat ; l’aile sud-est conserve ses cas d’application. Les cinq bureaux donnent une même réunion, mais cinq versions de la vérité."
+  },
+  {
+    "id": "c23_kit",
+    "kind": "pickup",
+    "cell": [
+      5,
+      17
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c23_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c23_gate1",
+    "kind": "door",
+    "cell": [
+      5,
+      21
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "y",
+    "controlled_by": "c23_p1"
+  },
+  {
+    "id": "c23_gate2",
+    "kind": "door",
+    "cell": [
+      17,
+      29
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "x",
+    "controlled_by": "c23_p2"
+  },
+  {
+    "id": "c23_secret1",
+    "kind": "clue",
+    "cell": [
+      17,
+      1
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "Le fauteuil du responsable est vide depuis la création du poste. Il bénéficie pourtant d’une excellente évaluation.",
+    "secret": true
+  },
+  {
+    "id": "c23_secret2",
+    "kind": "clue",
+    "cell": [
+      1,
+      33
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "Copie 3 : « Je suis l’original. » Note de maintenance : papier chargé à l’envers.",
+    "secret": true
+  },
+  {
+    "id": "c23_secret3",
+    "kind": "clue",
+    "cell": [
+      33,
+      23
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "À l’unanimité, le stage reste non rémunéré. Aucun incident n’a jamais ébranlé cette certitude.",
+    "secret": true
+  },
+  {
+    "id": "c23_exit",
+    "kind": "exit",
+    "cell": [
+      29,
+      31
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c23_p1",
+      "c23_p2",
+      "c23_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]

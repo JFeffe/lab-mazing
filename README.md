@@ -1,6 +1,6 @@
 # Lab-mazing — Le Labyrinthe de Folamour
 
-Version 0.18 : jeu solo 3D isométrique, quatre chapitres complets et vingt niveaux, français/anglais, déplacement au clic et au toucher.
+Version 0.19 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
 
 Jouer dans le navigateur : https://jfeffe.github.io/lab-mazing/
 
@@ -10,7 +10,31 @@ Dans Settings → Pages → Build and deployment, sélectionner **GitHub Actions
 Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le projet et exporte le jeu web sans threads. Aucun export manuel ni exécutable Windows à déposer dans ce dépôt.
 
 ## Développement
-Ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+Générer les ambiances originales avec `python3 scripts/compose_finale_audio.py`, puis ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Nouveautés v0.19
+
+**Pour votre tranquillité définitive** conclut l’aventure en cinq niveaux. HORIZON, révélé à la fin du chapitre 4, transforme la protection en obsession : fusées gigantesques, fausses preuves de MIROIR et copies qui ont oublié le droit de refuser. Le joueur rétablit ce droit et conduit Folamour à accepter un avenir incertain.
+
+| Niveau | Labyrinthe | Trois défis |
+| --- | --- | --- |
+| 1 — Le département des petites précautions | Épine de maintenance, trois baies de silos, deux ailes | Ponts couplés avec inspections physiques, manifeste, capsule de retour |
+| 2 — L’observatoire des intentions hostiles | Trois enceintes imbriquées | Décalages horaires, chronologie causale, copies circulaires |
+| 3 — Le docteur a toujours raison | Bureaux autour du conseil et archives en deux ailes | Quorum contradictoire, mandat fragmenté, droit d’arrêt |
+| 4 — Tout est sous contrôle | Galerie de commandement et réseau d’évacuation | Procédure d’arrêt, relais de reprise, deux capsules en miroir |
+| 5 — Un avenir légèrement incertain | Terrasses successives vers un petit bureau | Faits/hypothèses/inconnues, intervalles, dialogue final |
+
+- Quinze énigmes et quinze secrets, seize raccourcis sans contournement des sas, trois accès physiques variables.
+- Compte à rebours par étapes : seules les trois validations du niveau 4 font avancer la procédure. Les essais restent réversibles et aucun temps réel ne provoque d’échec.
+- Fusées monumentales, balayages de surveillance, cinq copies au conseil, ambiances mécaniques originales, annonces archivées et silence au dernier niveau. Une scène extérieure conclut l’aventure.
+- Reprise des sauvegardes des vingt anciens niveaux, transition depuis le chapitre 4, accès direct par chapitre, bilans conservés. Toutes les nouvelles consignes et interfaces sont en français/anglais.
+- Vérifications : parcours physiques complets, quinze solutions via les boutons, sauvegardes partielles/finales, indices, 27 configurations de ponts, 64 graphes de preuves, trajets de capsules, dispositions portrait/paysage et régressions. Le contrôle visuel Web local n’a pas abouti dans cet environnement ; un essai sur téléphone physique reste à effectuer.
+
+[Cartes et cheatsheets v0.19 — cinq dossiers de niveau](https://drive.google.com/drive/folders/1lTndQ60RtFyScCaPx2RVO_1fgic_vX5f).
+
+Données : `python3 scripts/build_chapter5.py`. Audio : `python3 scripts/compose_finale_audio.py`. Documents : `python3 scripts/document_chapter5.py /chemin/de/sortie`.
+
+Tests : `python3 game/tests/validate_chapter5.py`, puis Godot `--headless --path game --fixed-fps 60 --script res://tests/verify_chapter5.gd` et `res://tests/verify_finale_states.gd`. Ces contrôles sont inclus dans la publication GitHub Actions.
 
 ## Nouveautés v0.18
 

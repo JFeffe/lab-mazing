@@ -44,6 +44,7 @@ static func set_paused(player,value):
 func update(game,delta):
 	var active=game.playing and focused and not game.test_mode
 	var target=gain(game,"music")*(0.45 if game.modal_open else 1.0) if active else 0.0
+	if game.level==25:target=0.0
 	current_gain=move_toward(current_gain,target,delta*.16)
 	# Muting and zero volume take effect immediately, including ongoing sounds.
 	if gain(game,"music")==0:current_gain=0

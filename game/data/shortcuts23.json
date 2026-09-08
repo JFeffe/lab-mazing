@@ -1,0 +1,78 @@
+[
+  {
+    "id": "C81",
+    "cell": [
+      22,
+      1
+    ],
+    "axis": "x",
+    "sides": [
+      [
+        23,
+        1
+      ],
+      [
+        21,
+        1
+      ]
+    ],
+    "minimum_saved_steps": 12
+  },
+  {
+    "id": "C82",
+    "cell": [
+      12,
+      1
+    ],
+    "axis": "x",
+    "sides": [
+      [
+        13,
+        1
+      ],
+      [
+        11,
+        1
+      ]
+    ],
+    "minimum_saved_steps": 52
+  },
+  {
+    "id": "C83",
+    "cell": [
+      6,
+      23
+    ],
+    "axis": "x",
+    "sides": [
+      [
+        7,
+        23
+      ],
+      [
+        5,
+        23
+      ]
+    ],
+    "minimum_saved_steps": 52
+  },
+  {
+    "id": "C84",
+    "cell": [
+      22,
+      7
+    ],
+    "axis": "x",
+    "sides": [
+      [
+        23,
+        7
+      ],
+      [
+        21,
+        7
+      ]
+    ],
+    "minimum_saved_steps": 12
+  }
+]

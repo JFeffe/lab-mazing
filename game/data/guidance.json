@@ -797,6 +797,216 @@
         "A+B aller (2), A retour (1), C+D aller (8), B retour (2), A+B aller (2). Total 15. Valider.",
         "A+B across (2), A returns (1), C+D across (8), B returns (2), A+B across (2). Total 15. Validate."
       ]
+    ],
+    "c21_p1": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "Un cran après 2 revient à 0. Choisissez les mouvements par leurs effets communs ; une flèche inverse permet toujours de revenir.",
+        "One step after 2 returns to 0. Use the shared effects; a reverse arrow always lets you undo."
+      ],
+      [
+        "II une fois, III deux fois : A/B/C = 0/0/0. Lire 210, 211, 212 puis revenir à 203 et valider.",
+        "II once, III twice: A/B/C = 0/0/0. Read 210, 211, 212, return to 203 and validate."
+      ]
+    ],
+    "c21_p2": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "Six remplit MODÉRATION. Le duo 1+4 remplit TENDRESSE ; 2 complète le dossier 3 dans PATIENCE.",
+        "Six fills MODERATION. The 1+4 pair fills TENDERNESS; 2 completes 3 in PATIENCE."
+      ],
+      [
+        "1 → TENDRESSE ; 2 → PATIENCE ; 3 → PATIENCE ; 4 → TENDRESSE ; 6 → MODÉRATION. Valider.",
+        "1 → TENDERNESS; 2 → PATIENCE; 3 → PATIENCE; 4 → TENDERNESS; 6 → MODERATION. Validate."
+      ]
+    ],
+    "c21_p3": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "Le passage haut est coupé. Descendez par la colonne 3 jusqu’au tampon, traversez à droite et remontez vers R.",
+        "The top passage is cut. Descend column 3 to the stamp, cross right and climb to R."
+      ],
+      [
+        "E, E, S, S, E, E, N, N. Tester puis valider.",
+        "E, E, S, S, E, E, N, N. Test and validate."
+      ]
+    ],
+    "c22_p1": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "B vaut −1. Donc A vaut +2 et C vaut +1. Soustraire ces valeurs remet les rapports à la même heure.",
+        "B is −1. Therefore A is +2 and C +1. Subtract these values to synchronise reports."
+      ],
+      [
+        "A : +2 ; B : −1 ; C : +1. Valider.",
+        "A: +2; B: −1; C: +1. Validate."
+      ]
+    ],
+    "c22_p2": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "Les heures corrigées sont 12:00 cuisine, 12:01 prévision, 12:02 sirène, 12:03 volets, 12:04 confirmation.",
+        "Corrected times: 12:00 kitchen, 12:01 forecast, 12:02 siren, 12:03 shutters, 12:04 confirmation."
+      ],
+      [
+        "Cuisine → prévision → sirène → volets → confirmation. Tester puis valider.",
+        "Kitchen → forecast → siren → shutters → confirmation. Test and validate."
+      ]
+    ],
+    "c22_p3": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "Chaque copie revient vers son propre ancêtre. Retirer B→A et D→C laisse les deux chaînes d’observation ouvertes.",
+        "Each copy points to its own ancestor. Removing B→A and D→C leaves two open observation chains."
+      ],
+      [
+        "Suspendre B → A et D → C uniquement. Tester puis valider.",
+        "Suspend B → A and D → C only. Test and validate."
+      ]
+    ],
+    "c23_p1": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "E exclut D, donc B ne peut pas venir. Les trois places sont nécessairement A, C et E.",
+        "E excludes D, so B cannot attend. The three seats must be A, C and E."
+      ],
+      [
+        "Inviter A, C et E. Laisser B et D absents. Valider.",
+        "Invite A, C and E. Leave B and D absent. Validate."
+      ]
+    ],
+    "c23_p2": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "Les copies citaient seulement « protéger les gens ». Les quatre derniers fragments protègent aussi leur droit à l’incertitude.",
+        "The copies quoted only “protect people”. The remaining fragments protect their right to uncertainty too."
+      ],
+      [
+        "PROTÉGER → les gens → même lorsque → leur avis change → sans confondre → un doute avec une faute. Tester et valider.",
+        "PROTECT → people → even when → their minds change → without mistaking → doubt for wrongdoing. Test and validate."
+      ]
+    ],
+    "c23_p3": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "Une approbation explicite n’est pas un silence. Un constat n’est pas une prévision. Une issue praticable n’est pas une promesse.",
+        "Explicit approval is not silence. An observation is not a forecast. A usable exit is not a promise."
+      ],
+      [
+        "Accord explicite ; constat indépendant ; retour possible. Tester : seul le cas 1 est autorisé. Valider.",
+        "Explicit consent; independent observation; possible return. Test: only case 1 is authorised. Validate."
+      ]
+    ],
+    "c24_p1": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "Conserver une trace permet de suspendre les copies. Retirer ensuite le mécanisme qui réannule les arrêts, puis arrêter et protéger la décision.",
+        "Preserve a record to suspend copies. Then remove the mechanism that recancels stops, stop, and protect the decision."
+      ],
+      [
+        "Photographier → suspendre les copies → isoler le secours → arrêter → sceller. Tester puis valider.",
+        "Photograph → suspend copies → isolate backup → stop → seal. Test and validate."
+      ]
+    ],
+    "c24_p2": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "I et II ensemble éteignent A/C/D/E, mais B est inversé deux fois. Avec III, les trois premiers retrouvent leur état. Cherchez plutôt une combinaison qui touche chaque relais un nombre impair de fois.",
+        "I and II together turn off A/C/D/E, while B flips twice. With III, the first three return to their state. Seek a combination touching every relay an odd number of times."
+      ],
+      [
+        "II puis III puis IV : tous les relais sont éteints. L’ordre de ces trois leviers est libre. Tester et valider.",
+        "II then III then IV: all relays are off. These three levers may be used in any order. Test and validate."
+      ]
+    ],
+    "c24_p3": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "Sur A, longer le haut vers l’est, descendre à la troisième ligne puis revenir vers l’ouest. B suit le reflet de ce trajet.",
+        "On A, follow the top eastward, descend to the third row and return west. B follows the reflection."
+      ],
+      [
+        "E, E, E, E, S, S, O, O, O, O. Tester les deux trajets puis valider.",
+        "E, E, E, E, S, S, W, W, W, W. Test both routes and validate."
+      ]
+    ],
+    "c25_p1": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "Deux observations filmées, deux explications possibles, deux questions sans donnée. Répartir les six propositions selon leur fondement, pas leur ton assuré.",
+        "Two recorded observations, two possible explanations, two questions without data. Sort by evidence, not confident wording."
+      ],
+      [
+        "Dans l’ordre : FAIT, INCONNU, HYPOTHÈSE, FAIT, INCONNU, HYPOTHÈSE. Valider.",
+        "In order: FACT, UNKNOWN, HYPOTHESIS, FACT, UNKNOWN, HYPOTHESIS. Validate."
+      ]
+    ],
+    "c25_p2": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "L’intersection conserve [3,4], [2,4] et [1,2]. Il reste plusieurs possibles, et c’est une réponse correcte.",
+        "Intersections retain [3,4], [2,4] and [1,2]. Several possibilities remain, and that is a correct answer."
+      ],
+      [
+        "Couloir 3–4 ; cour 2–4 ; jardin 1–2. Valider.",
+        "Corridor 3–4; courtyard 2–4; garden 1–2. Validate."
+      ]
+    ],
+    "c25_p3": [
+      [
+        "Lisez les deux consignes du secteur. Les règles complètes figurent aussi sur ce poste.",
+        "Read both sector instructions. This station also contains all rules."
+      ],
+      [
+        "Ne promettez pas une certitude absente des données. Rappelez le droit de changer d’avis, puis proposez une ouverture volontaire et réversible.",
+        "Do not promise certainty unsupported by data. Recall the right to change one’s mind, then propose a voluntary, reversible opening."
+      ],
+      [
+        "« Je ne sais pas. » → « Protéger aussi leur droit de changer d’avis. » → « Ouvrir les portes. Chacun choisira de sortir. » Puis valider et rejoindre 900.",
+        "“I do not know.” → “Protect their right to change their minds too.” → “Open the doors. Each person may choose to leave.” Then validate and reach 900."
+      ]
     ]
   },
   "objectives": {
@@ -1193,6 +1403,106 @@
       "Collect kit 101 for station 203."
     ],
     "c20_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c21_p1": [
+      "Résoudre 203 : Trois ponts pour une petite signature.",
+      "Solve 203: Three bridges for one small signature."
+    ],
+    "c21_p2": [
+      "Résoudre 303 : Le poids de la paperasse.",
+      "Solve 303: The weight of paperwork."
+    ],
+    "c21_p3": [
+      "Résoudre 403 : Le retour absent du formulaire.",
+      "Solve 403: The return missing from the form."
+    ],
+    "c21_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c21_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c22_p1": [
+      "Résoudre 203 : Trois horloges, une panique.",
+      "Solve 203: Three clocks, one panic."
+    ],
+    "c22_p2": [
+      "Résoudre 303 : Le montage de la menace.",
+      "Solve 303: Editing the threat."
+    ],
+    "c22_p3": [
+      "Résoudre 403 : Deux sources, six certitudes.",
+      "Solve 403: Two sources, six certainties."
+    ],
+    "c22_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c22_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c23_p1": [
+      "Résoudre 203 : Le quorum des désaccords.",
+      "Solve 203: A quorum of disagreements."
+    ],
+    "c23_p2": [
+      "Résoudre 303 : La phrase que personne ne cite.",
+      "Solve 303: The sentence nobody quotes."
+    ],
+    "c23_p3": [
+      "Résoudre 403 : Une permission de dire non.",
+      "Solve 403: Permission to say no."
+    ],
+    "c23_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c23_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c24_p1": [
+      "Résoudre 203 : Annuler l’annulation automatique.",
+      "Solve 203: Cancel automatic cancellation."
+    ],
+    "c24_p2": [
+      "Résoudre 303 : Le secours du secours.",
+      "Solve 303: The backup’s backup."
+    ],
+    "c24_p3": [
+      "Résoudre 403 : Deux destinations, aucun départ.",
+      "Solve 403: Two destinations, no departure."
+    ],
+    "c24_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c24_exit": [
+      "Rejoindre le passage 900 et terminer la mission.",
+      "Reach passage 900 and complete the assignment."
+    ],
+    "c25_p1": [
+      "Résoudre 203 : Ce que nous savons vraiment.",
+      "Solve 203: What we actually know."
+    ],
+    "c25_p2": [
+      "Résoudre 303 : Une marge pour le réel.",
+      "Solve 303: Room for reality."
+    ],
+    "c25_p3": [
+      "Résoudre 403 : La réponse interdite.",
+      "Solve 403: The forbidden answer."
+    ],
+    "c25_kit": [
+      "Récupérer la mallette 101 pour le poste 203.",
+      "Collect kit 101 for station 203."
+    ],
+    "c25_exit": [
       "Rejoindre le passage 900 et terminer la mission.",
       "Reach passage 900 and complete the assignment."
     ]
@@ -1825,6 +2135,166 @@
           "c20_exit"
         ],
         "c20_exit"
+      ]
+    ],
+    "21": [
+      [
+        [
+          "c21_kit"
+        ],
+        "c21_kit"
+      ],
+      [
+        [
+          "c21_p1"
+        ],
+        "c21_p1"
+      ],
+      [
+        [
+          "c21_p2"
+        ],
+        "c21_p2"
+      ],
+      [
+        [
+          "c21_p3"
+        ],
+        "c21_p3"
+      ],
+      [
+        [
+          "c21_exit"
+        ],
+        "c21_exit"
+      ]
+    ],
+    "22": [
+      [
+        [
+          "c22_kit"
+        ],
+        "c22_kit"
+      ],
+      [
+        [
+          "c22_p1"
+        ],
+        "c22_p1"
+      ],
+      [
+        [
+          "c22_p2"
+        ],
+        "c22_p2"
+      ],
+      [
+        [
+          "c22_p3"
+        ],
+        "c22_p3"
+      ],
+      [
+        [
+          "c22_exit"
+        ],
+        "c22_exit"
+      ]
+    ],
+    "23": [
+      [
+        [
+          "c23_kit"
+        ],
+        "c23_kit"
+      ],
+      [
+        [
+          "c23_p1"
+        ],
+        "c23_p1"
+      ],
+      [
+        [
+          "c23_p2"
+        ],
+        "c23_p2"
+      ],
+      [
+        [
+          "c23_p3"
+        ],
+        "c23_p3"
+      ],
+      [
+        [
+          "c23_exit"
+        ],
+        "c23_exit"
+      ]
+    ],
+    "24": [
+      [
+        [
+          "c24_kit"
+        ],
+        "c24_kit"
+      ],
+      [
+        [
+          "c24_p1"
+        ],
+        "c24_p1"
+      ],
+      [
+        [
+          "c24_p2"
+        ],
+        "c24_p2"
+      ],
+      [
+        [
+          "c24_p3"
+        ],
+        "c24_p3"
+      ],
+      [
+        [
+          "c24_exit"
+        ],
+        "c24_exit"
+      ]
+    ],
+    "25": [
+      [
+        [
+          "c25_kit"
+        ],
+        "c25_kit"
+      ],
+      [
+        [
+          "c25_p1"
+        ],
+        "c25_p1"
+      ],
+      [
+        [
+          "c25_p2"
+        ],
+        "c25_p2"
+      ],
+      [
+        [
+          "c25_p3"
+        ],
+        "c25_p3"
+      ],
+      [
+        [
+          "c25_exit"
+        ],
+        "c25_exit"
       ]
     ]
   }

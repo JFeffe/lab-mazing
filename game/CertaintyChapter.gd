@@ -28,6 +28,6 @@ static func finish(g):
 				count+=1;secrets+=g.level_stats[str(n)].secrets;elapsed+=g.level_stats[str(n)].time
 		g.paragraph("CHAPITRE 4 TERMINÉ",22)
 		g.paragraph(g.loc("Bilan : %d niveau(x) terminé(s), %02d:%02d d’exploration, %d secrets.")%[count,int(elapsed)/60,int(elapsed)%60,secrets],17)
-		g.paragraph("Le chapitre 5 n’est pas encore jouable. Votre bilan est sauvegardé.",16)
+		g.modal_box.add_child(g.button("Entrer dans le programme HORIZON",func():g.start_game(false,21,true),true))
 	g.modal_box.add_child(g.button("Choisir un chapitre",func():g.playing=false;g.hud.hide();g.show_chapters()))
 	g.modal_box.add_child(g.button("Sauvegarder et revenir au menu",g.show_title))

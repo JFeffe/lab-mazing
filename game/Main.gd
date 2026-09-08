@@ -5,6 +5,8 @@ const SHORTCUT_LAYOUT_REVISION=2
 const SAVE="user://experience16_v4.json"
 const LEGACY_SAVE="user://experience16_v2.json"
 const ForesightChapter=preload("res://ForesightChapter.gd")
+const FinaleChapter=preload("res://FinaleChapter.gd")
+var chapter5_data=JSON.parse_string(FileAccess.get_file_as_string("res://data/chapter5.json"))
 const CertaintyChapter=preload("res://CertaintyChapter.gd")
 var chapter4_data=JSON.parse_string(FileAccess.get_file_as_string("res://data/chapter4.json"))
 var chapter3_data=JSON.parse_string(FileAccess.get_file_as_string("res://data/chapter3.json"))
@@ -189,7 +191,8 @@ func build_world():
 	if level==5: palettes=[Color("659b9d"),Color("ac9070"),Color("8982a9")]
 	if level==4: palettes=[Color("a18d72"),Color("788ba2"),Color("6b968d")]
 	if level==3: palettes=[Color("7789a5"),Color("638f94"),Color("93839e")]
-	if level>=16:palettes=[[Color("b59e79"),Color("8c9c99"),Color("869bb5")],[Color("96b09a"),Color("b4a27d"),Color("8d9cab")],[Color("779daa"),Color("9f94ae"),Color("91b9ae")],[Color("ac8964"),Color("909eaa"),Color("b19d7a")],[Color("aa91b7"),Color("829c95"),Color("b4a080")]][level-16]
+	if level in range(16,21):palettes=[[Color("b59e79"),Color("8c9c99"),Color("869bb5")],[Color("96b09a"),Color("b4a27d"),Color("8d9cab")],[Color("779daa"),Color("9f94ae"),Color("91b9ae")],[Color("ac8964"),Color("909eaa"),Color("b19d7a")],[Color("aa91b7"),Color("829c95"),Color("b4a080")]][level-16]
+	if level>=21:palettes=[[Color("a5a08b"),Color("858e9f"),Color("a28d7b")],[Color("7896a8"),Color("859a9e"),Color("9da893")],[Color("a693aa"),Color("9b927d"),Color("859c90")],[Color("a5816d"),Color("98918c"),Color("8f9f9b")],[Color("8c9b9d"),Color("98a798"),Color("b4a48e")]][level-21]
 	for y in range(grid.size()):
 		for x in range(grid.size()):
 			var k=key(x,y)
@@ -324,7 +327,8 @@ func build_event(e):
 		else:
 			for i in range(min(e.get("amount",1),4)): box(root,Vector3(0.45,0.12,0.45),Vector3(0,0.4+i*0.15,0),gold)
 	elif e.has("model"):
-		if e.model=="certainty":preload("res://CertaintyDecor.gd").model(self,root,e,gold,dark)
+		if e.model=="finale":preload("res://FinaleDecor.gd").model(self,root,e,gold,dark)
+		elif e.model=="certainty":preload("res://CertaintyDecor.gd").model(self,root,e,gold,dark)
 		elif e.model=="foresight":preload("res://ForesightDecor.gd").model(self,root,e,gold,dark)
 		elif e.model in ["stacks","reports","twin"]:preload("res://ArchiveDecor.gd").model(self,root,e,gold,dark)
 		elif e.model in ["seating","schedule","conference"]:preload("res://MeetingDecor.gd").model(self,root,e,gold,dark)
@@ -497,6 +501,7 @@ func build_ui():
 	var stack=VBoxContainer.new()
 	top.add_child(stack)
 	title_label=label("01 / OBSERVATION",19,accent)
+	title_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	stack.add_child(title_label)
 	status_label=label("",14)
 	status_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
@@ -535,7 +540,10 @@ func build_ui():
 	action_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	action_label.size_flags_horizontal=Control.SIZE_EXPAND_FILL
 	action_row.add_child(action_label)
-	interact_button=button("Examiner",func(): if not nearest.is_empty(): interact(nearest),true)
+	interact_button=button("Examiner",func():
+		if won and level==25:FinaleChapter.finish(self)
+		elif not nearest.is_empty():interact(nearest)
+	,true)
 	interact_button.custom_minimum_size.x=125
 	action_row.add_child(interact_button)
 	var nav=HBoxContainer.new()
@@ -612,7 +620,7 @@ func read_save():
 		var parser=JSON.new()
 		if parser.parse(FileAccess.get_file_as_string(path))!=OK: continue
 		var data=parser.data
-		if data is Dictionary and int(data.get("version",0)) in [2,4] and int(data.get("level",1)) in range(1,21): return data
+		if data is Dictionary and int(data.get("version",0)) in [2,4] and int(data.get("level",1)) in range(1,26): return data
 	return {}
 func show_title():
 	DisplayServer.window_set_title(loc("LE LABYRINTHE")+" — Folamour")
@@ -622,7 +630,7 @@ func show_title():
 	paragraph("Le laboratoire vous attend.\nLes machines aussi.",22)
 	paragraph("Cinq labyrinthes forment le chapitre 1, du laboratoire au défi final de Folamour. Objets à assembler, énigmes à manipuler et indices à recouper. Aucune limite de temps.")
 	paragraph("Le chapitre 2 propose cinq missions : les serres, les photocopies, le courrier, la réunion et les archives.",17)
-	paragraph("Le chapitre 3 ajoute cinq missions au département de la prévoyance. Quinze niveaux sont disponibles.",17)
+	paragraph("Le chapitre 5 conclut HORIZON. Les cinq chapitres et leurs vingt-cinq niveaux sont disponibles.",17)
 	var saved=read_save()
 	if not saved.is_empty():
 		modal_box.add_child(button("Continuer la partie",func(): start_game(true),true))
@@ -631,7 +639,7 @@ func show_title():
 	modal_box.add_child(button("Choisir un chapitre",show_chapters,not has_save()))
 	modal_box.add_child(button("Sélection de niveau / test",show_level_select))
 	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("VERSION 0.18 · LE COMPLEXE DE LA CERTITUDE",13)
+	paragraph("VERSION 0.19 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
 	modal_box.add_child(button("Réglages audio",func(): show_audio(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
@@ -660,6 +668,8 @@ func show_chapters():
 	if not saved.is_empty() and int(saved.get("level",1)) in range(16,21):
 		modal_box.add_child(button("Reprendre le chapitre 4",func():start_game(true),true))
 	for n in range(16,21):modal_box.add_child(button(level_name(n),func():confirm_new(n)))
+	paragraph("Chapitre 5 — Pour votre tranquillité définitive",22)
+	for n in range(21,26):modal_box.add_child(button(level_name(n),func():confirm_new(n)))
 	modal_box.add_child(button("Retour",show_title))
 func show_level_select():
 	clear_modal("TEST / NIVEAUX","Choisir un niveau")
@@ -672,10 +682,12 @@ func show_level_select():
 	for n in range(11,16):modal_box.add_child(button(level_name(n),func():confirm_new(n)))
 	paragraph("Chapitre 4 — Le complexe de la certitude",22)
 	for n in range(16,21):modal_box.add_child(button(level_name(n),func():confirm_new(n)))
+	paragraph("Chapitre 5 — Pour votre tranquillité définitive",22)
+	for n in range(21,26):modal_box.add_child(button(level_name(n),func():confirm_new(n)))
 	modal_box.add_child(button("Retour",show_title))
 func level_name(number):
 	var names=["Le laboratoire","Le département des machines","Le département d’optique","Le département des essais","Le défi de Folamour","Les serres expérimentales","Le service des photocopies","Le courrier interne","La salle de réunion","Le service des archives"]
-	return loc("Chapitre %d · Niveau %d — %s") % [int((number-1)/5)+1,(number-1)%5+1,loc(names[number-1] if number<=10 else chapter3_data[str(number)].title if number<=15 else chapter4_data[str(number)].title)]
+	return loc("Chapitre %d · Niveau %d — %s") % [int((number-1)/5)+1,(number-1)%5+1,loc(names[number-1] if number<=10 else chapter3_data[str(number)].title if number<=15 else chapter4_data[str(number)].title if number<=20 else chapter5_data[str(number)].title)]
 
 func confirm_new(target=1):
 	if not has_save():
@@ -690,7 +702,7 @@ func set_level(number):
 	signal_lights.clear()
 	decor.clear()
 	ambience_zone=-1
-	level=clampi(number,1,20)
+	level=clampi(number,1,25)
 	archive_blocks.clear()
 	if is_instance_valid(world):
 		remove_child(world)
@@ -715,7 +727,8 @@ func set_level(number):
 	build_world()
 	if level==10:preload("res://ArchiveDecor.gd").setup(self)
 	if level in range(11,16):preload("res://ForesightDecor.gd").setup(self)
-	if level>=16:preload("res://CertaintyDecor.gd").setup(self)
+	if level in range(16,21):preload("res://CertaintyDecor.gd").setup(self)
+	if level>=21:preload("res://FinaleDecor.gd").setup(self)
 func start_game(resume_v,target=1,keep_campaign=false):
 	playing=false
 	var data=read_save() if resume_v else {}
@@ -778,7 +791,8 @@ func start_game(resume_v,target=1,keep_campaign=false):
 		elif level==9:show_meeting_intro()
 		elif level==10:show_archive_intro()
 		elif level<=15:ForesightChapter.intro(self)
-		else:CertaintyChapter.intro(self)
+		elif level<=20:CertaintyChapter.intro(self)
+		else:FinaleChapter.intro(self)
 		if level<5:modal_box.add_child(button("Commencer l’exploration",close_modal,true))
 	elif level==5 and not won and not done.has("folamour_met"):
 		show_folamour_intro()
@@ -794,7 +808,8 @@ func start_game(resume_v,target=1,keep_campaign=false):
 		show_archive_intro()
 	elif level>=11 and not won and not done.has("c%d_met"%level):
 		if level<=15:ForesightChapter.intro(self)
-		else:CertaintyChapter.intro(self)
+		elif level<=20:CertaintyChapter.intro(self)
+		else:FinaleChapter.intro(self)
 	save_game()
 func _physics_process(delta):
 	if not playing or modal_open or won or (is_instance_valid(soundscape) and not soundscape.focused): return
@@ -868,6 +883,11 @@ func update_camera(delta):
 func key(x,y): return str(int(x))+","+str(int(y))
 func floor_at(x,y): return not archive_blocks.has(key(x,y)) and y>=0 and x>=0 and y<grid.size() and x<grid.size() and (grid[y][x]==1 or shortcut_cells.has(key(x,y)))
 func zone(y,x=17):
+	if level==21:return 0 if x<22 else 1 if y<17 else 2
+	if level==22:return 2 if x in range(13,22) and y in range(13,22) else 1 if x in range(7,28) and y in range(7,28) else 0
+	if level==23:return 0 if y<21 else 1 if x<17 else 2
+	if level==24:return 2 if y>19 else 0 if x<15 else 1
+	if level==25:return 0 if y<11 else 1 if y<23 else 2
 	if level==16:return 0 if y<16 else 1 if x<17 else 2
 	if level==17:return 0 if x<17 else 1 if y<17 else 2
 	if level==18:return 2 if x in range(15,20) and y in range(15,20) else 1 if x in range(9,26) and y in range(9,26) else 0
@@ -958,6 +978,7 @@ func update_hud():
 	if level>=11:
 		title_label.text=loc("C3 / MISSION %d" if level<=15 else "C4 / MISSION %d")%((level-1)%5+1)
 		status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d")%[held,int(done.has("c%d_p1"%level))+int(done.has("c%d_p2"%level))+int(done.has("c%d_p3"%level)),int(elapsed)/60,int(elapsed)%60]
+	if level>=21:title_label.text=loc(FinaleChapter.status(self))
 	if level==4: status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d") % [held,int(done.has("test_balance"))+int(done.has("sequence_panel"))+int(done.has("test_circuit")),int(elapsed)/60,int(elapsed)%60]
 	action_label.text=loc("["+nearest.ref+"] "+nearest.title if not nearest.is_empty() else "Cliquez / touchez le sol pour explorer")
 	if not move_path.is_empty(): action_label.text=loc("Destination : ")+ (loc(click_event.title) if not click_event.is_empty() else str(move_path[-1].x)+", "+str(move_path[-1].y))
@@ -969,6 +990,9 @@ func toast(text):
 	toast_label.text=loc(text)
 	toast_timer=6
 func interact(e):
+	if won and level==25:
+		FinaleChapter.finish(self)
+		return
 	if e.kind=="pickup":
 		for required in e.get("prerequisites",[]):
 			if not done.has(required):
@@ -1125,6 +1149,7 @@ func complete(e):
 	update_hud()
 	save_game()
 	if e.kind=="exit": show_win()
+	elif level>=21:FinaleChapter.checkpoint(self,e)
 func sync_event(e):
 	if e.id=="g_bridge":
 		var bridge=event_nodes[e.id].get_node_or_null("LivingBridge")
@@ -1280,8 +1305,11 @@ func show_win():
 		if Guidance.is_challenge(e) and done.has(e.id):puzzles+=1
 	var first_completion=not level_stats.has(str(level))
 	level_stats[str(level)]={"time":elapsed,"secrets":secrets,"hints":h,"errors":errors,"puzzles":puzzles,"shortcuts":open_shortcuts.size()}
-	if first_completion and level in [5,10,15,20] and is_instance_valid(soundscape):soundscape.effect(self,"chapter_complete")
+	if first_completion and level in [5,10,15,20,25] and is_instance_valid(soundscape):soundscape.effect(self,"chapter_complete")
 	save_game()
+	if level>=21:
+		FinaleChapter.finish(self)
+		return
 	if level>=16:
 		CertaintyChapter.finish(self)
 		return
@@ -1583,6 +1611,7 @@ func build_machine_decor():
 func _process(delta):
 	if is_instance_valid(soundscape):soundscape.update(self,delta)
 	update_ambience()
+	if level>=21:preload("res://FinaleDecor.gd").update(self,delta)
 	if level>=5 and is_instance_valid(folamour):
 		folamour.visible=playing and seen.has(key(roundi(folamour.position.x/TILE),roundi(folamour.position.z/TILE)))
 	for prop in decor: prop.visible=render_near(prop) and seen.has(prop.get_meta("fog_cell")) and prop.get_meta("archive_active",true)
@@ -1758,14 +1787,18 @@ func update_ambience():
 	if muted or not playing or modal_open or test_mode or (is_instance_valid(soundscape) and not soundscape.focused):
 		soundscape.set_paused(ambience,true)
 		return
+	if level==25 or (level==24 and FinaleChapter.stage(self)==3):
+		soundscape.set_paused(ambience,true)
+		return
 	var background_gain=soundscape.gain(self,"ambience") if is_instance_valid(soundscape) else 1.0
 	if background_gain<=0:
 		soundscape.set_paused(ambience,true)
 		return
 	var sector=zone(int(player.position.z/TILE),int(player.position.x/TILE))
+	if level==24:sector=3+FinaleChapter.stage(self)
 	if sector!=ambience_zone:
 		ambience_zone=sector
-		ambience.stream=load("res://assets/ambience"+str(sector)+".wav")
+		ambience.stream=load("res://assets/"+("horizon"+str(mini(2,sector-3)) if sector>=3 else "ambience"+str(sector))+".wav")
 		ambience.play()
 	elif not ambience.playing: ambience.play()
 	soundscape.set_paused(ambience,false)

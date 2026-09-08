@@ -10,3 +10,6 @@ release/
 web/
 
 __pycache__/
+
+# Reproducible original finale audio; generated before import/export.
+game/assets/horizon*.wav

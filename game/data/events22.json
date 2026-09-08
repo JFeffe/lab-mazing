@@ -1,0 +1,321 @@
+[
+  {
+    "id": "c22_n1",
+    "kind": "clue",
+    "cell": [
+      1,
+      7
+    ],
+    "ref": "201",
+    "title": "Consigne 201",
+    "text": "Les horloges A/B/C ont un décalage constant entre −2 et +2 minutes. Heure réelle = heure affichée moins décalage. À 12:00 réelles, B indiquait 11:59."
+  },
+  {
+    "id": "c22_n2",
+    "kind": "clue",
+    "cell": [
+      33,
+      27
+    ],
+    "ref": "202",
+    "title": "Consigne 202",
+    "text": "Au même instant A affiche trois minutes de plus que B. C affiche une minute de moins que A. Les écarts portent sur les horloges, pas sur les événements."
+  },
+  {
+    "id": "c22_p1",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      33
+    ],
+    "ref": "203",
+    "title": "Trois horloges, une panique",
+    "text": "Choisir les décalages (affiché − réel). B affiche 11:59 à 12:00 réelles. A est trois minutes devant B ; C une minute derrière A. Chaque décalage est entre −2 et +2.",
+    "puzzle_type": "finale",
+    "model": "finale",
+    "mode": "offsets",
+    "labels": [
+      "A",
+      "B",
+      "C"
+    ],
+    "choices": [
+      [
+        "−2",
+        "−1",
+        "0",
+        "+1",
+        "+2"
+      ],
+      [
+        "−2",
+        "−1",
+        "0",
+        "+1",
+        "+2"
+      ],
+      [
+        "−2",
+        "−1",
+        "0",
+        "+1",
+        "+2"
+      ]
+    ],
+    "target": [
+      4,
+      1,
+      3
+    ],
+    "requires": [
+      "c22_kit"
+    ],
+    "opens": [
+      "c22_gate1"
+    ],
+    "success": "Validation enregistrée. Le deuxième secteur est ouvert."
+  },
+  {
+    "id": "c22_n3",
+    "kind": "clue",
+    "cell": [
+      7,
+      7
+    ],
+    "ref": "301",
+    "title": "Consigne 301",
+    "text": "Images originales : cuisine allumée A 12:02 ; prévision MIROIR B 12:00 ; sirène C 12:03 ; volets fermés A 12:05 ; hostilité « confirmée » B 12:03."
+  },
+  {
+    "id": "c22_n4",
+    "kind": "clue",
+    "cell": [
+      27,
+      27
+    ],
+    "ref": "302",
+    "title": "Consigne 302",
+    "text": "Retirer les décalages A=+2, B=−1, C=+1. Classer les cinq images de la première à la dernière. Une confirmation postérieure ne peut pas être la cause de l’alerte initiale."
+  },
+  {
+    "id": "c22_p2",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      7
+    ],
+    "ref": "303",
+    "title": "Le montage de la menace",
+    "text": "Reconstituer les cinq événements à leur heure réelle. A avance de 2 minutes, B retarde de 1, C avance de 1. Un exemplaire de chaque image ; tester puis valider.",
+    "puzzle_type": "finale",
+    "model": "finale",
+    "mode": "chronology",
+    "cards": [
+      "Sirène · C 12:03",
+      "Hostilité confirmée · B 12:03",
+      "Cuisine allumée · A 12:02",
+      "Volets fermés · A 12:05",
+      "Prévision MIROIR · B 12:00"
+    ],
+    "sequence": [
+      2,
+      4,
+      0,
+      3,
+      1
+    ],
+    "max_commands": 5,
+    "prerequisites": [
+      "c22_p1"
+    ],
+    "opens": [
+      "c22_gate2"
+    ],
+    "success": "Validation enregistrée. Le troisième secteur est ouvert."
+  },
+  {
+    "id": "c22_n5",
+    "kind": "clue",
+    "cell": [
+      13,
+      13
+    ],
+    "ref": "401",
+    "title": "Consigne 401",
+    "text": "Les flèches signifient « sert de preuve à ». Capteur → A et Fenêtre → C sont les deux apports physiques à conserver. A → B et C → D sont les registres horodatés à conserver."
+  },
+  {
+    "id": "c22_n6",
+    "kind": "clue",
+    "cell": [
+      21,
+      21
+    ],
+    "ref": "402",
+    "title": "Consigne 402",
+    "text": "B → A et D → C sont des copies ajoutées après les rapports. Suspendre exactement deux liens, éliminer tout raisonnement circulaire, garder les quatre apports originaux."
+  },
+  {
+    "id": "c22_p3",
+    "kind": "mechanism",
+    "cell": [
+      17,
+      17
+    ],
+    "ref": "403",
+    "title": "Deux sources, six certitudes",
+    "text": "Chaque flèche fournit une preuve au nœud suivant. Suspendre exactement deux copies pour rendre le graphe sans boucle. Conserver Capteur→A, Fenêtre→C, A→B, C→D. Tester le graphe avant validation.",
+    "puzzle_type": "finale",
+    "model": "finale",
+    "mode": "feedback",
+    "names": [
+      "Capteur",
+      "A",
+      "B",
+      "Fenêtre",
+      "C",
+      "D"
+    ],
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "protected": [
+      0,
+      1,
+      3,
+      4
+    ],
+    "max_cuts": 2,
+    "prerequisites": [
+      "c22_p2"
+    ],
+    "success": "Validation enregistrée. Le passage de fin de niveau est autorisé."
+  },
+  {
+    "id": "c22_welcome",
+    "kind": "clue",
+    "cell": [
+      1,
+      31
+    ],
+    "ref": "100",
+    "title": "Ordre de mission",
+    "text": "Trois enceintes imbriquées : relevés sur le grand circuit extérieur, chronologie sur l’anneau médian, boucle des sources au centre. Le passage ouest 111 puis le passage nord 112 donnent accès aux enceintes suivantes."
+  },
+  {
+    "id": "c22_kit",
+    "kind": "pickup",
+    "cell": [
+      3,
+      33
+    ],
+    "ref": "101",
+    "title": "Mallette de service",
+    "text": "À installer au premier poste 203. Le matériel reste en place après les essais.",
+    "resource": "c22_kit",
+    "amount": 1,
+    "appearance": "key"
+  },
+  {
+    "id": "c22_gate1",
+    "kind": "door",
+    "cell": [
+      4,
+      17
+    ],
+    "ref": "111",
+    "title": "Sas de secteur 1",
+    "text": "Commande depuis le poste 203.",
+    "axis": "x",
+    "controlled_by": "c22_p1"
+  },
+  {
+    "id": "c22_gate2",
+    "kind": "door",
+    "cell": [
+      17,
+      10
+    ],
+    "ref": "112",
+    "title": "Sas de secteur 2",
+    "text": "Commande depuis le poste 303.",
+    "axis": "y",
+    "controlled_by": "c22_p2"
+  },
+  {
+    "id": "c22_secret1",
+    "kind": "clue",
+    "cell": [
+      33,
+      1
+    ],
+    "ref": "501",
+    "title": "Note confidentielle 1",
+    "text": "Le dernier opérateur a noté : « Je n’ai rien vu. » Sa précision lui a valu une formation corrective.",
+    "secret": true
+  },
+  {
+    "id": "c22_secret2",
+    "kind": "clue",
+    "cell": [
+      7,
+      23
+    ],
+    "ref": "502",
+    "title": "Note confidentielle 2",
+    "text": "La radio cite le rapport qui cite la radio. Deux sources indépendantes, selon la radio.",
+    "secret": true
+  },
+  {
+    "id": "c22_secret3",
+    "kind": "clue",
+    "cell": [
+      13,
+      21
+    ],
+    "ref": "503",
+    "title": "Note confidentielle 3",
+    "text": "Le dîner a été reclassé en offensive alimentaire. Le dessert fait encore débat.",
+    "secret": true
+  },
+  {
+    "id": "c22_exit",
+    "kind": "exit",
+    "cell": [
+      21,
+      15
+    ],
+    "ref": "900",
+    "title": "Passage de service",
+    "text": "Les trois validations sont nécessaires. Votre bilan sera conservé.",
+    "prerequisites": [
+      "c22_p1",
+      "c22_p2",
+      "c22_p3"
+    ],
+    "action": "Terminer la mission"
+  }
+]
