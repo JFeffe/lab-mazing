@@ -9,6 +9,11 @@ var cache={}
 
 func _init():
 	english=JSON.parse_string(FileAccess.get_file_as_string("res://data/en.json"))
+	# Register authored endings before compiling composed-text matching (HUD/journal).
+	var endings=JSON.parse_string(FileAccess.get_file_as_string("res://data/endings.json"))
+	for entry in endings.values():
+		for field in ["title","text","action","objective","success"]:
+			if entry.has(field):english[entry[field][0]]=entry[field][1]
 	var keys=english.keys().filter(func(value): return not value.strip_edges().is_empty())
 	keys.sort_custom(func(a,b): return a.length()>b.length())
 	var patterns=PackedStringArray()

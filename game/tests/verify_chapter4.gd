@@ -96,7 +96,7 @@ func run():
 						await action(99);check(controls.state(game,e).slice(0,3)==[12,0,13],"Undo seal crossing")
 						await action(0);await action(1);await action(98);check(controls.solved(game,e),"Redo seal crossing")
 					await press("Valider l’essai")
-				elif e.kind=="exit":await press("Terminer la mission")
+				elif e.kind=="exit":await press(e.action)
 			check(game.done.has(e.id),"Failed action "+e.id)
 			if e.kind!="exit":game.close_modal()
 			print("CHAPTER4 ROUTE ",e.id," PASS")

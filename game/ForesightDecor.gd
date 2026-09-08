@@ -19,11 +19,6 @@ static func model(g,root,e,gold,dark):
 	if e.mode in ["courier","duet","film","ordering","audit"]:
 		for i in range(5):g.box(root,Vector3(.25,.08,.25),Vector3((i-2)*.32,.84,.35),gold)
 static func setup(g):
-	g.folamour=g.make_folamour(g.world)
-	var welcome={}
-	for e in g.events:
-		if e.id.ends_with("_welcome"):welcome=e
-	g.folamour.position=Vector3(welcome.cell[0]*g.TILE,.05,welcome.cell[1]*g.TILE)
 	# Attach props to the tops of existing walls: no invisible obstacles on walkable cells.
 	for y in range(2,33,4):
 		for x in range(2,33,4):

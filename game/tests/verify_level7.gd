@@ -62,7 +62,7 @@ func run():
 				check((game.player.position.z-e.cell[1]*game.TILE)*sign_v<0,"Gate bypass: "+id)
 	game.show_puzzle(event("p_delivery"))
 	for child in game.modal_box.get_children():
-		if child is Button:check(child.text!="Deliver the copy","Exit available early")
+		if child is Button:check(child.text!=game.loc(event("p_delivery").action),"Exit available early")
 	game.close_modal()
 	game.player.position=Vector3(17*game.TILE,0.1,19*game.TILE)
 	var route=JSON.parse_string(FileAccess.get_file_as_string("res://tests/route_level7.json"))
@@ -115,7 +115,7 @@ func run():
 				await press("Validate the test")
 			elif e.kind=="exit":
 				for child in game.modal_box.get_children():
-					if child is Button and child.text=="Deliver the copy":child.pressed.emit();await process_frame;break
+					if child is Button and child.text==game.loc(event("p_delivery").action):child.pressed.emit();await process_frame;break
 		check(game.done.has(e.id),"Action failed: "+e.id)
 		game.close_modal()
 		print("LEVEL7 ROUTE ",e.id," PASS")

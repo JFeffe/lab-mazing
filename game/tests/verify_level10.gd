@@ -74,7 +74,7 @@ func run():
 	check(game.PuzzleControls.state(game,event("a_stacks"))==[0,0,0],"Shelf safety lock failed")
 	game.show_puzzle(event("a_final"))
 	for child in game.modal_box.get_children():
-		if child is Button:check(child.text!="Open the MIRROR file","Exit available early")
+		if child is Button:check(child.text!=game.loc(event("a_final").action),"Exit available early")
 	game.close_modal()
 	game.player.position=Vector3(17*game.TILE,0.1,23*game.TILE)
 	var route=JSON.parse_string(FileAccess.get_file_as_string("res://tests/route_level10.json"))

@@ -92,7 +92,7 @@ func run():
 						await action(99);check(controls.state(game,e).slice(0,3)==[1,4,3],"Undo tank transfer")
 						await action(4);check(controls.solved(game,e),"Redo tank transfer")
 					await press("Valider l’essai")
-				elif e.kind=="exit":await press("Terminer la mission")
+				elif e.kind=="exit":await press(e.action)
 			check(game.done.has(e.id),"Failed action "+e.id)
 			if e.kind!="exit":game.close_modal()
 			print("CHAPTER3 ROUTE ",e.id," PASS")

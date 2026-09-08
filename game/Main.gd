@@ -1,4 +1,5 @@
 extends Node3D
+const LevelEndings=preload("res://LevelEndings.gd")
 const TILE=2.6
 const MOVE_SPEED=9.1
 const SHORTCUT_LAYOUT_REVISION=2
@@ -258,14 +259,13 @@ func build_world():
 	build_readability_decor()
 	if level==2: build_machine_decor()
 	if level==6:preload("res://GreenhouseDecor.gd").decorate(self)
-	if level in [5,6,7,8,9,10]:
-		folamour=make_folamour(world)
-		folamour.position=Vector3(19*TILE,0,23*TILE) if level==10 else Vector3(19*TILE,0,23*TILE) if level==9 else Vector3(29*TILE,0,21*TILE) if level==8 else Vector3(17*TILE,0,19*TILE) if level==5 else Vector3(15*TILE,0,(19 if level==7 else 23)*TILE)
 	update_camera(1)
 
 func build_event(e):
 	var root=Node3D.new()
 	root.position=Vector3(e.cell[0]*TILE,0,e.cell[1]*TILE)
+	if e.has("ending_offset"):
+		root.position+=Vector3(e.ending_offset[0],0,e.ending_offset[1])
 	# Mount the exit just in front of the adjacent wall, keeping its discovery cell.
 	if e.has("wall_face"):
 		root.position+=Vector3(e.wall_face[0],0,e.wall_face[1])*TILE*0.45
@@ -273,7 +273,10 @@ func build_event(e):
 	event_nodes[e.id]=root
 	var gold=material(accent,true)
 	var dark=material(Color("243d48"))
-	if e.kind in ["door","oneway","exit"]:
+	if LevelEndings.is_doctor(e):
+		folamour=root
+		make_folamour(root)
+	elif e.kind in ["door","oneway","exit"]:
 		var horizontal=e.get("axis","y")=="x"
 		if horizontal: root.rotation.y=PI/2
 		for side in [-1,1]: box(root,Vector3(0.19,2.7,0.28),Vector3(side*1.16,1.3,0),dark)
@@ -351,7 +354,7 @@ func build_event(e):
 		box(root,Vector3(0.85,1,0.6),Vector3(0,0.5,0),dark)
 		box(root,Vector3(0.75,0.55,0.08),Vector3(0,1.12,-0.27),material(Color("93d4cf"),true))
 	var label=Label3D.new()
-	label.text=e.get("ref","?")
+	label.text=("Folamour · " if LevelEndings.is_doctor(e) else "")+e.get("ref","?")
 	label.position.y=3.0 if e.kind in ["door","exit","oneway"] or e.has("model") else 1.95
 	label.billboard=BaseMaterial3D.BILLBOARD_ENABLED
 	label.font_size=38
@@ -644,7 +647,7 @@ func show_title():
 	modal_box.add_child(button("Choisir un chapitre",show_chapters,not has_save()))
 	modal_box.add_child(button("Sélection de niveau / test",show_level_select))
 	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("VERSION 0.19.1 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE",13)
+	paragraph("VERSION 0.20 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
 	modal_box.add_child(button("Réglages audio",func(): show_audio(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
@@ -725,6 +728,8 @@ func set_level(number):
 	grid=level_data.grid
 	start_cell=Vector2i(level_data.start[0],level_data.start[1])
 	events=JSON.parse_string(FileAccess.get_file_as_string("res://data/events"+suffix+".json"))
+	folamour=null
+	LevelEndings.apply(self)
 	shortcuts=JSON.parse_string(FileAccess.get_file_as_string("res://data/shortcuts"+suffix+".json"))
 	item_catalog=JSON.parse_string(FileAccess.get_file_as_string("res://data/items"+suffix+".json")) if level>=2 else {}
 	world=Node3D.new()
@@ -989,7 +994,7 @@ func update_hud():
 	if not move_path.is_empty(): action_label.text=loc("Destination : ")+ (loc(click_event.title) if not click_event.is_empty() else str(move_path[-1].x)+", "+str(move_path[-1].y))
 	if is_instance_valid(interact_button):
 		interact_button.disabled=nearest.is_empty()
-		interact_button.text=loc("Examiner" if nearest.is_empty() or nearest.kind!="pickup" else "Ramasser")
+		interact_button.text=loc("Parler" if LevelEndings.is_doctor(nearest) else "Examiner" if nearest.is_empty() or nearest.kind!="pickup" else "Ramasser")
 func toast(text):
 	toast_source=text
 	toast_label.text=loc(text)
@@ -1040,6 +1045,9 @@ func held_all(ids):
 		if inventory.get(id,0)<1: return false
 	return true
 func show_puzzle(e):
+	if LevelEndings.is_doctor(e):
+		LevelEndings.show_dialogue(self,e)
+		return
 	current_event=e
 	clear_modal(e.get("ref","?")+" / MÉCANISME",e.title)
 	paragraph(e.get("installed_text",e.text) if done.has("installed_"+e.id) else e.text)
@@ -1127,7 +1135,7 @@ func install_items(e):
 	for id in e.requires: inventory[id]-=1
 	done["installed_"+e.id]=true
 	sync_event(e)
-	add_journal("installed_"+e.id,e.title+" — pièces assemblées ou installées. Descriptions conservées dans le journal.")
+	add_journal("installed_"+e.id,e.title+(" — objets remis à Folamour. Descriptions conservées dans le journal." if LevelEndings.is_doctor(e) else " — pièces assemblées ou installées. Descriptions conservées dans le journal."))
 	if e.has("answer") or e.has("puzzle_type"):
 		show_puzzle(e)
 		update_hud()
@@ -1139,6 +1147,9 @@ func open_target(id):
 		if other.id==id: sync_event(other)
 func complete(e):
 	if done.has(e.id): return
+	if LevelEndings.is_doctor(e):
+		if not LevelEndings.ready(self,e):return
+		if e.has("requires") and not done.has("installed_"+e.id):return
 	if e.has("puzzle_type") and (not PuzzleControls.available(self,e) or not PuzzleControls.solved(self,e)): return
 	done[e.id]=true
 	for id in e.get("grants",{}):
@@ -1148,7 +1159,7 @@ func complete(e):
 	for target in e.get("opens",[]): open_target(target)
 	sync_event(e)
 	chime(880)
-	if is_instance_valid(soundscape):soundscape.effect(self,"door" if e.kind in ["door","exit"] or e.has("opens") else "machine")
+	if is_instance_valid(soundscape):soundscape.effect(self,"success" if LevelEndings.is_doctor(e) else "door" if e.kind in ["door","exit"] or e.has("opens") else "machine")
 	close_modal()
 	toast(e.get("success","Le passage est ouvert."))
 	update_hud()
@@ -1284,7 +1295,7 @@ func show_map():
 	map.custom_minimum_size=Vector2(content_width(),content_width()*0.82)
 	modal_box.add_child(map)
 	paragraph("Clic droit sur un passage découvert : fermer la carte et s’y rendre.",14)
-	paragraph("Blanc : vous • Or : objet • Turquoise : indice\nBleu : mécanisme • Corail : porte • Vert : activé\nLes zones inconnues restent cachées.",14)
+	paragraph("Blanc : vous • Or : objet • Turquoise : indice\nBleu : mécanisme • Corail : porte • Vert : activé\nF : Folamour, fin de mission • Les zones inconnues restent cachées.",14)
 	modal_box.add_child(button("Reprendre",close_modal,true))
 func show_pause():
 	if not playing: return
@@ -1340,10 +1351,9 @@ func show_win():
 		return
 	clear_modal("NIVEAU "+str(level)+" / TERMINÉ", "Le laboratoire est franchi." if level==1 else "L’ascenseur est en marche." if level==2 else "Le ciel vous appartient." if level==3 else "Essais réussis." if level==4 else "Le défi impossible est accompli.")
 	if level==5:
-		present_folamour(true)
 		clear_modal("CHAPITRE 1 / TERMINÉ","Le défi impossible est accompli.")
 		folamour_portrait()
-		paragraph("Folamour s’approche. Pour la première fois, il semble à court de sarcasmes.",16)
+		paragraph("Folamour écoute votre rapport. Pour la première fois, il semble à court de sarcasmes.",16)
 		paragraph("« Vous avez réussi. ZÉRO est stable… Personne n’y était jamais arrivé. Félicitations, sujet 16. Vous pouvez être fier de vous. »",21)
 		paragraph("Il remet ses lunettes, puis retrouve son sourire habituel.",16)
 		paragraph("« Un tel talent mérite une proposition exceptionnelle : un stage dans mon laboratoire ! Non rémunéré, évidemment. Vous ne voudriez tout de même pas fausser l’expérience avec de l’argent ? »",21)
@@ -1620,7 +1630,7 @@ func _process(delta):
 	update_ambience()
 	if level>=21:preload("res://FinaleDecor.gd").update(self,delta)
 	if level>=5 and is_instance_valid(folamour):
-		folamour.visible=playing and seen.has(key(roundi(folamour.position.x/TILE),roundi(folamour.position.z/TILE)))
+		folamour.visible=playing and render_near(folamour) and seen.has(key(roundi(folamour.position.x/TILE),roundi(folamour.position.z/TILE)))
 	for prop in decor: prop.visible=render_near(prop) and seen.has(prop.get_meta("fog_cell")) and prop.get_meta("archive_active",true)
 	if not playing or modal_open or level!=2 or machine_parts.is_empty(): return
 	if done.has("generator") and machine_parts.has("generator"): machine_parts.generator.rotate_y(delta*3)
@@ -1756,7 +1766,7 @@ func add_event_signals(root,e):
 	elif e.kind=="clue":
 		# A pale sheet visibly distinguishes a readable terminal from an item.
 		box(root,Vector3(0.5,0.45,0.035),Vector3(0,1.16,-0.34),material(Color("b4e6e1")))
-	else:
+	elif not LevelEndings.is_doctor(e):
 		var lamp=box(root,Vector3(0.18,0.18,0.18),Vector3(0.75,1.8,0),material(Color("db735e"),true))
 		signal_lights[e.id]=lamp
 		for index in range(e.get("requires",[]).size()):
@@ -1873,19 +1883,10 @@ func folamour_portrait():
 	portrait_camera.look_at(Vector3(0,1.15,0))
 	portrait_camera.projection=Camera3D.PROJECTION_ORTHOGONAL
 	portrait_camera.size=2.5
-func present_folamour(ending=false):
-	if not is_instance_valid(folamour):return
-	var destination=Vector3(18*TILE,0,2*TILE) if ending else Vector3(18*TILE,0,20*TILE)
-	folamour.position=destination+Vector3(0,0,TILE)
-	folamour.visible=true
-	folamour.look_at(Vector3(player.position.x,0,player.position.z))
-	if test_mode:folamour.position=destination
-	else:create_tween().tween_property(folamour,"position",destination,1.6)
 func show_folamour_intro():
-	present_folamour()
 	clear_modal("NIVEAU 5 / LE DÉFI DE FOLAMOUR","Enfin, en personne.")
 	folamour_portrait()
-	paragraph("Une silhouette en blouse blanche vient à votre rencontre. Cette fois, la voix ne sort pas d’un haut-parleur : le docteur Folamour est devant vous.",17)
+	paragraph("Le docteur Folamour vous accueille en personne, puis rejoint la galerie nord du stabilisateur. Il y attendra votre démonstration.",17)
 	paragraph("« Sujet 16 ! Encore debout ? Je commençais à soupçonner mes labyrinthes d’être trop accueillants. Rassurez-vous, je corrigerai cela. »",21)
 	paragraph("« Voici ZÉRO. Personne n’a jamais réussi à stabiliser ce prototype. Pas un seul de mes brillants assistants. Je vous mets au défi d’être le premier. Le matériel est précieux ; vous, nous verrons. »",21)
 	paragraph("Explorez les ailes ouest et est, assemblez leurs résultats dans le hall, puis accédez au stabilisateur nord. Aucun compte à rebours. Tous les essais peuvent être recommencés.",17)

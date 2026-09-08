@@ -1,0 +1,634 @@
+{
+  "1": {
+    "id": "final",
+    "cell": [
+      17,
+      34
+    ],
+    "presentation": "door"
+  },
+  "2": {
+    "id": "lift_exit",
+    "cell": [
+      17,
+      34
+    ],
+    "presentation": "door"
+  },
+  "3": {
+    "id": "observation_exit",
+    "cell": [
+      17,
+      33
+    ],
+    "presentation": "door",
+    "wall_face": [
+      0,
+      1
+    ]
+  },
+  "4": {
+    "id": "test_exit",
+    "cell": [
+      17,
+      33
+    ],
+    "presentation": "door",
+    "wall_face": [
+      0,
+      1
+    ]
+  },
+  "5": {
+    "id": "f_exit",
+    "cell": [
+      17,
+      1
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Validation de ZÉRO",
+      "Folamour — ZERO certification"
+    ],
+    "text": [
+      "« ZÉRO doit être stable avant votre démonstration. Les compliments prématurés coûtent très cher au laboratoire. »",
+      "“ZERO must be stable before your demonstration. Premature compliments are very expensive for the laboratory.”"
+    ],
+    "action": [
+      "Présenter le résultat à Folamour",
+      "Show Folamour the result"
+    ],
+    "objective": [
+      "Parler à Folamour [405] : galerie nord du stabilisateur.",
+      "Speak to Folamour [405]: the northern stabilizer gallery."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "6": {
+    "id": "g_coffee",
+    "cell": [
+      17,
+      13
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Le café du docteur",
+      "Folamour — The doctor’s coffee"
+    ],
+    "text": [
+      "« Ma tasse et la préparation validée, s’il vous plaît. Les serres doivent fonctionner avant ma pause. C’est une question de priorités scientifiques. »",
+      "“My mug and the approved blend, please. The greenhouses must work before my break. Scientific priorities.”"
+    ],
+    "action": [
+      "Servir le café à Folamour",
+      "Serve Folamour his coffee"
+    ],
+    "objective": [
+      "Parler à Folamour [105] : point de service central des serres.",
+      "Speak to Folamour [105]: the central greenhouse service point."
+    ],
+    "success": [
+      "Folamour reçoit son café. Mission terminée.",
+      "Folamour receives his coffee. Mission complete."
+    ],
+    "offset": [
+      -0.65,
+      0
+    ]
+  },
+  "7": {
+    "id": "p_delivery",
+    "cell": [
+      21,
+      19
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Une seule copie",
+      "Folamour — Just one copy"
+    ],
+    "text": [
+      "« Remettez-moi la copie approuvée. Une seule. Les exemplaires surnuméraires seront considérés comme des candidatures spontanées. »",
+      "“Hand me the approved copy. Just one. Extra copies will be treated as unsolicited job applications.”"
+    ],
+    "action": [
+      "Remettre la copie à Folamour",
+      "Hand Folamour the copy"
+    ],
+    "objective": [
+      "Parler à Folamour [101] : accueil central des bureaux.",
+      "Speak to Folamour [101]: central office reception."
+    ],
+    "success": [
+      "Folamour reçoit la copie approuvée. Mission terminée.",
+      "Folamour receives the approved copy. Mission complete."
+    ]
+  },
+  "8": {
+    "id": "m_delivery",
+    "cell": [
+      27,
+      21
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Livraison en personne",
+      "Folamour — Personal delivery"
+    ],
+    "text": [
+      "« Le colis adressé est pour moi. Après tous ces détours, nous pouvons au moins nous épargner un guichet supplémentaire. »",
+      "“The addressed parcel is for me. After all those detours, we can at least spare ourselves another counter.”"
+    ],
+    "action": [
+      "Remettre le colis à Folamour",
+      "Hand Folamour the parcel"
+    ],
+    "objective": [
+      "Parler à Folamour [101] : réception est du courrier.",
+      "Speak to Folamour [101]: eastern mail reception."
+    ],
+    "success": [
+      "Folamour reçoit le colis. Mission terminée.",
+      "Folamour receives the parcel. Mission complete."
+    ]
+  },
+  "9": {
+    "id": "r_final",
+    "cell": [
+      21,
+      21
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Le président attend",
+      "Folamour — The chair is waiting"
+    ],
+    "text": [
+      "« Le placement, le planning et la conférence sont-ils prêts ? Annoncez-le-moi. Je déclarerai alors cette réunion suffisamment préparée pour commencer à la retarder. »",
+      "“Are the seating, schedule and conference ready? Tell me. I will declare this meeting sufficiently prepared to start delaying it.”"
+    ],
+    "action": [
+      "Annoncer la réunion à Folamour",
+      "Tell Folamour the meeting is ready"
+    ],
+    "objective": [
+      "Parler à Folamour [105] : présidence de la salle centrale.",
+      "Speak to Folamour [105]: the chair’s place in the central room."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "10": {
+    "id": "a_final",
+    "cell": [
+      21,
+      19
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Le dossier MIROIR",
+      "Folamour — The MIRROR file"
+    ],
+    "text": [
+      "« Apportez le sceau des archives. Nous ouvrirons ensemble le dossier MIROIR, après les trois validations. Votre nom y figure. Quelle coïncidence administrative. »",
+      "“Bring the archive seal. We will open the MIRROR file together after all three checks. Your name is in it. What an administrative coincidence.”"
+    ],
+    "action": [
+      "Ouvrir le dossier avec Folamour",
+      "Open the file with Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [105] : salle du dossier MIROIR.",
+      "Speak to Folamour [105]: the MIRROR file room."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "11": {
+    "id": "c11_exit",
+    "cell": [
+      33,
+      25
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Les prototypes identifiés",
+      "Folamour — Prototypes identified"
+    ],
+    "text": [
+      "« Vérifiez les trois expériences, puis dites-moi ce que font réellement nos prototypes. Si leurs étiquettes avaient raison, nous n’aurions pas eu besoin de vous. »",
+      "“Check all three experiments, then tell me what our prototypes actually do. If their labels were right, we would not have needed you.”"
+    ],
+    "action": [
+      "Faire le bilan avec Folamour",
+      "Review the results with Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : galerie est du magasin des prototypes.",
+      "Speak to Folamour [900]: the prototype store’s eastern gallery."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "12": {
+    "id": "c12_exit",
+    "cell": [
+      33,
+      33
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — L’incident annulé",
+      "Folamour — Incident cancelled"
+    ],
+    "text": [
+      "« Les trois validations, puis votre rapport. Un incident futur annulé reste un excellent résultat, même s’il devient difficile à photographier. »",
+      "“All three validations, then your report. A cancelled future incident remains an excellent result, even if it becomes difficult to photograph.”"
+    ],
+    "action": [
+      "Faire le bilan avec Folamour",
+      "Review the results with Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : angle sud-est du bureau des incidents.",
+      "Speak to Folamour [900]: the incident office’s southeastern corner."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "13": {
+    "id": "c13_exit",
+    "cell": [
+      13,
+      33
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Qui surveille le docteur ?",
+      "Folamour — Who watches the doctor?"
+    ],
+    "text": [
+      "« Après les trois vérifications, expliquez-moi qui circulait avec ma blouse. Je préfère que le système distingue les intrus de son employeur. »",
+      "“After the three checks, tell me who was walking around in my coat. I prefer the system to distinguish intruders from its employer.”"
+    ],
+    "action": [
+      "Faire le bilan avec Folamour",
+      "Review the results with Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : galerie sud de la centrale de surveillance.",
+      "Speak to Folamour [900]: the surveillance centre’s southern gallery."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "14": {
+    "id": "c14_exit",
+    "cell": [
+      33,
+      33
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Une crise simulée suffit",
+      "Folamour — One simulated crisis is enough"
+    ],
+    "text": [
+      "« Terminez les trois essais, puis venez confirmer que la crise était simulée. Le service technique commence à trouver cette précision assez importante. »",
+      "“Finish the three trials, then confirm that the crisis was simulated. The maintenance department is beginning to find that distinction rather important.”"
+    ],
+    "action": [
+      "Faire le bilan avec Folamour",
+      "Review the results with Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : poste sud-est du simulateur de crise.",
+      "Speak to Folamour [900]: the crisis simulator’s southeastern station."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "15": {
+    "id": "c15_exit",
+    "cell": [
+      29,
+      33
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Le conseil peut délibérer",
+      "Folamour — The council can deliberate"
+    ],
+    "text": [
+      "« Apportez les trois validations au bilan. Mes collègues attendent des éléments solides pour décider unanimement de reporter leur décision. »",
+      "“Bring all three validations to the review. My colleagues await solid evidence so they can unanimously postpone their decision.”"
+    ],
+    "action": [
+      "Présenter le bilan à Folamour",
+      "Present the results to Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : galerie sud du conseil de prévention.",
+      "Speak to Folamour [900]: the prevention council’s southern gallery."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "16": {
+    "id": "c16_exit",
+    "cell": [
+      33,
+      25
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Bienvenue dans la certitude",
+      "Folamour — Welcome to certainty"
+    ],
+    "text": [
+      "« Terminez les trois contrôles de régularisation, puis revenez me parler. Ici, même les arrivées imprévues sont prévues par formulaire. »",
+      "“Complete the three regularization checks, then come speak to me. Here, even unexpected arrivals are anticipated by a form.”"
+    ],
+    "action": [
+      "Faire le bilan avec Folamour",
+      "Review the results with Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : sortie est de la régularisation.",
+      "Speak to Folamour [900]: the eastern regularization landing."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "17": {
+    "id": "c17_exit",
+    "cell": [
+      33,
+      23
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Une journée normale",
+      "Folamour — A normal day"
+    ],
+    "text": [
+      "« Les trois validations du quartier, s’il vous plaît. Nous devons déterminer si cette journée a respecté sa description officielle. »",
+      "“The district’s three validations, please. We must establish whether this day has followed its official description.”"
+    ],
+    "action": [
+      "Faire le bilan avec Folamour",
+      "Review the results with Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : galerie est du quartier.",
+      "Speak to Folamour [900]: the district’s eastern gallery."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "18": {
+    "id": "c18_exit",
+    "cell": [
+      17,
+      19
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Les preuves sous surveillance",
+      "Folamour — Evidence under surveillance"
+    ],
+    "text": [
+      "« Après les trois contrôles, expliquez-moi ce que les images prouvent vraiment. Évitez simplement de les laisser témoigner toutes à la fois. »",
+      "“After the three checks, explain what the images really prove. Just avoid letting them all testify at once.”"
+    ],
+    "action": [
+      "Discuter des preuves avec Folamour",
+      "Discuss the evidence with Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : salle centrale des preuves.",
+      "Speak to Folamour [900]: the central evidence room."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "19": {
+    "id": "c19_exit",
+    "cell": [
+      33,
+      19
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Le rendement du contrôle",
+      "Folamour — The efficiency of control"
+    ],
+    "text": [
+      "« Faites valider les trois expériences, puis présentez votre bilan. Si la machine consomme son propre rendement, nous appellerons cela de l’autonomie. »",
+      "“Validate the three experiments, then present your results. If the machine consumes its own output, we will call that autonomy.”"
+    ],
+    "action": [
+      "Faire le bilan avec Folamour",
+      "Review the results with Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : galerie est des machines.",
+      "Speak to Folamour [900]: the eastern machinery gallery."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "20": {
+    "id": "c20_exit",
+    "cell": [
+      17,
+      3
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — La certitude et ses limites",
+      "Folamour — Certainty and its limits"
+    ],
+    "text": [
+      "« Les trois vérifications sont nécessaires. Venez ensuite discuter de ce que MIROIR sait… et de ce qu’il se contente de répéter. »",
+      "“All three checks are required. Then come discuss what MIRROR knows… and what it merely repeats.”"
+    ],
+    "action": [
+      "Confronter le bilan avec Folamour",
+      "Discuss the findings with Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : salle nord de MIROIR.",
+      "Speak to Folamour [900]: MIRROR’s northern room."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "21": {
+    "id": "c21_exit",
+    "cell": [
+      33,
+      29
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Les petites précautions",
+      "Folamour — Small precautions"
+    ],
+    "text": [
+      "« Les trois validations des silos, puis votre rapport. Vous conviendrez que nos précautions sont restées tout à fait modestes à l’échelle astronomique. »",
+      "“The three silo validations, then your report. You must admit our precautions remain quite modest on an astronomical scale.”"
+    ],
+    "action": [
+      "Faire le bilan avec Folamour",
+      "Review the results with Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : galerie est près de la capsule de retour.",
+      "Speak to Folamour [900]: the eastern gallery by the return capsule."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "22": {
+    "id": "c22_exit",
+    "cell": [
+      21,
+      15
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — La menace en question",
+      "Folamour — Questioning the threat"
+    ],
+    "text": [
+      "« Une fois les trois analyses terminées, dites-moi d’où vient la menace. Et si toutes les preuves se citent entre elles, demandez qui a commencé. »",
+      "“Once the three analyses are complete, tell me where the threat comes from. If all the sources cite each other, ask who started it.”"
+    ],
+    "action": [
+      "Discuter des preuves avec Folamour",
+      "Discuss the evidence with Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : salle intérieure de l’observatoire.",
+      "Speak to Folamour [900]: the observatory’s inner room."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "23": {
+    "id": "c23_exit",
+    "cell": [
+      29,
+      31
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Le droit de refuser",
+      "Folamour — The right to refuse"
+    ],
+    "text": [
+      "« Terminez les trois validations du conseil, puis venez me parler. À moi, l’original. Les copies ont déjà suffisamment monopolisé la discussion. »",
+      "“Complete the council’s three validations, then speak to me. The original. The copies have monopolized the discussion enough.”"
+    ],
+    "action": [
+      "Parler au véritable Folamour",
+      "Speak to the original Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : salle sud-est du conseil.",
+      "Speak to Folamour [900]: the southeastern council room."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "24": {
+    "id": "c24_exit",
+    "cell": [
+      5,
+      27
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Le calme après HORIZON",
+      "Folamour — Quiet after HORIZON"
+    ],
+    "text": [
+      "« Confirmez les trois étapes d’arrêt, puis dites-moi que tout est immobile. Pour une fois, je considérerai l’absence de lancement comme un résultat. »",
+      "“Confirm all three shutdown stages, then tell me everything is still. For once, I will consider the absence of a launch a result.”"
+    ],
+    "action": [
+      "Confirmer l’arrêt à Folamour",
+      "Confirm the shutdown to Folamour"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : zone sud-ouest d’évacuation.",
+      "Speak to Folamour [900]: the southwestern evacuation area."
+    ],
+    "success": [
+      "Folamour a reçu votre rapport. Mission terminée.",
+      "Folamour has received your report. Mission complete."
+    ]
+  },
+  "25": {
+    "id": "c25_exit",
+    "cell": [
+      17,
+      28
+    ],
+    "presentation": "folamour",
+    "title": [
+      "Folamour — Un avenir légèrement incertain",
+      "Folamour — A slightly uncertain future"
+    ],
+    "text": [
+      "« Avant de sortir, examinons les faits et ce qu’ils nous permettent vraiment de conclure. Ensuite, peut-être pourrons-nous accepter un avenir sans formulaire. »",
+      "“Before leaving, let us examine the facts and what they really allow us to conclude. Then perhaps we can accept a future without a form.”"
+    ],
+    "action": [
+      "Proposer à Folamour de sortir",
+      "Invite Folamour to leave"
+    ],
+    "objective": [
+      "Parler à Folamour [900] : petit bureau, auprès de la table du dialogue.",
+      "Speak to Folamour [900]: the small office, beside the dialogue desk."
+    ],
+    "success": [
+      "Folamour accepte de sortir avec vous.",
+      "Folamour agrees to leave with you."
+    ]
+  }
+}

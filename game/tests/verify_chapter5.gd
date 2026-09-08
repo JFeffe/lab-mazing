@@ -51,6 +51,8 @@ func run():
 		game.player.position=Vector3(game.start_cell.x*game.TILE,.1,game.start_cell.y*game.TILE)
 		for step in JSON.parse_string(FileAccess.get_file_as_string("res://tests/route_level%d.json"%number)):
 			var e=event(step.id)
+			# The final invitation now happens beside the conversation desk.
+			if number==25 and e.kind=="exit":step.route=[e.cell]
 			for cell in step.route:
 				var target=Vector3(cell[0]*game.TILE,0,cell[1]*game.TILE);var frames=0
 				while Vector2(game.player.position.x-target.x,game.player.position.z-target.z).length()>.08:
@@ -93,7 +95,7 @@ func run():
 						await action(99);check(not controls.solved(game,e),"Editing must invalidate simulation")
 						game.puzzle_states[e.id]=solved_state;game.show_puzzle(e)
 					await press("Valider l’essai")
-				elif e.kind=="exit":await press("Terminer la mission")
+				elif e.kind=="exit":await press(e.action)
 			check(game.done.has(e.id),"Failed action "+e.id)
 			if e.kind!="exit":game.close_modal()
 			print("CHAPTER5 ROUTE ",e.id," PASS")

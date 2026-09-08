@@ -5,8 +5,6 @@ static func model(g,root,e,gold,dark):
 		var dial=g.box(root,Vector3(.4,.3,.4),Vector3((i-1)*.58,1.02,0),gold);dial.name="Dial%d"%i
 	g.box(root,Vector3(1.8,.08,.2),Vector3(0,.9,-.5),gold)
 static func setup(g):
-	g.folamour=g.make_folamour(g.world)
-	g.folamour.position=Vector3(g.start_cell.x*g.TILE,0,(g.start_cell.y-2)*g.TILE)
 	for e in g.events:
 		for i in range(e.get("world_gates",[]).size()):
 			var gate=e.world_gates[i];var node=Node3D.new();node.name="Access%d"%i

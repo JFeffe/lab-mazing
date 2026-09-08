@@ -35,6 +35,9 @@ func _draw():
 		if game.done.has(e.id): col=Color("538975")
 		if e.kind=="exit": col=Color.WHITE
 		draw_circle(offset+(Vector2(e.cell[0],e.cell[1])+Vector2.ONE*0.5)*cell,max(2,cell*0.28),col)
+		if game.LevelEndings.is_doctor(e):
+			var point=offset+(Vector2(e.cell[0],e.cell[1])+Vector2.ONE*0.5)*cell
+			draw_string(get_theme_default_font(),point+Vector2(-4,4),"F",HORIZONTAL_ALIGNMENT_LEFT,-1,12,Color("152631"))
 		if e.kind=="oneway":
 			var c=offset+(Vector2(e.cell[0],e.cell[1])+Vector2.ONE*0.5)*cell
 			var d=Vector2(e.direction[0],e.direction[1])*max(4,cell*0.45)

@@ -27,8 +27,6 @@ static func rocket(g,cell,title):
 	for x in [-1.2,1.2]:g.box(root,Vector3(.16,10,.2),Vector3(x,5,.4),dark)
 	sign_on(g,root,title,12.5);return root
 static func setup(g):
-	g.folamour=g.make_folamour(g.world)
-	g.folamour.position=Vector3(17*g.TILE,0,28*g.TILE) if g.level==25 else Vector3(g.start_cell.x*g.TILE,0,(g.start_cell.y-1)*g.TILE)
 	for e in g.events:
 		for i in range(e.get("world_gates",[]).size()):
 			var gate=e.world_gates[i];var node=prop(g,Vector2i(gate.cell[0],gate.cell[1]));node.name="FinaleAccess%d"%i

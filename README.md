@@ -1,6 +1,6 @@
 # Lab-mazing — Le Labyrinthe de Folamour
 
-Version 0.19.1 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
+Version 0.20 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
 
 Jouer dans le navigateur : https://jfeffe.github.io/lab-mazing/
 
@@ -11,6 +11,14 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Générer les ambiances originales avec `python3 scripts/compose_finale_audio.py`, puis ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Fins de niveau v0.20
+
+Les 25 points de fin ont été audités. Les niveaux 1–2 gardent leurs vrais seuils ; les sorties 3–4 sont fixées au mur. Dans les niveaux 5–25, parler à Folamour remplace la porte artificielle, avec une remise d’objet ou un bilan adapté à la mission. Au niveau 25, le docteur reste auprès du bureau du dialogue final.
+
+Les objectifs, le bouton **Parler**, les repères **F** sur la carte et les conversations existent en français et en anglais. Les énigmes, objets requis et identifiants de sauvegarde sont conservés.
+
+La présentation canonique des fins se trouve dans `game/data/endings.json`, appliquée aux données générées par `LevelEndings.gd`. Elle n’est pas écrasée par les générateurs de labyrinthes. [Audit des 25 fins](docs/endings-audit-v020.md).
 
 ## Ajustements v0.19.1
 

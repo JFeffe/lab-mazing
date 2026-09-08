@@ -32,7 +32,10 @@ static func objective(game):
 		var complete=true
 		for id in stage[0]:
 			if not game.done.has(id):complete=false
-		if not complete:return translated(game,game.guidance_data.objectives[stage[1]])
+		if not complete:
+			for e in game.events:
+				if e.id==stage[1] and game.LevelEndings.is_doctor(e):return game.loc(e.objective)
+			return translated(game,game.guidance_data.objectives[stage[1]])
 	return game.loc("Rejoignez la sortie du niveau pour valider votre réussite.")
 
 static func is_challenge(e):
