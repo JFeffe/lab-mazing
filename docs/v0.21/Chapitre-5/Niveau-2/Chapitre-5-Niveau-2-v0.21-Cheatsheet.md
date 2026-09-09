@@ -18,7 +18,7 @@ La collection suit la sauvegarde de cette aventure. Dans le dossier, rejouer un 
 
 ## Plan exact du labyrinthe
 
-[Cartes PNG/PDF et guides du chapitre dans Drive](https://drive.google.com/drive/folders/1IjoAFrSGu9G-0xYGWxEcjmuhLkoK0zge)
+Les cartes PNG/PDF accompagnent ce guide dans le ZIP complet remis avec la version 0.21.
 
 Pour lire les petits repères, utiliser le PNG en pleine résolution ou le PDF A3 séparé. Les coordonnées désignent les cases du labyrinthe ; le nord est en haut.
 
