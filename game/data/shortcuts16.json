@@ -16,7 +16,9 @@
         21
       ]
     ],
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "original_detour_steps": 86,
+    "fully_open_saved_steps": 16
   },
   {
     "id": "C12",
@@ -35,7 +37,9 @@
         21
       ]
     ],
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "original_detour_steps": 86,
+    "fully_open_saved_steps": 16
   },
   {
     "id": "C13",
@@ -54,7 +58,9 @@
         17
       ]
     ],
-    "minimum_saved_steps": 76
+    "minimum_saved_steps": 44,
+    "original_detour_steps": 78,
+    "fully_open_saved_steps": 44
   },
   {
     "id": "C14",
@@ -73,6 +79,104 @@
         21
       ]
     ],
-    "minimum_saved_steps": 24
+    "minimum_saved_steps": 24,
+    "original_detour_steps": 78,
+    "fully_open_saved_steps": 24
+  },
+  {
+    "cell": [
+      24,
+      33
+    ],
+    "sides": [
+      [
+        25,
+        33
+      ],
+      [
+        23,
+        33
+      ]
+    ],
+    "axis": "x",
+    "id": "B1",
+    "original_detour_steps": 66,
+    "minimum_saved_steps": 60,
+    "fully_open_saved_steps": 60,
+    "return_example": {
+      "origin": "c16_n6",
+      "target": "c16_p2",
+      "origin_ref": "402",
+      "target_ref": "303",
+      "origin_title": "Consigne 402",
+      "target_title": "La personne qui n’est pas arrivée",
+      "before": 88,
+      "after": 52,
+      "saved": 36
+    }
+  },
+  {
+    "cell": [
+      13,
+      26
+    ],
+    "sides": [
+      [
+        13,
+        25
+      ],
+      [
+        13,
+        27
+      ]
+    ],
+    "axis": "y",
+    "id": "B2",
+    "original_detour_steps": 34,
+    "minimum_saved_steps": 32,
+    "fully_open_saved_steps": 32,
+    "return_example": {
+      "origin": "c16_secret2",
+      "target": "c16_p3",
+      "origin_ref": "502",
+      "target_ref": "403",
+      "origin_title": "Note confidentielle 2",
+      "target_title": "Les tubes de régularisation",
+      "before": 58,
+      "after": 34,
+      "saved": 24
+    }
+  },
+  {
+    "cell": [
+      22,
+      25
+    ],
+    "sides": [
+      [
+        23,
+        25
+      ],
+      [
+        21,
+        25
+      ]
+    ],
+    "axis": "x",
+    "id": "B3",
+    "original_detour_steps": 34,
+    "minimum_saved_steps": 32,
+    "fully_open_saved_steps": 32,
+    "return_example": {
+      "origin": "c16_n4",
+      "target": "c16_p3",
+      "origin_ref": "302",
+      "target_ref": "403",
+      "origin_title": "Consigne 302",
+      "target_title": "Les tubes de régularisation",
+      "before": 42,
+      "after": 22,
+      "saved": 20
+    }
   }
 ]

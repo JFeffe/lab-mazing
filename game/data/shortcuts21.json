@@ -16,7 +16,9 @@
         5
       ]
     ],
-    "minimum_saved_steps": 24
+    "minimum_saved_steps": 24,
+    "original_detour_steps": 62,
+    "fully_open_saved_steps": 24
   },
   {
     "id": "C62",
@@ -35,7 +37,9 @@
         9
       ]
     ],
-    "minimum_saved_steps": 56
+    "minimum_saved_steps": 56,
+    "original_detour_steps": 58,
+    "fully_open_saved_steps": 56
   },
   {
     "id": "C63",
@@ -54,7 +58,9 @@
         5
       ]
     ],
-    "minimum_saved_steps": 24
+    "minimum_saved_steps": 24,
+    "original_detour_steps": 54,
+    "fully_open_saved_steps": 24
   },
   {
     "id": "C64",
@@ -73,6 +79,72 @@
         27
       ]
     ],
-    "minimum_saved_steps": 48
+    "minimum_saved_steps": 20,
+    "original_detour_steps": 50,
+    "fully_open_saved_steps": 20
+  },
+  {
+    "cell": [
+      23,
+      30
+    ],
+    "sides": [
+      [
+        23,
+        29
+      ],
+      [
+        23,
+        31
+      ]
+    ],
+    "axis": "y",
+    "id": "B1",
+    "original_detour_steps": 26,
+    "minimum_saved_steps": 24,
+    "fully_open_saved_steps": 24,
+    "return_example": {
+      "origin": "c21_secret3",
+      "target": "c21_p3",
+      "origin_ref": "503",
+      "target_ref": "403",
+      "origin_title": "Note confidentielle 3",
+      "target_title": "Le retour absent du formulaire",
+      "before": 34,
+      "after": 10,
+      "saved": 24
+    }
+  },
+  {
+    "cell": [
+      24,
+      19
+    ],
+    "sides": [
+      [
+        25,
+        19
+      ],
+      [
+        23,
+        19
+      ]
+    ],
+    "axis": "x",
+    "id": "B2",
+    "original_detour_steps": 50,
+    "minimum_saved_steps": 20,
+    "fully_open_saved_steps": 20,
+    "return_example": {
+      "origin": "c21_n5",
+      "target": "c21_p2",
+      "origin_ref": "401",
+      "target_ref": "303",
+      "origin_title": "Consigne 401",
+      "target_title": "Le poids de la paperasse",
+      "before": 52,
+      "after": 32,
+      "saved": 20
+    }
   }
 ]

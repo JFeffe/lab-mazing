@@ -41,6 +41,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          python3 game/tests/validate_return_links.py
           python3 game/tests/validate_collectibles.py
           python3 game/tests/validate_level3.py
           python3 game/tests/validate_level4.py
@@ -54,7 +55,7 @@ jobs:
           python3 game/tests/validate_chapter4.py
           python3 game/tests/validate_chapter5.py
           python3 game/tests/validate_shortcuts.py
-          for test in verify_subject16 verify_endings verify_map_navigation verify_v03 verify_level2 verify_level3 verify_level4 verify_level5 verify_level6 verify_level7 verify_level8 verify_level9 verify_level10 verify_chapter3 verify_chapter4 verify_certainty_states verify_chapter5 verify_finale_states verify_comfort verify_localization verify_shortcuts verify_chapter_polish verify_mobile_performance verify_audio_transitions; do
+          for test in verify_return_saves verify_interaction_approaches verify_click verify_subject16 verify_endings verify_map_navigation verify_v03 verify_level2 verify_level3 verify_level4 verify_level5 verify_level6 verify_level7 verify_level8 verify_level9 verify_level10 verify_chapter3 verify_chapter4 verify_certainty_states verify_chapter5 verify_finale_states verify_comfort verify_localization verify_shortcuts verify_chapter_polish verify_mobile_performance verify_audio_transitions; do
             XDG_DATA_HOME="$RUNNER_TEMP/lab-$test" /tmp/godot/Godot_v4.5.1-stable_linux.x86_64 --headless --path game --fixed-fps 60 --script "res://tests/$test.gd" 2>&1 | tee "$RUNNER_TEMP/$test.log"
             if grep -E "SCRIPT ERROR:|^ERROR:" "$RUNNER_TEMP/$test.log"; then exit 1; fi
           done

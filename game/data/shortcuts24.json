@@ -16,7 +16,9 @@
         23
       ]
     ],
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "original_detour_steps": 82,
+    "fully_open_saved_steps": 20
   },
   {
     "id": "C92",
@@ -35,7 +37,9 @@
         7
       ]
     ],
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "original_detour_steps": 78,
+    "fully_open_saved_steps": 16
   },
   {
     "id": "C93",
@@ -54,7 +58,9 @@
         13
       ]
     ],
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "original_detour_steps": 66,
+    "fully_open_saved_steps": 16
   },
   {
     "id": "C94",
@@ -73,6 +79,72 @@
         25
       ]
     ],
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "original_detour_steps": 62,
+    "fully_open_saved_steps": 20
+  },
+  {
+    "cell": [
+      23,
+      30
+    ],
+    "sides": [
+      [
+        23,
+        29
+      ],
+      [
+        23,
+        31
+      ]
+    ],
+    "axis": "y",
+    "id": "B1",
+    "original_detour_steps": 50,
+    "minimum_saved_steps": 48,
+    "fully_open_saved_steps": 48,
+    "return_example": {
+      "origin": "c24_n6",
+      "target": "c24_p3",
+      "origin_ref": "402",
+      "target_ref": "403",
+      "origin_title": "Consigne 402",
+      "target_title": "Deux destinations, aucun départ",
+      "before": 66,
+      "after": 34,
+      "saved": 32
+    }
+  },
+  {
+    "cell": [
+      26,
+      1
+    ],
+    "sides": [
+      [
+        27,
+        1
+      ],
+      [
+        25,
+        1
+      ]
+    ],
+    "axis": "x",
+    "id": "B2",
+    "original_detour_steps": 50,
+    "minimum_saved_steps": 48,
+    "fully_open_saved_steps": 48,
+    "return_example": {
+      "origin": "c24_secret2",
+      "target": "c24_p2",
+      "origin_ref": "502",
+      "target_ref": "303",
+      "origin_title": "Note confidentielle 2",
+      "target_title": "Le secours du secours",
+      "before": 54,
+      "after": 26,
+      "saved": 28
+    }
   }
 ]

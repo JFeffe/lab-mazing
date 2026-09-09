@@ -24,7 +24,7 @@ for n in range(16,21):
  m,E,S=[read(D/f'{k}{n}.json') for k in ['maze','events','shortcuts']];by={e['id']:e for e in E}
  F={(x,y) for y,row in enumerate(m['grid']) for x,v in enumerate(row) if v};start=tuple(m['start']);prefix=f'c{n}_'
  assert len(by)==len(E)==len({tuple(e['cell']) for e in E})==(20 if n<=18 else 17)
- assert sum(e.get('secret',False) for e in E)==3 and len(S)==(0 if n==18 else 4)
+ assert sum(e.get('secret',False) for e in E)==3 and (len(S)==0 if n==18 else len(S)>=4)
  assert all(tuple(e['cell']) in F for e in E)
  for stage in range(3):
   locked={tuple(e['cell']) for e in E if e['kind']=='exit' or e['kind']=='door' and int(e['id'][-1])>stage}

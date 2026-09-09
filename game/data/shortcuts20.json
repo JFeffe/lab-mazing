@@ -16,7 +16,9 @@
         25
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 58,
+    "fully_open_saved_steps": 12
   },
   {
     "id": "C52",
@@ -35,7 +37,9 @@
         29
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 46,
+    "fully_open_saved_steps": 12
   },
   {
     "id": "C53",
@@ -54,7 +58,9 @@
         5
       ]
     ],
-    "minimum_saved_steps": 40
+    "minimum_saved_steps": 40,
+    "original_detour_steps": 42,
+    "fully_open_saved_steps": 40
   },
   {
     "id": "C54",
@@ -73,6 +79,8 @@
         3
       ]
     ],
-    "minimum_saved_steps": 40
+    "minimum_saved_steps": 40,
+    "original_detour_steps": 42,
+    "fully_open_saved_steps": 40
   }
 ]

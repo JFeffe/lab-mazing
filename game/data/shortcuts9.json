@@ -17,7 +17,8 @@
     "axis": "x",
     "original_detour_steps": 18,
     "id": "R1",
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "fully_open_saved_steps": 16
   },
   {
     "cell": [
@@ -37,7 +38,8 @@
     "axis": "y",
     "original_detour_steps": 32,
     "id": "R2",
-    "minimum_saved_steps": 30
+    "minimum_saved_steps": 30,
+    "fully_open_saved_steps": 30
   },
   {
     "cell": [
@@ -57,7 +59,8 @@
     "axis": "x",
     "original_detour_steps": 30,
     "id": "R3",
-    "minimum_saved_steps": 28
+    "minimum_saved_steps": 28,
+    "fully_open_saved_steps": 28
   },
   {
     "cell": [
@@ -77,7 +80,8 @@
     "axis": "x",
     "original_detour_steps": 46,
     "id": "R4",
-    "minimum_saved_steps": 44
+    "minimum_saved_steps": 44,
+    "fully_open_saved_steps": 44
   },
   {
     "cell": [
@@ -97,7 +101,8 @@
     "axis": "y",
     "original_detour_steps": 22,
     "id": "R5",
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "fully_open_saved_steps": 20
   },
   {
     "cell": [
@@ -117,6 +122,7 @@
     "axis": "x",
     "original_detour_steps": 18,
     "id": "R6",
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "fully_open_saved_steps": 16
   }
 ]

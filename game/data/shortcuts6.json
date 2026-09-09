@@ -17,7 +17,8 @@
     "axis": "x",
     "original_detour_steps": 18,
     "id": "G1",
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "fully_open_saved_steps": 16
   },
   {
     "cell": [
@@ -37,7 +38,8 @@
     "axis": "x",
     "original_detour_steps": 58,
     "id": "G2",
-    "minimum_saved_steps": 56
+    "minimum_saved_steps": 56,
+    "fully_open_saved_steps": 56
   },
   {
     "cell": [
@@ -57,7 +59,8 @@
     "axis": "y",
     "original_detour_steps": 14,
     "id": "G3",
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "fully_open_saved_steps": 12
   },
   {
     "cell": [
@@ -77,7 +80,8 @@
     "axis": "x",
     "original_detour_steps": 118,
     "id": "G4",
-    "minimum_saved_steps": 104
+    "minimum_saved_steps": 44,
+    "fully_open_saved_steps": 44
   },
   {
     "cell": [
@@ -97,7 +101,8 @@
     "axis": "y",
     "original_detour_steps": 14,
     "id": "G5",
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "fully_open_saved_steps": 12
   },
   {
     "cell": [
@@ -117,6 +122,103 @@
     "axis": "y",
     "original_detour_steps": 18,
     "id": "G6",
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "fully_open_saved_steps": 16
+  },
+  {
+    "cell": [
+      12,
+      3
+    ],
+    "sides": [
+      [
+        13,
+        3
+      ],
+      [
+        11,
+        3
+      ]
+    ],
+    "axis": "x",
+    "id": "B1",
+    "original_detour_steps": 70,
+    "minimum_saved_steps": 68,
+    "fully_open_saved_steps": 68,
+    "return_example": {
+      "origin": "g_pipe_tip",
+      "target": "g_blend",
+      "origin_ref": "204",
+      "target_ref": "205",
+      "origin_title": "Annotation du plombier",
+      "target_title": "Mélangeur aromatique",
+      "before": 72,
+      "after": 10,
+      "saved": 62
+    }
+  },
+  {
+    "cell": [
+      14,
+      2
+    ],
+    "sides": [
+      [
+        15,
+        2
+      ],
+      [
+        13,
+        2
+      ]
+    ],
+    "axis": "x",
+    "id": "B2",
+    "original_detour_steps": 32,
+    "minimum_saved_steps": 30,
+    "fully_open_saved_steps": 30,
+    "return_example": {
+      "origin": "g_pipe_tip",
+      "target": "g_blend",
+      "origin_ref": "204",
+      "target_ref": "205",
+      "origin_title": "Annotation du plombier",
+      "target_title": "Mélangeur aromatique",
+      "before": 32,
+      "after": 10,
+      "saved": 22
+    }
+  },
+  {
+    "cell": [
+      11,
+      20
+    ],
+    "sides": [
+      [
+        11,
+        19
+      ],
+      [
+        11,
+        21
+      ]
+    ],
+    "axis": "y",
+    "id": "B3",
+    "original_detour_steps": 82,
+    "minimum_saved_steps": 44,
+    "fully_open_saved_steps": 44,
+    "return_example": {
+      "origin": "g_coupling",
+      "target": "g_irrigation",
+      "origin_ref": "202",
+      "target_ref": "203",
+      "origin_title": "Raccord étanche",
+      "target_title": "Circuit d’irrigation",
+      "before": 50,
+      "after": 30,
+      "saved": 20
+    }
   }
 ]

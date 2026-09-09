@@ -16,7 +16,9 @@
         5
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 134,
+    "fully_open_saved_steps": 12
   },
   {
     "id": "P32",
@@ -35,7 +37,9 @@
         5
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 134,
+    "fully_open_saved_steps": 12
   },
   {
     "id": "P33",
@@ -54,7 +58,9 @@
         5
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 122,
+    "fully_open_saved_steps": 12
   },
   {
     "id": "P34",
@@ -73,6 +79,40 @@
         9
       ]
     ],
-    "minimum_saved_steps": 24
+    "minimum_saved_steps": 24,
+    "original_detour_steps": 102,
+    "fully_open_saved_steps": 24
+  },
+  {
+    "cell": [
+      14,
+      27
+    ],
+    "sides": [
+      [
+        15,
+        27
+      ],
+      [
+        13,
+        27
+      ]
+    ],
+    "axis": "x",
+    "id": "B1",
+    "original_detour_steps": 42,
+    "minimum_saved_steps": 40,
+    "fully_open_saved_steps": 40,
+    "return_example": {
+      "origin": "c13_n4",
+      "target": "c13_p3",
+      "origin_ref": "302",
+      "target_ref": "403",
+      "origin_title": "Filigrane MIROIR",
+      "target_title": "Réhabilitation du visiteur",
+      "before": 60,
+      "after": 32,
+      "saved": 28
+    }
   }
 ]

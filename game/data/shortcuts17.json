@@ -16,7 +16,9 @@
         19
       ]
     ],
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "original_detour_steps": 74,
+    "fully_open_saved_steps": 20
   },
   {
     "id": "C22",
@@ -35,7 +37,9 @@
         25
       ]
     ],
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "original_detour_steps": 62,
+    "fully_open_saved_steps": 20
   },
   {
     "id": "C23",
@@ -54,7 +58,9 @@
         7
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 58,
+    "fully_open_saved_steps": 12
   },
   {
     "id": "C24",
@@ -73,6 +79,104 @@
         7
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 54,
+    "fully_open_saved_steps": 12
+  },
+  {
+    "cell": [
+      19,
+      2
+    ],
+    "sides": [
+      [
+        19,
+        1
+      ],
+      [
+        19,
+        3
+      ]
+    ],
+    "axis": "y",
+    "id": "B1",
+    "original_detour_steps": 50,
+    "minimum_saved_steps": 38,
+    "fully_open_saved_steps": 38,
+    "return_example": {
+      "origin": "c17_n3",
+      "target": "c17_p2",
+      "origin_ref": "301",
+      "target_ref": "303",
+      "origin_title": "Consigne 301",
+      "target_title": "Le facteur qui livre hier",
+      "before": 32,
+      "after": 12,
+      "saved": 20
+    }
+  },
+  {
+    "cell": [
+      6,
+      2
+    ],
+    "sides": [
+      [
+        7,
+        2
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    "axis": "x",
+    "id": "B2",
+    "original_detour_steps": 40,
+    "minimum_saved_steps": 38,
+    "fully_open_saved_steps": 38,
+    "return_example": {
+      "origin": "c17_n1",
+      "target": "c17_p2",
+      "origin_ref": "201",
+      "target_ref": "303",
+      "origin_title": "Consigne 201",
+      "target_title": "Le facteur qui livre hier",
+      "before": 70,
+      "after": 34,
+      "saved": 36
+    }
+  },
+  {
+    "cell": [
+      26,
+      6
+    ],
+    "sides": [
+      [
+        27,
+        6
+      ],
+      [
+        25,
+        6
+      ]
+    ],
+    "axis": "x",
+    "id": "B3",
+    "original_detour_steps": 26,
+    "minimum_saved_steps": 24,
+    "fully_open_saved_steps": 24,
+    "return_example": {
+      "origin": "c17_n4",
+      "target": "c17_p2",
+      "origin_ref": "302",
+      "target_ref": "303",
+      "origin_title": "Consigne 302",
+      "target_title": "Le facteur qui livre hier",
+      "before": 40,
+      "after": 18,
+      "saved": 22
+    }
   }
 ]

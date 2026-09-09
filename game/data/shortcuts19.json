@@ -16,7 +16,9 @@
         13
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 110,
+    "fully_open_saved_steps": 12
   },
   {
     "id": "C42",
@@ -35,7 +37,9 @@
         13
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 102,
+    "fully_open_saved_steps": 12
   },
   {
     "id": "C43",
@@ -54,7 +58,9 @@
         15
       ]
     ],
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "original_detour_steps": 94,
+    "fully_open_saved_steps": 20
   },
   {
     "id": "C44",
@@ -73,6 +79,72 @@
         21
       ]
     ],
-    "minimum_saved_steps": 28
+    "minimum_saved_steps": 28,
+    "original_detour_steps": 86,
+    "fully_open_saved_steps": 28
+  },
+  {
+    "cell": [
+      15,
+      10
+    ],
+    "sides": [
+      [
+        15,
+        9
+      ],
+      [
+        15,
+        11
+      ]
+    ],
+    "axis": "y",
+    "id": "B1",
+    "original_detour_steps": 42,
+    "minimum_saved_steps": 40,
+    "fully_open_saved_steps": 40,
+    "return_example": {
+      "origin": "c19_n3",
+      "target": "c19_p1",
+      "origin_ref": "301",
+      "target_ref": "203",
+      "origin_title": "Consigne 301",
+      "target_title": "L’énergie compte deux fois",
+      "before": 98,
+      "after": 66,
+      "saved": 32
+    }
+  },
+  {
+    "cell": [
+      9,
+      22
+    ],
+    "sides": [
+      [
+        9,
+        21
+      ],
+      [
+        9,
+        23
+      ]
+    ],
+    "axis": "y",
+    "id": "B2",
+    "original_detour_steps": 38,
+    "minimum_saved_steps": 36,
+    "fully_open_saved_steps": 36,
+    "return_example": {
+      "origin": "c19_n4",
+      "target": "c19_p1",
+      "origin_ref": "302",
+      "target_ref": "203",
+      "origin_title": "Consigne 302",
+      "target_title": "L’énergie compte deux fois",
+      "before": 70,
+      "after": 50,
+      "saved": 20
+    }
   }
 ]

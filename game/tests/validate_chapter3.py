@@ -24,7 +24,7 @@ for n in range(11,16):
  m,E,S=[read(D/f'{k}{n}.json') for k in ['maze','events','shortcuts']];by={e['id']:e for e in E}
  F={(x,y) for y,row in enumerate(m['grid']) for x,v in enumerate(row) if v};start=tuple(m['start']);prefix=f'c{n}_'
  assert len(by)==len(E)==len({tuple(e['cell']) for e in E})==17
- assert sum(e.get('secret',False) for e in E)==3 and len(S)==4
+ assert sum(e.get('secret',False) for e in E)==3 and len(S)>=4
  assert all(tuple(e['cell']) in F for e in E)
  for stage in range(3):
   locked={tuple(e['cell']) for e in E if e['kind']=='exit' or e['kind']=='door' and int(e['id'][-1])>stage}
@@ -51,7 +51,7 @@ for n in range(11,16):
   done.add(e['id']);done.update(e.get('opens',[]));current=route[-1]
   if e['kind']=='pickup':owned.add(e['resource'])
  assert len(done)==17
- print('CHAPTER3',n,'GRAPH + ROUTE + 4 SAFE SHORTCUTS PASS')
+ print('CHAPTER3',n,'GRAPH + ROUTE +',len(S),'SAFE SHORTCUTS PASS')
 # Constraints, independently enumerated from the written notes.
 assert [v for v in permutations(range(4)) if v[0]==3 and v[3]==0 and abs(v[1]-v[3])!=1]==[(3,2,1,0)]
 assert [v for v in product(range(13),repeat=4) if sum(v)==12 and v[1]==v[0]-1 and v[2]==v[0]+1 and v[3]==v[0]]==[(3,2,4,3)]

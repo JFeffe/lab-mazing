@@ -17,7 +17,8 @@
     "axis": "y",
     "original_detour_steps": 18,
     "id": "R1",
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "fully_open_saved_steps": 16
   },
   {
     "cell": [
@@ -37,7 +38,8 @@
     "axis": "x",
     "original_detour_steps": 34,
     "id": "R2",
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "fully_open_saved_steps": 16
   },
   {
     "cell": [
@@ -57,7 +59,8 @@
     "axis": "y",
     "original_detour_steps": 14,
     "id": "R3",
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "fully_open_saved_steps": 12
   },
   {
     "cell": [
@@ -77,7 +80,8 @@
     "axis": "x",
     "original_detour_steps": 50,
     "id": "R4",
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "fully_open_saved_steps": 16
   },
   {
     "cell": [
@@ -97,7 +101,8 @@
     "axis": "x",
     "original_detour_steps": 68,
     "id": "R5",
-    "minimum_saved_steps": 66
+    "minimum_saved_steps": 34,
+    "fully_open_saved_steps": 34
   },
   {
     "cell": [
@@ -117,7 +122,8 @@
     "axis": "x",
     "original_detour_steps": 118,
     "id": "R6",
-    "minimum_saved_steps": 64
+    "minimum_saved_steps": 64,
+    "fully_open_saved_steps": 64
   },
   {
     "cell": [
@@ -137,7 +143,8 @@
     "axis": "x",
     "original_detour_steps": 46,
     "id": "R7",
-    "minimum_saved_steps": 44
+    "minimum_saved_steps": 44,
+    "fully_open_saved_steps": 44
   },
   {
     "cell": [
@@ -157,6 +164,103 @@
     "axis": "x",
     "original_detour_steps": 46,
     "id": "R8",
-    "minimum_saved_steps": 44
+    "minimum_saved_steps": 44,
+    "fully_open_saved_steps": 44
+  },
+  {
+    "cell": [
+      17,
+      10
+    ],
+    "sides": [
+      [
+        17,
+        9
+      ],
+      [
+        17,
+        11
+      ]
+    ],
+    "axis": "y",
+    "id": "B1",
+    "original_detour_steps": 54,
+    "minimum_saved_steps": 34,
+    "fully_open_saved_steps": 34,
+    "return_example": {
+      "origin": "route_sign",
+      "target": "star_vault",
+      "origin_ref": "21",
+      "target_ref": "87",
+      "origin_title": "Registre des ateliers",
+      "target_title": "Atelier optique",
+      "before": 38,
+      "after": 10,
+      "saved": 28
+    }
+  },
+  {
+    "cell": [
+      4,
+      19
+    ],
+    "sides": [
+      [
+        5,
+        19
+      ],
+      [
+        3,
+        19
+      ]
+    ],
+    "axis": "x",
+    "id": "B2",
+    "original_detour_steps": 34,
+    "minimum_saved_steps": 32,
+    "fully_open_saved_steps": 32,
+    "return_example": {
+      "origin": "maintenance_a",
+      "target": "moon_vault",
+      "origin_ref": "53",
+      "target_ref": "19",
+      "origin_title": "Maintenance — circuit primaire",
+      "target_title": "Chambre lunaire",
+      "before": 53,
+      "after": 25,
+      "saved": 28
+    }
+  },
+  {
+    "cell": [
+      16,
+      5
+    ],
+    "sides": [
+      [
+        17,
+        5
+      ],
+      [
+        15,
+        5
+      ]
+    ],
+    "axis": "x",
+    "id": "B3",
+    "original_detour_steps": 26,
+    "minimum_saved_steps": 24,
+    "fully_open_saved_steps": 24,
+    "return_example": {
+      "origin": "copper_key",
+      "target": "code03",
+      "origin_ref": "33",
+      "target_ref": "03",
+      "origin_title": "Clé de cuivre",
+      "target_title": "Accès au laboratoire",
+      "before": 33,
+      "after": 9,
+      "saved": 24
+    }
   }
 ]

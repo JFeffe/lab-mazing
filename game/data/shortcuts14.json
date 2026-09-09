@@ -16,7 +16,9 @@
         33
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 26,
+    "fully_open_saved_steps": 12
   },
   {
     "id": "P42",
@@ -35,7 +37,9 @@
         23
       ]
     ],
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "original_detour_steps": 22,
+    "fully_open_saved_steps": 20
   },
   {
     "id": "P43",
@@ -54,7 +58,9 @@
         27
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 14,
+    "fully_open_saved_steps": 12
   },
   {
     "id": "P44",
@@ -73,6 +79,8 @@
         29
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 14,
+    "fully_open_saved_steps": 12
   }
 ]

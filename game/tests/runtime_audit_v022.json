@@ -1,0 +1,182 @@
+{
+  "version": "0.22",
+  "engine": "Godot 4.5.1",
+  "runtime_tests": [
+    {
+      "test": "verify_return_saves",
+      "code": 0,
+      "errors": [],
+      "seconds": 27.4,
+      "note": "Rechecked on final permanent-station return layout."
+    },
+    {
+      "test": "verify_interaction_approaches",
+      "code": 0,
+      "seconds": 2.2,
+      "errors": []
+    },
+    {
+      "test": "verify_click",
+      "code": 0,
+      "seconds": 19.8,
+      "errors": []
+    },
+    {
+      "test": "verify_subject16",
+      "code": 0,
+      "errors": [],
+      "seconds": 11.1,
+      "note": "Rechecked on final permanent-station return layout."
+    },
+    {
+      "test": "verify_endings",
+      "code": 0,
+      "seconds": 13.2,
+      "errors": []
+    },
+    {
+      "test": "verify_map_navigation",
+      "code": 0,
+      "seconds": 2.3,
+      "errors": []
+    },
+    {
+      "test": "verify_v03",
+      "code": 0,
+      "errors": [],
+      "seconds": 13.5,
+      "note": "Rechecked on final permanent-station return layout."
+    },
+    {
+      "test": "verify_level2",
+      "code": 0,
+      "seconds": 13.6,
+      "errors": []
+    },
+    {
+      "test": "verify_level3",
+      "code": 0,
+      "seconds": 15.5,
+      "errors": []
+    },
+    {
+      "test": "verify_level4",
+      "code": 0,
+      "seconds": 14.4,
+      "errors": []
+    },
+    {
+      "test": "verify_level5",
+      "code": 0,
+      "seconds": 8.7,
+      "errors": []
+    },
+    {
+      "test": "verify_level6",
+      "code": 0,
+      "seconds": 10.7,
+      "errors": []
+    },
+    {
+      "test": "verify_level7",
+      "code": 0,
+      "seconds": 10.6,
+      "errors": []
+    },
+    {
+      "test": "verify_level8",
+      "code": 0,
+      "seconds": 9.7,
+      "errors": []
+    },
+    {
+      "test": "verify_level9",
+      "code": 0,
+      "seconds": 12.1,
+      "errors": []
+    },
+    {
+      "test": "verify_level10",
+      "code": 0,
+      "seconds": 9.2,
+      "errors": []
+    },
+    {
+      "test": "verify_chapter3",
+      "code": 0,
+      "seconds": 34.9,
+      "errors": []
+    },
+    {
+      "test": "verify_chapter4",
+      "code": 0,
+      "seconds": 33.3,
+      "errors": []
+    },
+    {
+      "test": "verify_certainty_states",
+      "code": 0,
+      "seconds": 2.6,
+      "errors": []
+    },
+    {
+      "test": "verify_chapter5",
+      "code": 0,
+      "seconds": 31.5,
+      "errors": []
+    },
+    {
+      "test": "verify_finale_states",
+      "code": 0,
+      "seconds": 5.0,
+      "errors": []
+    },
+    {
+      "test": "verify_comfort",
+      "code": 0,
+      "seconds": 10.8,
+      "errors": []
+    },
+    {
+      "test": "verify_localization",
+      "code": 0,
+      "seconds": 14.0,
+      "errors": []
+    },
+    {
+      "test": "verify_shortcuts",
+      "code": 0,
+      "errors": [],
+      "seconds": 25.9,
+      "note": "Rechecked on final permanent-station return layout."
+    },
+    {
+      "test": "verify_chapter_polish",
+      "code": 0,
+      "seconds": 5.6,
+      "errors": []
+    },
+    {
+      "test": "verify_mobile_performance",
+      "code": 0,
+      "seconds": 5.7,
+      "errors": []
+    },
+    {
+      "test": "verify_audio_transitions",
+      "code": 0,
+      "seconds": 0.6,
+      "errors": []
+    }
+  ],
+  "static_validators": 16,
+  "levels": 25,
+  "shortcuts": 155,
+  "new_shortcuts": 43,
+  "collectibles": 250,
+  "limitations": [
+    "Reference routes and targeted setups, not a single blind human playthrough.",
+    "Browser WebGL2 unavailable; physical phone performance not measured."
+  ],
+  "native_visual": "25 levels plus 390x844 and 844x390 pause/dossier captures rendered with Godot OpenGL compatibility."
+}

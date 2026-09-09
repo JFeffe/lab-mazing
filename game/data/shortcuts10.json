@@ -16,7 +16,9 @@
         3
       ]
     ],
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "original_detour_steps": 86,
+    "fully_open_saved_steps": 20
   },
   {
     "id": "A2",
@@ -35,7 +37,9 @@
         7
       ]
     ],
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "original_detour_steps": 74,
+    "fully_open_saved_steps": 20
   },
   {
     "id": "A3",
@@ -54,7 +58,9 @@
         19
       ]
     ],
-    "minimum_saved_steps": 28
+    "minimum_saved_steps": 28,
+    "original_detour_steps": 70,
+    "fully_open_saved_steps": 28
   },
   {
     "id": "A4",
@@ -73,6 +79,40 @@
         27
       ]
     ],
-    "minimum_saved_steps": 24
+    "minimum_saved_steps": 24,
+    "original_detour_steps": 26,
+    "fully_open_saved_steps": 24
+  },
+  {
+    "cell": [
+      9,
+      28
+    ],
+    "sides": [
+      [
+        9,
+        27
+      ],
+      [
+        9,
+        29
+      ]
+    ],
+    "axis": "y",
+    "id": "B1",
+    "original_detour_steps": 50,
+    "minimum_saved_steps": 48,
+    "fully_open_saved_steps": 48,
+    "return_example": {
+      "origin": "a_secret1",
+      "target": "a_reports",
+      "origin_ref": "305",
+      "target_ref": "303",
+      "origin_title": "Archive confidentielle 305",
+      "target_title": "Lecteur de rapports",
+      "before": 64,
+      "after": 20,
+      "saved": 44
+    }
   }
 ]

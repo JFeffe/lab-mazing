@@ -16,7 +16,9 @@
         1
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 54,
+    "fully_open_saved_steps": 12
   },
   {
     "id": "C82",
@@ -35,7 +37,9 @@
         1
       ]
     ],
-    "minimum_saved_steps": 52
+    "minimum_saved_steps": 52,
+    "original_detour_steps": 54,
+    "fully_open_saved_steps": 52
   },
   {
     "id": "C83",
@@ -54,7 +58,9 @@
         23
       ]
     ],
-    "minimum_saved_steps": 52
+    "minimum_saved_steps": 20,
+    "original_detour_steps": 54,
+    "fully_open_saved_steps": 20
   },
   {
     "id": "C84",
@@ -73,6 +79,72 @@
         7
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 42,
+    "fully_open_saved_steps": 12
+  },
+  {
+    "cell": [
+      24,
+      23
+    ],
+    "sides": [
+      [
+        25,
+        23
+      ],
+      [
+        23,
+        23
+      ]
+    ],
+    "axis": "x",
+    "id": "B1",
+    "original_detour_steps": 34,
+    "minimum_saved_steps": 32,
+    "fully_open_saved_steps": 32,
+    "return_example": {
+      "origin": "c23_n5",
+      "target": "c23_p3",
+      "origin_ref": "401",
+      "target_ref": "403",
+      "origin_title": "Consigne 401",
+      "target_title": "Une permission de dire non",
+      "before": 30,
+      "after": 10,
+      "saved": 20
+    }
+  },
+  {
+    "cell": [
+      7,
+      28
+    ],
+    "sides": [
+      [
+        7,
+        27
+      ],
+      [
+        7,
+        29
+      ]
+    ],
+    "axis": "y",
+    "id": "B2",
+    "original_detour_steps": 38,
+    "minimum_saved_steps": 20,
+    "fully_open_saved_steps": 20,
+    "return_example": {
+      "origin": "c23_secret2",
+      "target": "c23_p2",
+      "origin_ref": "502",
+      "target_ref": "303",
+      "origin_title": "Note confidentielle 2",
+      "target_title": "La phrase que personne ne cite",
+      "before": 40,
+      "after": 20,
+      "saved": 20
+    }
   }
 ]

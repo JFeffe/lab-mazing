@@ -16,7 +16,9 @@
         17
       ]
     ],
-    "minimum_saved_steps": 60
+    "minimum_saved_steps": 60,
+    "original_detour_steps": 62,
+    "fully_open_saved_steps": 60
   },
   {
     "id": "C102",
@@ -35,7 +37,9 @@
         13
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 54,
+    "fully_open_saved_steps": 12
   },
   {
     "id": "C103",
@@ -54,7 +58,9 @@
         1
       ]
     ],
-    "minimum_saved_steps": 48
+    "minimum_saved_steps": 20,
+    "original_detour_steps": 50,
+    "fully_open_saved_steps": 20
   },
   {
     "id": "C104",
@@ -73,6 +79,136 @@
         15
       ]
     ],
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "original_detour_steps": 46,
+    "fully_open_saved_steps": 12
+  },
+  {
+    "cell": [
+      6,
+      3
+    ],
+    "sides": [
+      [
+        7,
+        3
+      ],
+      [
+        5,
+        3
+      ]
+    ],
+    "axis": "x",
+    "id": "B1",
+    "original_detour_steps": 34,
+    "minimum_saved_steps": 32,
+    "fully_open_saved_steps": 32,
+    "return_example": {
+      "origin": "c25_kit",
+      "target": "c25_p1",
+      "origin_ref": "101",
+      "target_ref": "203",
+      "origin_title": "Mallette de service",
+      "target_title": "Ce que nous savons vraiment",
+      "before": 66,
+      "after": 34,
+      "saved": 32
+    }
+  },
+  {
+    "cell": [
+      14,
+      1
+    ],
+    "sides": [
+      [
+        15,
+        1
+      ],
+      [
+        13,
+        1
+      ]
+    ],
+    "axis": "x",
+    "id": "B2",
+    "original_detour_steps": 30,
+    "minimum_saved_steps": 28,
+    "fully_open_saved_steps": 28,
+    "return_example": {
+      "origin": "c25_kit",
+      "target": "c25_p1",
+      "origin_ref": "101",
+      "target_ref": "203",
+      "origin_title": "Mallette de service",
+      "target_title": "Ce que nous savons vraiment",
+      "before": 62,
+      "after": 34,
+      "saved": 28
+    }
+  },
+  {
+    "cell": [
+      28,
+      5
+    ],
+    "sides": [
+      [
+        29,
+        5
+      ],
+      [
+        27,
+        5
+      ]
+    ],
+    "axis": "x",
+    "id": "B3",
+    "original_detour_steps": 34,
+    "minimum_saved_steps": 20,
+    "fully_open_saved_steps": 20,
+    "return_example": {
+      "origin": "c25_secret1",
+      "target": "c25_p1",
+      "origin_ref": "501",
+      "target_ref": "203",
+      "origin_title": "Note confidentielle 1",
+      "target_title": "Ce que nous savons vraiment",
+      "before": 34,
+      "after": 14,
+      "saved": 20
+    }
+  },
+  {
+    "cell": [
+      1,
+      14
+    ],
+    "sides": [
+      [
+        1,
+        13
+      ],
+      [
+        1,
+        15
+      ]
+    ],
+    "axis": "y",
+    "id": "B4",
+    "original_detour_steps": 30,
+    "minimum_saved_steps": 28,
+    "fully_open_saved_steps": 28,
+    "return_example": {
+      "origin": "c25_n3",
+      "target": "c25_exit",
+      "origin_ref": "301",
+      "target_ref": "900",
+      "origin_title": "Consigne 301",
+      "target_title": "Folamour — Un avenir légèrement incertain",
+      "before": 51,
+      "after": 31,
+      "saved": 20
+    }
   }
 ]

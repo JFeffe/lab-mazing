@@ -105,7 +105,7 @@ func run():
 	game.open_shortcuts.clear()
 	game.journal_order.clear()
 	game.load_game()
-	check(game.open_shortcuts.size()==8 and game.walked==saved_walked and game.journal_order==saved_order,"SAVE SHORTCUTS/CHRONOLOGY")
+	check(game.open_shortcuts.size()==game.shortcuts.size() and game.walked==saved_walked and game.journal_order==saved_order,"SAVE SHORTCUTS/CHRONOLOGY")
 	game.test_mode=true
 	check(is_equal_approx(game.MOVE_SPEED,7.0*1.3) and not InputMap.has_action("run"),"SPEED / RUN BINDING")
 	print("SHORTCUTS + JOURNAL + SAVE + SPEED: ","FAIL" if failed else "PASS")

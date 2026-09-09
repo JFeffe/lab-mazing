@@ -17,7 +17,8 @@
     "axis": "x",
     "original_detour_steps": 18,
     "id": "P1",
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "fully_open_saved_steps": 16
   },
   {
     "cell": [
@@ -37,7 +38,8 @@
     "axis": "y",
     "original_detour_steps": 30,
     "id": "P2",
-    "minimum_saved_steps": 28
+    "minimum_saved_steps": 28,
+    "fully_open_saved_steps": 28
   },
   {
     "cell": [
@@ -57,7 +59,8 @@
     "axis": "y",
     "original_detour_steps": 30,
     "id": "P3",
-    "minimum_saved_steps": 28
+    "minimum_saved_steps": 28,
+    "fully_open_saved_steps": 28
   },
   {
     "cell": [
@@ -77,7 +80,8 @@
     "axis": "x",
     "original_detour_steps": 98,
     "id": "P4",
-    "minimum_saved_steps": 80
+    "minimum_saved_steps": 80,
+    "fully_open_saved_steps": 80
   },
   {
     "cell": [
@@ -97,7 +101,8 @@
     "axis": "x",
     "original_detour_steps": 50,
     "id": "P5",
-    "minimum_saved_steps": 48
+    "minimum_saved_steps": 48,
+    "fully_open_saved_steps": 48
   },
   {
     "cell": [
@@ -117,6 +122,39 @@
     "axis": "x",
     "original_detour_steps": 18,
     "id": "P6",
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "fully_open_saved_steps": 16
+  },
+  {
+    "cell": [
+      15,
+      14
+    ],
+    "sides": [
+      [
+        15,
+        13
+      ],
+      [
+        15,
+        15
+      ]
+    ],
+    "axis": "y",
+    "id": "B1",
+    "original_detour_steps": 26,
+    "minimum_saved_steps": 24,
+    "fully_open_saved_steps": 24,
+    "return_example": {
+      "origin": "p_secret1",
+      "target": "p_delivery",
+      "origin_ref": "205",
+      "target_ref": "101",
+      "origin_title": "Archive administrative 205",
+      "target_title": "Folamour — Une seule copie",
+      "before": 32,
+      "after": 12,
+      "saved": 20
+    }
   }
 ]

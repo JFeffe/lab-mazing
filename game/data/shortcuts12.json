@@ -16,7 +16,9 @@
         25
       ]
     ],
-    "minimum_saved_steps": 24
+    "minimum_saved_steps": 24,
+    "original_detour_steps": 86,
+    "fully_open_saved_steps": 24
   },
   {
     "id": "P22",
@@ -35,7 +37,9 @@
         9
       ]
     ],
-    "minimum_saved_steps": 64
+    "minimum_saved_steps": 64,
+    "original_detour_steps": 66,
+    "fully_open_saved_steps": 64
   },
   {
     "id": "P23",
@@ -54,7 +58,9 @@
         27
       ]
     ],
-    "minimum_saved_steps": 24
+    "minimum_saved_steps": 24,
+    "original_detour_steps": 62,
+    "fully_open_saved_steps": 24
   },
   {
     "id": "P24",
@@ -73,6 +79,104 @@
         33
       ]
     ],
-    "minimum_saved_steps": 40
+    "minimum_saved_steps": 40,
+    "original_detour_steps": 62,
+    "fully_open_saved_steps": 40
+  },
+  {
+    "cell": [
+      26,
+      21
+    ],
+    "sides": [
+      [
+        27,
+        21
+      ],
+      [
+        25,
+        21
+      ]
+    ],
+    "axis": "x",
+    "id": "B1",
+    "original_detour_steps": 34,
+    "minimum_saved_steps": 32,
+    "fully_open_saved_steps": 32,
+    "return_example": {
+      "origin": "c12_n4",
+      "target": "c12_p2",
+      "origin_ref": "302",
+      "target_ref": "303",
+      "origin_title": "Rapport à l’envers",
+      "target_title": "Chronologie de l’incident",
+      "before": 52,
+      "after": 20,
+      "saved": 32
+    }
+  },
+  {
+    "cell": [
+      14,
+      5
+    ],
+    "sides": [
+      [
+        15,
+        5
+      ],
+      [
+        13,
+        5
+      ]
+    ],
+    "axis": "x",
+    "id": "B2",
+    "original_detour_steps": 30,
+    "minimum_saved_steps": 28,
+    "fully_open_saved_steps": 28,
+    "return_example": {
+      "origin": "c12_kit",
+      "target": "c12_p1",
+      "origin_ref": "101",
+      "target_ref": "203",
+      "origin_title": "Mallette de service",
+      "target_title": "Horloges décalées",
+      "before": 46,
+      "after": 18,
+      "saved": 28
+    }
+  },
+  {
+    "cell": [
+      8,
+      21
+    ],
+    "sides": [
+      [
+        9,
+        21
+      ],
+      [
+        7,
+        21
+      ]
+    ],
+    "axis": "x",
+    "id": "B3",
+    "original_detour_steps": 50,
+    "minimum_saved_steps": 48,
+    "fully_open_saved_steps": 48,
+    "return_example": {
+      "origin": "c12_n4",
+      "target": "c12_p3",
+      "origin_ref": "302",
+      "target_ref": "403",
+      "origin_title": "Rapport à l’envers",
+      "target_title": "Prévention sans incident",
+      "before": 76,
+      "after": 52,
+      "saved": 24
+    }
   }
 ]

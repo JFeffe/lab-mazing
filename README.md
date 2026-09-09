@@ -2,7 +2,7 @@
 
 **[▶ Jouer au Labyrinthe de Folamour dans le navigateur](https://jfeffe.github.io/lab-mazing/)**
 
-Version 0.21 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
+Version 0.22 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
 
 ## Publication
 Pour chaque annonce de version sur GitHub, placer le lien **Jouer** en première ligne du corps de la publication, avant les nouveautés. Utiliser le [modèle d’annonce](.github/RELEASE_TEMPLATE.md) et conserver le lien juste sous le titre de ce README.
@@ -13,6 +13,20 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Générer les ambiances originales avec `python3 scripts/compose_finale_audio.py`, puis ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Nouveautés v0.22 — Retours utiles et audit complet
+
+- 43 portes secrètes ajoutées sur 20 niveaux : 155 passages au total. Chaque ajout évite au moins 20 pas, jusqu’à 72, même avec les autres raccourcis et verrous ouverts. Les exemples documentés mènent à un poste permanent, une commande ou Folamour.
+- Les 112 portes précédentes gardent leurs positions et leurs identifiants. Une nouvelle porte se révèle après visite physique des deux côtés, y compris à la reprise si les deux cases avaient déjà été parcourues.
+- Clic sur une sortie murale : le personnage avance désormais assez près du modèle pour interagir. Un clic sur un objet inaccessible annule la destination précédente.
+- Les 25 niveaux, les accès variables, les énigmes, les sauvegardes et les 250 souvenirs ont été revérifiés. Les grilles et les conditions de progression restent inchangées.
+- Contrôle visuel natif des 25 niveaux et des interfaces portrait/paysage. Le navigateur de contrôle ne fournit pas WebGL 2 ; la fluidité sur téléphone physique reste à vérifier.
+
+[Cheatsheets et cartes v0.22](docs/v0.22/INDEX.md) · [Dossier v0.22 sur Drive](https://drive.google.com/drive/folders/1N2W2Mz7kKlehyW2VMztWtzykcsEGqMHr).
+
+Documents : `python3 scripts/document_campaign_audit.py /chemin/de/sortie`. Mesures des retours et conservation des placements publiés : `python3 scripts/audit_return_links.py --write`. Les générateurs historiques peuvent reconstruire leurs anciens passages ; réappliquer ensuite cet audit conserve la sélection v0.22.
+
+Validation : `python3 game/tests/validate_return_links.py`, puis les tests Godot `verify_shortcuts`, `verify_return_saves` et `verify_interaction_approaches`. La suite complète comprend 27 tests Godot et les validations indépendantes des chapitres. [Mesures des 155 portes](game/tests/return_links_audit.json).
 
 ## Nouveautés v0.21 — Dossier du sujet 16
 

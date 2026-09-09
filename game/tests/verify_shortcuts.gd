@@ -17,7 +17,7 @@ func run():
 	root.add_child(game)
 	game.test_mode=true
 	var audit=JSON.parse_string(FileAccess.get_file_as_string("res://tests/shortcut_audit.json"))
-	for number in range(1,16):
+	for number in range(1,26):
 		game.start_game(false,number)
 		game.close_modal()
 		game.playing=false

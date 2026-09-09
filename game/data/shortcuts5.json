@@ -17,7 +17,8 @@
     "axis": "x",
     "original_detour_steps": 14,
     "id": "F1",
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "fully_open_saved_steps": 12
   },
   {
     "cell": [
@@ -37,7 +38,8 @@
     "axis": "x",
     "original_detour_steps": 106,
     "id": "F2",
-    "minimum_saved_steps": 48
+    "minimum_saved_steps": 48,
+    "fully_open_saved_steps": 48
   },
   {
     "cell": [
@@ -57,7 +59,8 @@
     "axis": "y",
     "original_detour_steps": 74,
     "id": "F3",
-    "minimum_saved_steps": 72
+    "minimum_saved_steps": 72,
+    "fully_open_saved_steps": 72
   },
   {
     "cell": [
@@ -77,7 +80,8 @@
     "axis": "x",
     "original_detour_steps": 58,
     "id": "F4",
-    "minimum_saved_steps": 48
+    "minimum_saved_steps": 24,
+    "fully_open_saved_steps": 24
   },
   {
     "cell": [
@@ -97,7 +101,8 @@
     "axis": "x",
     "original_detour_steps": 26,
     "id": "F5",
-    "minimum_saved_steps": 24
+    "minimum_saved_steps": 24,
+    "fully_open_saved_steps": 24
   },
   {
     "cell": [
@@ -117,6 +122,103 @@
     "axis": "y",
     "original_detour_steps": 18,
     "id": "F6",
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "fully_open_saved_steps": 16
+  },
+  {
+    "cell": [
+      13,
+      26
+    ],
+    "sides": [
+      [
+        13,
+        25
+      ],
+      [
+        13,
+        27
+      ]
+    ],
+    "axis": "y",
+    "id": "B1",
+    "original_detour_steps": 42,
+    "minimum_saved_steps": 40,
+    "fully_open_saved_steps": 40,
+    "return_example": {
+      "origin": "f_water_tip",
+      "target": "f_assembly",
+      "origin_ref": "202",
+      "target_ref": "103",
+      "origin_title": "Note du technicien",
+      "target_title": "Station de couplage",
+      "before": 52,
+      "after": 20,
+      "saved": 32
+    }
+  },
+  {
+    "cell": [
+      32,
+      27
+    ],
+    "sides": [
+      [
+        33,
+        27
+      ],
+      [
+        31,
+        27
+      ]
+    ],
+    "axis": "x",
+    "id": "B2",
+    "original_detour_steps": 54,
+    "minimum_saved_steps": 24,
+    "fully_open_saved_steps": 24,
+    "return_example": {
+      "origin": "f_secret2",
+      "target": "f_tower",
+      "origin_ref": "304",
+      "target_ref": "303",
+      "origin_title": "Le précédent record",
+      "target_title": "Transfert du noyau",
+      "before": 32,
+      "after": 8,
+      "saved": 24
+    }
+  },
+  {
+    "cell": [
+      24,
+      7
+    ],
+    "sides": [
+      [
+        25,
+        7
+      ],
+      [
+        23,
+        7
+      ]
+    ],
+    "axis": "x",
+    "id": "B3",
+    "original_detour_steps": 30,
+    "minimum_saved_steps": 28,
+    "fully_open_saved_steps": 28,
+    "return_example": {
+      "origin": "f_rotors",
+      "target": "f_assembly",
+      "origin_ref": "403",
+      "target_ref": "103",
+      "origin_title": "Stabilisateur ZÉRO",
+      "target_title": "Station de couplage",
+      "before": 42,
+      "after": 18,
+      "saved": 24
+    }
   }
 ]

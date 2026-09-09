@@ -17,7 +17,8 @@
     "axis": "x",
     "original_detour_steps": 22,
     "id": "O1",
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "fully_open_saved_steps": 20
   },
   {
     "cell": [
@@ -37,7 +38,8 @@
     "axis": "y",
     "original_detour_steps": 22,
     "id": "O2",
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "fully_open_saved_steps": 20
   },
   {
     "cell": [
@@ -57,7 +59,8 @@
     "axis": "x",
     "original_detour_steps": 18,
     "id": "O3",
-    "minimum_saved_steps": 16
+    "minimum_saved_steps": 16,
+    "fully_open_saved_steps": 16
   },
   {
     "cell": [
@@ -77,7 +80,8 @@
     "axis": "x",
     "original_detour_steps": 74,
     "id": "O4",
-    "minimum_saved_steps": 72
+    "minimum_saved_steps": 72,
+    "fully_open_saved_steps": 72
   },
   {
     "cell": [
@@ -97,7 +101,8 @@
     "axis": "x",
     "original_detour_steps": 34,
     "id": "O5",
-    "minimum_saved_steps": 32
+    "minimum_saved_steps": 32,
+    "fully_open_saved_steps": 32
   },
   {
     "cell": [
@@ -117,6 +122,135 @@
     "axis": "x",
     "original_detour_steps": 34,
     "id": "O6",
-    "minimum_saved_steps": 32
+    "minimum_saved_steps": 32,
+    "fully_open_saved_steps": 32
+  },
+  {
+    "cell": [
+      19,
+      30
+    ],
+    "sides": [
+      [
+        19,
+        29
+      ],
+      [
+        19,
+        31
+      ]
+    ],
+    "axis": "y",
+    "id": "B1",
+    "original_detour_steps": 38,
+    "minimum_saved_steps": 36,
+    "fully_open_saved_steps": 36,
+    "return_example": {
+      "origin": "reader_rule",
+      "target": "observation_exit",
+      "origin_ref": "304",
+      "target_ref": "306",
+      "origin_title": "Consigne du lecteur",
+      "target_title": "Chambre d’observation",
+      "before": 52,
+      "after": 16,
+      "saved": 36
+    }
+  },
+  {
+    "cell": [
+      16,
+      5
+    ],
+    "sides": [
+      [
+        17,
+        5
+      ],
+      [
+        15,
+        5
+      ]
+    ],
+    "axis": "x",
+    "id": "B2",
+    "original_detour_steps": 34,
+    "minimum_saved_steps": 32,
+    "fully_open_saved_steps": 32,
+    "return_example": {
+      "origin": "beam_plan",
+      "target": "optical_bench",
+      "origin_ref": "205",
+      "target_ref": "103",
+      "origin_title": "Permutation des faisceaux",
+      "target_title": "Banc optique",
+      "before": 46,
+      "after": 14,
+      "saved": 32
+    }
+  },
+  {
+    "cell": [
+      2,
+      13
+    ],
+    "sides": [
+      [
+        3,
+        13
+      ],
+      [
+        1,
+        13
+      ]
+    ],
+    "axis": "x",
+    "id": "B3",
+    "original_detour_steps": 34,
+    "minimum_saved_steps": 32,
+    "fully_open_saved_steps": 32,
+    "return_example": {
+      "origin": "beam_triangle",
+      "target": "optical_bench",
+      "origin_ref": "202",
+      "target_ref": "103",
+      "origin_title": "Étalon triangle",
+      "target_title": "Banc optique",
+      "before": 60,
+      "after": 32,
+      "saved": 28
+    }
+  },
+  {
+    "cell": [
+      24,
+      1
+    ],
+    "sides": [
+      [
+        25,
+        1
+      ],
+      [
+        23,
+        1
+      ]
+    ],
+    "axis": "x",
+    "id": "B4",
+    "original_detour_steps": 46,
+    "minimum_saved_steps": 44,
+    "fully_open_saved_steps": 44,
+    "return_example": {
+      "origin": "lens",
+      "target": "optical_bench",
+      "origin_ref": "101",
+      "target_ref": "103",
+      "origin_title": "Lentille convergente",
+      "target_title": "Banc optique",
+      "before": 42,
+      "after": 22,
+      "saved": 20
+    }
   }
 ]

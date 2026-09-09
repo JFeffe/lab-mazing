@@ -673,7 +673,7 @@ func show_title():
 	modal_box.add_child(button("Choisir un chapitre",show_chapters,not has_save()))
 	modal_box.add_child(button("Sélection de niveau / test",show_level_select))
 	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("VERSION 0.21 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE",13)
+	paragraph("VERSION 0.22 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
 	modal_box.add_child(button("Réglages audio",func(): show_audio(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
@@ -1784,11 +1784,16 @@ func request_cell(goal):
 func request_event(e):
 	if e.kind=="pickup" and done.has(e.id): return
 	if e.kind=="collectible" and Subject16.has(self,e):return
+	stop_navigation()
 	var start=Vector2i(roundi(player.position.x/TILE),roundi(player.position.z/TILE))
 	var c=Vector2i(e.cell[0],e.cell[1])
 	var candidates=[c,c+Vector2i.UP,c+Vector2i.RIGHT,c+Vector2i.DOWN,c+Vector2i.LEFT]
 	var best=[]
 	for goal in candidates:
+		# Wall-mounted controls and offset actors are not at their grid center.
+		# Choose a destination inside the same range used by finish_navigation.
+		var position=Vector3(goal.x*TILE,0.1,goal.y*TILE)
+		if position.distance_to(event_nodes[e.id].position)>3.0:continue
 		var path=Navigator.route(self,start,goal)
 		if not path.is_empty() and (best.is_empty() or path.size()<best.size()): best=path
 	if best.is_empty():

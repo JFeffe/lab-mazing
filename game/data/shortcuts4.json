@@ -17,7 +17,8 @@
     "axis": "y",
     "original_detour_steps": 22,
     "id": "T1",
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "fully_open_saved_steps": 20
   },
   {
     "cell": [
@@ -37,7 +38,8 @@
     "axis": "y",
     "original_detour_steps": 22,
     "id": "T2",
-    "minimum_saved_steps": 20
+    "minimum_saved_steps": 20,
+    "fully_open_saved_steps": 20
   },
   {
     "cell": [
@@ -57,7 +59,8 @@
     "axis": "x",
     "original_detour_steps": 14,
     "id": "T3",
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "fully_open_saved_steps": 12
   },
   {
     "cell": [
@@ -77,7 +80,8 @@
     "axis": "x",
     "original_detour_steps": 78,
     "id": "T4",
-    "minimum_saved_steps": 76
+    "minimum_saved_steps": 76,
+    "fully_open_saved_steps": 76
   },
   {
     "cell": [
@@ -97,7 +101,8 @@
     "axis": "x",
     "original_detour_steps": 14,
     "id": "T5",
-    "minimum_saved_steps": 12
+    "minimum_saved_steps": 12,
+    "fully_open_saved_steps": 12
   },
   {
     "cell": [
@@ -117,6 +122,71 @@
     "axis": "x",
     "original_detour_steps": 30,
     "id": "T6",
-    "minimum_saved_steps": 28
+    "minimum_saved_steps": 28,
+    "fully_open_saved_steps": 28
+  },
+  {
+    "cell": [
+      12,
+      21
+    ],
+    "sides": [
+      [
+        13,
+        21
+      ],
+      [
+        11,
+        21
+      ]
+    ],
+    "axis": "x",
+    "id": "B1",
+    "original_detour_steps": 86,
+    "minimum_saved_steps": 72,
+    "fully_open_saved_steps": 72,
+    "return_example": {
+      "origin": "order_comet",
+      "target": "sequence_panel",
+      "origin_ref": "203",
+      "target_ref": "204",
+      "origin_title": "Rapport de la comète",
+      "target_title": "Console de lancement",
+      "before": 72,
+      "after": 16,
+      "saved": 56
+    }
+  },
+  {
+    "cell": [
+      1,
+      6
+    ],
+    "sides": [
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        7
+      ]
+    ],
+    "axis": "y",
+    "id": "B2",
+    "original_detour_steps": 42,
+    "minimum_saved_steps": 40,
+    "fully_open_saved_steps": 40,
+    "return_example": {
+      "origin": "t_welcome",
+      "target": "sequence_panel",
+      "origin_ref": "100",
+      "target_ref": "204",
+      "origin_title": "Département des essais",
+      "target_title": "Console de lancement",
+      "before": 70,
+      "after": 50,
+      "saved": 20
+    }
   }
 ]

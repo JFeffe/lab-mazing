@@ -17,7 +17,8 @@
     "axis": "x",
     "original_detour_steps": 46,
     "id": "M1",
-    "minimum_saved_steps": 44
+    "minimum_saved_steps": 44,
+    "fully_open_saved_steps": 44
   },
   {
     "cell": [
@@ -37,7 +38,8 @@
     "axis": "x",
     "original_detour_steps": 26,
     "id": "M2",
-    "minimum_saved_steps": 24
+    "minimum_saved_steps": 24,
+    "fully_open_saved_steps": 24
   },
   {
     "cell": [
@@ -57,7 +59,8 @@
     "axis": "x",
     "original_detour_steps": 26,
     "id": "M3",
-    "minimum_saved_steps": 24
+    "minimum_saved_steps": 24,
+    "fully_open_saved_steps": 24
   },
   {
     "cell": [
@@ -77,7 +80,8 @@
     "axis": "y",
     "original_detour_steps": 16,
     "id": "M4",
-    "minimum_saved_steps": 14
+    "minimum_saved_steps": 14,
+    "fully_open_saved_steps": 14
   },
   {
     "cell": [
@@ -97,7 +101,8 @@
     "axis": "x",
     "original_detour_steps": 46,
     "id": "M5",
-    "minimum_saved_steps": 30
+    "minimum_saved_steps": 30,
+    "fully_open_saved_steps": 30
   },
   {
     "cell": [
@@ -117,6 +122,39 @@
     "axis": "y",
     "original_detour_steps": 62,
     "id": "M6",
-    "minimum_saved_steps": 60
+    "minimum_saved_steps": 36,
+    "fully_open_saved_steps": 36
+  },
+  {
+    "cell": [
+      14,
+      31
+    ],
+    "sides": [
+      [
+        15,
+        31
+      ],
+      [
+        13,
+        31
+      ]
+    ],
+    "axis": "x",
+    "id": "B1",
+    "original_detour_steps": 30,
+    "minimum_saved_steps": 28,
+    "fully_open_saved_steps": 28,
+    "return_example": {
+      "origin": "lift_exit",
+      "target": "hoist",
+      "origin_ref": "306",
+      "target_ref": "303",
+      "origin_title": "Commandes de l’ascenseur",
+      "target_title": "Treuil du contrepoids",
+      "before": 33,
+      "after": 13,
+      "saved": 20
+    }
   }
 ]
