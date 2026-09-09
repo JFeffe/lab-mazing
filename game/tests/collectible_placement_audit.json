@@ -1,0 +1,177 @@
+{
+  "1": {
+    "maze_sha256": "f3064c4176e60528647b299ac6904c713d2318e1160f2d2acb83c8bece213b6c",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 6,
+    "min_clearance": 3
+  },
+  "2": {
+    "maze_sha256": "82d86e1e2e0ec7f888822b6c174860780f979864eb9a1942cce50ed6b5721535",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 6,
+    "min_clearance": 4
+  },
+  "3": {
+    "maze_sha256": "14260dc67acd683d5dc5b305c4d2c08a992062671f992d9e39f4625254c0d0a9",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 10,
+    "min_clearance": 4
+  },
+  "4": {
+    "maze_sha256": "d8f94554abd8a8955f3d17732b9fe9bf39742f65c109cb3525215b4fbe8bd5fa",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 6,
+    "min_clearance": 4
+  },
+  "5": {
+    "maze_sha256": "d9e8c53be8eaeceb4d4dab8061daf53199e1796c537797162751be7e59efcf6d",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 8,
+    "min_clearance": 4
+  },
+  "6": {
+    "maze_sha256": "97fe35093b15ce5c97f8e34cae5ea083a71aabda0d275727926fc6df81e7b864",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 12,
+    "min_clearance": 4
+  },
+  "7": {
+    "maze_sha256": "f1576606431c57daa5ba87d95783f6fe5b0d85f38348541de356665a5ba95a9d",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 8,
+    "min_clearance": 4
+  },
+  "8": {
+    "maze_sha256": "4ffe9a750e2b07f97d77b199582492d888f5394bde95231ec1a6b02d83da2192",
+    "count": 10,
+    "dead_ends": 9,
+    "min_event_distance": 5,
+    "min_clearance": 4
+  },
+  "9": {
+    "maze_sha256": "c668feec17de6889aff60586cbd188faf09c9165a37ac307a63a1f0079ac5e11",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 8,
+    "min_clearance": 3
+  },
+  "10": {
+    "maze_sha256": "58cb5456e03cd7544cdfa65f25d3eb4dfcccb04893bf8ca6835fe81878899201",
+    "count": 10,
+    "dead_ends": 5,
+    "min_event_distance": 6,
+    "min_clearance": 3
+  },
+  "11": {
+    "maze_sha256": "d4725afe3dc8a1738c68be8bcdc194a7216d092ead032047ebf5c10e016c9a83",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 6,
+    "min_clearance": 4
+  },
+  "12": {
+    "maze_sha256": "0d80e78a10d8a607345f590484bff2c303ea33402617fa9211f68674b41b894c",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 8,
+    "min_clearance": 4
+  },
+  "13": {
+    "maze_sha256": "299fd6d4a2b4b4ee499d47ef215433e7bf2afa1510c957f6dfb16375f0d2b8cc",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 8,
+    "min_clearance": 4
+  },
+  "14": {
+    "maze_sha256": "fc4cd98ad9b1554bde3377a93b09bb511af5f229d22dacc0f4e14574193f5f30",
+    "count": 10,
+    "dead_ends": 2,
+    "min_event_distance": 8,
+    "min_clearance": 4
+  },
+  "15": {
+    "maze_sha256": "b1dff355496d655be0badd6ed9f997d31072f11a9bce048bb0ca6517349addef",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 5,
+    "min_clearance": 4
+  },
+  "16": {
+    "maze_sha256": "536dfcb70b1243c3b83fb4bdcf6f3d25cf9694e6e91dcaf3f84e2edbe75c752d",
+    "count": 10,
+    "dead_ends": 6,
+    "min_event_distance": 8,
+    "min_clearance": 4
+  },
+  "17": {
+    "maze_sha256": "76b24b8e41bf2392a30f4efad397efe84ae193b276a29a080aa92de7cec46920",
+    "count": 10,
+    "dead_ends": 9,
+    "min_event_distance": 8,
+    "min_clearance": 4
+  },
+  "18": {
+    "maze_sha256": "e1d86a38f2057e499d8bc763a94821a52c4e9a7cbf9d0bbfaa7372e4b3031ac5",
+    "count": 10,
+    "dead_ends": 0,
+    "min_event_distance": 8,
+    "min_clearance": 5
+  },
+  "19": {
+    "maze_sha256": "077d62cf0f587e5307e81e0b1288c2c784339dc6c7f1ab37a59e8973f38e99ba",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 10,
+    "min_clearance": 4
+  },
+  "20": {
+    "maze_sha256": "0663aff43ed96937c2bb07e88226615520dc3c96b891800beff8fb5e205bb621",
+    "count": 10,
+    "dead_ends": 6,
+    "min_event_distance": 6,
+    "min_clearance": 3
+  },
+  "21": {
+    "maze_sha256": "127c9390fc9bf1eda20a022d00562169afdf2c037da2440686867cc8babc9b7c",
+    "count": 10,
+    "dead_ends": 7,
+    "min_event_distance": 8,
+    "min_clearance": 4
+  },
+  "22": {
+    "maze_sha256": "a3194ab43cc91525d69fe0e965e1a6bcaf60457488b60b0467525ee04129ed5f",
+    "count": 10,
+    "dead_ends": 0,
+    "min_event_distance": 5,
+    "min_clearance": 5
+  },
+  "23": {
+    "maze_sha256": "f15ccfdc7c60373a9d11cb4c5614914c11897b5c3b481fc9c9d0cdd2d4726523",
+    "count": 10,
+    "dead_ends": 4,
+    "min_event_distance": 6,
+    "min_clearance": 4
+  },
+  "24": {
+    "maze_sha256": "b9f62a1b7f78a0e6366a2120c918ef2e59be7dbf06320e3a577c4ab4030dfcf9",
+    "count": 10,
+    "dead_ends": 10,
+    "min_event_distance": 6,
+    "min_clearance": 4
+  },
+  "25": {
+    "maze_sha256": "ab8ee391629c8ed9b19b8dd57212b8dfb2cd42a3f16b2c07db3b4af12066b746",
+    "count": 10,
+    "dead_ends": 8,
+    "min_event_distance": 8,
+    "min_clearance": 4
+  }
+}

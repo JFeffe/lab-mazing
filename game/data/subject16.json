@@ -1,0 +1,302 @@
+{
+  "chapters": {
+    "1": {
+      "name": [
+        "Le laboratoire artisanal",
+        "The handmade laboratory"
+      ],
+      "collectible": [
+        "Ampoule témoin",
+        "Witness ampoule"
+      ],
+      "color": "70dbc7",
+      "ambient": "bedace",
+      "sun": "ffe3b4",
+      "background": "102827",
+      "palettes": [
+        "61978d",
+        "809ba8",
+        "a49b7a"
+      ],
+      "motif": "ampoule",
+      "archives": [
+        [
+          "Les premières expériences tenaient dans une boîte. Folamour avait écrit « ne pas secouer » sur les six faces.",
+          "The first experiments fitted in a box. Folamour wrote “do not shake” on all six sides."
+        ],
+        [
+          "Ancien inventaire : trois outils, une idée brillante et aucune procédure pour distinguer les deux.",
+          "Old inventory: three tools, one brilliant idea and no procedure for telling them apart."
+        ],
+        [
+          "Note du docteur : « Le sujet vérifie même les impasses. Il faudra cesser de les appeler inutiles. »",
+          "Doctor’s note: “The subject even checks dead ends. We will have to stop calling them useless.”"
+        ]
+      ]
+    },
+    "2": {
+      "name": [
+        "Le stage administratif",
+        "The administrative internship"
+      ],
+      "collectible": [
+        "Tampon de service",
+        "Service stamp"
+      ],
+      "color": "e6b56c",
+      "ambient": "dfd4b3",
+      "sun": "ffe0ab",
+      "background": "29271e",
+      "palettes": [
+        "a59673",
+        "829c86",
+        "969ca6"
+      ],
+      "motif": "stamp",
+      "archives": [
+        [
+          "Le premier formulaire demandait seulement : « Est-ce réparé ? » Il a été retiré pour manque d’ambition.",
+          "The first form only asked “Is it fixed?” It was withdrawn for lack of ambition."
+        ],
+        [
+          "Une pause-café de 2008 attend toujours sa validation. La tasse, elle, a été promue.",
+          "A coffee break from 2008 is still awaiting approval. The mug has been promoted."
+        ],
+        [
+          "Évaluation du stage : initiative remarquable ; tendance inquiétante à finir le travail.",
+          "Internship review: remarkable initiative; worrying tendency to finish the work."
+        ]
+      ]
+    },
+    "3": {
+      "name": [
+        "La mécanique des prévisions",
+        "The machinery of prediction"
+      ],
+      "collectible": [
+        "Rouage de prévoyance",
+        "Foresight gear"
+      ],
+      "color": "c4a5ef",
+      "ambient": "d1c4eb",
+      "sun": "e8ddff",
+      "background": "232438",
+      "palettes": [
+        "9290b5",
+        "819aa4",
+        "ac967f"
+      ],
+      "motif": "gear",
+      "archives": [
+        [
+          "Le premier modèle prédisait la fermeture des bureaux à dix-sept heures. Sa précision a beaucoup impressionné.",
+          "The first model predicted that the offices would close at five. Its accuracy impressed everyone."
+        ],
+        [
+          "Mention manuscrite : « Une prévision doit pouvoir se tromper. » Quelqu’un a ajouté : « Sous réserve d’autorisation. »",
+          "Handwritten note: “A prediction must be allowed to be wrong.” Someone added: “Subject to approval.”"
+        ],
+        [
+          "Les horloges sont synchronisées. Les désaccords ont donc lieu exactement au même moment.",
+          "The clocks are synchronized. Disagreements now occur at exactly the same time."
+        ]
+      ]
+    },
+    "4": {
+      "name": [
+        "Les reflets de la certitude",
+        "Reflections of certainty"
+      ],
+      "collectible": [
+        "Prisme MIROIR",
+        "MIRROR prism"
+      ],
+      "color": "8bbdec",
+      "ambient": "bcd8eb",
+      "sun": "d1e5ff",
+      "background": "182838",
+      "palettes": [
+        "7398b1",
+        "8aafb0",
+        "9b95ba"
+      ],
+      "motif": "prism",
+      "archives": [
+        [
+          "Les prismes étaient destinés à comparer deux points de vue. MIROIR a demandé qu’ils regardent tous dans le même sens.",
+          "The prisms were meant to compare two viewpoints. MIRROR requested that they all face the same way."
+        ],
+        [
+          "Rapport de contrôle : la copie ressemble à l’original. Rapport suivant : l’original ne ressemble pas assez à la copie.",
+          "Inspection report: the copy resembles the original. Next report: the original does not resemble the copy enough."
+        ],
+        [
+          "Une marge a été conservée sur le formulaire. Il subsiste donc officiellement un peu de place pour le doute.",
+          "A margin was retained on the form. There is therefore officially still some room for doubt."
+        ]
+      ]
+    },
+    "5": {
+      "name": [
+        "HORIZON, jusqu’au silence",
+        "HORIZON, towards silence"
+      ],
+      "collectible": [
+        "Capsule de retour",
+        "Return capsule"
+      ],
+      "color": "e5b287",
+      "ambient": "d5c5b9",
+      "sun": "ffd5aa",
+      "background": "302426",
+      "palettes": [
+        "ad8d79",
+        "939ca1",
+        "97a08a"
+      ],
+      "motif": "capsule",
+      "archives": [
+        [
+          "Maquette de poche : départ, trajet, retour. Trois mots qui devraient toujours voyager ensemble.",
+          "Pocket model: departure, journey, return. Three words that should always travel together."
+        ],
+        [
+          "Le service des grands projets avait commandé des capsules miniatures. Le service des achats a lu « miniatures monumentales ».",
+          "The major projects department ordered miniature capsules. Purchasing read “monumental miniatures”."
+        ],
+        [
+          "Dernière annotation : « Prévoir un retour. Et laisser chacun décider s’il veut partir. »",
+          "Final annotation: “Plan a return. And let everyone decide whether they want to leave.”"
+        ]
+      ]
+    }
+  },
+  "reactions": {
+    "greeting": [
+      [
+        "Sujet 16. Je vois que votre curiosité ne respecte toujours pas les horaires.",
+        "Subject 16. I see your curiosity still ignores office hours."
+      ],
+      [
+        "Vous cherchez encore quelque chose ? Voilà une attitude difficile à classer.",
+        "Still looking for something? A difficult attitude to classify."
+      ],
+      [
+        "Approchez. J’avais justement prévu une conversation imprévue.",
+        "Come closer. I had just scheduled an unexpected conversation."
+      ],
+      [
+        "C’est bien vous ? Les copies ont une fâcheuse tendance à répondre oui.",
+        "Is that really you? The copies have an unfortunate habit of saying yes."
+      ],
+      [
+        "Vous êtes encore là. Cette fois, je crois que c’est une bonne nouvelle.",
+        "You are still here. This time, I think that is good news."
+      ]
+    ],
+    "success": [
+      [
+        "Ça fonctionne. Je vais devoir trouver une autre raison de froncer les sourcils.",
+        "It works. I will have to find another reason to frown."
+      ],
+      [
+        "Un travail terminé ! Prévenez les archives avant que ça ne se reproduise.",
+        "Work completed! Tell the archives before it happens again."
+      ],
+      [
+        "Votre résultat était prévu. Dans la colonne des surprises.",
+        "Your result was predicted. In the surprises column."
+      ],
+      [
+        "Le système vient de perdre une certitude. Il lui en reste beaucoup trop.",
+        "The system just lost one certainty. It still has far too many."
+      ],
+      [
+        "Continuez. Les machines commencent enfin à nous écouter.",
+        "Keep going. The machines are finally starting to listen."
+      ]
+    ],
+    "collect": [
+      [
+        "Cet échantillon ne servait à rien. Jusqu’à ce que vous le trouviez, apparemment.",
+        "That sample was useless. Until you found it, apparently."
+      ],
+      [
+        "Vous collectionnez les tampons ? Une carrière administrative vous tend les bras.",
+        "Collecting stamps? An administrative career awaits you."
+      ],
+      [
+        "Ce rouage était en avance. Il attendait donc ici.",
+        "That gear was ahead of schedule. So it was waiting here."
+      ],
+      [
+        "Attention à ce prisme. Il pourrait montrer un autre point de vue.",
+        "Careful with that prism. It might show another point of view."
+      ],
+      [
+        "Une capsule de retour. Gardez-la. Le mot retour me plaît de plus en plus.",
+        "A return capsule. Keep it. I like the word return more and more."
+      ]
+    ],
+    "error": [
+      [
+        "Résultat intéressant. Nous appellerons cela une hypothèse éliminée.",
+        "Interesting result. We will call it an eliminated hypothesis."
+      ],
+      [
+        "Le formulaire autorise une nouvelle tentative. Quelle générosité.",
+        "The form permits another attempt. How generous."
+      ],
+      [
+        "La prévision vient d’être corrigée par les faits. Un incident regrettable.",
+        "The prediction has just been corrected by facts. An unfortunate incident."
+      ],
+      [
+        "Vous pouvez essayer autrement. Le système devrait prendre exemple.",
+        "You can try another way. The system should learn from that."
+      ],
+      [
+        "Prenez votre temps. Cette décision mérite mieux qu’une précipitation.",
+        "Take your time. This decision deserves better than haste."
+      ]
+    ]
+  },
+  "ui": {
+    "Dossier du sujet 16": "Subject 16 dossier",
+    "Dossier": "Dossier",
+    "Collection": "Collection",
+    "Observations de Folamour": "Folamour’s observations",
+    "Album des découvertes": "Discovery album",
+    "Les collectibles sont facultatifs. Ils ne sont jamais dépensés et ne bloquent aucune énigme.": "Collectibles are optional. They are never spent and never block a puzzle.",
+    "Collection du niveau : %d / 10": "Level collection: %d / 10",
+    "Collection totale : %d / 250": "Total collection: %d / 250",
+    "Chapitre %d : %d / 50": "Chapter %d: %d / 50",
+    "Archives débloquées : %d / 15": "Archives unlocked: %d / 15",
+    "Une archive se révèle à 10, 25 et 50 trouvailles dans chaque chapitre.": "An archive is revealed at 10, 25 and 50 finds in each chapter.",
+    "Archive encore scellée.": "Archive still sealed.",
+    "Aucune observation pour le moment.": "No observations yet.",
+    "Rapport de progression": "Progress report",
+    "Niveau %d : %d / 10": "Level %d: %d / 10",
+    "Rejouer pour compléter la collection": "Replay to complete the collection",
+    "Rejouer ce niveau ?": "Replay this level?",
+    "Les énigmes de ce niveau recommenceront. Votre collection et les bilans des niveaux seront conservés. La progression du niveau actuel sera remplacée.": "This level’s puzzles will restart. Your collection and level results will be kept. Current level progress will be replaced.",
+    "Rejouer": "Replay",
+    "Animations décoratives : OUI": "Decorative animations: ON",
+    "Animations décoratives : NON": "Decorative animations: OFF",
+    "Répliques de Folamour : OUI": "Folamour comments: ON",
+    "Répliques de Folamour : NON": "Folamour comments: OFF",
+    "Collectionner": "Collect",
+    "Souvenir classé : %s · %d / 10": "Souvenir filed: %s · %d / 10",
+    "Collection complète !": "Collection complete!",
+    "Dossier conservé avec la sauvegarde de cette aventure. Une nouvelle partie le remet à zéro.": "Dossier kept with this adventure’s save. A new game resets it.",
+    "Collection complète : curiosité officiellement excessive.": "Collection complete: officially excessive curiosity.",
+    "Les anciennes sauvegardes reprennent normalement ; les nouvelles collections commencent à zéro.": "Older saves resume normally; new collections start at zero.",
+    "Collectible facultatif du dossier du sujet 16.": "Optional collectible for the Subject 16 dossier.",
+    "Nouvelle archive disponible dans le dossier du sujet 16.": "A new archive is available in Subject 16’s dossier.",
+    "Niveaux terminés : %d / 25": "Levels completed: %d / 25",
+    "Retour au bilan": "Back to results",
+    "Souvenirs de ce niveau : %d / 10": "Souvenirs in this level: %d / 10",
+    "Blanc : vous • Or : objet • Turquoise : indice\nBleu : mécanisme • Corail : porte • Vert : activé\nF : Folamour, fin de mission • Cercle blanc : collectible\nLes zones inconnues restent cachées.": "White: you • Gold: item • Turquoise: clue\nBlue: mechanism • Coral: door • Green: activated\nF: Folamour, mission end • White ring: collectible\nUnknown areas remain hidden.",
+    "VERSION 0.21 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE": "VERSION 0.21 · FOR YOUR DEFINITIVE PEACE OF MIND"
+  }
+}

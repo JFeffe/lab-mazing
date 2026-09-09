@@ -14,6 +14,14 @@ func _init():
 	for entry in endings.values():
 		for field in ["title","text","action","objective","success"]:
 			if entry.has(field):english[entry[field][0]]=entry[field][1]
+	var subject=JSON.parse_string(FileAccess.get_file_as_string("res://data/subject16.json"))
+	english.merge(subject.ui,true)
+	for entry in subject.chapters.values():
+		for field in ["name","collectible"]:english[entry[field][0]]=entry[field][1]
+		for i in range(1,11):english[entry.collectible[0]+" · K%02d"%i]=entry.collectible[1]+" · K%02d"%i
+		for pair in entry.archives:english[pair[0]]=pair[1]
+	for list_v in subject.reactions.values():
+		for pair in list_v:english[pair[0]]=pair[1]
 	var keys=english.keys().filter(func(value): return not value.strip_edges().is_empty())
 	keys.sort_custom(func(a,b): return a.length()>b.length())
 	var patterns=PackedStringArray()

@@ -1,6 +1,6 @@
 # Lab-mazing — Le Labyrinthe de Folamour
 
-Version 0.20 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
+Version 0.21 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
 
 Jouer dans le navigateur : https://jfeffe.github.io/lab-mazing/
 
@@ -11,6 +11,17 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Générer les ambiances originales avec `python3 scripts/compose_finale_audio.py`, puis ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Nouveautés v0.21 — Dossier du sujet 16
+
+- Dossier accessible depuis le HUD, la pause et les bilans : progression, collection, quinze archives et observations de Folamour.
+- Dix souvenirs facultatifs par niveau (250) : ampoules témoins, tampons de service, rouages de prévoyance, prismes MIROIR et capsules de retour. Ils ne consomment aucune place dans le sac et ne conditionnent jamais la fin.
+- Collection persistante pendant la campagne et lors des reprises. Rejouer un niveau terminé depuis le dossier conserve la collection et les bilans ; les énigmes et la progression du niveau actuel sont remplacées après confirmation explicite. Une nouvelle aventure réinitialise le dossier.
+- Folamour suit le sujet du regard, respire et gesticule doucement. Répliques liées aux rencontres, réussites, tentatives et collections ; animations et commentaires désactivables séparément en pause.
+- Palettes, lumière et objets décoratifs spécifiques à chaque chapitre. Les cinq silhouettes se distinguent aussi sans la couleur.
+- Aucun changement aux 25 grilles, énigmes ou passages. Placement : 196 fonds d’impasse et 54 recoins éloignés, avec dix récompenses par niveau, cinq pas au minimum des interactions et huit pas entre récompenses.
+
+Placement reproductible : `python3 scripts/place_collectibles.py`. Contrôles : `python3 game/tests/validate_collectibles.py` et Godot `--headless --path game --fixed-fps 60 --script res://tests/verify_subject16.gd`. Ces contrôles s’ajoutent à la suite complète dans GitHub Actions.
 
 ## Fins de niveau v0.20
 

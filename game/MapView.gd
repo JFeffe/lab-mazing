@@ -28,13 +28,18 @@ func _draw():
 	for e in game.events:
 		if not game.seen.has(game.key(e.cell[0],e.cell[1])): continue
 		if e.kind=="pickup" and game.done.has(e.id): continue
+		if e.kind=="collectible" and game.Subject16.has(game,e):continue
 		var col=Color("e9be72")
 		if e.kind=="clue": col=Color("85d8d2")
 		if e.kind in ["mechanism","craft"]: col=Color("93aff0")
 		if e.kind in ["door","oneway"]: col=Color("e28b73")
 		if game.done.has(e.id): col=Color("538975")
 		if e.kind=="exit": col=Color.WHITE
+		if e.kind=="collectible":col=Color(game.Subject16.theme(game.level).color)
 		draw_circle(offset+(Vector2(e.cell[0],e.cell[1])+Vector2.ONE*0.5)*cell,max(2,cell*0.28),col)
+		if e.kind=="collectible":
+			var center=offset+(Vector2(e.cell[0],e.cell[1])+Vector2.ONE*.5)*cell
+			draw_arc(center,max(3,cell*.38),0,TAU,12,Color.WHITE,1)
 		if game.LevelEndings.is_doctor(e):
 			var point=offset+(Vector2(e.cell[0],e.cell[1])+Vector2.ONE*0.5)*cell
 			draw_string(get_theme_default_font(),point+Vector2(-4,4),"F",HORIZONTAL_ALIGNMENT_LEFT,-1,12,Color("152631"))

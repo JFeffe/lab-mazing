@@ -1,0 +1,9004 @@
+{
+  "1": [
+    {
+      "cell": [
+        17,
+        1
+      ],
+      "depth": 2,
+      "event_distance": 11,
+      "clearance": 3,
+      "type": "impasse",
+      "branch": [
+        [
+          17,
+          1
+        ],
+        [
+          18,
+          1
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "id": "collection_01_01",
+      "ref": "K01",
+      "chapter": 1,
+      "level": 1
+    },
+    {
+      "cell": [
+        3,
+        9
+      ],
+      "depth": 2,
+      "event_distance": 15,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          9
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          11
+        ]
+      ],
+      "id": "collection_01_02",
+      "ref": "K02",
+      "chapter": 1,
+      "level": 1
+    },
+    {
+      "cell": [
+        7,
+        9
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "id": "collection_01_03",
+      "ref": "K03",
+      "chapter": 1,
+      "level": 1
+    },
+    {
+      "cell": [
+        29,
+        17
+      ],
+      "depth": 2,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          29,
+          17
+        ],
+        [
+          29,
+          16
+        ],
+        [
+          29,
+          15
+        ]
+      ],
+      "id": "collection_01_04",
+      "ref": "K04",
+      "chapter": 1,
+      "level": 1
+    },
+    {
+      "cell": [
+        33,
+        21
+      ],
+      "depth": 8,
+      "event_distance": 9,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          33,
+          21
+        ],
+        [
+          33,
+          22
+        ],
+        [
+          33,
+          23
+        ],
+        [
+          32,
+          23
+        ],
+        [
+          31,
+          23
+        ],
+        [
+          30,
+          23
+        ],
+        [
+          29,
+          23
+        ],
+        [
+          28,
+          23
+        ],
+        [
+          27,
+          23
+        ]
+      ],
+      "id": "collection_01_05",
+      "ref": "K05",
+      "chapter": 1,
+      "level": 1
+    },
+    {
+      "cell": [
+        11,
+        25
+      ],
+      "depth": 4,
+      "event_distance": 16,
+      "clearance": 3,
+      "type": "impasse",
+      "branch": [
+        [
+          11,
+          25
+        ],
+        [
+          10,
+          25
+        ],
+        [
+          9,
+          25
+        ],
+        [
+          8,
+          25
+        ],
+        [
+          7,
+          25
+        ]
+      ],
+      "id": "collection_01_06",
+      "ref": "K06",
+      "chapter": 1,
+      "level": 1
+    },
+    {
+      "cell": [
+        23,
+        25
+      ],
+      "depth": 4,
+      "event_distance": 19,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          25
+        ],
+        [
+          24,
+          25
+        ],
+        [
+          25,
+          25
+        ],
+        [
+          25,
+          26
+        ],
+        [
+          25,
+          27
+        ]
+      ],
+      "id": "collection_01_07",
+      "ref": "K07",
+      "chapter": 1,
+      "level": 1
+    },
+    {
+      "cell": [
+        5,
+        31
+      ],
+      "depth": 4,
+      "event_distance": 15,
+      "clearance": 3,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          31
+        ],
+        [
+          6,
+          31
+        ],
+        [
+          7,
+          31
+        ],
+        [
+          7,
+          32
+        ],
+        [
+          7,
+          33
+        ]
+      ],
+      "id": "collection_01_08",
+      "ref": "K08",
+      "chapter": 1,
+      "level": 1
+    },
+    {
+      "cell": [
+        13,
+        31
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          13,
+          31
+        ],
+        [
+          13,
+          30
+        ],
+        [
+          13,
+          29
+        ]
+      ],
+      "id": "collection_01_09",
+      "ref": "K09",
+      "chapter": 1,
+      "level": 1
+    },
+    {
+      "cell": [
+        25,
+        31
+      ],
+      "depth": 4,
+      "event_distance": 19,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          31
+        ],
+        [
+          25,
+          30
+        ],
+        [
+          25,
+          29
+        ],
+        [
+          25,
+          28
+        ],
+        [
+          25,
+          27
+        ]
+      ],
+      "id": "collection_01_10",
+      "ref": "K10",
+      "chapter": 1,
+      "level": 1
+    }
+  ],
+  "2": [
+    {
+      "cell": [
+        15,
+        1
+      ],
+      "depth": 2,
+      "event_distance": 16,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          1
+        ],
+        [
+          17,
+          1
+        ]
+      ],
+      "id": "collection_02_01",
+      "ref": "K01",
+      "chapter": 1,
+      "level": 2
+    },
+    {
+      "cell": [
+        31,
+        3
+      ],
+      "depth": 6,
+      "event_distance": 12,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          31,
+          3
+        ],
+        [
+          30,
+          3
+        ],
+        [
+          29,
+          3
+        ],
+        [
+          28,
+          3
+        ],
+        [
+          27,
+          3
+        ],
+        [
+          27,
+          2
+        ],
+        [
+          27,
+          1
+        ]
+      ],
+      "id": "collection_02_02",
+      "ref": "K02",
+      "chapter": 1,
+      "level": 2
+    },
+    {
+      "cell": [
+        9,
+        7
+      ],
+      "depth": 4,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          9,
+          7
+        ],
+        [
+          9,
+          6
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          11,
+          5
+        ]
+      ],
+      "id": "collection_02_03",
+      "ref": "K03",
+      "chapter": 1,
+      "level": 2
+    },
+    {
+      "cell": [
+        13,
+        9
+      ],
+      "depth": 2,
+      "event_distance": 6,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          13,
+          9
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          15,
+          9
+        ]
+      ],
+      "id": "collection_02_04",
+      "ref": "K04",
+      "chapter": 1,
+      "level": 2
+    },
+    {
+      "cell": [
+        9,
+        15
+      ],
+      "depth": 2,
+      "event_distance": 14,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          9,
+          15
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          9,
+          17
+        ]
+      ],
+      "id": "collection_02_05",
+      "ref": "K05",
+      "chapter": 1,
+      "level": 2
+    },
+    {
+      "cell": [
+        21,
+        15
+      ],
+      "depth": 6,
+      "event_distance": 8,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          15
+        ],
+        [
+          21,
+          14
+        ],
+        [
+          21,
+          13
+        ],
+        [
+          20,
+          13
+        ],
+        [
+          19,
+          13
+        ],
+        [
+          18,
+          13
+        ],
+        [
+          17,
+          13
+        ]
+      ],
+      "id": "collection_02_06",
+      "ref": "K06",
+      "chapter": 1,
+      "level": 2
+    },
+    {
+      "cell": [
+        27,
+        17
+      ],
+      "depth": 4,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          27,
+          17
+        ],
+        [
+          26,
+          17
+        ],
+        [
+          25,
+          17
+        ],
+        [
+          24,
+          17
+        ],
+        [
+          23,
+          17
+        ]
+      ],
+      "id": "collection_02_07",
+      "ref": "K07",
+      "chapter": 1,
+      "level": 2
+    },
+    {
+      "cell": [
+        5,
+        27
+      ],
+      "depth": 8,
+      "event_distance": 14,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          27
+        ],
+        [
+          5,
+          26
+        ],
+        [
+          5,
+          25
+        ],
+        [
+          6,
+          25
+        ],
+        [
+          7,
+          25
+        ],
+        [
+          8,
+          25
+        ],
+        [
+          9,
+          25
+        ],
+        [
+          10,
+          25
+        ],
+        [
+          11,
+          25
+        ]
+      ],
+      "id": "collection_02_08",
+      "ref": "K08",
+      "chapter": 1,
+      "level": 2
+    },
+    {
+      "cell": [
+        7,
+        31
+      ],
+      "depth": 2,
+      "event_distance": 8,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          31
+        ],
+        [
+          6,
+          31
+        ],
+        [
+          5,
+          31
+        ]
+      ],
+      "id": "collection_02_09",
+      "ref": "K09",
+      "chapter": 1,
+      "level": 2
+    },
+    {
+      "cell": [
+        25,
+        33
+      ],
+      "depth": 2,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          33
+        ],
+        [
+          26,
+          33
+        ],
+        [
+          27,
+          33
+        ]
+      ],
+      "id": "collection_02_10",
+      "ref": "K10",
+      "chapter": 1,
+      "level": 2
+    }
+  ],
+  "3": [
+    {
+      "cell": [
+        13,
+        1
+      ],
+      "depth": 6,
+      "event_distance": 14,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          1
+        ],
+        [
+          17,
+          1
+        ],
+        [
+          18,
+          1
+        ],
+        [
+          19,
+          1
+        ]
+      ],
+      "id": "collection_03_01",
+      "ref": "K01",
+      "chapter": 1,
+      "level": 3
+    },
+    {
+      "cell": [
+        3,
+        3
+      ],
+      "depth": 4,
+      "event_distance": 16,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "id": "collection_03_02",
+      "ref": "K02",
+      "chapter": 1,
+      "level": 3
+    },
+    {
+      "cell": [
+        7,
+        3
+      ],
+      "depth": 12,
+      "event_distance": 22,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          3
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          9,
+          5
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          9
+        ]
+      ],
+      "id": "collection_03_03",
+      "ref": "K03",
+      "chapter": 1,
+      "level": 3
+    },
+    {
+      "cell": [
+        25,
+        3
+      ],
+      "depth": 8,
+      "event_distance": 10,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          3
+        ],
+        [
+          25,
+          2
+        ],
+        [
+          25,
+          1
+        ],
+        [
+          26,
+          1
+        ],
+        [
+          27,
+          1
+        ],
+        [
+          28,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          30,
+          1
+        ],
+        [
+          31,
+          1
+        ]
+      ],
+      "id": "collection_03_04",
+      "ref": "K04",
+      "chapter": 1,
+      "level": 3
+    },
+    {
+      "cell": [
+        23,
+        7
+      ],
+      "depth": 4,
+      "event_distance": 14,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          7
+        ],
+        [
+          22,
+          7
+        ],
+        [
+          21,
+          7
+        ],
+        [
+          21,
+          6
+        ],
+        [
+          21,
+          5
+        ]
+      ],
+      "id": "collection_03_05",
+      "ref": "K05",
+      "chapter": 1,
+      "level": 3
+    },
+    {
+      "cell": [
+        25,
+        13
+      ],
+      "depth": 12,
+      "event_distance": 16,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          13
+        ],
+        [
+          25,
+          14
+        ],
+        [
+          25,
+          15
+        ],
+        [
+          25,
+          16
+        ],
+        [
+          25,
+          17
+        ],
+        [
+          26,
+          17
+        ],
+        [
+          27,
+          17
+        ],
+        [
+          27,
+          16
+        ],
+        [
+          27,
+          15
+        ],
+        [
+          27,
+          14
+        ],
+        [
+          27,
+          13
+        ],
+        [
+          28,
+          13
+        ],
+        [
+          29,
+          13
+        ]
+      ],
+      "id": "collection_03_06",
+      "ref": "K06",
+      "chapter": 1,
+      "level": 3
+    },
+    {
+      "cell": [
+        5,
+        17
+      ],
+      "depth": 4,
+      "event_distance": 20,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          17
+        ],
+        [
+          4,
+          17
+        ],
+        [
+          3,
+          17
+        ],
+        [
+          3,
+          16
+        ],
+        [
+          3,
+          15
+        ]
+      ],
+      "id": "collection_03_07",
+      "ref": "K07",
+      "chapter": 1,
+      "level": 3
+    },
+    {
+      "cell": [
+        11,
+        25
+      ],
+      "depth": 14,
+      "event_distance": 26,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          11,
+          25
+        ],
+        [
+          12,
+          25
+        ],
+        [
+          13,
+          25
+        ],
+        [
+          14,
+          25
+        ],
+        [
+          15,
+          25
+        ],
+        [
+          15,
+          26
+        ],
+        [
+          15,
+          27
+        ],
+        [
+          16,
+          27
+        ],
+        [
+          17,
+          27
+        ],
+        [
+          17,
+          26
+        ],
+        [
+          17,
+          25
+        ],
+        [
+          18,
+          25
+        ],
+        [
+          19,
+          25
+        ],
+        [
+          20,
+          25
+        ],
+        [
+          21,
+          25
+        ]
+      ],
+      "id": "collection_03_08",
+      "ref": "K08",
+      "chapter": 1,
+      "level": 3
+    },
+    {
+      "cell": [
+        7,
+        27
+      ],
+      "depth": 14,
+      "event_distance": 16,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          27
+        ],
+        [
+          6,
+          27
+        ],
+        [
+          5,
+          27
+        ],
+        [
+          5,
+          28
+        ],
+        [
+          5,
+          29
+        ],
+        [
+          4,
+          29
+        ],
+        [
+          3,
+          29
+        ],
+        [
+          3,
+          28
+        ],
+        [
+          3,
+          27
+        ],
+        [
+          2,
+          27
+        ],
+        [
+          1,
+          27
+        ],
+        [
+          1,
+          28
+        ],
+        [
+          1,
+          29
+        ],
+        [
+          1,
+          30
+        ],
+        [
+          1,
+          31
+        ]
+      ],
+      "id": "collection_03_09",
+      "ref": "K09",
+      "chapter": 1,
+      "level": 3
+    },
+    {
+      "cell": [
+        25,
+        31
+      ],
+      "depth": 2,
+      "event_distance": 14,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          31
+        ],
+        [
+          25,
+          30
+        ],
+        [
+          25,
+          29
+        ]
+      ],
+      "id": "collection_03_10",
+      "ref": "K10",
+      "chapter": 1,
+      "level": 3
+    }
+  ],
+  "4": [
+    {
+      "cell": [
+        7,
+        1
+      ],
+      "depth": 18,
+      "event_distance": 26,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          8,
+          3
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          1
+        ],
+        [
+          17,
+          1
+        ]
+      ],
+      "id": "collection_04_01",
+      "ref": "K01",
+      "chapter": 1,
+      "level": 4
+    },
+    {
+      "cell": [
+        23,
+        3
+      ],
+      "depth": 6,
+      "event_distance": 20,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          3
+        ],
+        [
+          23,
+          4
+        ],
+        [
+          23,
+          5
+        ],
+        [
+          23,
+          6
+        ],
+        [
+          23,
+          7
+        ],
+        [
+          23,
+          8
+        ],
+        [
+          23,
+          9
+        ]
+      ],
+      "id": "collection_04_02",
+      "ref": "K02",
+      "chapter": 1,
+      "level": 4
+    },
+    {
+      "cell": [
+        21,
+        9
+      ],
+      "depth": 2,
+      "event_distance": 16,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          9
+        ],
+        [
+          22,
+          9
+        ],
+        [
+          23,
+          9
+        ]
+      ],
+      "id": "collection_04_03",
+      "ref": "K03",
+      "chapter": 1,
+      "level": 4
+    },
+    {
+      "cell": [
+        27,
+        13
+      ],
+      "depth": 4,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          27,
+          13
+        ],
+        [
+          28,
+          13
+        ],
+        [
+          29,
+          13
+        ],
+        [
+          30,
+          13
+        ],
+        [
+          31,
+          13
+        ]
+      ],
+      "id": "collection_04_04",
+      "ref": "K04",
+      "chapter": 1,
+      "level": 4
+    },
+    {
+      "cell": [
+        11,
+        17
+      ],
+      "depth": 2,
+      "event_distance": 16,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          11,
+          17
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          11,
+          15
+        ]
+      ],
+      "id": "collection_04_05",
+      "ref": "K05",
+      "chapter": 1,
+      "level": 4
+    },
+    {
+      "cell": [
+        23,
+        17
+      ],
+      "depth": 4,
+      "event_distance": 8,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          17
+        ],
+        [
+          23,
+          16
+        ],
+        [
+          23,
+          15
+        ],
+        [
+          22,
+          15
+        ],
+        [
+          21,
+          15
+        ]
+      ],
+      "id": "collection_04_06",
+      "ref": "K06",
+      "chapter": 1,
+      "level": 4
+    },
+    {
+      "cell": [
+        21,
+        25
+      ],
+      "depth": 4,
+      "event_distance": 24,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          25
+        ],
+        [
+          20,
+          25
+        ],
+        [
+          19,
+          25
+        ],
+        [
+          18,
+          25
+        ],
+        [
+          17,
+          25
+        ]
+      ],
+      "id": "collection_04_07",
+      "ref": "K07",
+      "chapter": 1,
+      "level": 4
+    },
+    {
+      "cell": [
+        15,
+        27
+      ],
+      "depth": 2,
+      "event_distance": 28,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          15,
+          27
+        ],
+        [
+          14,
+          27
+        ],
+        [
+          13,
+          27
+        ]
+      ],
+      "id": "collection_04_08",
+      "ref": "K08",
+      "chapter": 1,
+      "level": 4
+    },
+    {
+      "cell": [
+        23,
+        29
+      ],
+      "depth": 2,
+      "event_distance": 14,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          29
+        ],
+        [
+          22,
+          29
+        ],
+        [
+          21,
+          29
+        ]
+      ],
+      "id": "collection_04_09",
+      "ref": "K09",
+      "chapter": 1,
+      "level": 4
+    },
+    {
+      "cell": [
+        25,
+        33
+      ],
+      "depth": 4,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          33
+        ],
+        [
+          26,
+          33
+        ],
+        [
+          27,
+          33
+        ],
+        [
+          27,
+          32
+        ],
+        [
+          27,
+          31
+        ]
+      ],
+      "id": "collection_04_10",
+      "ref": "K10",
+      "chapter": 1,
+      "level": 4
+    }
+  ],
+  "5": [
+    {
+      "cell": [
+        15,
+        7
+      ],
+      "depth": 4,
+      "event_distance": 8,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          15,
+          7
+        ],
+        [
+          15,
+          6
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          3
+        ]
+      ],
+      "id": "collection_05_01",
+      "ref": "K01",
+      "chapter": 1,
+      "level": 5
+    },
+    {
+      "cell": [
+        29,
+        9
+      ],
+      "depth": 2,
+      "event_distance": 20,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          29,
+          9
+        ],
+        [
+          30,
+          9
+        ],
+        [
+          31,
+          9
+        ]
+      ],
+      "id": "collection_05_02",
+      "ref": "K02",
+      "chapter": 1,
+      "level": 5
+    },
+    {
+      "cell": [
+        7,
+        15
+      ],
+      "depth": 2,
+      "event_distance": 24,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          15
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          5,
+          15
+        ]
+      ],
+      "id": "collection_05_03",
+      "ref": "K03",
+      "chapter": 1,
+      "level": 5
+    },
+    {
+      "cell": [
+        1,
+        17
+      ],
+      "depth": 6,
+      "event_distance": 28,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          17
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          1,
+          15
+        ],
+        [
+          2,
+          15
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          15
+        ]
+      ],
+      "id": "collection_05_04",
+      "ref": "K04",
+      "chapter": 1,
+      "level": 5
+    },
+    {
+      "cell": [
+        11,
+        17
+      ],
+      "depth": 2,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          11,
+          17
+        ],
+        [
+          12,
+          17
+        ],
+        [
+          13,
+          17
+        ]
+      ],
+      "id": "collection_05_05",
+      "ref": "K05",
+      "chapter": 1,
+      "level": 5
+    },
+    {
+      "cell": [
+        33,
+        19
+      ],
+      "depth": 4,
+      "event_distance": 22,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          33,
+          19
+        ],
+        [
+          33,
+          20
+        ],
+        [
+          33,
+          21
+        ],
+        [
+          33,
+          22
+        ],
+        [
+          33,
+          23
+        ]
+      ],
+      "id": "collection_05_06",
+      "ref": "K06",
+      "chapter": 1,
+      "level": 5
+    },
+    {
+      "cell": [
+        3,
+        21
+      ],
+      "depth": 2,
+      "event_distance": 26,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          21
+        ],
+        [
+          4,
+          21
+        ],
+        [
+          5,
+          21
+        ]
+      ],
+      "id": "collection_05_07",
+      "ref": "K07",
+      "chapter": 1,
+      "level": 5
+    },
+    {
+      "cell": [
+        9,
+        21
+      ],
+      "depth": 8,
+      "event_distance": 32,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          9,
+          21
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          7,
+          21
+        ],
+        [
+          7,
+          22
+        ],
+        [
+          7,
+          23
+        ],
+        [
+          6,
+          23
+        ],
+        [
+          5,
+          23
+        ],
+        [
+          5,
+          22
+        ],
+        [
+          5,
+          21
+        ]
+      ],
+      "id": "collection_05_08",
+      "ref": "K08",
+      "chapter": 1,
+      "level": 5
+    },
+    {
+      "cell": [
+        21,
+        25
+      ],
+      "depth": 2,
+      "event_distance": 20,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          25
+        ],
+        [
+          21,
+          24
+        ],
+        [
+          21,
+          23
+        ]
+      ],
+      "id": "collection_05_09",
+      "ref": "K09",
+      "chapter": 1,
+      "level": 5
+    },
+    {
+      "cell": [
+        7,
+        31
+      ],
+      "depth": 4,
+      "event_distance": 22,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          31
+        ],
+        [
+          6,
+          31
+        ],
+        [
+          5,
+          31
+        ],
+        [
+          5,
+          30
+        ],
+        [
+          5,
+          29
+        ]
+      ],
+      "id": "collection_05_10",
+      "ref": "K10",
+      "chapter": 1,
+      "level": 5
+    }
+  ],
+  "6": [
+    {
+      "cell": [
+        13,
+        1
+      ],
+      "depth": 14,
+      "event_distance": 16,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          13,
+          1
+        ],
+        [
+          13,
+          2
+        ],
+        [
+          13,
+          3
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          13,
+          5
+        ],
+        [
+          14,
+          5
+        ],
+        [
+          15,
+          5
+        ],
+        [
+          16,
+          5
+        ],
+        [
+          17,
+          5
+        ],
+        [
+          18,
+          5
+        ],
+        [
+          19,
+          5
+        ],
+        [
+          20,
+          5
+        ],
+        [
+          21,
+          5
+        ],
+        [
+          22,
+          5
+        ],
+        [
+          23,
+          5
+        ]
+      ],
+      "id": "collection_06_01",
+      "ref": "K01",
+      "chapter": 2,
+      "level": 6
+    },
+    {
+      "cell": [
+        3,
+        3
+      ],
+      "depth": 4,
+      "event_distance": 14,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ]
+      ],
+      "id": "collection_06_02",
+      "ref": "K02",
+      "chapter": 2,
+      "level": 6
+    },
+    {
+      "cell": [
+        1,
+        7
+      ],
+      "depth": 6,
+      "event_distance": 12,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          7
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          4,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ]
+      ],
+      "id": "collection_06_03",
+      "ref": "K03",
+      "chapter": 2,
+      "level": 6
+    },
+    {
+      "cell": [
+        11,
+        9
+      ],
+      "depth": 8,
+      "event_distance": 16,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          11,
+          9
+        ],
+        [
+          11,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          11,
+          17
+        ]
+      ],
+      "id": "collection_06_04",
+      "ref": "K04",
+      "chapter": 2,
+      "level": 6
+    },
+    {
+      "cell": [
+        29,
+        11
+      ],
+      "depth": 8,
+      "event_distance": 12,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          29,
+          11
+        ],
+        [
+          28,
+          11
+        ],
+        [
+          27,
+          11
+        ],
+        [
+          26,
+          11
+        ],
+        [
+          25,
+          11
+        ],
+        [
+          25,
+          12
+        ],
+        [
+          25,
+          13
+        ],
+        [
+          25,
+          14
+        ],
+        [
+          25,
+          15
+        ]
+      ],
+      "id": "collection_06_05",
+      "ref": "K05",
+      "chapter": 2,
+      "level": 6
+    },
+    {
+      "cell": [
+        27,
+        17
+      ],
+      "depth": 6,
+      "event_distance": 26,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          27,
+          17
+        ],
+        [
+          28,
+          17
+        ],
+        [
+          29,
+          17
+        ],
+        [
+          29,
+          16
+        ],
+        [
+          29,
+          15
+        ],
+        [
+          30,
+          15
+        ],
+        [
+          31,
+          15
+        ]
+      ],
+      "id": "collection_06_06",
+      "ref": "K06",
+      "chapter": 2,
+      "level": 6
+    },
+    {
+      "cell": [
+        7,
+        21
+      ],
+      "depth": 6,
+      "event_distance": 18,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          21
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          9,
+          21
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          11,
+          21
+        ],
+        [
+          11,
+          22
+        ],
+        [
+          11,
+          23
+        ]
+      ],
+      "id": "collection_06_07",
+      "ref": "K07",
+      "chapter": 2,
+      "level": 6
+    },
+    {
+      "cell": [
+        33,
+        21
+      ],
+      "depth": 6,
+      "event_distance": 28,
+      "clearance": 12,
+      "type": "impasse",
+      "branch": [
+        [
+          33,
+          21
+        ],
+        [
+          33,
+          20
+        ],
+        [
+          33,
+          19
+        ],
+        [
+          33,
+          18
+        ],
+        [
+          33,
+          17
+        ],
+        [
+          33,
+          16
+        ],
+        [
+          33,
+          15
+        ]
+      ],
+      "id": "collection_06_08",
+      "ref": "K08",
+      "chapter": 2,
+      "level": 6
+    },
+    {
+      "cell": [
+        25,
+        23
+      ],
+      "depth": 2,
+      "event_distance": 24,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          23
+        ],
+        [
+          25,
+          24
+        ],
+        [
+          25,
+          25
+        ]
+      ],
+      "id": "collection_06_09",
+      "ref": "K09",
+      "chapter": 2,
+      "level": 6
+    },
+    {
+      "cell": [
+        7,
+        31
+      ],
+      "depth": 6,
+      "event_distance": 12,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          31
+        ],
+        [
+          7,
+          30
+        ],
+        [
+          7,
+          29
+        ],
+        [
+          7,
+          28
+        ],
+        [
+          7,
+          27
+        ],
+        [
+          8,
+          27
+        ],
+        [
+          9,
+          27
+        ]
+      ],
+      "id": "collection_06_10",
+      "ref": "K10",
+      "chapter": 2,
+      "level": 6
+    }
+  ],
+  "7": [
+    {
+      "cell": [
+        3,
+        3
+      ],
+      "depth": 10,
+      "event_distance": 16,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          9,
+          2
+        ],
+        [
+          9,
+          3
+        ]
+      ],
+      "id": "collection_07_01",
+      "ref": "K01",
+      "chapter": 2,
+      "level": 7
+    },
+    {
+      "cell": [
+        29,
+        5
+      ],
+      "depth": 2,
+      "event_distance": 8,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          29,
+          5
+        ],
+        [
+          30,
+          5
+        ],
+        [
+          31,
+          5
+        ]
+      ],
+      "id": "collection_07_02",
+      "ref": "K02",
+      "chapter": 2,
+      "level": 7
+    },
+    {
+      "cell": [
+        25,
+        7
+      ],
+      "depth": 8,
+      "event_distance": 20,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          7
+        ],
+        [
+          24,
+          7
+        ],
+        [
+          23,
+          7
+        ],
+        [
+          23,
+          6
+        ],
+        [
+          23,
+          5
+        ],
+        [
+          23,
+          4
+        ],
+        [
+          23,
+          3
+        ],
+        [
+          22,
+          3
+        ],
+        [
+          21,
+          3
+        ]
+      ],
+      "id": "collection_07_03",
+      "ref": "K03",
+      "chapter": 2,
+      "level": 7
+    },
+    {
+      "cell": [
+        27,
+        9
+      ],
+      "depth": 2,
+      "event_distance": 8,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          27,
+          9
+        ],
+        [
+          26,
+          9
+        ],
+        [
+          25,
+          9
+        ]
+      ],
+      "id": "collection_07_04",
+      "ref": "K04",
+      "chapter": 2,
+      "level": 7
+    },
+    {
+      "cell": [
+        23,
+        21
+      ],
+      "depth": 8,
+      "event_distance": 10,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          21
+        ],
+        [
+          24,
+          21
+        ],
+        [
+          25,
+          21
+        ],
+        [
+          26,
+          21
+        ],
+        [
+          27,
+          21
+        ],
+        [
+          28,
+          21
+        ],
+        [
+          29,
+          21
+        ],
+        [
+          30,
+          21
+        ],
+        [
+          31,
+          21
+        ]
+      ],
+      "id": "collection_07_05",
+      "ref": "K05",
+      "chapter": 2,
+      "level": 7
+    },
+    {
+      "cell": [
+        15,
+        25
+      ],
+      "depth": 16,
+      "event_distance": 38,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          15,
+          25
+        ],
+        [
+          15,
+          24
+        ],
+        [
+          15,
+          23
+        ],
+        [
+          14,
+          23
+        ],
+        [
+          13,
+          23
+        ],
+        [
+          13,
+          24
+        ],
+        [
+          13,
+          25
+        ],
+        [
+          12,
+          25
+        ],
+        [
+          11,
+          25
+        ],
+        [
+          10,
+          25
+        ],
+        [
+          9,
+          25
+        ],
+        [
+          9,
+          26
+        ],
+        [
+          9,
+          27
+        ],
+        [
+          9,
+          28
+        ],
+        [
+          9,
+          29
+        ],
+        [
+          8,
+          29
+        ],
+        [
+          7,
+          29
+        ]
+      ],
+      "id": "collection_07_06",
+      "ref": "K06",
+      "chapter": 2,
+      "level": 7
+    },
+    {
+      "cell": [
+        5,
+        27
+      ],
+      "depth": 4,
+      "event_distance": 26,
+      "clearance": 10,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          27
+        ],
+        [
+          5,
+          28
+        ],
+        [
+          5,
+          29
+        ],
+        [
+          6,
+          29
+        ],
+        [
+          7,
+          29
+        ]
+      ],
+      "id": "collection_07_07",
+      "ref": "K07",
+      "chapter": 2,
+      "level": 7
+    },
+    {
+      "cell": [
+        23,
+        27
+      ],
+      "depth": 10,
+      "event_distance": 28,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          27
+        ],
+        [
+          22,
+          27
+        ],
+        [
+          21,
+          27
+        ],
+        [
+          20,
+          27
+        ],
+        [
+          19,
+          27
+        ],
+        [
+          19,
+          26
+        ],
+        [
+          19,
+          25
+        ],
+        [
+          20,
+          25
+        ],
+        [
+          21,
+          25
+        ],
+        [
+          22,
+          25
+        ],
+        [
+          23,
+          25
+        ]
+      ],
+      "id": "collection_07_08",
+      "ref": "K08",
+      "chapter": 2,
+      "level": 7
+    },
+    {
+      "cell": [
+        29,
+        27
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 10,
+      "type": "impasse",
+      "branch": [
+        [
+          29,
+          27
+        ],
+        [
+          29,
+          28
+        ],
+        [
+          29,
+          29
+        ]
+      ],
+      "id": "collection_07_09",
+      "ref": "K09",
+      "chapter": 2,
+      "level": 7
+    },
+    {
+      "cell": [
+        27,
+        33
+      ],
+      "depth": 6,
+      "event_distance": 14,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          27,
+          33
+        ],
+        [
+          27,
+          32
+        ],
+        [
+          27,
+          31
+        ],
+        [
+          27,
+          30
+        ],
+        [
+          27,
+          29
+        ],
+        [
+          28,
+          29
+        ],
+        [
+          29,
+          29
+        ]
+      ],
+      "id": "collection_07_10",
+      "ref": "K10",
+      "chapter": 2,
+      "level": 7
+    }
+  ],
+  "8": [
+    {
+      "cell": [
+        17,
+        1
+      ],
+      "depth": 0,
+      "event_distance": 36,
+      "clearance": 4,
+      "type": "recoin",
+      "branch": [
+        [
+          17,
+          1
+        ]
+      ],
+      "id": "collection_08_01",
+      "ref": "K01",
+      "chapter": 2,
+      "level": 8
+    },
+    {
+      "cell": [
+        17,
+        15
+      ],
+      "depth": 4,
+      "event_distance": 12,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          17,
+          15
+        ],
+        [
+          18,
+          15
+        ],
+        [
+          19,
+          15
+        ],
+        [
+          19,
+          14
+        ],
+        [
+          19,
+          13
+        ]
+      ],
+      "id": "collection_08_02",
+      "ref": "K02",
+      "chapter": 2,
+      "level": 8
+    },
+    {
+      "cell": [
+        5,
+        17
+      ],
+      "depth": 8,
+      "event_distance": 10,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          17
+        ],
+        [
+          4,
+          17
+        ],
+        [
+          3,
+          17
+        ],
+        [
+          3,
+          18
+        ],
+        [
+          3,
+          19
+        ],
+        [
+          3,
+          20
+        ],
+        [
+          3,
+          21
+        ],
+        [
+          3,
+          22
+        ],
+        [
+          3,
+          23
+        ]
+      ],
+      "id": "collection_08_03",
+      "ref": "K03",
+      "chapter": 2,
+      "level": 8
+    },
+    {
+      "cell": [
+        15,
+        19
+      ],
+      "depth": 4,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          15,
+          19
+        ],
+        [
+          15,
+          20
+        ],
+        [
+          15,
+          21
+        ],
+        [
+          15,
+          22
+        ],
+        [
+          15,
+          23
+        ]
+      ],
+      "id": "collection_08_04",
+      "ref": "K04",
+      "chapter": 2,
+      "level": 8
+    },
+    {
+      "cell": [
+        9,
+        21
+      ],
+      "depth": 2,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          9,
+          21
+        ],
+        [
+          10,
+          21
+        ],
+        [
+          11,
+          21
+        ]
+      ],
+      "id": "collection_08_05",
+      "ref": "K05",
+      "chapter": 2,
+      "level": 8
+    },
+    {
+      "cell": [
+        23,
+        21
+      ],
+      "depth": 8,
+      "event_distance": 10,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          21
+        ],
+        [
+          23,
+          20
+        ],
+        [
+          23,
+          19
+        ],
+        [
+          23,
+          18
+        ],
+        [
+          23,
+          17
+        ],
+        [
+          23,
+          16
+        ],
+        [
+          23,
+          15
+        ],
+        [
+          23,
+          14
+        ],
+        [
+          23,
+          13
+        ]
+      ],
+      "id": "collection_08_06",
+      "ref": "K06",
+      "chapter": 2,
+      "level": 8
+    },
+    {
+      "cell": [
+        19,
+        23
+      ],
+      "depth": 4,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          19,
+          23
+        ],
+        [
+          19,
+          22
+        ],
+        [
+          19,
+          21
+        ],
+        [
+          19,
+          20
+        ],
+        [
+          19,
+          19
+        ]
+      ],
+      "id": "collection_08_07",
+      "ref": "K07",
+      "chapter": 2,
+      "level": 8
+    },
+    {
+      "cell": [
+        13,
+        29
+      ],
+      "depth": 2,
+      "event_distance": 5,
+      "clearance": 5,
+      "type": "impasse",
+      "branch": [
+        [
+          13,
+          29
+        ],
+        [
+          14,
+          29
+        ],
+        [
+          15,
+          29
+        ]
+      ],
+      "id": "collection_08_08",
+      "ref": "K08",
+      "chapter": 2,
+      "level": 8
+    },
+    {
+      "cell": [
+        21,
+        29
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 5,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          29
+        ],
+        [
+          22,
+          29
+        ],
+        [
+          23,
+          29
+        ]
+      ],
+      "id": "collection_08_09",
+      "ref": "K09",
+      "chapter": 2,
+      "level": 8
+    },
+    {
+      "cell": [
+        9,
+        31
+      ],
+      "depth": 4,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          9,
+          31
+        ],
+        [
+          8,
+          31
+        ],
+        [
+          7,
+          31
+        ],
+        [
+          7,
+          32
+        ],
+        [
+          7,
+          33
+        ]
+      ],
+      "id": "collection_08_10",
+      "ref": "K10",
+      "chapter": 2,
+      "level": 8
+    }
+  ],
+  "9": [
+    {
+      "cell": [
+        27,
+        3
+      ],
+      "depth": 4,
+      "event_distance": 8,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          27,
+          3
+        ],
+        [
+          27,
+          2
+        ],
+        [
+          27,
+          1
+        ],
+        [
+          28,
+          1
+        ],
+        [
+          29,
+          1
+        ]
+      ],
+      "id": "collection_09_01",
+      "ref": "K01",
+      "chapter": 2,
+      "level": 9
+    },
+    {
+      "cell": [
+        7,
+        5
+      ],
+      "depth": 4,
+      "event_distance": 22,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          5
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "id": "collection_09_02",
+      "ref": "K02",
+      "chapter": 2,
+      "level": 9
+    },
+    {
+      "cell": [
+        15,
+        5
+      ],
+      "depth": 12,
+      "event_distance": 17,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          15,
+          5
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          3
+        ],
+        [
+          14,
+          3
+        ],
+        [
+          13,
+          3
+        ],
+        [
+          13,
+          4
+        ],
+        [
+          13,
+          5
+        ],
+        [
+          13,
+          6
+        ],
+        [
+          13,
+          7
+        ],
+        [
+          13,
+          8
+        ],
+        [
+          13,
+          9
+        ],
+        [
+          14,
+          9
+        ],
+        [
+          15,
+          9
+        ]
+      ],
+      "id": "collection_09_03",
+      "ref": "K03",
+      "chapter": 2,
+      "level": 9
+    },
+    {
+      "cell": [
+        3,
+        11
+      ],
+      "depth": 6,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          11
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          3,
+          14
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          3,
+          16
+        ],
+        [
+          3,
+          17
+        ]
+      ],
+      "id": "collection_09_04",
+      "ref": "K04",
+      "chapter": 2,
+      "level": 9
+    },
+    {
+      "cell": [
+        7,
+        13
+      ],
+      "depth": 2,
+      "event_distance": 26,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          13
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "id": "collection_09_05",
+      "ref": "K05",
+      "chapter": 2,
+      "level": 9
+    },
+    {
+      "cell": [
+        1,
+        19
+      ],
+      "depth": 8,
+      "event_distance": 14,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          19
+        ],
+        [
+          1,
+          20
+        ],
+        [
+          1,
+          21
+        ],
+        [
+          1,
+          22
+        ],
+        [
+          1,
+          23
+        ],
+        [
+          1,
+          24
+        ],
+        [
+          1,
+          25
+        ],
+        [
+          1,
+          26
+        ],
+        [
+          1,
+          27
+        ]
+      ],
+      "id": "collection_09_06",
+      "ref": "K06",
+      "chapter": 2,
+      "level": 9
+    },
+    {
+      "cell": [
+        25,
+        19
+      ],
+      "depth": 4,
+      "event_distance": 14,
+      "clearance": 3,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          19
+        ],
+        [
+          25,
+          20
+        ],
+        [
+          25,
+          21
+        ],
+        [
+          25,
+          22
+        ],
+        [
+          25,
+          23
+        ]
+      ],
+      "id": "collection_09_07",
+      "ref": "K07",
+      "chapter": 2,
+      "level": 9
+    },
+    {
+      "cell": [
+        33,
+        19
+      ],
+      "depth": 2,
+      "event_distance": 22,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          33,
+          19
+        ],
+        [
+          33,
+          20
+        ],
+        [
+          33,
+          21
+        ]
+      ],
+      "id": "collection_09_08",
+      "ref": "K08",
+      "chapter": 2,
+      "level": 9
+    },
+    {
+      "cell": [
+        31,
+        29
+      ],
+      "depth": 6,
+      "event_distance": 22,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          31,
+          29
+        ],
+        [
+          31,
+          28
+        ],
+        [
+          31,
+          27
+        ],
+        [
+          30,
+          27
+        ],
+        [
+          29,
+          27
+        ],
+        [
+          29,
+          26
+        ],
+        [
+          29,
+          25
+        ]
+      ],
+      "id": "collection_09_09",
+      "ref": "K09",
+      "chapter": 2,
+      "level": 9
+    },
+    {
+      "cell": [
+        19,
+        31
+      ],
+      "depth": 2,
+      "event_distance": 12,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          19,
+          31
+        ],
+        [
+          20,
+          31
+        ],
+        [
+          21,
+          31
+        ]
+      ],
+      "id": "collection_09_10",
+      "ref": "K10",
+      "chapter": 2,
+      "level": 9
+    }
+  ],
+  "10": [
+    {
+      "cell": [
+        2,
+        3
+      ],
+      "depth": 0,
+      "event_distance": 27,
+      "clearance": 3,
+      "type": "recoin",
+      "branch": [
+        [
+          2,
+          3
+        ]
+      ],
+      "id": "collection_10_01",
+      "ref": "K01",
+      "chapter": 2,
+      "level": 10
+    },
+    {
+      "cell": [
+        1,
+        7
+      ],
+      "depth": 0,
+      "event_distance": 22,
+      "clearance": 6,
+      "type": "recoin",
+      "branch": [
+        [
+          1,
+          7
+        ]
+      ],
+      "id": "collection_10_02",
+      "ref": "K02",
+      "chapter": 2,
+      "level": 10
+    },
+    {
+      "cell": [
+        3,
+        9
+      ],
+      "depth": 6,
+      "event_distance": 18,
+      "clearance": 10,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          5,
+          11
+        ],
+        [
+          6,
+          11
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "id": "collection_10_03",
+      "ref": "K03",
+      "chapter": 2,
+      "level": 10
+    },
+    {
+      "cell": [
+        3,
+        13
+      ],
+      "depth": 0,
+      "event_distance": 30,
+      "clearance": 6,
+      "type": "recoin",
+      "branch": [
+        [
+          3,
+          13
+        ]
+      ],
+      "id": "collection_10_04",
+      "ref": "K04",
+      "chapter": 2,
+      "level": 10
+    },
+    {
+      "cell": [
+        1,
+        17
+      ],
+      "depth": 6,
+      "event_distance": 32,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          17
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          1,
+          15
+        ],
+        [
+          1,
+          14
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          1,
+          11
+        ]
+      ],
+      "id": "collection_10_05",
+      "ref": "K05",
+      "chapter": 2,
+      "level": 10
+    },
+    {
+      "cell": [
+        5,
+        23
+      ],
+      "depth": 2,
+      "event_distance": 18,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          23
+        ],
+        [
+          4,
+          23
+        ],
+        [
+          3,
+          23
+        ]
+      ],
+      "id": "collection_10_06",
+      "ref": "K06",
+      "chapter": 2,
+      "level": 10
+    },
+    {
+      "cell": [
+        7,
+        25
+      ],
+      "depth": 0,
+      "event_distance": 26,
+      "clearance": 10,
+      "type": "recoin",
+      "branch": [
+        [
+          7,
+          25
+        ]
+      ],
+      "id": "collection_10_07",
+      "ref": "K07",
+      "chapter": 2,
+      "level": 10
+    },
+    {
+      "cell": [
+        13,
+        25
+      ],
+      "depth": 4,
+      "event_distance": 6,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          13,
+          25
+        ],
+        [
+          14,
+          25
+        ],
+        [
+          15,
+          25
+        ],
+        [
+          16,
+          25
+        ],
+        [
+          17,
+          25
+        ]
+      ],
+      "id": "collection_10_08",
+      "ref": "K08",
+      "chapter": 2,
+      "level": 10
+    },
+    {
+      "cell": [
+        1,
+        27
+      ],
+      "depth": 2,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          27
+        ],
+        [
+          1,
+          28
+        ],
+        [
+          1,
+          29
+        ]
+      ],
+      "id": "collection_10_09",
+      "ref": "K09",
+      "chapter": 2,
+      "level": 10
+    },
+    {
+      "cell": [
+        15,
+        31
+      ],
+      "depth": 0,
+      "event_distance": 12,
+      "clearance": 4,
+      "type": "recoin",
+      "branch": [
+        [
+          15,
+          31
+        ],
+        [
+          15,
+          30
+        ],
+        [
+          15,
+          29
+        ],
+        [
+          15,
+          28
+        ],
+        [
+          15,
+          27
+        ],
+        [
+          14,
+          27
+        ],
+        [
+          13,
+          27
+        ],
+        [
+          13,
+          28
+        ],
+        [
+          13,
+          29
+        ],
+        [
+          13,
+          30
+        ],
+        [
+          13,
+          31
+        ],
+        [
+          13,
+          32
+        ],
+        [
+          13,
+          33
+        ],
+        [
+          14,
+          33
+        ],
+        [
+          15,
+          33
+        ],
+        [
+          16,
+          33
+        ],
+        [
+          17,
+          33
+        ]
+      ],
+      "id": "collection_10_10",
+      "ref": "K10",
+      "chapter": 2,
+      "level": 10
+    }
+  ],
+  "11": [
+    {
+      "cell": [
+        7,
+        7
+      ],
+      "depth": 4,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          7
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          7,
+          3
+        ]
+      ],
+      "id": "collection_11_01",
+      "ref": "K01",
+      "chapter": 3,
+      "level": 11
+    },
+    {
+      "cell": [
+        17,
+        7
+      ],
+      "depth": 4,
+      "event_distance": 26,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          17,
+          7
+        ],
+        [
+          18,
+          7
+        ],
+        [
+          19,
+          7
+        ],
+        [
+          19,
+          6
+        ],
+        [
+          19,
+          5
+        ]
+      ],
+      "id": "collection_11_02",
+      "ref": "K02",
+      "chapter": 3,
+      "level": 11
+    },
+    {
+      "cell": [
+        25,
+        7
+      ],
+      "depth": 6,
+      "event_distance": 22,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          7
+        ],
+        [
+          25,
+          6
+        ],
+        [
+          25,
+          5
+        ],
+        [
+          25,
+          4
+        ],
+        [
+          25,
+          3
+        ],
+        [
+          26,
+          3
+        ],
+        [
+          27,
+          3
+        ]
+      ],
+      "id": "collection_11_03",
+      "ref": "K03",
+      "chapter": 3,
+      "level": 11
+    },
+    {
+      "cell": [
+        3,
+        9
+      ],
+      "depth": 4,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          9
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          9
+        ]
+      ],
+      "id": "collection_11_04",
+      "ref": "K04",
+      "chapter": 3,
+      "level": 11
+    },
+    {
+      "cell": [
+        25,
+        15
+      ],
+      "depth": 4,
+      "event_distance": 18,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          15
+        ],
+        [
+          25,
+          16
+        ],
+        [
+          25,
+          17
+        ],
+        [
+          25,
+          18
+        ],
+        [
+          25,
+          19
+        ]
+      ],
+      "id": "collection_11_05",
+      "ref": "K05",
+      "chapter": 3,
+      "level": 11
+    },
+    {
+      "cell": [
+        31,
+        19
+      ],
+      "depth": 4,
+      "event_distance": 16,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          31,
+          19
+        ],
+        [
+          31,
+          18
+        ],
+        [
+          31,
+          17
+        ],
+        [
+          32,
+          17
+        ],
+        [
+          33,
+          17
+        ]
+      ],
+      "id": "collection_11_06",
+      "ref": "K06",
+      "chapter": 3,
+      "level": 11
+    },
+    {
+      "cell": [
+        5,
+        21
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          21
+        ],
+        [
+          6,
+          21
+        ],
+        [
+          7,
+          21
+        ]
+      ],
+      "id": "collection_11_07",
+      "ref": "K07",
+      "chapter": 3,
+      "level": 11
+    },
+    {
+      "cell": [
+        17,
+        21
+      ],
+      "depth": 4,
+      "event_distance": 12,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          17,
+          21
+        ],
+        [
+          17,
+          20
+        ],
+        [
+          17,
+          19
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          19,
+          19
+        ]
+      ],
+      "id": "collection_11_08",
+      "ref": "K08",
+      "chapter": 3,
+      "level": 11
+    },
+    {
+      "cell": [
+        13,
+        23
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          13,
+          23
+        ],
+        [
+          13,
+          24
+        ],
+        [
+          13,
+          25
+        ]
+      ],
+      "id": "collection_11_09",
+      "ref": "K09",
+      "chapter": 3,
+      "level": 11
+    },
+    {
+      "cell": [
+        25,
+        27
+      ],
+      "depth": 4,
+      "event_distance": 6,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          27
+        ],
+        [
+          26,
+          27
+        ],
+        [
+          27,
+          27
+        ],
+        [
+          28,
+          27
+        ],
+        [
+          29,
+          27
+        ]
+      ],
+      "id": "collection_11_10",
+      "ref": "K10",
+      "chapter": 3,
+      "level": 11
+    }
+  ],
+  "12": [
+    {
+      "cell": [
+        11,
+        1
+      ],
+      "depth": 4,
+      "event_distance": 18,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ]
+      ],
+      "id": "collection_12_01",
+      "ref": "K01",
+      "chapter": 3,
+      "level": 12
+    },
+    {
+      "cell": [
+        25,
+        1
+      ],
+      "depth": 6,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          1
+        ],
+        [
+          26,
+          1
+        ],
+        [
+          27,
+          1
+        ],
+        [
+          28,
+          1
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          30,
+          1
+        ],
+        [
+          31,
+          1
+        ]
+      ],
+      "id": "collection_12_02",
+      "ref": "K02",
+      "chapter": 3,
+      "level": 12
+    },
+    {
+      "cell": [
+        25,
+        5
+      ],
+      "depth": 6,
+      "event_distance": 28,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          5
+        ],
+        [
+          24,
+          5
+        ],
+        [
+          23,
+          5
+        ],
+        [
+          23,
+          6
+        ],
+        [
+          23,
+          7
+        ],
+        [
+          22,
+          7
+        ],
+        [
+          21,
+          7
+        ]
+      ],
+      "id": "collection_12_03",
+      "ref": "K03",
+      "chapter": 3,
+      "level": 12
+    },
+    {
+      "cell": [
+        21,
+        15
+      ],
+      "depth": 6,
+      "event_distance": 14,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          15
+        ],
+        [
+          21,
+          14
+        ],
+        [
+          21,
+          13
+        ],
+        [
+          22,
+          13
+        ],
+        [
+          23,
+          13
+        ],
+        [
+          24,
+          13
+        ],
+        [
+          25,
+          13
+        ]
+      ],
+      "id": "collection_12_04",
+      "ref": "K04",
+      "chapter": 3,
+      "level": 12
+    },
+    {
+      "cell": [
+        7,
+        17
+      ],
+      "depth": 4,
+      "event_distance": 22,
+      "clearance": 10,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          17
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          7,
+          14
+        ],
+        [
+          7,
+          13
+        ]
+      ],
+      "id": "collection_12_05",
+      "ref": "K05",
+      "chapter": 3,
+      "level": 12
+    },
+    {
+      "cell": [
+        11,
+        17
+      ],
+      "depth": 6,
+      "event_distance": 30,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          11,
+          17
+        ],
+        [
+          12,
+          17
+        ],
+        [
+          13,
+          17
+        ],
+        [
+          14,
+          17
+        ],
+        [
+          15,
+          17
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          15,
+          19
+        ]
+      ],
+      "id": "collection_12_06",
+      "ref": "K06",
+      "chapter": 3,
+      "level": 12
+    },
+    {
+      "cell": [
+        19,
+        19
+      ],
+      "depth": 4,
+      "event_distance": 28,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          19,
+          19
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          17,
+          19
+        ],
+        [
+          16,
+          19
+        ],
+        [
+          15,
+          19
+        ]
+      ],
+      "id": "collection_12_07",
+      "ref": "K07",
+      "chapter": 3,
+      "level": 12
+    },
+    {
+      "cell": [
+        21,
+        27
+      ],
+      "depth": 4,
+      "event_distance": 22,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          27
+        ],
+        [
+          20,
+          27
+        ],
+        [
+          19,
+          27
+        ],
+        [
+          19,
+          26
+        ],
+        [
+          19,
+          25
+        ]
+      ],
+      "id": "collection_12_08",
+      "ref": "K08",
+      "chapter": 3,
+      "level": 12
+    },
+    {
+      "cell": [
+        9,
+        31
+      ],
+      "depth": 10,
+      "event_distance": 14,
+      "clearance": 10,
+      "type": "impasse",
+      "branch": [
+        [
+          9,
+          31
+        ],
+        [
+          9,
+          32
+        ],
+        [
+          9,
+          33
+        ],
+        [
+          10,
+          33
+        ],
+        [
+          11,
+          33
+        ],
+        [
+          12,
+          33
+        ],
+        [
+          13,
+          33
+        ],
+        [
+          14,
+          33
+        ],
+        [
+          15,
+          33
+        ],
+        [
+          16,
+          33
+        ],
+        [
+          17,
+          33
+        ]
+      ],
+      "id": "collection_12_09",
+      "ref": "K09",
+      "chapter": 3,
+      "level": 12
+    },
+    {
+      "cell": [
+        23,
+        33
+      ],
+      "depth": 8,
+      "event_distance": 16,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          33
+        ],
+        [
+          22,
+          33
+        ],
+        [
+          21,
+          33
+        ],
+        [
+          21,
+          32
+        ],
+        [
+          21,
+          31
+        ],
+        [
+          22,
+          31
+        ],
+        [
+          23,
+          31
+        ],
+        [
+          24,
+          31
+        ],
+        [
+          25,
+          31
+        ]
+      ],
+      "id": "collection_12_10",
+      "ref": "K10",
+      "chapter": 3,
+      "level": 12
+    }
+  ],
+  "13": [
+    {
+      "cell": [
+        5,
+        3
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          3
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "id": "collection_13_01",
+      "ref": "K01",
+      "chapter": 3,
+      "level": 13
+    },
+    {
+      "cell": [
+        3,
+        7
+      ],
+      "depth": 2,
+      "event_distance": 12,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ]
+      ],
+      "id": "collection_13_02",
+      "ref": "K02",
+      "chapter": 3,
+      "level": 13
+    },
+    {
+      "cell": [
+        13,
+        11
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          13,
+          11
+        ],
+        [
+          12,
+          11
+        ],
+        [
+          11,
+          11
+        ]
+      ],
+      "id": "collection_13_03",
+      "ref": "K03",
+      "chapter": 3,
+      "level": 13
+    },
+    {
+      "cell": [
+        21,
+        11
+      ],
+      "depth": 6,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          11
+        ],
+        [
+          20,
+          11
+        ],
+        [
+          19,
+          11
+        ],
+        [
+          19,
+          10
+        ],
+        [
+          19,
+          9
+        ],
+        [
+          19,
+          8
+        ],
+        [
+          19,
+          7
+        ]
+      ],
+      "id": "collection_13_04",
+      "ref": "K04",
+      "chapter": 3,
+      "level": 13
+    },
+    {
+      "cell": [
+        21,
+        17
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          17
+        ],
+        [
+          21,
+          16
+        ],
+        [
+          21,
+          15
+        ]
+      ],
+      "id": "collection_13_05",
+      "ref": "K05",
+      "chapter": 3,
+      "level": 13
+    },
+    {
+      "cell": [
+        9,
+        21
+      ],
+      "depth": 4,
+      "event_distance": 36,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          9,
+          21
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          7,
+          21
+        ],
+        [
+          6,
+          21
+        ],
+        [
+          5,
+          21
+        ]
+      ],
+      "id": "collection_13_06",
+      "ref": "K06",
+      "chapter": 3,
+      "level": 13
+    },
+    {
+      "cell": [
+        21,
+        23
+      ],
+      "depth": 10,
+      "event_distance": 36,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          23
+        ],
+        [
+          22,
+          23
+        ],
+        [
+          23,
+          23
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          23,
+          25
+        ],
+        [
+          23,
+          26
+        ],
+        [
+          23,
+          27
+        ],
+        [
+          24,
+          27
+        ],
+        [
+          25,
+          27
+        ],
+        [
+          26,
+          27
+        ],
+        [
+          27,
+          27
+        ]
+      ],
+      "id": "collection_13_07",
+      "ref": "K07",
+      "chapter": 3,
+      "level": 13
+    },
+    {
+      "cell": [
+        1,
+        25
+      ],
+      "depth": 2,
+      "event_distance": 8,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          25
+        ],
+        [
+          1,
+          26
+        ],
+        [
+          1,
+          27
+        ]
+      ],
+      "id": "collection_13_08",
+      "ref": "K08",
+      "chapter": 3,
+      "level": 13
+    },
+    {
+      "cell": [
+        29,
+        27
+      ],
+      "depth": 2,
+      "event_distance": 28,
+      "clearance": 10,
+      "type": "impasse",
+      "branch": [
+        [
+          29,
+          27
+        ],
+        [
+          28,
+          27
+        ],
+        [
+          27,
+          27
+        ]
+      ],
+      "id": "collection_13_09",
+      "ref": "K09",
+      "chapter": 3,
+      "level": 13
+    },
+    {
+      "cell": [
+        19,
+        33
+      ],
+      "depth": 2,
+      "event_distance": 8,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          19,
+          33
+        ],
+        [
+          19,
+          32
+        ],
+        [
+          19,
+          31
+        ]
+      ],
+      "id": "collection_13_10",
+      "ref": "K10",
+      "chapter": 3,
+      "level": 13
+    }
+  ],
+  "14": [
+    {
+      "cell": [
+        8,
+        10
+      ],
+      "depth": 0,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "recoin",
+      "branch": [
+        [
+          8,
+          10
+        ]
+      ],
+      "id": "collection_14_01",
+      "ref": "K01",
+      "chapter": 3,
+      "level": 14
+    },
+    {
+      "cell": [
+        27,
+        10
+      ],
+      "depth": 0,
+      "event_distance": 9,
+      "clearance": 7,
+      "type": "recoin",
+      "branch": [
+        [
+          27,
+          10
+        ]
+      ],
+      "id": "collection_14_02",
+      "ref": "K02",
+      "chapter": 3,
+      "level": 14
+    },
+    {
+      "cell": [
+        1,
+        17
+      ],
+      "depth": 8,
+      "event_distance": 20,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          17
+        ],
+        [
+          2,
+          17
+        ],
+        [
+          3,
+          17
+        ],
+        [
+          3,
+          18
+        ],
+        [
+          3,
+          19
+        ],
+        [
+          3,
+          20
+        ],
+        [
+          3,
+          21
+        ],
+        [
+          2,
+          21
+        ],
+        [
+          1,
+          21
+        ]
+      ],
+      "id": "collection_14_03",
+      "ref": "K03",
+      "chapter": 3,
+      "level": 14
+    },
+    {
+      "cell": [
+        1,
+        21
+      ],
+      "depth": 0,
+      "event_distance": 12,
+      "clearance": 4,
+      "type": "recoin",
+      "branch": [
+        [
+          1,
+          21
+        ]
+      ],
+      "id": "collection_14_04",
+      "ref": "K04",
+      "chapter": 3,
+      "level": 14
+    },
+    {
+      "cell": [
+        29,
+        22
+      ],
+      "depth": 0,
+      "event_distance": 11,
+      "clearance": 7,
+      "type": "recoin",
+      "branch": [
+        [
+          29,
+          22
+        ]
+      ],
+      "id": "collection_14_05",
+      "ref": "K05",
+      "chapter": 3,
+      "level": 14
+    },
+    {
+      "cell": [
+        32,
+        23
+      ],
+      "depth": 0,
+      "event_distance": 15,
+      "clearance": 7,
+      "type": "recoin",
+      "branch": [
+        [
+          32,
+          23
+        ]
+      ],
+      "id": "collection_14_06",
+      "ref": "K06",
+      "chapter": 3,
+      "level": 14
+    },
+    {
+      "cell": [
+        1,
+        27
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          27
+        ],
+        [
+          1,
+          28
+        ],
+        [
+          1,
+          29
+        ]
+      ],
+      "id": "collection_14_07",
+      "ref": "K07",
+      "chapter": 3,
+      "level": 14
+    },
+    {
+      "cell": [
+        24,
+        27
+      ],
+      "depth": 0,
+      "event_distance": 11,
+      "clearance": 11,
+      "type": "recoin",
+      "branch": [
+        [
+          24,
+          27
+        ]
+      ],
+      "id": "collection_14_08",
+      "ref": "K08",
+      "chapter": 3,
+      "level": 14
+    },
+    {
+      "cell": [
+        14,
+        30
+      ],
+      "depth": 0,
+      "event_distance": 18,
+      "clearance": 10,
+      "type": "recoin",
+      "branch": [
+        [
+          14,
+          30
+        ]
+      ],
+      "id": "collection_14_09",
+      "ref": "K09",
+      "chapter": 3,
+      "level": 14
+    },
+    {
+      "cell": [
+        9,
+        33
+      ],
+      "depth": 0,
+      "event_distance": 16,
+      "clearance": 8,
+      "type": "recoin",
+      "branch": [
+        [
+          9,
+          33
+        ]
+      ],
+      "id": "collection_14_10",
+      "ref": "K10",
+      "chapter": 3,
+      "level": 14
+    }
+  ],
+  "15": [
+    {
+      "cell": [
+        5,
+        1
+      ],
+      "depth": 8,
+      "event_distance": 26,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          2
+        ],
+        [
+          7,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "id": "collection_15_01",
+      "ref": "K01",
+      "chapter": 3,
+      "level": 15
+    },
+    {
+      "cell": [
+        3,
+        5
+      ],
+      "depth": 2,
+      "event_distance": 20,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          5
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          5
+        ]
+      ],
+      "id": "collection_15_02",
+      "ref": "K02",
+      "chapter": 3,
+      "level": 15
+    },
+    {
+      "cell": [
+        31,
+        5
+      ],
+      "depth": 8,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          31,
+          5
+        ],
+        [
+          30,
+          5
+        ],
+        [
+          29,
+          5
+        ],
+        [
+          29,
+          4
+        ],
+        [
+          29,
+          3
+        ],
+        [
+          29,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          30,
+          1
+        ],
+        [
+          31,
+          1
+        ]
+      ],
+      "id": "collection_15_03",
+      "ref": "K03",
+      "chapter": 3,
+      "level": 15
+    },
+    {
+      "cell": [
+        1,
+        9
+      ],
+      "depth": 14,
+      "event_distance": 36,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          3,
+          10
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          1,
+          11
+        ],
+        [
+          1,
+          12
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          1,
+          14
+        ],
+        [
+          1,
+          15
+        ],
+        [
+          1,
+          16
+        ],
+        [
+          1,
+          17
+        ],
+        [
+          1,
+          18
+        ],
+        [
+          1,
+          19
+        ]
+      ],
+      "id": "collection_15_04",
+      "ref": "K04",
+      "chapter": 3,
+      "level": 15
+    },
+    {
+      "cell": [
+        27,
+        9
+      ],
+      "depth": 2,
+      "event_distance": 17,
+      "clearance": 9,
+      "type": "impasse",
+      "branch": [
+        [
+          27,
+          9
+        ],
+        [
+          27,
+          10
+        ],
+        [
+          27,
+          11
+        ]
+      ],
+      "id": "collection_15_05",
+      "ref": "K05",
+      "chapter": 3,
+      "level": 15
+    },
+    {
+      "cell": [
+        29,
+        13
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          29,
+          13
+        ],
+        [
+          30,
+          13
+        ],
+        [
+          31,
+          13
+        ]
+      ],
+      "id": "collection_15_06",
+      "ref": "K06",
+      "chapter": 3,
+      "level": 15
+    },
+    {
+      "cell": [
+        5,
+        15
+      ],
+      "depth": 4,
+      "event_distance": 5,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          15
+        ],
+        [
+          6,
+          15
+        ],
+        [
+          7,
+          15
+        ],
+        [
+          7,
+          16
+        ],
+        [
+          7,
+          17
+        ]
+      ],
+      "id": "collection_15_07",
+      "ref": "K07",
+      "chapter": 3,
+      "level": 15
+    },
+    {
+      "cell": [
+        29,
+        21
+      ],
+      "depth": 2,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          29,
+          21
+        ],
+        [
+          30,
+          21
+        ],
+        [
+          31,
+          21
+        ]
+      ],
+      "id": "collection_15_08",
+      "ref": "K08",
+      "chapter": 3,
+      "level": 15
+    },
+    {
+      "cell": [
+        3,
+        23
+      ],
+      "depth": 6,
+      "event_distance": 28,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          23
+        ],
+        [
+          3,
+          22
+        ],
+        [
+          3,
+          21
+        ],
+        [
+          3,
+          20
+        ],
+        [
+          3,
+          19
+        ],
+        [
+          2,
+          19
+        ],
+        [
+          1,
+          19
+        ]
+      ],
+      "id": "collection_15_09",
+      "ref": "K09",
+      "chapter": 3,
+      "level": 15
+    },
+    {
+      "cell": [
+        27,
+        25
+      ],
+      "depth": 2,
+      "event_distance": 17,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          27,
+          25
+        ],
+        [
+          27,
+          26
+        ],
+        [
+          27,
+          27
+        ]
+      ],
+      "id": "collection_15_10",
+      "ref": "K10",
+      "chapter": 3,
+      "level": 15
+    }
+  ],
+  "16": [
+    {
+      "cell": [
+        9,
+        13
+      ],
+      "depth": 0,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "recoin",
+      "branch": [
+        [
+          9,
+          13
+        ]
+      ],
+      "id": "collection_16_01",
+      "ref": "K01",
+      "chapter": 4,
+      "level": 16
+    },
+    {
+      "cell": [
+        24,
+        17
+      ],
+      "depth": 0,
+      "event_distance": 21,
+      "clearance": 5,
+      "type": "recoin",
+      "branch": [
+        [
+          24,
+          17
+        ]
+      ],
+      "id": "collection_16_02",
+      "ref": "K02",
+      "chapter": 4,
+      "level": 16
+    },
+    {
+      "cell": [
+        21,
+        21
+      ],
+      "depth": 2,
+      "event_distance": 16,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          21
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          19,
+          21
+        ]
+      ],
+      "id": "collection_16_03",
+      "ref": "K03",
+      "chapter": 4,
+      "level": 16
+    },
+    {
+      "cell": [
+        15,
+        25
+      ],
+      "depth": 4,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          15,
+          25
+        ],
+        [
+          15,
+          26
+        ],
+        [
+          15,
+          27
+        ],
+        [
+          14,
+          27
+        ],
+        [
+          13,
+          27
+        ]
+      ],
+      "id": "collection_16_04",
+      "ref": "K04",
+      "chapter": 4,
+      "level": 16
+    },
+    {
+      "cell": [
+        7,
+        27
+      ],
+      "depth": 0,
+      "event_distance": 18,
+      "clearance": 4,
+      "type": "recoin",
+      "branch": [
+        [
+          7,
+          27
+        ]
+      ],
+      "id": "collection_16_05",
+      "ref": "K05",
+      "chapter": 4,
+      "level": 16
+    },
+    {
+      "cell": [
+        29,
+        28
+      ],
+      "depth": 0,
+      "event_distance": 15,
+      "clearance": 7,
+      "type": "recoin",
+      "branch": [
+        [
+          29,
+          28
+        ]
+      ],
+      "id": "collection_16_06",
+      "ref": "K06",
+      "chapter": 4,
+      "level": 16
+    },
+    {
+      "cell": [
+        1,
+        29
+      ],
+      "depth": 4,
+      "event_distance": 12,
+      "clearance": 12,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          29
+        ],
+        [
+          1,
+          28
+        ],
+        [
+          1,
+          27
+        ],
+        [
+          1,
+          26
+        ],
+        [
+          1,
+          25
+        ]
+      ],
+      "id": "collection_16_07",
+      "ref": "K07",
+      "chapter": 4,
+      "level": 16
+    },
+    {
+      "cell": [
+        11,
+        29
+      ],
+      "depth": 4,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          11,
+          29
+        ],
+        [
+          11,
+          28
+        ],
+        [
+          11,
+          27
+        ],
+        [
+          12,
+          27
+        ],
+        [
+          13,
+          27
+        ]
+      ],
+      "id": "collection_16_08",
+      "ref": "K08",
+      "chapter": 4,
+      "level": 16
+    },
+    {
+      "cell": [
+        7,
+        31
+      ],
+      "depth": 4,
+      "event_distance": 20,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          31
+        ],
+        [
+          6,
+          31
+        ],
+        [
+          5,
+          31
+        ],
+        [
+          4,
+          31
+        ],
+        [
+          3,
+          31
+        ]
+      ],
+      "id": "collection_16_09",
+      "ref": "K09",
+      "chapter": 4,
+      "level": 16
+    },
+    {
+      "cell": [
+        27,
+        31
+      ],
+      "depth": 8,
+      "event_distance": 12,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          27,
+          31
+        ],
+        [
+          26,
+          31
+        ],
+        [
+          25,
+          31
+        ],
+        [
+          25,
+          32
+        ],
+        [
+          25,
+          33
+        ],
+        [
+          26,
+          33
+        ],
+        [
+          27,
+          33
+        ],
+        [
+          28,
+          33
+        ],
+        [
+          29,
+          33
+        ]
+      ],
+      "id": "collection_16_10",
+      "ref": "K10",
+      "chapter": 4,
+      "level": 16
+    }
+  ],
+  "17": [
+    {
+      "cell": [
+        5,
+        1
+      ],
+      "depth": 2,
+      "event_distance": 8,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "id": "collection_17_01",
+      "ref": "K01",
+      "chapter": 4,
+      "level": 17
+    },
+    {
+      "cell": [
+        3,
+        5
+      ],
+      "depth": 2,
+      "event_distance": 18,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          5
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "id": "collection_17_02",
+      "ref": "K02",
+      "chapter": 4,
+      "level": 17
+    },
+    {
+      "cell": [
+        19,
+        5
+      ],
+      "depth": 4,
+      "event_distance": 12,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          19,
+          5
+        ],
+        [
+          19,
+          4
+        ],
+        [
+          19,
+          3
+        ],
+        [
+          20,
+          3
+        ],
+        [
+          21,
+          3
+        ]
+      ],
+      "id": "collection_17_03",
+      "ref": "K03",
+      "chapter": 4,
+      "level": 17
+    },
+    {
+      "cell": [
+        5,
+        13
+      ],
+      "depth": 2,
+      "event_distance": 12,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          13
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          5,
+          11
+        ]
+      ],
+      "id": "collection_17_04",
+      "ref": "K04",
+      "chapter": 4,
+      "level": 17
+    },
+    {
+      "cell": [
+        23,
+        13
+      ],
+      "depth": 0,
+      "event_distance": 28,
+      "clearance": 8,
+      "type": "recoin",
+      "branch": [
+        [
+          23,
+          13
+        ]
+      ],
+      "id": "collection_17_05",
+      "ref": "K05",
+      "chapter": 4,
+      "level": 17
+    },
+    {
+      "cell": [
+        25,
+        15
+      ],
+      "depth": 10,
+      "event_distance": 12,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          15
+        ],
+        [
+          26,
+          15
+        ],
+        [
+          27,
+          15
+        ],
+        [
+          28,
+          15
+        ],
+        [
+          29,
+          15
+        ],
+        [
+          29,
+          14
+        ],
+        [
+          29,
+          13
+        ],
+        [
+          30,
+          13
+        ],
+        [
+          31,
+          13
+        ],
+        [
+          31,
+          14
+        ],
+        [
+          31,
+          15
+        ]
+      ],
+      "id": "collection_17_06",
+      "ref": "K06",
+      "chapter": 4,
+      "level": 17
+    },
+    {
+      "cell": [
+        1,
+        19
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          19
+        ],
+        [
+          1,
+          20
+        ],
+        [
+          1,
+          21
+        ]
+      ],
+      "id": "collection_17_07",
+      "ref": "K07",
+      "chapter": 4,
+      "level": 17
+    },
+    {
+      "cell": [
+        21,
+        23
+      ],
+      "depth": 10,
+      "event_distance": 12,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          23
+        ],
+        [
+          20,
+          23
+        ],
+        [
+          19,
+          23
+        ],
+        [
+          19,
+          24
+        ],
+        [
+          19,
+          25
+        ],
+        [
+          19,
+          26
+        ],
+        [
+          19,
+          27
+        ],
+        [
+          19,
+          28
+        ],
+        [
+          19,
+          29
+        ],
+        [
+          19,
+          30
+        ],
+        [
+          19,
+          31
+        ]
+      ],
+      "id": "collection_17_08",
+      "ref": "K08",
+      "chapter": 4,
+      "level": 17
+    },
+    {
+      "cell": [
+        3,
+        27
+      ],
+      "depth": 8,
+      "event_distance": 12,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          27
+        ],
+        [
+          3,
+          26
+        ],
+        [
+          3,
+          25
+        ],
+        [
+          3,
+          24
+        ],
+        [
+          3,
+          23
+        ],
+        [
+          4,
+          23
+        ],
+        [
+          5,
+          23
+        ],
+        [
+          5,
+          24
+        ],
+        [
+          5,
+          25
+        ]
+      ],
+      "id": "collection_17_09",
+      "ref": "K09",
+      "chapter": 4,
+      "level": 17
+    },
+    {
+      "cell": [
+        23,
+        31
+      ],
+      "depth": 2,
+      "event_distance": 18,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          31
+        ],
+        [
+          24,
+          31
+        ],
+        [
+          25,
+          31
+        ]
+      ],
+      "id": "collection_17_10",
+      "ref": "K10",
+      "chapter": 4,
+      "level": 17
+    }
+  ],
+  "18": [
+    {
+      "cell": [
+        18,
+        1
+      ],
+      "depth": 0,
+      "event_distance": 17,
+      "clearance": 13,
+      "type": "recoin",
+      "branch": [
+        [
+          18,
+          1
+        ]
+      ],
+      "id": "collection_18_01",
+      "ref": "K01",
+      "chapter": 4,
+      "level": 18
+    },
+    {
+      "cell": [
+        33,
+        1
+      ],
+      "depth": 0,
+      "event_distance": 11,
+      "clearance": 11,
+      "type": "recoin",
+      "branch": [
+        [
+          33,
+          1
+        ]
+      ],
+      "id": "collection_18_02",
+      "ref": "K02",
+      "chapter": 4,
+      "level": 18
+    },
+    {
+      "cell": [
+        14,
+        5
+      ],
+      "depth": 0,
+      "event_distance": 17,
+      "clearance": 9,
+      "type": "recoin",
+      "branch": [
+        [
+          14,
+          5
+        ]
+      ],
+      "id": "collection_18_03",
+      "ref": "K03",
+      "chapter": 4,
+      "level": 18
+    },
+    {
+      "cell": [
+        5,
+        8
+      ],
+      "depth": 0,
+      "event_distance": 11,
+      "clearance": 5,
+      "type": "recoin",
+      "branch": [
+        [
+          5,
+          8
+        ]
+      ],
+      "id": "collection_18_04",
+      "ref": "K04",
+      "chapter": 4,
+      "level": 18
+    },
+    {
+      "cell": [
+        33,
+        11
+      ],
+      "depth": 0,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "recoin",
+      "branch": [
+        [
+          33,
+          11
+        ]
+      ],
+      "id": "collection_18_05",
+      "ref": "K05",
+      "chapter": 4,
+      "level": 18
+    },
+    {
+      "cell": [
+        1,
+        12
+      ],
+      "depth": 0,
+      "event_distance": 11,
+      "clearance": 11,
+      "type": "recoin",
+      "branch": [
+        [
+          1,
+          12
+        ]
+      ],
+      "id": "collection_18_06",
+      "ref": "K06",
+      "chapter": 4,
+      "level": 18
+    },
+    {
+      "cell": [
+        22,
+        17
+      ],
+      "depth": 0,
+      "event_distance": 11,
+      "clearance": 5,
+      "type": "recoin",
+      "branch": [
+        [
+          22,
+          17
+        ]
+      ],
+      "id": "collection_18_07",
+      "ref": "K07",
+      "chapter": 4,
+      "level": 18
+    },
+    {
+      "cell": [
+        5,
+        23
+      ],
+      "depth": 0,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "recoin",
+      "branch": [
+        [
+          5,
+          23
+        ]
+      ],
+      "id": "collection_18_08",
+      "ref": "K08",
+      "chapter": 4,
+      "level": 18
+    },
+    {
+      "cell": [
+        14,
+        25
+      ],
+      "depth": 0,
+      "event_distance": 11,
+      "clearance": 9,
+      "type": "recoin",
+      "branch": [
+        [
+          14,
+          25
+        ]
+      ],
+      "id": "collection_18_09",
+      "ref": "K09",
+      "chapter": 4,
+      "level": 18
+    },
+    {
+      "cell": [
+        18,
+        33
+      ],
+      "depth": 0,
+      "event_distance": 15,
+      "clearance": 15,
+      "type": "recoin",
+      "branch": [
+        [
+          18,
+          33
+        ]
+      ],
+      "id": "collection_18_10",
+      "ref": "K10",
+      "chapter": 4,
+      "level": 18
+    }
+  ],
+  "19": [
+    {
+      "cell": [
+        31,
+        5
+      ],
+      "depth": 8,
+      "event_distance": 24,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          31,
+          5
+        ],
+        [
+          30,
+          5
+        ],
+        [
+          29,
+          5
+        ],
+        [
+          29,
+          4
+        ],
+        [
+          29,
+          3
+        ],
+        [
+          29,
+          2
+        ],
+        [
+          29,
+          1
+        ],
+        [
+          30,
+          1
+        ],
+        [
+          31,
+          1
+        ]
+      ],
+      "id": "collection_19_01",
+      "ref": "K01",
+      "chapter": 4,
+      "level": 19
+    },
+    {
+      "cell": [
+        19,
+        7
+      ],
+      "depth": 8,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          19,
+          7
+        ],
+        [
+          19,
+          6
+        ],
+        [
+          19,
+          5
+        ],
+        [
+          19,
+          4
+        ],
+        [
+          19,
+          3
+        ],
+        [
+          19,
+          2
+        ],
+        [
+          19,
+          1
+        ],
+        [
+          20,
+          1
+        ],
+        [
+          21,
+          1
+        ]
+      ],
+      "id": "collection_19_02",
+      "ref": "K02",
+      "chapter": 4,
+      "level": 19
+    },
+    {
+      "cell": [
+        27,
+        9
+      ],
+      "depth": 4,
+      "event_distance": 16,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          27,
+          9
+        ],
+        [
+          27,
+          10
+        ],
+        [
+          27,
+          11
+        ],
+        [
+          27,
+          12
+        ],
+        [
+          27,
+          13
+        ]
+      ],
+      "id": "collection_19_03",
+      "ref": "K03",
+      "chapter": 4,
+      "level": 19
+    },
+    {
+      "cell": [
+        21,
+        11
+      ],
+      "depth": 4,
+      "event_distance": 18,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          11
+        ],
+        [
+          20,
+          11
+        ],
+        [
+          19,
+          11
+        ],
+        [
+          18,
+          11
+        ],
+        [
+          17,
+          11
+        ]
+      ],
+      "id": "collection_19_04",
+      "ref": "K04",
+      "chapter": 4,
+      "level": 19
+    },
+    {
+      "cell": [
+        33,
+        11
+      ],
+      "depth": 2,
+      "event_distance": 24,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          33,
+          11
+        ],
+        [
+          33,
+          12
+        ],
+        [
+          33,
+          13
+        ]
+      ],
+      "id": "collection_19_05",
+      "ref": "K05",
+      "chapter": 4,
+      "level": 19
+    },
+    {
+      "cell": [
+        3,
+        17
+      ],
+      "depth": 18,
+      "event_distance": 44,
+      "clearance": 10,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          17
+        ],
+        [
+          3,
+          18
+        ],
+        [
+          3,
+          19
+        ],
+        [
+          3,
+          20
+        ],
+        [
+          3,
+          21
+        ],
+        [
+          4,
+          21
+        ],
+        [
+          5,
+          21
+        ],
+        [
+          5,
+          20
+        ],
+        [
+          5,
+          19
+        ],
+        [
+          5,
+          18
+        ],
+        [
+          5,
+          17
+        ],
+        [
+          6,
+          17
+        ],
+        [
+          7,
+          17
+        ],
+        [
+          8,
+          17
+        ],
+        [
+          9,
+          17
+        ],
+        [
+          9,
+          16
+        ],
+        [
+          9,
+          15
+        ],
+        [
+          8,
+          15
+        ],
+        [
+          7,
+          15
+        ]
+      ],
+      "id": "collection_19_06",
+      "ref": "K06",
+      "chapter": 4,
+      "level": 19
+    },
+    {
+      "cell": [
+        27,
+        19
+      ],
+      "depth": 4,
+      "event_distance": 14,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          27,
+          19
+        ],
+        [
+          27,
+          20
+        ],
+        [
+          27,
+          21
+        ],
+        [
+          27,
+          22
+        ],
+        [
+          27,
+          23
+        ]
+      ],
+      "id": "collection_19_07",
+      "ref": "K07",
+      "chapter": 4,
+      "level": 19
+    },
+    {
+      "cell": [
+        11,
+        23
+      ],
+      "depth": 8,
+      "event_distance": 10,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          11,
+          23
+        ],
+        [
+          10,
+          23
+        ],
+        [
+          9,
+          23
+        ],
+        [
+          9,
+          24
+        ],
+        [
+          9,
+          25
+        ],
+        [
+          10,
+          25
+        ],
+        [
+          11,
+          25
+        ],
+        [
+          11,
+          26
+        ],
+        [
+          11,
+          27
+        ]
+      ],
+      "id": "collection_19_08",
+      "ref": "K08",
+      "chapter": 4,
+      "level": 19
+    },
+    {
+      "cell": [
+        23,
+        25
+      ],
+      "depth": 14,
+      "event_distance": 18,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          25
+        ],
+        [
+          23,
+          24
+        ],
+        [
+          23,
+          23
+        ],
+        [
+          23,
+          22
+        ],
+        [
+          23,
+          21
+        ],
+        [
+          22,
+          21
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          21,
+          22
+        ],
+        [
+          21,
+          23
+        ],
+        [
+          20,
+          23
+        ],
+        [
+          19,
+          23
+        ],
+        [
+          19,
+          22
+        ],
+        [
+          19,
+          21
+        ],
+        [
+          18,
+          21
+        ],
+        [
+          17,
+          21
+        ]
+      ],
+      "id": "collection_19_09",
+      "ref": "K09",
+      "chapter": 4,
+      "level": 19
+    },
+    {
+      "cell": [
+        15,
+        33
+      ],
+      "depth": 4,
+      "event_distance": 12,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          15,
+          33
+        ],
+        [
+          15,
+          32
+        ],
+        [
+          15,
+          31
+        ],
+        [
+          16,
+          31
+        ],
+        [
+          17,
+          31
+        ]
+      ],
+      "id": "collection_19_10",
+      "ref": "K10",
+      "chapter": 4,
+      "level": 19
+    }
+  ],
+  "20": [
+    {
+      "cell": [
+        31,
+        6
+      ],
+      "depth": 0,
+      "event_distance": 9,
+      "clearance": 3,
+      "type": "recoin",
+      "branch": [
+        [
+          31,
+          6
+        ]
+      ],
+      "id": "collection_20_01",
+      "ref": "K01",
+      "chapter": 4,
+      "level": 20
+    },
+    {
+      "cell": [
+        17,
+        7
+      ],
+      "depth": 4,
+      "event_distance": 14,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          17,
+          7
+        ],
+        [
+          16,
+          7
+        ],
+        [
+          15,
+          7
+        ],
+        [
+          14,
+          7
+        ],
+        [
+          13,
+          7
+        ]
+      ],
+      "id": "collection_20_02",
+      "ref": "K02",
+      "chapter": 4,
+      "level": 20
+    },
+    {
+      "cell": [
+        27,
+        9
+      ],
+      "depth": 2,
+      "event_distance": 18,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          27,
+          9
+        ],
+        [
+          27,
+          8
+        ],
+        [
+          27,
+          7
+        ]
+      ],
+      "id": "collection_20_03",
+      "ref": "K03",
+      "chapter": 4,
+      "level": 20
+    },
+    {
+      "cell": [
+        1,
+        11
+      ],
+      "depth": 4,
+      "event_distance": 14,
+      "clearance": 10,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          11
+        ],
+        [
+          1,
+          10
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          7
+        ]
+      ],
+      "id": "collection_20_04",
+      "ref": "K04",
+      "chapter": 4,
+      "level": 20
+    },
+    {
+      "cell": [
+        9,
+        11
+      ],
+      "depth": 2,
+      "event_distance": 10,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          9,
+          11
+        ],
+        [
+          8,
+          11
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "id": "collection_20_05",
+      "ref": "K05",
+      "chapter": 4,
+      "level": 20
+    },
+    {
+      "cell": [
+        1,
+        23
+      ],
+      "depth": 24,
+      "event_distance": 30,
+      "clearance": 10,
+      "type": "impasse",
+      "branch": [
+        [
+          1,
+          23
+        ],
+        [
+          1,
+          24
+        ],
+        [
+          1,
+          25
+        ],
+        [
+          1,
+          26
+        ],
+        [
+          1,
+          27
+        ],
+        [
+          1,
+          28
+        ],
+        [
+          1,
+          29
+        ],
+        [
+          1,
+          30
+        ],
+        [
+          1,
+          31
+        ],
+        [
+          2,
+          31
+        ],
+        [
+          3,
+          31
+        ],
+        [
+          3,
+          30
+        ],
+        [
+          3,
+          29
+        ],
+        [
+          3,
+          28
+        ],
+        [
+          3,
+          27
+        ],
+        [
+          4,
+          27
+        ],
+        [
+          5,
+          27
+        ],
+        [
+          5,
+          26
+        ],
+        [
+          5,
+          25
+        ],
+        [
+          4,
+          25
+        ],
+        [
+          3,
+          25
+        ],
+        [
+          3,
+          24
+        ],
+        [
+          3,
+          23
+        ],
+        [
+          4,
+          23
+        ],
+        [
+          5,
+          23
+        ]
+      ],
+      "id": "collection_20_06",
+      "ref": "K06",
+      "chapter": 4,
+      "level": 20
+    },
+    {
+      "cell": [
+        7,
+        25
+      ],
+      "depth": 2,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          25
+        ],
+        [
+          7,
+          26
+        ],
+        [
+          7,
+          27
+        ]
+      ],
+      "id": "collection_20_07",
+      "ref": "K07",
+      "chapter": 4,
+      "level": 20
+    },
+    {
+      "cell": [
+        33,
+        25
+      ],
+      "depth": 0,
+      "event_distance": 12,
+      "clearance": 8,
+      "type": "recoin",
+      "branch": [
+        [
+          33,
+          25
+        ]
+      ],
+      "id": "collection_20_08",
+      "ref": "K08",
+      "chapter": 4,
+      "level": 20
+    },
+    {
+      "cell": [
+        25,
+        26
+      ],
+      "depth": 0,
+      "event_distance": 19,
+      "clearance": 7,
+      "type": "recoin",
+      "branch": [
+        [
+          25,
+          26
+        ]
+      ],
+      "id": "collection_20_09",
+      "ref": "K09",
+      "chapter": 4,
+      "level": 20
+    },
+    {
+      "cell": [
+        2,
+        31
+      ],
+      "depth": 0,
+      "event_distance": 21,
+      "clearance": 3,
+      "type": "recoin",
+      "branch": [
+        [
+          2,
+          31
+        ]
+      ],
+      "id": "collection_20_10",
+      "ref": "K10",
+      "chapter": 4,
+      "level": 20
+    }
+  ],
+  "21": [
+    {
+      "cell": [
+        25,
+        5
+      ],
+      "depth": 4,
+      "event_distance": 12,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          5
+        ],
+        [
+          26,
+          5
+        ],
+        [
+          27,
+          5
+        ],
+        [
+          28,
+          5
+        ],
+        [
+          29,
+          5
+        ]
+      ],
+      "id": "collection_21_01",
+      "ref": "K01",
+      "chapter": 5,
+      "level": 21
+    },
+    {
+      "cell": [
+        2,
+        9
+      ],
+      "depth": 0,
+      "event_distance": 31,
+      "clearance": 9,
+      "type": "recoin",
+      "branch": [
+        [
+          2,
+          9
+        ]
+      ],
+      "id": "collection_21_02",
+      "ref": "K02",
+      "chapter": 5,
+      "level": 21
+    },
+    {
+      "cell": [
+        31,
+        11
+      ],
+      "depth": 4,
+      "event_distance": 14,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          31,
+          11
+        ],
+        [
+          30,
+          11
+        ],
+        [
+          29,
+          11
+        ],
+        [
+          28,
+          11
+        ],
+        [
+          27,
+          11
+        ]
+      ],
+      "id": "collection_21_03",
+      "ref": "K03",
+      "chapter": 5,
+      "level": 21
+    },
+    {
+      "cell": [
+        7,
+        13
+      ],
+      "depth": 2,
+      "event_distance": 46,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          13
+        ],
+        [
+          7,
+          12
+        ],
+        [
+          7,
+          11
+        ]
+      ],
+      "id": "collection_21_04",
+      "ref": "K04",
+      "chapter": 5,
+      "level": 21
+    },
+    {
+      "cell": [
+        3,
+        15
+      ],
+      "depth": 0,
+      "event_distance": 32,
+      "clearance": 8,
+      "type": "recoin",
+      "branch": [
+        [
+          3,
+          15
+        ]
+      ],
+      "id": "collection_21_05",
+      "ref": "K05",
+      "chapter": 5,
+      "level": 21
+    },
+    {
+      "cell": [
+        3,
+        19
+      ],
+      "depth": 2,
+      "event_distance": 12,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          3,
+          19
+        ],
+        [
+          4,
+          19
+        ],
+        [
+          5,
+          19
+        ]
+      ],
+      "id": "collection_21_06",
+      "ref": "K06",
+      "chapter": 5,
+      "level": 21
+    },
+    {
+      "cell": [
+        5,
+        23
+      ],
+      "depth": 6,
+      "event_distance": 22,
+      "clearance": 10,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          23
+        ],
+        [
+          4,
+          23
+        ],
+        [
+          3,
+          23
+        ],
+        [
+          2,
+          23
+        ],
+        [
+          1,
+          23
+        ],
+        [
+          1,
+          24
+        ],
+        [
+          1,
+          25
+        ]
+      ],
+      "id": "collection_21_07",
+      "ref": "K07",
+      "chapter": 5,
+      "level": 21
+    },
+    {
+      "cell": [
+        9,
+        25
+      ],
+      "depth": 6,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          9,
+          25
+        ],
+        [
+          9,
+          26
+        ],
+        [
+          9,
+          27
+        ],
+        [
+          9,
+          28
+        ],
+        [
+          9,
+          29
+        ],
+        [
+          9,
+          30
+        ],
+        [
+          9,
+          31
+        ]
+      ],
+      "id": "collection_21_08",
+      "ref": "K08",
+      "chapter": 5,
+      "level": 21
+    },
+    {
+      "cell": [
+        29,
+        25
+      ],
+      "depth": 6,
+      "event_distance": 8,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          29,
+          25
+        ],
+        [
+          29,
+          24
+        ],
+        [
+          29,
+          23
+        ],
+        [
+          28,
+          23
+        ],
+        [
+          27,
+          23
+        ],
+        [
+          27,
+          24
+        ],
+        [
+          27,
+          25
+        ]
+      ],
+      "id": "collection_21_09",
+      "ref": "K09",
+      "chapter": 5,
+      "level": 21
+    },
+    {
+      "cell": [
+        25,
+        29
+      ],
+      "depth": 0,
+      "event_distance": 12,
+      "clearance": 4,
+      "type": "recoin",
+      "branch": [
+        [
+          25,
+          29
+        ]
+      ],
+      "id": "collection_21_10",
+      "ref": "K10",
+      "chapter": 5,
+      "level": 21
+    }
+  ],
+  "22": [
+    {
+      "cell": [
+        6,
+        1
+      ],
+      "depth": 0,
+      "event_distance": 11,
+      "clearance": 7,
+      "type": "recoin",
+      "branch": [
+        [
+          6,
+          1
+        ]
+      ],
+      "id": "collection_22_01",
+      "ref": "K01",
+      "chapter": 5,
+      "level": 22
+    },
+    {
+      "cell": [
+        14,
+        1
+      ],
+      "depth": 0,
+      "event_distance": 19,
+      "clearance": 9,
+      "type": "recoin",
+      "branch": [
+        [
+          14,
+          1
+        ]
+      ],
+      "id": "collection_22_02",
+      "ref": "K02",
+      "chapter": 5,
+      "level": 22
+    },
+    {
+      "cell": [
+        22,
+        1
+      ],
+      "depth": 0,
+      "event_distance": 11,
+      "clearance": 11,
+      "type": "recoin",
+      "branch": [
+        [
+          22,
+          1
+        ]
+      ],
+      "id": "collection_22_03",
+      "ref": "K03",
+      "chapter": 5,
+      "level": 22
+    },
+    {
+      "cell": [
+        12,
+        7
+      ],
+      "depth": 0,
+      "event_distance": 5,
+      "clearance": 5,
+      "type": "recoin",
+      "branch": [
+        [
+          12,
+          7
+        ]
+      ],
+      "id": "collection_22_04",
+      "ref": "K04",
+      "chapter": 5,
+      "level": 22
+    },
+    {
+      "cell": [
+        27,
+        12
+      ],
+      "depth": 0,
+      "event_distance": 15,
+      "clearance": 9,
+      "type": "recoin",
+      "branch": [
+        [
+          27,
+          12
+        ]
+      ],
+      "id": "collection_22_05",
+      "ref": "K05",
+      "chapter": 5,
+      "level": 22
+    },
+    {
+      "cell": [
+        1,
+        14
+      ],
+      "depth": 0,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "recoin",
+      "branch": [
+        [
+          1,
+          14
+        ]
+      ],
+      "id": "collection_22_06",
+      "ref": "K06",
+      "chapter": 5,
+      "level": 22
+    },
+    {
+      "cell": [
+        33,
+        14
+      ],
+      "depth": 0,
+      "event_distance": 13,
+      "clearance": 13,
+      "type": "recoin",
+      "branch": [
+        [
+          33,
+          14
+        ]
+      ],
+      "id": "collection_22_07",
+      "ref": "K07",
+      "chapter": 5,
+      "level": 22
+    },
+    {
+      "cell": [
+        15,
+        27
+      ],
+      "depth": 0,
+      "event_distance": 12,
+      "clearance": 8,
+      "type": "recoin",
+      "branch": [
+        [
+          15,
+          27
+        ]
+      ],
+      "id": "collection_22_08",
+      "ref": "K08",
+      "chapter": 5,
+      "level": 22
+    },
+    {
+      "cell": [
+        10,
+        33
+      ],
+      "depth": 0,
+      "event_distance": 7,
+      "clearance": 7,
+      "type": "recoin",
+      "branch": [
+        [
+          10,
+          33
+        ]
+      ],
+      "id": "collection_22_09",
+      "ref": "K09",
+      "chapter": 5,
+      "level": 22
+    },
+    {
+      "cell": [
+        28,
+        33
+      ],
+      "depth": 0,
+      "event_distance": 11,
+      "clearance": 7,
+      "type": "recoin",
+      "branch": [
+        [
+          28,
+          33
+        ]
+      ],
+      "id": "collection_22_10",
+      "ref": "K10",
+      "chapter": 5,
+      "level": 22
+    }
+  ],
+  "23": [
+    {
+      "cell": [
+        24,
+        1
+      ],
+      "depth": 0,
+      "event_distance": 9,
+      "clearance": 7,
+      "type": "recoin",
+      "branch": [
+        [
+          24,
+          1
+        ]
+      ],
+      "id": "collection_23_01",
+      "ref": "K01",
+      "chapter": 5,
+      "level": 23
+    },
+    {
+      "cell": [
+        13,
+        3
+      ],
+      "depth": 0,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "recoin",
+      "branch": [
+        [
+          13,
+          3
+        ]
+      ],
+      "id": "collection_23_02",
+      "ref": "K02",
+      "chapter": 5,
+      "level": 23
+    },
+    {
+      "cell": [
+        11,
+        9
+      ],
+      "depth": 0,
+      "event_distance": 10,
+      "clearance": 10,
+      "type": "recoin",
+      "branch": [
+        [
+          11,
+          9
+        ]
+      ],
+      "id": "collection_23_03",
+      "ref": "K03",
+      "chapter": 5,
+      "level": 23
+    },
+    {
+      "cell": [
+        33,
+        9
+      ],
+      "depth": 0,
+      "event_distance": 8,
+      "clearance": 8,
+      "type": "recoin",
+      "branch": [
+        [
+          33,
+          9
+        ]
+      ],
+      "id": "collection_23_04",
+      "ref": "K04",
+      "chapter": 5,
+      "level": 23
+    },
+    {
+      "cell": [
+        33,
+        17
+      ],
+      "depth": 4,
+      "event_distance": 16,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          33,
+          17
+        ],
+        [
+          32,
+          17
+        ],
+        [
+          31,
+          17
+        ],
+        [
+          30,
+          17
+        ],
+        [
+          29,
+          17
+        ]
+      ],
+      "id": "collection_23_05",
+      "ref": "K05",
+      "chapter": 5,
+      "level": 23
+    },
+    {
+      "cell": [
+        13,
+        19
+      ],
+      "depth": 0,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "recoin",
+      "branch": [
+        [
+          13,
+          19
+        ]
+      ],
+      "id": "collection_23_06",
+      "ref": "K06",
+      "chapter": 5,
+      "level": 23
+    },
+    {
+      "cell": [
+        13,
+        25
+      ],
+      "depth": 4,
+      "event_distance": 12,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          13,
+          25
+        ],
+        [
+          13,
+          24
+        ],
+        [
+          13,
+          23
+        ],
+        [
+          12,
+          23
+        ],
+        [
+          11,
+          23
+        ]
+      ],
+      "id": "collection_23_07",
+      "ref": "K07",
+      "chapter": 5,
+      "level": 23
+    },
+    {
+      "cell": [
+        25,
+        25
+      ],
+      "depth": 4,
+      "event_distance": 8,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          25
+        ],
+        [
+          25,
+          24
+        ],
+        [
+          25,
+          23
+        ],
+        [
+          26,
+          23
+        ],
+        [
+          27,
+          23
+        ]
+      ],
+      "id": "collection_23_08",
+      "ref": "K08",
+      "chapter": 5,
+      "level": 23
+    },
+    {
+      "cell": [
+        5,
+        29
+      ],
+      "depth": 0,
+      "event_distance": 16,
+      "clearance": 4,
+      "type": "recoin",
+      "branch": [
+        [
+          5,
+          29
+        ]
+      ],
+      "id": "collection_23_09",
+      "ref": "K09",
+      "chapter": 5,
+      "level": 23
+    },
+    {
+      "cell": [
+        23,
+        31
+      ],
+      "depth": 2,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          31
+        ],
+        [
+          24,
+          31
+        ],
+        [
+          25,
+          31
+        ]
+      ],
+      "id": "collection_23_10",
+      "ref": "K10",
+      "chapter": 5,
+      "level": 23
+    }
+  ],
+  "24": [
+    {
+      "cell": [
+        23,
+        7
+      ],
+      "depth": 2,
+      "event_distance": 16,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          23,
+          7
+        ],
+        [
+          22,
+          7
+        ],
+        [
+          21,
+          7
+        ]
+      ],
+      "id": "collection_24_01",
+      "ref": "K01",
+      "chapter": 5,
+      "level": 24
+    },
+    {
+      "cell": [
+        29,
+        11
+      ],
+      "depth": 8,
+      "event_distance": 16,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          29,
+          11
+        ],
+        [
+          29,
+          10
+        ],
+        [
+          29,
+          9
+        ],
+        [
+          30,
+          9
+        ],
+        [
+          31,
+          9
+        ],
+        [
+          31,
+          8
+        ],
+        [
+          31,
+          7
+        ],
+        [
+          31,
+          6
+        ],
+        [
+          31,
+          5
+        ]
+      ],
+      "id": "collection_24_02",
+      "ref": "K02",
+      "chapter": 5,
+      "level": 24
+    },
+    {
+      "cell": [
+        5,
+        23
+      ],
+      "depth": 4,
+      "event_distance": 8,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          5,
+          23
+        ],
+        [
+          6,
+          23
+        ],
+        [
+          7,
+          23
+        ],
+        [
+          7,
+          24
+        ],
+        [
+          7,
+          25
+        ]
+      ],
+      "id": "collection_24_03",
+      "ref": "K03",
+      "chapter": 5,
+      "level": 24
+    },
+    {
+      "cell": [
+        13,
+        23
+      ],
+      "depth": 4,
+      "event_distance": 40,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          13,
+          23
+        ],
+        [
+          12,
+          23
+        ],
+        [
+          11,
+          23
+        ],
+        [
+          11,
+          24
+        ],
+        [
+          11,
+          25
+        ]
+      ],
+      "id": "collection_24_04",
+      "ref": "K04",
+      "chapter": 5,
+      "level": 24
+    },
+    {
+      "cell": [
+        31,
+        23
+      ],
+      "depth": 2,
+      "event_distance": 15,
+      "clearance": 7,
+      "type": "impasse",
+      "branch": [
+        [
+          31,
+          23
+        ],
+        [
+          31,
+          24
+        ],
+        [
+          31,
+          25
+        ]
+      ],
+      "id": "collection_24_05",
+      "ref": "K05",
+      "chapter": 5,
+      "level": 24
+    },
+    {
+      "cell": [
+        25,
+        27
+      ],
+      "depth": 4,
+      "event_distance": 29,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          25,
+          27
+        ],
+        [
+          25,
+          28
+        ],
+        [
+          25,
+          29
+        ],
+        [
+          25,
+          30
+        ],
+        [
+          25,
+          31
+        ]
+      ],
+      "id": "collection_24_06",
+      "ref": "K06",
+      "chapter": 5,
+      "level": 24
+    },
+    {
+      "cell": [
+        33,
+        27
+      ],
+      "depth": 4,
+      "event_distance": 6,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          33,
+          27
+        ],
+        [
+          33,
+          28
+        ],
+        [
+          33,
+          29
+        ],
+        [
+          33,
+          30
+        ],
+        [
+          33,
+          31
+        ]
+      ],
+      "id": "collection_24_07",
+      "ref": "K07",
+      "chapter": 5,
+      "level": 24
+    },
+    {
+      "cell": [
+        9,
+        29
+      ],
+      "depth": 6,
+      "event_distance": 42,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          9,
+          29
+        ],
+        [
+          9,
+          30
+        ],
+        [
+          9,
+          31
+        ],
+        [
+          9,
+          32
+        ],
+        [
+          9,
+          33
+        ],
+        [
+          10,
+          33
+        ],
+        [
+          11,
+          33
+        ]
+      ],
+      "id": "collection_24_08",
+      "ref": "K08",
+      "chapter": 5,
+      "level": 24
+    },
+    {
+      "cell": [
+        15,
+        33
+      ],
+      "depth": 2,
+      "event_distance": 20,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          15,
+          33
+        ],
+        [
+          16,
+          33
+        ],
+        [
+          17,
+          33
+        ]
+      ],
+      "id": "collection_24_09",
+      "ref": "K09",
+      "chapter": 5,
+      "level": 24
+    },
+    {
+      "cell": [
+        21,
+        33
+      ],
+      "depth": 2,
+      "event_distance": 24,
+      "clearance": 10,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          33
+        ],
+        [
+          22,
+          33
+        ],
+        [
+          23,
+          33
+        ]
+      ],
+      "id": "collection_24_10",
+      "ref": "K10",
+      "chapter": 5,
+      "level": 24
+    }
+  ],
+  "25": [
+    {
+      "cell": [
+        7,
+        1
+      ],
+      "depth": 4,
+      "event_distance": 26,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ]
+      ],
+      "id": "collection_25_01",
+      "ref": "K01",
+      "chapter": 5,
+      "level": 25
+    },
+    {
+      "cell": [
+        9,
+        5
+      ],
+      "depth": 2,
+      "event_distance": 32,
+      "clearance": 10,
+      "type": "impasse",
+      "branch": [
+        [
+          9,
+          5
+        ],
+        [
+          10,
+          5
+        ],
+        [
+          11,
+          5
+        ]
+      ],
+      "id": "collection_25_02",
+      "ref": "K02",
+      "chapter": 5,
+      "level": 25
+    },
+    {
+      "cell": [
+        15,
+        5
+      ],
+      "depth": 2,
+      "event_distance": 32,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          15,
+          5
+        ],
+        [
+          15,
+          4
+        ],
+        [
+          15,
+          3
+        ]
+      ],
+      "id": "collection_25_03",
+      "ref": "K03",
+      "chapter": 5,
+      "level": 25
+    },
+    {
+      "cell": [
+        15,
+        9
+      ],
+      "depth": 0,
+      "event_distance": 40,
+      "clearance": 4,
+      "type": "recoin",
+      "branch": [
+        [
+          15,
+          9
+        ]
+      ],
+      "id": "collection_25_04",
+      "ref": "K04",
+      "chapter": 5,
+      "level": 25
+    },
+    {
+      "cell": [
+        11,
+        13
+      ],
+      "depth": 0,
+      "event_distance": 30,
+      "clearance": 10,
+      "type": "recoin",
+      "branch": [
+        [
+          11,
+          13
+        ]
+      ],
+      "id": "collection_25_05",
+      "ref": "K05",
+      "chapter": 5,
+      "level": 25
+    },
+    {
+      "cell": [
+        17,
+        15
+      ],
+      "depth": 4,
+      "event_distance": 26,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          17,
+          15
+        ],
+        [
+          17,
+          16
+        ],
+        [
+          17,
+          17
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          15,
+          17
+        ]
+      ],
+      "id": "collection_25_06",
+      "ref": "K06",
+      "chapter": 5,
+      "level": 25
+    },
+    {
+      "cell": [
+        21,
+        15
+      ],
+      "depth": 2,
+      "event_distance": 18,
+      "clearance": 8,
+      "type": "impasse",
+      "branch": [
+        [
+          21,
+          15
+        ],
+        [
+          21,
+          16
+        ],
+        [
+          21,
+          17
+        ]
+      ],
+      "id": "collection_25_07",
+      "ref": "K07",
+      "chapter": 5,
+      "level": 25
+    },
+    {
+      "cell": [
+        33,
+        17
+      ],
+      "depth": 6,
+      "event_distance": 8,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          33,
+          17
+        ],
+        [
+          33,
+          16
+        ],
+        [
+          33,
+          15
+        ],
+        [
+          33,
+          14
+        ],
+        [
+          33,
+          13
+        ],
+        [
+          32,
+          13
+        ],
+        [
+          31,
+          13
+        ]
+      ],
+      "id": "collection_25_08",
+      "ref": "K08",
+      "chapter": 5,
+      "level": 25
+    },
+    {
+      "cell": [
+        15,
+        19
+      ],
+      "depth": 18,
+      "event_distance": 40,
+      "clearance": 4,
+      "type": "impasse",
+      "branch": [
+        [
+          15,
+          19
+        ],
+        [
+          14,
+          19
+        ],
+        [
+          13,
+          19
+        ],
+        [
+          12,
+          19
+        ],
+        [
+          11,
+          19
+        ],
+        [
+          11,
+          18
+        ],
+        [
+          11,
+          17
+        ],
+        [
+          11,
+          16
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          13,
+          15
+        ],
+        [
+          13,
+          16
+        ],
+        [
+          13,
+          17
+        ],
+        [
+          14,
+          17
+        ],
+        [
+          15,
+          17
+        ]
+      ],
+      "id": "collection_25_09",
+      "ref": "K09",
+      "chapter": 5,
+      "level": 25
+    },
+    {
+      "cell": [
+        19,
+        21
+      ],
+      "depth": 4,
+      "event_distance": 14,
+      "clearance": 6,
+      "type": "impasse",
+      "branch": [
+        [
+          19,
+          21
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          22,
+          21
+        ],
+        [
+          23,
+          21
+        ]
+      ],
+      "id": "collection_25_10",
+      "ref": "K10",
+      "chapter": 5,
+      "level": 25
+    }
+  ]
+}

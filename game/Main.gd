@@ -1,4 +1,15 @@
 extends Node3D
+const Subject16=preload("res://Subject16.gd")
+const ChapterIdentity=preload("res://ChapterIdentity.gd")
+var dossier=Subject16.blank()
+var decorative_motion=true
+var folamour_comments=true
+var animated_doctors=[]
+var decor_time=0.0
+var reaction_text=""
+var reaction_time=0.0
+var last_observed_errors=0
+var folamour_line:Label
 const LevelEndings=preload("res://LevelEndings.gd")
 const TILE=2.6
 const MOVE_SPEED=9.1
@@ -169,16 +180,16 @@ func build_world():
 	var env=WorldEnvironment.new()
 	var settings=Environment.new()
 	settings.background_mode=Environment.BG_COLOR
-	settings.background_color=Color("101f2b")
+	settings.background_color=Color(Subject16.theme(level).background)
 	settings.ambient_light_source=Environment.AMBIENT_SOURCE_COLOR
-	settings.ambient_light_color=Color("c1d9e4")
+	settings.ambient_light_color=Color(Subject16.theme(level).ambient)
 	settings.ambient_light_energy=0.38
 	settings.tonemap_mode=Environment.TONE_MAPPER_FILMIC
 	env.environment=settings
 	world.add_child(env)
 	var sun=DirectionalLight3D.new()
 	sun.rotation_degrees=Vector3(-55,-30,0)
-	sun.light_color=Color("ffdfaa")
+	sun.light_color=Color(Subject16.theme(level).sun)
 	sun.light_energy=0.72
 	sun.shadow_enabled=not OS.has_feature("web")
 	world.add_child(sun)
@@ -194,6 +205,7 @@ func build_world():
 	if level==3: palettes=[Color("7789a5"),Color("638f94"),Color("93839e")]
 	if level in range(16,21):palettes=[[Color("b59e79"),Color("8c9c99"),Color("869bb5")],[Color("96b09a"),Color("b4a27d"),Color("8d9cab")],[Color("779daa"),Color("9f94ae"),Color("91b9ae")],[Color("ac8964"),Color("909eaa"),Color("b19d7a")],[Color("aa91b7"),Color("829c95"),Color("b4a080")]][level-16]
 	if level>=21:palettes=[[Color("a5a08b"),Color("858e9f"),Color("a28d7b")],[Color("7896a8"),Color("859a9e"),Color("9da893")],[Color("a693aa"),Color("9b927d"),Color("859c90")],[Color("a5816d"),Color("98918c"),Color("8f9f9b")],[Color("8c9b9d"),Color("98a798"),Color("b4a48e")]][level-21]
+	for i in range(3):palettes[i]=palettes[i].lerp(Color(Subject16.theme(level).palettes[i]),0.65)
 	for y in range(grid.size()):
 		for x in range(grid.size()):
 			var k=key(x,y)
@@ -273,7 +285,9 @@ func build_event(e):
 	event_nodes[e.id]=root
 	var gold=material(accent,true)
 	var dark=material(Color("243d48"))
-	if LevelEndings.is_doctor(e):
+	if e.kind=="collectible":
+		ChapterIdentity.model(self,root,e)
+	elif LevelEndings.is_doctor(e):
 		folamour=root
 		make_folamour(root)
 	elif e.kind in ["door","oneway","exit"]:
@@ -354,7 +368,7 @@ func build_event(e):
 		box(root,Vector3(0.85,1,0.6),Vector3(0,0.5,0),dark)
 		box(root,Vector3(0.75,0.55,0.08),Vector3(0,1.12,-0.27),material(Color("93d4cf"),true))
 	var label=Label3D.new()
-	label.text=("Folamour · " if LevelEndings.is_doctor(e) else "")+e.get("ref","?")
+	label.text="◇" if e.kind=="collectible" else ("Folamour · " if LevelEndings.is_doctor(e) else "")+e.get("ref","?")
 	label.position.y=3.0 if e.kind in ["door","exit","oneway"] or e.has("model") else 1.95
 	label.billboard=BaseMaterial3D.BILLBOARD_ENABLED
 	label.font_size=38
@@ -515,6 +529,13 @@ func build_ui():
 	var objective_button=button("Objectif actuel",show_objective)
 	objective_button.custom_minimum_size.y=38
 	stack.add_child(objective_button)
+	var dossier_button=button("Dossier du sujet 16",func():Subject16.show(self))
+	dossier_button.custom_minimum_size.y=38
+	stack.add_child(dossier_button)
+	folamour_line=label("",14,accent)
+	folamour_line.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	folamour_line.hide()
+	stack.add_child(folamour_line)
 	var mp=PanelContainer.new()
 	mp.set_anchors_and_offsets_preset(Control.PRESET_TOP_RIGHT)
 	mp.position=Vector2(-234,12)
@@ -647,7 +668,7 @@ func show_title():
 	modal_box.add_child(button("Choisir un chapitre",show_chapters,not has_save()))
 	modal_box.add_child(button("Sélection de niveau / test",show_level_select))
 	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("VERSION 0.20 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE",13)
+	paragraph("VERSION 0.21 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
 	modal_box.add_child(button("Réglages audio",func(): show_audio(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
@@ -730,6 +751,7 @@ func set_level(number):
 	events=JSON.parse_string(FileAccess.get_file_as_string("res://data/events"+suffix+".json"))
 	folamour=null
 	LevelEndings.apply(self)
+	Subject16.apply(self)
 	shortcuts=JSON.parse_string(FileAccess.get_file_as_string("res://data/shortcuts"+suffix+".json"))
 	item_catalog=JSON.parse_string(FileAccess.get_file_as_string("res://data/items"+suffix+".json")) if level>=2 else {}
 	world=Node3D.new()
@@ -739,11 +761,16 @@ func set_level(number):
 	if level in range(11,16):preload("res://ForesightDecor.gd").setup(self)
 	if level in range(16,21):preload("res://CertaintyDecor.gd").setup(self)
 	if level>=21:preload("res://FinaleDecor.gd").setup(self)
+	ChapterIdentity.setup(self)
 func start_game(resume_v,target=1,keep_campaign=false):
 	playing=false
 	var data=read_save() if resume_v else {}
 	if not data.is_empty(): target=int(data.get("level",1))
-	if not keep_campaign: level_stats={}
+	if not keep_campaign:
+		level_stats={}
+		dossier=Subject16.blank()
+	reaction_time=0
+	last_observed_errors=0
 	done.clear()
 	seen.clear()
 	journal.clear()
@@ -763,6 +790,8 @@ func start_game(resume_v,target=1,keep_campaign=false):
 	current_event={}
 	set_level(target)
 	if not data.is_empty(): load_game()
+	dossier.visited[str(level)]=true
+	last_observed_errors=errors
 	sync_shortcuts()
 	record_walk()
 	playing=true
@@ -936,7 +965,7 @@ func update_fog():
 		if not w.visible:continue
 		var diff=w.position-player.position
 		w.scale.y=0.12 if diff.x+diff.z>0 and abs(diff.x-diff.z)<5 and Vector2(diff.x,diff.z).length()<7 else 1.0
-	for e in events: event_nodes[e.id].visible=render_near(event_nodes[e.id]) and seen.has(key(e.cell[0],e.cell[1])) and not (e.kind=="pickup" and done.has(e.id))
+	for e in events: event_nodes[e.id].visible=render_near(event_nodes[e.id]) and seen.has(key(e.cell[0],e.cell[1])) and not ((e.kind=="pickup" and done.has(e.id)) or (e.kind=="collectible" and Subject16.has(self,e)))
 	for id in machine_parts:
 		if id.begins_with("pipe_"): machine_parts[id].visible=seen.has(machine_parts[id].get_meta("fog_cell"))
 	mini_map.queue_redraw()
@@ -948,6 +977,7 @@ func find_nearest():
 	nearest={}
 	var best=3.0
 	for e in events:
+		if e.kind=="collectible" and Subject16.has(self,e):continue
 		if (e.kind=="pickup" or e.kind in ["door","exit"]) and done.has(e.id): continue
 		var dist=player.position.distance_to(event_nodes[e.id].position)
 		if dist<best:
@@ -990,18 +1020,23 @@ func update_hud():
 		status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d")%[held,int(done.has("c%d_p1"%level))+int(done.has("c%d_p2"%level))+int(done.has("c%d_p3"%level)),int(elapsed)/60,int(elapsed)%60]
 	if level>=21:title_label.text=loc(FinaleChapter.status(self))
 	if level==4: status_label.text=loc("Objets  %d    •    Essais  %d / 3    •    %02d:%02d") % [held,int(done.has("test_balance"))+int(done.has("sequence_panel"))+int(done.has("test_circuit")),int(elapsed)/60,int(elapsed)%60]
+	status_label.text+="   ◇ "+str(Subject16.count(self,level))+"/10"
 	action_label.text=loc("["+nearest.ref+"] "+nearest.title if not nearest.is_empty() else "Cliquez / touchez le sol pour explorer")
 	if not move_path.is_empty(): action_label.text=loc("Destination : ")+ (loc(click_event.title) if not click_event.is_empty() else str(move_path[-1].x)+", "+str(move_path[-1].y))
 	if is_instance_valid(interact_button):
 		interact_button.disabled=nearest.is_empty()
-		interact_button.text=loc("Parler" if LevelEndings.is_doctor(nearest) else "Examiner" if nearest.is_empty() or nearest.kind!="pickup" else "Ramasser")
+		interact_button.text=loc("Parler" if LevelEndings.is_doctor(nearest) else "Examiner" if nearest.is_empty() or nearest.kind not in ["pickup","collectible"] else "Ramasser")
 func toast(text):
 	toast_source=text
 	toast_label.text=loc(text)
 	toast_timer=6
 func interact(e):
+	if e.kind=="collectible":
+		Subject16.collect(self,e)
+		return
 	if won and level==25:
 		FinaleChapter.finish(self)
+		Subject16.finish_button(self)
 		return
 	if e.kind=="pickup":
 		for required in e.get("prerequisites",[]):
@@ -1152,6 +1187,7 @@ func complete(e):
 		if e.has("requires") and not done.has("installed_"+e.id):return
 	if e.has("puzzle_type") and (not PuzzleControls.available(self,e) or not PuzzleControls.solved(self,e)): return
 	done[e.id]=true
+	if Guidance.is_challenge(e):Subject16.react(self,"success",e.id)
 	for id in e.get("grants",{}):
 		inventory[id]=inventory.get(id,0)+e.grants[id]
 		add_journal("object_"+id,item_name(id)+"\n"+item_catalog.get(id,{}).get("text","Objet assemblé."))
@@ -1167,6 +1203,10 @@ func complete(e):
 	if e.kind=="exit": show_win()
 	elif level>=21:FinaleChapter.checkpoint(self,e)
 func sync_event(e):
+	if e.kind=="collectible":
+		event_nodes[e.id].visible=not Subject16.has(self,e)
+		event_nodes[e.id].get_node("PickArea").collision_layer=0 if Subject16.has(self,e) else 2
+		return
 	if e.id=="g_bridge":
 		var bridge=event_nodes[e.id].get_node_or_null("LivingBridge")
 		if bridge:bridge.visible=done.has(e.id)
@@ -1295,7 +1335,7 @@ func show_map():
 	map.custom_minimum_size=Vector2(content_width(),content_width()*0.82)
 	modal_box.add_child(map)
 	paragraph("Clic droit sur un passage découvert : fermer la carte et s’y rendre.",14)
-	paragraph("Blanc : vous • Or : objet • Turquoise : indice\nBleu : mécanisme • Corail : porte • Vert : activé\nF : Folamour, fin de mission • Les zones inconnues restent cachées.",14)
+	paragraph("Blanc : vous • Or : objet • Turquoise : indice\nBleu : mécanisme • Corail : porte • Vert : activé\nF : Folamour, fin de mission • Cercle blanc : collectible\nLes zones inconnues restent cachées.",14)
 	modal_box.add_child(button("Reprendre",close_modal,true))
 func show_pause():
 	if not playing: return
@@ -1309,6 +1349,9 @@ func show_pause():
 	modal_box.add_child(button("Langue / Language",func(): show_language(true)))
 	modal_box.add_child(button("Objectif actuel",show_objective))
 	modal_box.add_child(button("Réglages audio",func(): show_audio(true)))
+	modal_box.add_child(button("Dossier du sujet 16",func():Subject16.show(self)))
+	modal_box.add_child(button("Animations décoratives : OUI" if decorative_motion else "Animations décoratives : NON",func(): decorative_motion=not decorative_motion; save_game(); show_pause()))
+	modal_box.add_child(button("Répliques de Folamour : OUI" if folamour_comments else "Répliques de Folamour : NON",func(): folamour_comments=not folamour_comments; save_game(); show_pause()))
 	modal_box.add_child(button("Sauvegarder et revenir au menu",func(): save_game(); show_title()))
 	if not OS.has_feature("web"): modal_box.add_child(button("Sauvegarder et quitter",func(): save_game(); get_tree().quit()))
 func show_win():
@@ -1327,27 +1370,35 @@ func show_win():
 	save_game()
 	if level>=21:
 		FinaleChapter.finish(self)
+		Subject16.finish_button(self)
 		return
 	if level>=16:
 		CertaintyChapter.finish(self)
+		Subject16.finish_button(self)
 		return
 	if level>=11:
 		ForesightChapter.finish(self)
+		Subject16.finish_button(self)
 		return
 	if level==10:
 		show_archive_win()
+		Subject16.finish_button(self)
 		return
 	if level==9:
 		show_meeting_win()
+		Subject16.finish_button(self)
 		return
 	if level==8:
 		show_mail_win()
+		Subject16.finish_button(self)
 		return
 	if level==7:
 		show_office_win()
+		Subject16.finish_button(self)
 		return
 	if level==6:
 		show_greenhouse_win()
+		Subject16.finish_button(self)
 		return
 	clear_modal("NIVEAU "+str(level)+" / TERMINÉ", "Le laboratoire est franchi." if level==1 else "L’ascenseur est en marche." if level==2 else "Le ciel vous appartient." if level==3 else "Essais réussis." if level==4 else "Le défi impossible est accompli.")
 	if level==5:
@@ -1390,10 +1441,11 @@ func show_win():
 		modal_box.add_child(button("Accepter le stage — Chapitre 2",func(): start_game(false,6,true),true))
 		modal_box.add_child(button("Choisir un chapitre",func(): playing=false; hud.hide(); show_chapters(),true))
 		modal_box.add_child(button("Recommencer le chapitre 1",func(): confirm_new(1)))
+	Subject16.finish_button(self)
 	modal_box.add_child(button("Sauvegarder et revenir au menu",show_title))
 func save_game():
 	if test_mode: return
-	var data={"version":4,"shortcut_layout_revision":SHORTCUT_LAYOUT_REVISION,"level":level,"level_stats":level_stats,"dial_settings":dial_settings,"puzzle_states":puzzle_states,"walked":walked,"open_shortcuts":open_shortcuts,"journal_order":journal_order,"position":[player.position.x,player.position.y,player.position.z],"seen":seen,"done":done,"journal":journal,"hints":hints,"inventory":inventory,"elapsed":elapsed,"errors":errors,"won":won,"zoom":zoom,"muted":muted}
+	var data={"version":4,"subject16":dossier,"decorative_motion":decorative_motion,"folamour_comments":folamour_comments,"shortcut_layout_revision":SHORTCUT_LAYOUT_REVISION,"level":level,"level_stats":level_stats,"dial_settings":dial_settings,"puzzle_states":puzzle_states,"walked":walked,"open_shortcuts":open_shortcuts,"journal_order":journal_order,"position":[player.position.x,player.position.y,player.position.z],"seen":seen,"done":done,"journal":journal,"hints":hints,"inventory":inventory,"elapsed":elapsed,"errors":errors,"won":won,"zoom":zoom,"muted":muted}
 	var f=FileAccess.open(SAVE+".tmp",FileAccess.WRITE)
 	if f:
 		f.store_string(JSON.stringify(data))
@@ -1413,6 +1465,11 @@ func load_game():
 	var data=read_save()
 	if data.is_empty(): return
 	level_stats=data.get("level_stats",{})
+	dossier=data.get("subject16",Subject16.blank())
+	for field in ["collection","observations","visited"]:
+		if not dossier.has(field):dossier[field]={}
+	decorative_motion=data.get("decorative_motion",true)
+	folamour_comments=data.get("folamour_comments",true)
 	dial_settings=data.get("dial_settings",{})
 	puzzle_states=data.get("puzzle_states",{})
 	won=data.get("won",false)
@@ -1626,6 +1683,7 @@ func build_machine_decor():
 	box(lift,Vector3(2.4,0.15,0.3),Vector3(0,3.15,0.9),metal)
 	machine_parts.lift=lift
 func _process(delta):
+	Subject16.update(self,delta)
 	if is_instance_valid(soundscape):soundscape.update(self,delta)
 	update_ambience()
 	if level>=21:preload("res://FinaleDecor.gd").update(self,delta)
@@ -1720,6 +1778,7 @@ func request_cell(goal):
 	return true
 func request_event(e):
 	if e.kind=="pickup" and done.has(e.id): return
+	if e.kind=="collectible" and Subject16.has(self,e):return
 	var start=Vector2i(roundi(player.position.x/TILE),roundi(player.position.z/TILE))
 	var c=Vector2i(e.cell[0],e.cell[1])
 	var candidates=[c,c+Vector2i.UP,c+Vector2i.RIGHT,c+Vector2i.DOWN,c+Vector2i.LEFT]
@@ -1766,7 +1825,7 @@ func add_event_signals(root,e):
 	elif e.kind=="clue":
 		# A pale sheet visibly distinguishes a readable terminal from an item.
 		box(root,Vector3(0.5,0.45,0.035),Vector3(0,1.16,-0.34),material(Color("b4e6e1")))
-	elif not LevelEndings.is_doctor(e):
+	elif not LevelEndings.is_doctor(e) and e.kind!="collectible":
 		var lamp=box(root,Vector3(0.18,0.18,0.18),Vector3(0.75,1.8,0),material(Color("db735e"),true))
 		signal_lights[e.id]=lamp
 		for index in range(e.get("requires",[]).size()):
@@ -1841,6 +1900,8 @@ func make_folamour(parent):
 	var actor=Node3D.new()
 	actor.name="DocteurFolamour"
 	parent.add_child(actor)
+	animated_doctors=animated_doctors.filter(func(a):return is_instance_valid(a))
+	animated_doctors.append(actor)
 	var coat=material(Color("e7eeee"))
 	var skin=material(Color("e7bc99"))
 	var dark=material(Color("243344"))
@@ -1857,8 +1918,9 @@ func make_folamour(parent):
 	box(actor,Vector3(0.12,0.08,0.08),Vector3(0,1.75,-0.27),dark)
 	box(actor,Vector3(0.12,0.3,0.04),Vector3(0,1.15,-0.26),material(Color("bc5762")))
 	for x in [-0.47,0.47]:
-		box(actor,Vector3(0.2,0.7,0.24),Vector3(x,1,0),coat)
-		box(actor,Vector3(0.19,0.19,0.22),Vector3(x,0.6,0),skin)
+		var arm=Node3D.new();arm.name="ArmPivot"+str(x);arm.position=Vector3(x,1.3,0);arm.set_meta("side",signf(x));actor.add_child(arm)
+		box(arm,Vector3(0.2,0.7,0.24),Vector3(0,-.3,0),coat)
+		box(arm,Vector3(0.19,0.19,0.22),Vector3(0,-.7,0),skin)
 	box(actor,Vector3(0.25,0.03,0.03),Vector3(0,1.54,-0.25),dark)
 	return actor
 func folamour_portrait():
