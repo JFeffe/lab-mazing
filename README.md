@@ -1,10 +1,12 @@
 # Lab-mazing — Le Labyrinthe de Folamour
 
+**[▶ Jouer au Labyrinthe de Folamour dans le navigateur](https://jfeffe.github.io/lab-mazing/)**
+
 Version 0.21 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
 
-Jouer dans le navigateur : https://jfeffe.github.io/lab-mazing/
-
 ## Publication
+Pour chaque annonce de version sur GitHub, placer le lien **Jouer** en première ligne du corps de la publication, avant les nouveautés. Utiliser le [modèle d’annonce](.github/RELEASE_TEMPLATE.md) et conserver le lien juste sous le titre de ce README.
+
 Dans Settings → Pages → Build and deployment, sélectionner **GitHub Actions**. Ensuite lancer le workflow **Build and publish game** depuis Actions. Les prochains changements sur main reconstruisent et publient le jeu.
 
 Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le projet et exporte le jeu web sans threads. Aucun export manuel ni exécutable Windows à déposer dans ce dépôt.
