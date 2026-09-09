@@ -67,6 +67,11 @@ func run():
 				check(game.modal_scroll.size.y<=game.get_viewport().get_visible_rect().size.y,"Dossier height overflow")
 				if lang=="en":check(not all_text(game.modal_box).contains("facultatif"),"Untranslated dossier")
 	game.localization.choose("fr",false);game.start_game(false,5);game.close_modal()
+	root.size=Vector2i(844,390)
+	for i in range(4):await process_frame
+	game.close_modal();game.folamour_line.text="Folamour : Une observation supplémentaire pour compléter votre dossier, sujet 16.";game.folamour_line.show();game.reaction_time=8.0
+	for i in range(4):await process_frame
+	check(game.hud.get_child(0).get_global_rect().end.y<game.get_viewport().get_visible_rect().size.y-234,"HUD leaves too little visible maze in landscape")
 	game.reaction_time=0;game.folamour_comments=false;game.Subject16.react(game,"collect","test")
 	check(game.reaction_time==0 and not game.dossier.observations.is_empty(),"Disabled comments lost archive")
 	var actor=game.folamour.get_node("DocteurFolamour");game.folamour.show()

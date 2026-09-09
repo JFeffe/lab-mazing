@@ -526,12 +526,17 @@ func build_ui():
 	status_label=label("",14)
 	status_label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	stack.add_child(status_label)
+	var dossier_row=HBoxContainer.new()
+	dossier_row.add_theme_constant_override("separation",8)
+	stack.add_child(dossier_row)
 	var objective_button=button("Objectif actuel",show_objective)
 	objective_button.custom_minimum_size.y=38
-	stack.add_child(objective_button)
+	objective_button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	dossier_row.add_child(objective_button)
 	var dossier_button=button("Dossier du sujet 16",func():Subject16.show(self))
 	dossier_button.custom_minimum_size.y=38
-	stack.add_child(dossier_button)
+	dossier_button.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+	dossier_row.add_child(dossier_button)
 	folamour_line=label("",14,accent)
 	folamour_line.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	folamour_line.hide()

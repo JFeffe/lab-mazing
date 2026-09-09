@@ -23,6 +23,10 @@ Générer les ambiances originales avec `python3 scripts/compose_finale_audio.py
 
 Placement reproductible : `python3 scripts/place_collectibles.py`. Contrôles : `python3 game/tests/validate_collectibles.py` et Godot `--headless --path game --fixed-fps 60 --script res://tests/verify_subject16.gd`. Ces contrôles s’ajoutent à la suite complète dans GitHub Actions.
 
+[Cartes et cheatsheets v0.21 — les 25 niveaux](https://drive.google.com/drive/folders/1_2Sa00T5YCT2QCgQap1IADQbYPzGb_ms). Chaque chapitre contient cinq guides PDF et un ZIP avec les cartes PNG/PDF et les guides Markdown. [Recherche et audit](docs/v0.21/Recherche-et-audit-v0.21.md). Régénération : `python3 scripts/document_subject16.py /chemin/de/sortie`.
+
+Vérification : les 250 ramassages physiques et les 23 régressions Godot passent, ainsi que la publication GitHub Actions. Le paquet web publié contient bien les 25 collections. Le navigateur de contrôle ne fournit pas WebGL 2 : l’appréciation du rendu 3D et la fluidité sur téléphone réel restent à confirmer.
+
 ## Fins de niveau v0.20
 
 Les 25 points de fin ont été audités. Les niveaux 1–2 gardent leurs vrais seuils ; les sorties 3–4 sont fixées au mur. Dans les niveaux 5–25, parler à Folamour remplace la porte artificielle, avec une remise d’objet ou un bilan adapté à la mission. Au niveau 25, le docteur reste auprès du bureau du dialogue final.
