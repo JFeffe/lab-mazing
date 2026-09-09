@@ -1,6 +1,6 @@
 # Lab-Mazing v0.21 — Cartes et cheatsheets
 
-Les vingt-cinq guides ci-dessous contiennent les dix emplacements de collection, les solutions et les conditions de fin de mission. Les cartes PNG/PDF et les guides PDF accompagnent aussi le ZIP complet remis avec cette version. La copie dans Drive attend la confirmation de sa destination après le blocage de la vérification automatique.
+Les vingt-cinq guides ci-dessous contiennent les dix emplacements de collection, les solutions et les conditions de fin de mission. Les cartes PNG/PDF et les guides PDF accompagnent aussi le ZIP complet remis avec cette version. [Documents v0.21 dans Drive](https://drive.google.com/drive/folders/1_2Sa00T5YCT2QCgQap1IADQbYPzGb_ms) : les 25 guides PDF sont accessibles individuellement ; chaque archive de chapitre contient ses cartes PNG/PDF et ses guides PDF/Markdown.
 
 [Recherche et audit](Recherche-et-audit-v0.21.md) · [Index des 250 souvenirs](Index-250-souvenirs-v0.21.csv)
 

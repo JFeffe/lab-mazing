@@ -23,7 +23,7 @@ Générer les ambiances originales avec `python3 scripts/compose_finale_audio.py
 
 Placement reproductible : `python3 scripts/place_collectibles.py`. Contrôles : `python3 game/tests/validate_collectibles.py` et Godot `--headless --path game --fixed-fps 60 --script res://tests/verify_subject16.gd`. Ces contrôles s’ajoutent à la suite complète dans GitHub Actions.
 
-[Cheatsheets v0.21 — les 25 niveaux](docs/v0.21/INDEX.md). Le ZIP complet remis avec cette version contient les cartes PNG/PDF, les guides PDF/Markdown et le rapport de recherche. La copie dans Drive attend une confirmation de destination après le blocage du contrôle automatique. [Recherche et audit](docs/v0.21/Recherche-et-audit-v0.21.md). Régénération : `python3 scripts/document_subject16.py /chemin/de/sortie`.
+[Cheatsheets v0.21 — les 25 niveaux](docs/v0.21/INDEX.md). Le ZIP complet remis avec cette version contient les cartes PNG/PDF, les guides PDF/Markdown et le rapport de recherche. [Documents v0.21 dans Drive](https://drive.google.com/drive/folders/1_2Sa00T5YCT2QCgQap1IADQbYPzGb_ms) : cinq dossiers de chapitre, 25 guides PDF, une archive pour chaque chapitre, l’archive complète, le rapport de recherche et l’index des 250 souvenirs. [Recherche et audit](docs/v0.21/Recherche-et-audit-v0.21.md). Régénération : `python3 scripts/document_subject16.py /chemin/de/sortie`.
 
 Vérification : les 250 ramassages physiques et les 23 régressions Godot passent, ainsi que la publication GitHub Actions. Le paquet web publié contient bien les 25 collections. Le navigateur de contrôle ne fournit pas WebGL 2 : l’appréciation du rendu 3D et la fluidité sur téléphone réel restent à confirmer.
 
