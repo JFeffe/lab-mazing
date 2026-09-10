@@ -2,7 +2,7 @@
 
 **[▶ Jouer au Labyrinthe de Folamour dans le navigateur](https://jfeffe.github.io/lab-mazing/)**
 
-Version 0.22 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
+Version 0.23 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
 
 ## Publication
 Pour chaque annonce de version sur GitHub, placer le lien **Jouer** en première ligne du corps de la publication, avant les nouveautés. Utiliser le [modèle d’annonce](.github/RELEASE_TEMPLATE.md) et conserver le lien juste sous le titre de ce README.
@@ -13,6 +13,18 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Générer les ambiances originales avec `python3 scripts/compose_finale_audio.py`, puis ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Nouveautés v0.23 — Clics et musique par chapitre
+
+- Clic gauche **ou droit** dans le labyrinthe pour se déplacer et approcher les objets.
+- Carte ouverte : clic gauche ou droit sur une case découverte et accessible pour fermer la carte et s’y rendre. Les murs, zones inconnues et accès verrouillés restent protégés.
+- Chapitre 1 : musique originale conservée (80 BPM). Quatre nouvelles compositions lounge : **Le tampon qui dansait** (84), **La prévoyance en chaussons** (88), **Le miroir prend des vacances** (92), **Tout va presque bien** (96).
+- Menu et sélection des chapitres : **Ouverture du service des catastrophes**, 108 BPM, basse rebondissante, accords syncopés et petites réponses de cloche décalées.
+- Fondus entre les thèmes, boucle continue entre les niveaux du même chapitre, baisse du volume pendant la lecture. Le silence narratif du niveau 25 est conservé ; revenir au menu relance bien son thème.
+- Cinq compositions originales sans échantillons externes, environ 1,2 Mo au total, volume moyen aligné sur le morceau original. Régénération facultative : `python3 scripts/compose_chapter_audio.py` (numpy et ffmpeg).
+- Consignes mises à jour en français et en anglais. Les cartes et solutions [v0.22](docs/v0.22/INDEX.md) restent valables : aucune énigme ni case modifiée.
+
+Contrôles ciblés : `verify_map_navigation`, `verify_chapter_music`, `verify_audio_transitions`, `verify_click`, `verify_chapter_polish` et `verify_localization`. La publication exécute également la suite complète.
 
 ## Nouveautés v0.22 — Retours utiles et audit complet
 

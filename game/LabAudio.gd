@@ -1,4 +1,6 @@
 extends Node
+const TRACKS=["folamour_menu.ogg","folamour_lounge.ogg","folamour_chapter2.ogg","folamour_chapter3.ogg","folamour_chapter4.ogg","folamour_chapter5.ogg"]
+var current_track=0
 const SETTINGS="user://audio.cfg"
 var levels={"master":0.8,"music":0.22,"effects":0.55,"ambience":0.4}
 var music:AudioStreamPlayer
@@ -10,7 +12,7 @@ var current_gain=0.0
 
 func _ready():
 	load_settings()
-	music=make_player("folamour_lounge.ogg")
+	music=make_player(TRACKS[current_track])
 	music.stream.loop=true
 	mechanical=make_player("door.wav")
 	fanfare=make_player("chapter_complete.wav")
@@ -41,13 +43,25 @@ static func set_paused(player,value):
 	# Never forward an unchanged pause state to the audio backend.
 	if player.stream_paused!=value:player.stream_paused=value
 
+func track_for(game):
+	return clampi(int((game.level-1)/5)+1,1,5) if game.playing else 0
+
 func update(game,delta):
-	var active=game.playing and focused and not game.test_mode
-	var target=gain(game,"music")*(0.45 if game.modal_open else 1.0) if active else 0.0
-	if game.level==25:target=0.0
+	var active=focused and not game.test_mode
+	var desired=track_for(game)
+	var target=gain(game,"music")*(0.45 if game.playing and game.modal_open else 1.0) if active else 0.0
+	# Preserve the intentional quiet of the final conversation, not the menu after it.
+	if game.playing and game.level==25:target=0.0
+	# Fade out before replacing the stream. The same chapter never restarts on a
+	# level change, map opening, volume adjustment or focus transition.
+	if desired!=current_track:target=0.0
 	current_gain=move_toward(current_gain,target,delta*.16)
-	# Muting and zero volume take effect immediately, including ongoing sounds.
 	if gain(game,"music")==0:current_gain=0
+	if desired!=current_track and current_gain<=0.00001:
+		music.stop()
+		current_track=desired
+		music.stream=load("res://assets/"+TRACKS[current_track])
+		music.stream.loop=true
 	music.volume_db=linear_to_db(maxf(current_gain,0.00001))
 	set_paused(music,not active or gain(game,"music")==0)
 	if active and gain(game,"music")>0 and not music.playing:music.play()

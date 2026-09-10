@@ -1849,5 +1849,9 @@
   "Le docteur Folamour vous accueille en personne, puis rejoint la galerie nord du stabilisateur. Il y attendra votre démonstration.": "Doctor Folamour welcomes you in person, then heads to the northern stabilizer gallery. He will wait there for your demonstration.",
   "Folamour écoute votre rapport. Pour la première fois, il semble à court de sarcasmes.": "Folamour listens to your report. For the first time, he seems short of sarcasm.",
   "Blanc : vous • Or : objet • Turquoise : indice\nBleu : mécanisme • Corail : porte • Vert : activé\nF : Folamour, fin de mission • Les zones inconnues restent cachées.": "White: you • Gold: item • Turquoise: clue\nBlue: mechanism • Coral: door • Green: activated\nF: Folamour, mission ending • Unknown areas remain hidden.",
-  " — objets remis à Folamour. Descriptions conservées dans le journal.": " — items handed to Folamour. Descriptions kept in the journal."
+  " — objets remis à Folamour. Descriptions conservées dans le journal.": " — items handed to Folamour. Descriptions kept in the journal.",
+  "Clic gauche ou droit sur un passage découvert : fermer la carte et s’y rendre.": "Left- or right-click a discovered passage to close the map and walk there.",
+  "Une musique lounge différente par chapitre, de plus en plus rythmée, et une ouverture décalée au menu. Le fond musical s’atténue pendant la lecture.": "A different lounge theme for each chapter, gradually picking up the pace, and a quirky menu overture. The music softens while you read.",
+  "Clic gauche, clic droit ou toucher sur le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause": "Left-click, right-click or tap the floor to move. Tap an object to examine it.\nWASD / ZQSD / arrows: move • E: interact\nI: bag • J: journal • M: map • Esc: pause",
+  "VERSION 0.23 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE": "VERSION 0.23 · FOR YOUR PERMANENT PEACE OF MIND"
 }

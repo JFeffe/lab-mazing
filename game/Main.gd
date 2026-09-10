@@ -672,8 +672,8 @@ func show_title():
 		if saved.get("won",false) and int(saved.get("level",1))<5: paragraph("Niveau terminé : reprenez pour accéder à la suite.",16)
 	modal_box.add_child(button("Choisir un chapitre",show_chapters,not has_save()))
 	modal_box.add_child(button("Sélection de niveau / test",show_level_select))
-	paragraph("Cliquez ou touchez le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
-	paragraph("VERSION 0.22 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE",13)
+	paragraph("Clic gauche, clic droit ou toucher sur le sol pour vous déplacer. Touchez un objet pour l’examiner.\nWASD / ZQSD / flèches : marcher • E : interagir\nI : sac • J : journal • M : carte • Échap : pause",15)
+	paragraph("VERSION 0.23 · POUR VOTRE TRANQUILLITÉ DÉFINITIVE",13)
 	modal_box.add_child(button("Langue / Language",func(): show_language(false)))
 	modal_box.add_child(button("Réglages audio",func(): show_audio(false)))
 	if not OS.has_feature("web"): modal_box.add_child(button("Quitter",func(): get_tree().quit()))
@@ -902,7 +902,7 @@ func _physics_process(delta):
 		if e.kind=="pickup" and not done.has(e.id): event_nodes[e.id].rotation.y+=delta*0.7
 func _unhandled_input(event):
 	if playing and not modal_open and not won:
-		if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_LEFT:
+		if event is InputEventMouseButton and event.pressed and event.button_index in [MOUSE_BUTTON_LEFT,MOUSE_BUTTON_RIGHT]:
 			click_at(event.position)
 			get_viewport().set_input_as_handled()
 	if event is InputEventKey and event.pressed and event.keycode==KEY_F11:
@@ -1339,7 +1339,7 @@ func show_map():
 	map.navigation_enabled=true
 	map.custom_minimum_size=Vector2(content_width(),content_width()*0.82)
 	modal_box.add_child(map)
-	paragraph("Clic droit sur un passage découvert : fermer la carte et s’y rendre.",14)
+	paragraph("Clic gauche ou droit sur un passage découvert : fermer la carte et s’y rendre.",14)
 	paragraph("Blanc : vous • Or : objet • Turquoise : indice\nBleu : mécanisme • Corail : porte • Vert : activé\nF : Folamour, fin de mission • Cercle blanc : collectible\nLes zones inconnues restent cachées.",14)
 	modal_box.add_child(button("Reprendre",close_modal,true))
 func show_pause():
@@ -1995,7 +1995,7 @@ func show_hint(e,typed=null,at_mechanism=true):
 
 func show_audio(from_pause=true):
 	clear_modal("AMBIANCE DU LABORATOIRE","Réglages audio")
-	paragraph("Une musique d’ascenseur un peu étrange, à faible volume. Le fond musical s’atténue pendant la lecture.",16)
+	paragraph("Une musique lounge différente par chapitre, de plus en plus rythmée, et une ouverture décalée au menu. Le fond musical s’atténue pendant la lecture.",16)
 	for channel in ["master","music","effects","ambience"]:
 		var titles={"master":"Volume général","music":"Musique","effects":"Effets sonores","ambience":"Bruit des machines"}
 		var caption=paragraph(loc(titles[channel])+" : "+str(roundi(soundscape.levels[channel]*100))+" %",17)

@@ -31,8 +31,8 @@ func run():
 	await process_frame
 	var cell=min(map.size.x,map.size.y)/game.grid.size()
 	var offset=(map.size-Vector2.ONE*cell*game.grid.size())/2
-	map_click(map,offset+Vector2(2.5,1.5)*cell,MOUSE_BUTTON_LEFT)
-	check(game.modal_open and game.move_path.is_empty(),"Left click must not navigate")
+	map_click(map,offset+Vector2(2.5,1.5)*cell,MOUSE_BUTTON_MIDDLE)
+	check(game.modal_open and game.move_path.is_empty(),"Middle click must not navigate")
 	map_click(map,offset+Vector2(0.5,0.5)*cell)
 	check(game.modal_open and game.move_path.is_empty(),"Wall accepted")
 	map_click(map,offset+Vector2(17.5,13.5)*cell)
@@ -45,6 +45,37 @@ func run():
 	check(not game.modal_open and game.move_path[-1]==Vector2i(2,1),"Right click did not close map and set route")
 	for i in range(120):await physics_frame
 	check(game.move_path.is_empty() and abs(game.player.position.x-2*game.TILE)<0.1,"Player did not reach map destination")
+	game.show_map()
+	for child in game.modal_box.get_children():
+		if child.get_script()==game.MapWidget:map=child
+	await process_frame
+	cell=min(map.size.x,map.size.y)/game.grid.size()
+	offset=(map.size-Vector2.ONE*cell*game.grid.size())/2
+	map_click(map,offset+Vector2(0.5,0.5)*cell,MOUSE_BUTTON_LEFT)
+	check(game.modal_open and game.move_path.is_empty(),"Left click accepts wall")
+	map_click(map,offset+Vector2(17.5,13.5)*cell,MOUSE_BUTTON_LEFT)
+	check(game.modal_open and game.move_path.is_empty(),"Left click accepts locked region")
+	game.seen.erase(game.key(1,1))
+	map_click(map,offset+Vector2(1.5,1.5)*cell,MOUSE_BUTTON_LEFT)
+	check(game.modal_open and game.move_path.is_empty(),"Left click accepts unexplored cell")
+	game.seen[game.key(1,1)]=true
+	map_click(map,offset+Vector2(1.5,1.5)*cell,MOUSE_BUTTON_LEFT)
+	check(not game.modal_open and game.move_path[-1]==Vector2i(1,1),"Left click did not close map and set route")
+	for i in range(120):await physics_frame
+	check(game.move_path.is_empty() and abs(game.player.position.x-game.TILE)<0.1,"Left-click destination not reached")
+	# Real camera projection: both buttons use the world pathfinder.
+	for button in [MOUSE_BUTTON_LEFT,MOUSE_BUTTON_RIGHT]:
+		game.stop_navigation()
+		var input=InputEventMouseButton.new()
+		input.button_index=button
+		input.pressed=true
+		input.position=game.camera.unproject_position(Vector3(2*game.TILE,0,game.TILE))
+		game._unhandled_input(input)
+		check(not game.move_path.is_empty() and game.move_path[-1]==Vector2i(2,1),"World button failed: "+str(button))
+		game.show_pause()
+		game._unhandled_input(input)
+		check(game.move_path.is_empty(),"World click passes through modal")
+		game.close_modal()
 	game.player.position=Vector3(16*game.TILE,0.1,33*game.TILE)
 	check(game.request_cell(Vector2i(18,33)),"Cannot route along exit corridor")
 	for i in range(120):await physics_frame

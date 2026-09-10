@@ -5,7 +5,7 @@ var navigation_enabled=false
 
 func _gui_input(event):
 	if not navigation_enabled or game==null or not game.playing or game.won: return
-	if event is InputEventMouseButton and event.pressed and event.button_index==MOUSE_BUTTON_RIGHT:
+	if event is InputEventMouseButton and event.pressed and event.button_index in [MOUSE_BUTTON_LEFT,MOUSE_BUTTON_RIGHT]:
 		accept_event()
 		var n=game.grid.size()
 		var cell=min(size.x,size.y)/float(n)
