@@ -175,5 +175,10 @@ func run():
 	game.load_game()
 	check(game.done==before and game.journal.has("disc_moon") and game.inventory.disc_moon==0,"SAVE/LOAD CONSUMED ITEMS")
 	DirAccess.remove_absolute(game.SAVE)
+	# Saving briefly enables normal mode; do not start menu audio during teardown.
+	game.test_mode=true
+	game.queue_free()
+	await process_frame
+	await process_frame
 	print("ESCAPE ROOM ",sas,": ","FAIL" if failed else "PASS"," — ",steps," route cells; real collisions, inventory, mechanisms, journal, save/load.")
 	quit(1 if failed else 0)
