@@ -59,5 +59,9 @@ func run():
 	sound.update(game,.016)
 	check(sound.current_gain==0 and sound.music.stream_paused,"Zero volume plays")
 	game.test_mode=true
+	sound.music.stop()
+	game.queue_free()
+	await process_frame
+	await process_frame
 	print("CHAPTER / MENU MUSIC: ","FAIL" if failed else "PASS")
 	quit(1 if failed else 0)

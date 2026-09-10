@@ -2,7 +2,7 @@
 
 **[▶ Jouer au Labyrinthe de Folamour dans le navigateur](https://jfeffe.github.io/lab-mazing/)**
 
-Version 0.23 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
+Version 0.23.1 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
 
 ## Publication
 Pour chaque annonce de version sur GitHub, placer le lien **Jouer** en première ligne du corps de la publication, avant les nouveautés. Utiliser le [modèle d’annonce](.github/RELEASE_TEMPLATE.md) et conserver le lien juste sous le titre de ce README.
@@ -13,6 +13,12 @@ Le workflow télécharge Godot 4.5.1 et ses modèles officiels, importe le proje
 
 ## Développement
 Générer les ambiances originales avec `python3 scripts/compose_finale_audio.py`, puis ouvrir game/project.godot avec Godot 4.5.1. Pour exporter localement, installer ses modèles d’export puis exécuter `python scripts/export_web.py /chemin/vers/godot`.
+
+## Ajustement v0.23.1 — Le swing des petites anomalies
+
+Le menu adopte une nouvelle composition originale à 100 BPM : groove lounge légèrement swing, basse ronde, grosse caisse douce, rimshot brossé, piano électrique et motif de vibraphone. Une section centrale plus aérée donne de la respiration à la boucle de 57,6 secondes. Les cinq thèmes de chapitre sont conservés.
+
+Régénérer uniquement ce morceau : `python3 scripts/compose_chapter_audio.py --menu-only`.
 
 ## Nouveautés v0.23 — Clics et musique par chapitre
 
