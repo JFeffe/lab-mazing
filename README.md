@@ -2,6 +2,8 @@
 
 **[▶ Jouer au Labyrinthe de Folamour dans le navigateur](https://jfeffe.github.io/lab-mazing/)**
 
+**[▶ Jouer sur itch.io](https://jjeff01.itch.io/le-labyrinthe-de-folamour)**
+
 Version 0.23.1 : jeu solo 3D isométrique, cinq chapitres complets et vingt-cinq niveaux, français/anglais, déplacement au clic et au toucher.
 
 ## Publication
